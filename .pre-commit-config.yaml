@@ -1,0 +1,9 @@
+repos:
+- repo: local
+  hooks:
+    - id: gdlint
+      name: GdLint Scripts Folder
+      description: Makes sure the .gd scripts are following the common linting rules.
+      entry: bash -c 'gdlint scripts/*.gd'
+      language: system
+      stages: ["pre-commit"]
