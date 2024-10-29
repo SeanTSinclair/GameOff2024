@@ -2,8 +2,15 @@ repos:
 - repo: local
   hooks:
     - id: gdlint
-      name: GdLint Scripts Folder
+      name: GdLint 
       description: Makes sure the .gd scripts are following the common linting rules.
-      entry: bash -c 'gdlint scripts/*.gd'
+      entry: bash -c 'gdlint .'
+      language: system
+      stages: ["pre-commit"]
+
+    - id: gdformat
+      name: GdFormat 
+      description: Formats the code to create a more uniform codebase
+      entry: bash -c 'gdformat .'
       language: system
       stages: ["pre-commit"]
