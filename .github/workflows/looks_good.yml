@@ -1,6 +1,7 @@
 name: Looks Good
 
 on:
+  workflow_dispatch:
   pull_request:
     branches:
       - main
