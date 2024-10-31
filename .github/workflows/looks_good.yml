@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Scony/godot-gdscript-toolkit@master
+      - uses: Scony/godot-gdscript-toolkit@4.3.2
       - run: gdformat --check .
       - run: gdlint .
