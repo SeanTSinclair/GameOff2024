@@ -129,3 +129,8 @@ inventory={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+
+[layer_names]
+
+3d_render/layer_2="UV Light"
+3d_render/layer_9="Layer 9"
