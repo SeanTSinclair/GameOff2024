@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://747uiig7qjkh"]
+
+[ext_resource type="Script" path="res://scripts/inventory/inventory.gd" id="1_tptya"]
+
+[node name="Inventory" type="Node"]
+script = ExtResource("1_tptya")
+
+[node name="InventoryUILayer" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="InventoryUILayer"]
+offset_right = 461.0
+offset_bottom = 318.0

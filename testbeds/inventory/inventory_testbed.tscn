@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://501vdpjoci7f"]
+
+[ext_resource type="Script" path="res://testbeds/inventory/inventory_testbed.gd" id="1_tetqe"]
+[ext_resource type="Resource" uid="uid://dxecwfaahw8at" path="res://testbeds/inventory/test_item1.tres" id="2_wyrd1"]
+[ext_resource type="PackedScene" uid="uid://747uiig7qjkh" path="res://scenes/inventory/inventory.tscn" id="2_y68et"]
+[ext_resource type="Resource" uid="uid://pj7mrp2ct2m8" path="res://testbeds/inventory/test_item2.tres" id="3_gmreg"]
+
+[node name="InventoryTestbed" type="Node2D"]
+script = ExtResource("1_tetqe")
+test_item_1 = ExtResource("2_wyrd1")
+test_item_2 = ExtResource("3_gmreg")
+
+[node name="PanelCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="PanelCanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -256.0
+offset_bottom = 474.0
+grow_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelCanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OpenButton" type="Button" parent="PanelCanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Open inventory"
+
+[node name="AddItem1Button" type="Button" parent="PanelCanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Add test item 1"
+
+[node name="AddItem2Button" type="Button" parent="PanelCanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Add test item 2"
+
+[node name="Inventory" parent="." instance=ExtResource("2_y68et")]
+
+[connection signal="pressed" from="PanelCanvasLayer/Panel/VBoxContainer/OpenButton" to="." method="_on_open_button_pressed"]
+[connection signal="pressed" from="PanelCanvasLayer/Panel/VBoxContainer/AddItem1Button" to="." method="_on_add_item_1_button_pressed"]
+[connection signal="pressed" from="PanelCanvasLayer/Panel/VBoxContainer/AddItem2Button" to="." method="_on_add_item_2_button_pressed"]
