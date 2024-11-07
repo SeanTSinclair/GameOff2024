@@ -1,14 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://501vdpjoci7f"]
+[gd_scene load_steps=6 format=3 uid="uid://501vdpjoci7f"]
 
 [ext_resource type="Script" path="res://testbeds/inventory/inventory_testbed.gd" id="1_tetqe"]
 [ext_resource type="Resource" uid="uid://dxecwfaahw8at" path="res://testbeds/inventory/test_item1.tres" id="2_wyrd1"]
 [ext_resource type="PackedScene" uid="uid://747uiig7qjkh" path="res://scenes/inventory/inventory.tscn" id="2_y68et"]
 [ext_resource type="Resource" uid="uid://pj7mrp2ct2m8" path="res://testbeds/inventory/test_item2.tres" id="3_gmreg"]
+[ext_resource type="PackedScene" uid="uid://dqwxixxvncq6e" path="res://scenes/inventory/item_card.tscn" id="5_mvbmg"]
 
 [node name="InventoryTestbed" type="Node2D"]
 script = ExtResource("1_tetqe")
-test_item_1 = ExtResource("2_wyrd1")
-test_item_2 = ExtResource("3_gmreg")
 
 [node name="PanelCanvasLayer" type="CanvasLayer" parent="."]
 
@@ -32,16 +31,16 @@ grow_vertical = 2
 layout_mode = 2
 text = "Open inventory"
 
-[node name="AddItem1Button" type="Button" parent="PanelCanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-text = "Add test item 1"
-
-[node name="AddItem2Button" type="Button" parent="PanelCanvasLayer/Panel/VBoxContainer"]
-layout_mode = 2
-text = "Add test item 2"
-
 [node name="Inventory" parent="." instance=ExtResource("2_y68et")]
 
+[node name="ItemCard" parent="." instance=ExtResource("5_mvbmg")]
+item = ExtResource("2_wyrd1")
+
+[node name="ItemCard2" parent="." instance=ExtResource("5_mvbmg")]
+offset_top = 83.0
+offset_bottom = 147.0
+item = ExtResource("3_gmreg")
+
 [connection signal="pressed" from="PanelCanvasLayer/Panel/VBoxContainer/OpenButton" to="." method="_on_open_button_pressed"]
-[connection signal="pressed" from="PanelCanvasLayer/Panel/VBoxContainer/AddItem1Button" to="." method="_on_add_item_1_button_pressed"]
-[connection signal="pressed" from="PanelCanvasLayer/Panel/VBoxContainer/AddItem2Button" to="." method="_on_add_item_2_button_pressed"]
+[connection signal="item_clicked" from="ItemCard" to="." method="_on_item_card_item_clicked"]
+[connection signal="item_clicked" from="ItemCard2" to="." method="_on_item_card_item_clicked"]

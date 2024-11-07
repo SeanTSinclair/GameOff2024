@@ -1,27 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqwxixxvncq6e"]
+[gd_scene load_steps=2 format=3 uid="uid://dqwxixxvncq6e"]
 
 [ext_resource type="Script" path="res://scripts/inventory/item_card.gd" id="1_svjcw"]
-[ext_resource type="Texture2D" uid="uid://d1fvjr4n6lwkw" path="res://icon.svg" id="1_ygyoi"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_b6lu6"]
-font_size = 14
 
 [node name="ItemCard" type="VBoxContainer"]
-offset_right = 128.0
-offset_bottom = 144.0
+clip_contents = true
+custom_minimum_size = Vector2(64, 64)
+offset_right = 64.0
+offset_bottom = 64.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_svjcw")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ItemButton" type="Button" parent="."]
 layout_mode = 2
-texture = ExtResource("1_ygyoi")
-expand_mode = 5
+size_flags_vertical = 3
+icon_alignment = 1
+expand_icon = true
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-text = "Item name"
-label_settings = SubResource("LabelSettings_b6lu6")
-horizontal_alignment = 1
-vertical_alignment = 1
-text_overrun_behavior = 3
+[connection signal="pressed" from="ItemButton" to="." method="_on_item_button_pressed"]
