@@ -19,7 +19,7 @@ func _ready() -> void:
 
 func _update_display() -> void:
 	display_button.text = "Windowed"
-	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 		display_button.text = "Fullscreen"
 	#sfx_slider.value = _get_bus_volume_precent("sfx")
 	#music_slider.value = _get_bus_volume_precent("music")
@@ -27,10 +27,9 @@ func _update_display() -> void:
 
 func _on_display_button_pressed() -> void:
 	var mode := DisplayServer.window_get_mode()
-	if mode != DisplayServer.WINDOW_MODE_FULLSCREEN:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	if mode != DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
-		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 	_update_display()
