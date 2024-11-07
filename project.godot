@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 window/stretch/mode="canvas_items"
 
+[gui]
+
+theme/custom="res://resources/theme.tres"
+
 [input]
 
 move_right={
