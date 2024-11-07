@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://hxqw24njpf7y"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://hxqw24njpf7y"]
 
 [ext_resource type="FontFile" uid="uid://dgt8hnu4dbipj" path="res://assets/NunitoSans.ttf" id="1_70j8e"]
 [ext_resource type="Texture2D" uid="uid://dit7ij8ib7c5c" path="res://assets/NinePathRect_test_01.png" id="1_b6y7l"]
@@ -30,6 +30,31 @@ texture_margin_top = 3.0
 texture_margin_right = 3.0
 texture_margin_bottom = 3.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86tkl"]
+bg_color = Color(0.215902, 0.215902, 0.215902, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlhv3"]
+bg_color = Color(0.215686, 0.215686, 0.215686, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nf5kx"]
+texture = ExtResource("1_b6y7l")
+texture_margin_left = 12.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 12.0
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
 [resource]
 default_font = ExtResource("1_70j8e")
 Button/colors/font_hover_color = Color(0.94902, 0.94902, 0.94902, 0.705882)
@@ -37,3 +62,6 @@ Button/styles/focus = SubResource("StyleBoxEmpty_1cta1")
 Button/styles/hover = SubResource("StyleBoxTexture_fx4g2")
 Button/styles/normal = SubResource("StyleBoxTexture_ivcl8")
 Button/styles/pressed = SubResource("StyleBoxTexture_gtccu")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_86tkl")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_vlhv3")
+HSlider/styles/slider = SubResource("StyleBoxTexture_nf5kx")
