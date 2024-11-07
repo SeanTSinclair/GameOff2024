@@ -1,6 +1,39 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://hxqw24njpf7y"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://hxqw24njpf7y"]
 
 [ext_resource type="FontFile" uid="uid://dgt8hnu4dbipj" path="res://assets/NunitoSans.ttf" id="1_70j8e"]
+[ext_resource type="Texture2D" uid="uid://dit7ij8ib7c5c" path="res://assets/NinePathRect_test_01.png" id="1_b6y7l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1cta1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5hrjw"]
+load_path = "res://.godot/imported/NinePathRect_test_01.png-97ac8aefd2bb94c5c3aca2794abb4f0a.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fx4g2"]
+texture = SubResource("CompressedTexture2D_5hrjw")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+modulate_color = Color(1, 1, 1, 0.705882)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivcl8"]
+texture = ExtResource("1_b6y7l")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gtccu"]
+texture = ExtResource("1_b6y7l")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
 
 [resource]
 default_font = ExtResource("1_70j8e")
+Button/colors/font_hover_color = Color(0.94902, 0.94902, 0.94902, 0.705882)
+Button/styles/focus = SubResource("StyleBoxEmpty_1cta1")
+Button/styles/hover = SubResource("StyleBoxTexture_fx4g2")
+Button/styles/normal = SubResource("StyleBoxTexture_ivcl8")
+Button/styles/pressed = SubResource("StyleBoxTexture_gtccu")
