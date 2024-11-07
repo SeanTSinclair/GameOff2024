@@ -1,16 +1,29 @@
 class_name Inventory
 extends Node
 
+const ITEM_CARD = preload("res://scenes/inventory/item_card.tscn")
+
 var is_open: bool
 var items := Array()
 
-@onready var inventory_ui_layer: CanvasLayer = %InventoryUILayer
-@onready var rich_text_label: RichTextLabel = $InventoryUILayer/RichTextLabel
+@onready var inventory_menu: CanvasLayer = %InventoryMenu
+
+@onready var items_flow_container: HFlowContainer = %ItemsFlowContainer
+
+
+func _ready() -> void:
+	if !is_open:
+		inventory_menu.hide()
 
 
 func open() -> void:
-	inventory_ui_layer.show()
+	inventory_menu.show()
 	is_open = true
+
+
+func close() -> void:
+	inventory_menu.hide()
+	is_open = false
 
 
 func add(item: Item) -> void:
@@ -19,8 +32,19 @@ func add(item: Item) -> void:
 
 
 func update() -> void:
-	rich_text_label.text = ""
+	for child in items_flow_container.get_children():
+		child.queue_free()
 
 	for item in items:
-		rich_text_label.append_text(item.id + ": " + item.name)
-		rich_text_label.append_text("\n")
+		var box = ITEM_CARD.instantiate()
+		box.item = item
+		box.item_clicked.connect(_on_item_clicked)
+		items_flow_container.add_child(box)
+
+
+func _on_close_button_pressed() -> void:
+	close()
+
+
+func _on_item_clicked(source: ItemCard) -> void:
+	print("Item clicked: " + source.item.id + ": " + source.item.name)
