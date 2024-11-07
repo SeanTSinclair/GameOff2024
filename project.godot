@@ -17,6 +17,10 @@ config/icon="res://icon.svg"
 
 [display]
 
+window/size/viewport_width=480
+window/size/viewport_height=360
+window/size/window_width_override=960
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
 [gui]
@@ -97,3 +101,7 @@ weapon_toggle={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":10,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
