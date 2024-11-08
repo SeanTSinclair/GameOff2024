@@ -11,3 +11,11 @@ func _on_open_button_pressed() -> void:
 func _on_item_card_item_clicked(source: ItemCard) -> void:
 	inventory.add(source.item)
 	source.queue_free()
+
+
+func _on_inventory_item_added(item: Item) -> void:
+	print("Item added: " + item.id + ": " + item.name)
+
+
+func _on_inventory_item_removed(item: Item) -> void:
+	print("Item removed: " + item.id + ": " + item.name)

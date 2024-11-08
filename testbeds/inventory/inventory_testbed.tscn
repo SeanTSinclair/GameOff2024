@@ -42,5 +42,7 @@ offset_bottom = 147.0
 item = ExtResource("3_gmreg")
 
 [connection signal="pressed" from="PanelCanvasLayer/Panel/VBoxContainer/OpenButton" to="." method="_on_open_button_pressed"]
+[connection signal="item_added" from="Inventory" to="." method="_on_inventory_item_added"]
+[connection signal="item_removed" from="Inventory" to="." method="_on_inventory_item_removed"]
 [connection signal="item_clicked" from="ItemCard" to="." method="_on_item_card_item_clicked"]
 [connection signal="item_clicked" from="ItemCard2" to="." method="_on_item_card_item_clicked"]
