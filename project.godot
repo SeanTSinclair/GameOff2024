@@ -128,8 +128,7 @@ inventory={
 
 [layer_names]
 
-3d_render/layer_2="UV Light"
-3d_render/layer_9="Layer 9"
+3d_render/layer_2="UV"
 
 [rendering]
 
