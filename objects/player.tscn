@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=4 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=11 format=4 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://objects/player.gd" id="1_ffboj"]
+[ext_resource type="PackedScene" uid="uid://j85kjm3bqby5" path="res://scenes/components/interaction_ray/interact_ray.tscn" id="2_osnc4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
@@ -72,7 +73,7 @@ stretch = true
 transparent_bg = true
 handle_input_locally = false
 msaa_3d = 1
-size = Vector2i(1152, 648)
+size = Vector2i(480, 360)
 render_target_update_mode = 4
 
 [node name="CameraItem" type="Camera3D" parent="Head/Camera/SubViewportContainer/SubViewport"]
@@ -92,6 +93,8 @@ frame = 2
 exclude_parent = false
 target_position = Vector3(0, 0, -10)
 collide_with_areas = true
+
+[node name="InteractionRay" parent="Head/Camera" instance=ExtResource("2_osnc4")]
 
 [node name="Shadow" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
