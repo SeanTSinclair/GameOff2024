@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-signal health_updated
-
 @export_subgroup("Properties")
 @export var movement_speed = 5
 @export var jump_strength = 8
