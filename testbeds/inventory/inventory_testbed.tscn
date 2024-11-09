@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://501vdpjoci7f"]
+[gd_scene load_steps=7 format=3 uid="uid://501vdpjoci7f"]
 
 [ext_resource type="Script" path="res://testbeds/inventory/inventory_testbed.gd" id="1_tetqe"]
 [ext_resource type="Resource" uid="uid://dxecwfaahw8at" path="res://testbeds/inventory/test_item1.tres" id="2_wyrd1"]
-[ext_resource type="PackedScene" uid="uid://747uiig7qjkh" path="res://scenes/inventory/inventory.tscn" id="2_y68et"]
+[ext_resource type="PackedScene" uid="uid://747uiig7qjkh" path="res://scenes/managers/inventory/inventory_manager.tscn" id="2_y68et"]
 [ext_resource type="Resource" uid="uid://pj7mrp2ct2m8" path="res://testbeds/inventory/test_item2.tres" id="3_gmreg"]
-[ext_resource type="PackedScene" uid="uid://dqwxixxvncq6e" path="res://scenes/inventory/item_card.tscn" id="5_mvbmg"]
+[ext_resource type="PackedScene" uid="uid://dqwxixxvncq6e" path="res://scenes/ui/inventory_menu/item_card.tscn" id="5_mvbmg"]
+[ext_resource type="PackedScene" uid="uid://cr4ffolpruv74" path="res://scenes/ui/inventory_menu/inventory_menu.tscn" id="5_yeajj"]
 
 [node name="InventoryTestbed" type="Node2D"]
 script = ExtResource("1_tetqe")
@@ -31,8 +32,6 @@ grow_vertical = 2
 layout_mode = 2
 text = "Open inventory"
 
-[node name="Inventory" parent="." instance=ExtResource("2_y68et")]
-
 [node name="ItemCard" parent="." instance=ExtResource("5_mvbmg")]
 item = ExtResource("2_wyrd1")
 
@@ -41,8 +40,13 @@ offset_top = 83.0
 offset_bottom = 147.0
 item = ExtResource("3_gmreg")
 
+[node name="InventoryMenu" parent="." node_paths=PackedStringArray("inventory_manager") instance=ExtResource("5_yeajj")]
+inventory_manager = NodePath("../InventoryManager")
+
+[node name="InventoryManager" parent="." instance=ExtResource("2_y68et")]
+
 [connection signal="pressed" from="PanelCanvasLayer/Panel/VBoxContainer/OpenButton" to="." method="_on_open_button_pressed"]
-[connection signal="item_added" from="Inventory" to="." method="_on_inventory_item_added"]
-[connection signal="item_removed" from="Inventory" to="." method="_on_inventory_item_removed"]
 [connection signal="item_clicked" from="ItemCard" to="." method="_on_item_card_item_clicked"]
 [connection signal="item_clicked" from="ItemCard2" to="." method="_on_item_card_item_clicked"]
+[connection signal="item_added" from="InventoryManager" to="." method="_on_inventory_manager_item_added"]
+[connection signal="item_removed" from="InventoryManager" to="." method="_on_inventory_manager_item_removed"]
