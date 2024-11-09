@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmrduyydccrfe"]
+
+[ext_resource type="Script" path="res://scripts/game_objects/box/box.gd" id="1_hfqbw"]
+[ext_resource type="PackedScene" uid="uid://xwdbemxk6fio" path="res://scenes/components/outline_component/outline_component.tscn" id="1_no3ii"]
+[ext_resource type="PackedScene" uid="uid://bkxp5t2pd7n4k" path="res://scenes/components/interaction_component/interaction_component.tscn" id="2_eyog7"]
+[ext_resource type="Material" uid="uid://b4xviwnncl20x" path="res://scenes/game_objects/box/blue_material.tres" id="2_ittq5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_biqw1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n0i6b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6y85"]
+
+[node name="Box" type="RigidBody3D"]
+script = ExtResource("1_hfqbw")
+
+[node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance") instance=ExtResource("1_no3ii")]
+mesh_instance = NodePath("../MeshInstance3D")
+
+[node name="InteractionComponent" parent="." instance=ExtResource("2_eyog7")]
+
+[node name="CollisionShape3D" parent="InteractionComponent" index="0"]
+shape = SubResource("BoxShape3D_biqw1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("2_ittq5")
+mesh = SubResource("BoxMesh_n0i6b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_q6y85")
+
+[editable path="InteractionComponent"]
