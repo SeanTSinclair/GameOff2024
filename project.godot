@@ -123,12 +123,9 @@ inventory={
 
 [layer_names]
 
+3d_render/layer_2="UV"
 3d_physics/layer_1="world"
 3d_physics/layer_2="interact_object"
-
-[layer_names]
-
-3d_render/layer_2="UV"
 
 [rendering]
 

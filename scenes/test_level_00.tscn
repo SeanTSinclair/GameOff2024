@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="1_ibhvb"]
-[ext_resource type="PackedScene" uid="uid://cbds4y15nkwsw" path="res://objects/secret-text.tscn" id="4_sr0u4"]
+[ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4x2xr"]
 size = Vector3(10, 0.1, 10)
@@ -23,9 +23,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16215, 4.96185, 0.267482)
 light_color = Color(1, 0.482353, 0.215686, 1)
 light_cull_mask = 4294967037
 omni_range = 7.928
-
-[node name="Secret-text" parent="." instance=ExtResource("4_sr0u4")]
-transform = Transform3D(-0.999908, 0, -0.0135435, 0, 1, 0, 0.0135435, 0, -0.999908, -3.43808, 2.61532, 5.23581)
 
 [node name="Room" type="Node3D" parent="."]
 
@@ -147,3 +144,6 @@ mesh = SubResource("BoxMesh_i3qnv")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ll1as")
+
+[node name="Secret-text" parent="." instance=ExtResource("4_sr0u4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.43486, 4.94068)
