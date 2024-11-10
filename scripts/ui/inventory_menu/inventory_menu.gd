@@ -18,6 +18,7 @@ var open: bool:
 	get:
 		return open
 
+@onready var item_description: ItemDescription = %ItemDescription
 @onready var items_flow_container: HFlowContainer = %ItemsFlowContainer
 
 
@@ -53,13 +54,16 @@ func update() -> void:
 
 func _on_item_clicked(source: ItemCard) -> void:
 	print("Item clicked: " + source.item.id + ": " + source.item.name)
+	item_description.item = source.item
 
 
 func _on_item_added(_item: Item) -> void:
 	update()
 
 
-func _on_item_removed(_item: Item) -> void:
+func _on_item_removed(item: Item) -> void:
+	if item_description.item && item_description.item.id == item.id:
+		item_description.item = null
 	update()
 
 

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ml5umihi8bb0"]
+
+[ext_resource type="Script" path="res://scripts/ui/inventory_menu/inventory_item_view.gd" id="1_cmwgi"]
+[ext_resource type="PackedScene" uid="uid://cxobmci0h8loh" path="res://testbeds/inventory/test_item_scene1.tscn" id="1_l017s"]
+
+[node name="InventoryItemView" type="Node3D"]
+script = ExtResource("1_cmwgi")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 1)
+
+[node name="ItemLayer" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="TestItemScene1" parent="ItemLayer" instance=ExtResource("1_l017s")]

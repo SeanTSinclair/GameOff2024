@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cr4ffolpruv74"]
+[gd_scene load_steps=6 format=3 uid="uid://cr4ffolpruv74"]
 
 [ext_resource type="Script" path="res://scripts/ui/inventory_menu/inventory_menu.gd" id="1_1eewc"]
+[ext_resource type="PackedScene" uid="uid://dqwxixxvncq6e" path="res://scenes/ui/inventory_menu/item_card.tscn" id="2_jxu38"]
+[ext_resource type="Resource" uid="uid://dxecwfaahw8at" path="res://testbeds/inventory/test_item1.tres" id="3_kktsq"]
+[ext_resource type="Resource" uid="uid://pj7mrp2ct2m8" path="res://testbeds/inventory/test_item2.tres" id="4_0rlp2"]
+[ext_resource type="PackedScene" uid="uid://cd5vyidrabpx8" path="res://scenes/ui/inventory_menu/item_description.tscn" id="5_7un42"]
 
 [node name="InventoryMenu" type="CanvasLayer"]
 script = ExtResource("1_1eewc")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(300, 200)
+custom_minimum_size = Vector2(360, 300)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -30,16 +34,95 @@ layout_mode = 2
 [node name="Header" type="Label" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Items"
+text = "Inventory"
 horizontal_alignment = 1
 
 [node name="CloseButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "x"
 
-[node name="ItemsFlowContainer" type="HFlowContainer" parent="PanelContainer/VBoxContainer"]
-unique_name_in_owner = true
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemsFlowContainer" type="HFlowContainer" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ItemCard" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("3_kktsq")
+
+[node name="ItemCard3" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard4" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard5" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard6" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard7" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard8" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard9" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard10" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard11" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard12" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard13" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard14" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard15" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard16" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemCard17" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
+layout_mode = 2
+item = ExtResource("4_0rlp2")
+
+[node name="ItemDescription" parent="PanelContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("5_7un42")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

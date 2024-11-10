@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxobmci0h8loh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v0xii"]
+albedo_color = Color(1, 0.341176, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4x4r8"]
+material = SubResource("StandardMaterial3D_v0xii")
+top_radius = 0.2
+bottom_radius = 0.25
+height = 0.05
+rings = 2
+
+[node name="TestItemScene1" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_4x4r8")
