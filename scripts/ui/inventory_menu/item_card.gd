@@ -12,6 +12,7 @@ signal item_clicked(source: ItemCard)
 func _ready() -> void:
 	if !item:
 		push_error("Missing item")
+		return
 	item_button.icon = item.inventory_texture
 	item_button.tooltip_text = item.name
 

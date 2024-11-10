@@ -1,35 +1,43 @@
 class_name PauseMenu
 extends CanvasLayer
 
+signal pause_menu_opened
+signal pause_menu_closed
+
 const MAIN_MENU := "res://scenes/ui/main_menu/main_menu.tscn"
 
-var is_closing := false
+var is_closed := false
 var options_scene := preload("res://scenes/ui/options_menu/options_menu.tscn")
+
+var open: bool:
+	set(value):
+		open = value
+		if open:
+			_open()
+		else:
+			_close()
+	get:
+		return open
 
 @onready var panel_container: PanelContainer = %PanelContainer
 
 
-func _ready() -> void:
-	get_tree().paused = true
-
-
-func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("key_escape"):
-		_close()
-		get_tree().root.set_input_as_handled()
+func _open() -> void:
+	is_closed = false
+	show()
+	pause_menu_opened.emit()
 
 
 func _close() -> void:
-	if is_closing:
+	if is_closed:
 		return
-
-	is_closing = true
-	get_tree().paused = false
-	queue_free()
+	hide()
+	is_closed = true
+	pause_menu_closed.emit()
 
 
 func _on_resume_button_pressed() -> void:
-	_close()
+	open = false
 
 
 func _on_quit_button_pressed() -> void:
