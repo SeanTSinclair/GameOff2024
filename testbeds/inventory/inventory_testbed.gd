@@ -10,8 +10,10 @@ func _on_open_button_pressed() -> void:
 
 
 func _on_item_card_item_clicked(source: ItemCard) -> void:
-	inventory_manager.add(source.item)
-	source.queue_free()
+	if inventory_manager.has_item(source.item):
+		inventory_manager.take(source.item)
+	else:
+		inventory_manager.add(source.item)
 
 
 func _on_inventory_manager_item_added(item: Item) -> void:

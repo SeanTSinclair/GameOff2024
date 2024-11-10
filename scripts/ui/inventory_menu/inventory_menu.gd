@@ -25,6 +25,7 @@ func _ready() -> void:
 	if inventory_manager:
 		inventory_manager.item_added.connect(_on_item_added)
 		inventory_manager.item_removed.connect(_on_item_removed)
+		update()
 	else:
 		push_error("Missing InventoryManager")
 
@@ -43,9 +44,7 @@ func update() -> void:
 	for child in items_flow_container.get_children():
 		child.queue_free()
 
-	var items = inventory_manager.items.values()
-
-	for item in items:
+	for item in inventory_manager.items:
 		var box = ITEM_CARD.instantiate()
 		box.item = item
 		box.item_clicked.connect(_on_item_clicked)
