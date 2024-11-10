@@ -1,8 +1,10 @@
 class_name PauseMenu
 extends CanvasLayer
 
+const MAIN_MENU := "res://scenes/ui/main_menu/main_menu.tscn"
+
 var is_closing := false
-var options_scene := preload("res://scenes/ui/options_menu.tscn")
+var options_scene := preload("res://scenes/ui/options_menu/options_menu.tscn")
 
 @onready var panel_container: PanelContainer = %PanelContainer
 
@@ -32,7 +34,7 @@ func _on_resume_button_pressed() -> void:
 
 func _on_quit_button_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+	get_tree().change_scene_to_file(MAIN_MENU)
 
 
 func _on_options_button_pressed() -> void:
