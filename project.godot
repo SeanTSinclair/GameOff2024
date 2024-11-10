@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="res://resources/audio_bus_layout.tres"
 
+[autoload]
+
+Events="*res://scripts/autoloaders/events.gd"
+
 [display]
 
 window/size/viewport_width=480
