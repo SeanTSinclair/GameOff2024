@@ -7,6 +7,10 @@ signal item_removed(item: Item)
 @export var items: Array[Item] = []
 
 
+func _ready() -> void:
+	Events.picked_up_item.connect(_on_picked_up_item)
+
+
 func add(item: Item) -> void:
 	if has_item(item):
 		push_warning("InventoryManager: Adding item that we already have in inventory: " + item.id)
@@ -49,3 +53,7 @@ func take(item: Item) -> Item:
 	var item_taken = items.pop_at(index)
 	item_removed.emit(item_taken)
 	return item_taken
+
+
+func _on_picked_up_item(item: Item) -> void:
+	add(item)
