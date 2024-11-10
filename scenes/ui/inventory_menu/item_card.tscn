@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dqwxixxvncq6e"]
 
-[ext_resource type="Script" path="res://scripts/managers/inventory/item_card.gd" id="1_4umyn"]
+[ext_resource type="Script" path="res://scripts/ui/inventory_menu/item_card.gd" id="1_4umyn"]
 
 [node name="ItemCard" type="VBoxContainer"]
 clip_contents = true
