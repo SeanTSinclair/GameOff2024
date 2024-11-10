@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://j85kjm3bqby5"]
 
-[ext_resource type="Script" path="res://scripts/components/interaction_component/interact_ray.gd" id="1_yw0p0"]
+[ext_resource type="Script" path="res://scripts/components/interaction_ray/interaction_ray.gd" id="1_37d81"]
 
 [node name="InteractionRay" type="RayCast3D"]
 exclude_parent = false
 target_position = Vector3(0, 0, -1.5)
 collision_mask = 2
 collide_with_areas = true
-script = ExtResource("1_yw0p0")
+script = ExtResource("1_37d81")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 14

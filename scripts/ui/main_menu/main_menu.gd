@@ -2,7 +2,7 @@ class_name MainMenu
 extends CanvasLayer
 
 var main_scene := preload("res://scenes/main/main.tscn")
-var options_scene := preload("res://scenes/ui/options_menu.tscn")
+var options_scene := preload("res://scenes/ui/options_menu/options_menu.tscn")
 
 @onready var panel_container: PanelContainer = %PanelContainer
 

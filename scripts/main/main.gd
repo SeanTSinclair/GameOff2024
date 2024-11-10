@@ -1,7 +1,7 @@
 class_name Main
 extends Node
 
-var pause_menu_scene := preload("res://scenes/ui/pause_menu.tscn")
+var pause_menu_scene := preload("res://scenes/ui/pause_menu/pause_menu.tscn")
 
 
 func _unhandled_input(_event: InputEvent) -> void:
