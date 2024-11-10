@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=8 format=3 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="1_ibhvb"]
+[ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="2_ltaep"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4x2xr"]
 size = Vector3(10, 0.1, 10)
@@ -8,7 +9,19 @@ size = Vector3(10, 0.1, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_4c0l8"]
 size = Vector3(10, 0.1, 10)
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlr4d"]
+resource_local_to_scene = true
+albedo_color = Color(0.215533, 0.379721, 0.89158, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xbpim"]
+resource_local_to_scene = true
+albedo_color = Color(0.215533, 0.379721, 0.89158, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_51qco"]
+resource_local_to_scene = true
+albedo_color = Color(0.215533, 0.379721, 0.89158, 1)
+
+[node name="TestLevel00" type="Node3D"]
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
@@ -20,3 +33,41 @@ mesh = SubResource("BoxMesh_4c0l8")
 
 [node name="Player" parent="Ground" instance=ExtResource("1_ibhvb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.14954, 1.75245, 1.33837)
+
+[node name="Box1" parent="." instance=ExtResource("2_ltaep")]
+transform = Transform3D(0.886721, 0.462306, 0, -0.462306, 0.886721, 0, 0, 0, 1, -3.33704, 1.73554, -3.94999)
+
+[node name="InteractionComponent" parent="Box1" index="1"]
+prompt_message = "Box1"
+
+[node name="MeshInstance3D" parent="Box1" index="2"]
+material_override = SubResource("StandardMaterial3D_vlr4d")
+
+[node name="Box2" parent="." instance=ExtResource("2_ltaep")]
+transform = Transform3D(0.690617, 0.72322, 0, -0.563293, 0.537899, -0.627189, -0.453595, 0.433147, 0.778867, -1.22511, 3.80863, -2.98184)
+
+[node name="InteractionComponent" parent="Box2" index="1"]
+prompt_message = "Box2"
+
+[node name="MeshInstance3D" parent="Box2" index="2"]
+material_override = SubResource("StandardMaterial3D_xbpim")
+
+[node name="Box3" parent="." instance=ExtResource("2_ltaep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63823, 4.54129, -3.04241)
+
+[node name="InteractionComponent" parent="Box3" index="1"]
+prompt_message = "Box3"
+
+[node name="MeshInstance3D" parent="Box3" index="2"]
+material_override = SubResource("StandardMaterial3D_51qco")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.827659, 0.561231, 0, -0.561231, 0.827659, 0, 4.90786, 5.83041)
+shadow_enabled = true
+
+[editable path="Box1"]
+[editable path="Box1/InteractionComponent"]
+[editable path="Box2"]
+[editable path="Box2/InteractionComponent"]
+[editable path="Box3"]
+[editable path="Box3/InteractionComponent"]

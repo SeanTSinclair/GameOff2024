@@ -8,6 +8,8 @@ const ITEM_CARD = preload("res://scenes/ui/inventory_menu/item_card.tscn")
 
 @export var inventory_manager: InventoryManager
 
+var is_closed := false
+
 var open: bool:
 	set(value):
 		open = value
@@ -32,12 +34,16 @@ func _ready() -> void:
 
 
 func _open() -> void:
+	is_closed = false
 	show()
 	inventory_opened.emit()
 
 
 func _close() -> void:
+	if is_closed:
+		return
 	hide()
+	is_closed = true
 	inventory_closed.emit()
 
 
