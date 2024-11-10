@@ -126,6 +126,10 @@ inventory={
 3d_physics/layer_1="world"
 3d_physics/layer_2="interact_object"
 
+[layer_names]
+
+3d_render/layer_2="UV"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
