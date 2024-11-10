@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://c82rfbjdt05py"]
+[gd_scene load_steps=7 format=3 uid="uid://c82rfbjdt05py"]
 
 [ext_resource type="Script" path="res://scripts/main/main.gd" id="1_42f4o"]
 [ext_resource type="PackedScene" uid="uid://4wndb8147fjy" path="res://scenes/test_level_00.tscn" id="2_6hw2h"]
-[ext_resource type="PackedScene" uid="uid://bl5dy2qeqcwyt" path="res://scenes/managers/interaction_manager/interaction_manager.tscn" id="2_fip7a"]
 [ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="3_aqxmj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h8qyr"]
@@ -19,10 +18,6 @@ albedo_color = Color(0.215533, 0.379721, 0.89158, 1)
 
 [node name="Main" type="Node"]
 script = ExtResource("1_42f4o")
-
-[node name="InteractionManager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("2_fip7a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.50316, 0.657912, -1.60957)
-player = NodePath("../Node3D/Ground/Player")
 
 [node name="Node3D" parent="." instance=ExtResource("2_6hw2h")]
 
