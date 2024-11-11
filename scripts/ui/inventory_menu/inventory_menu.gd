@@ -25,6 +25,8 @@ var open: bool:
 
 
 func _ready() -> void:
+	Events.item_equipped.connect(_on_item_equipped)
+	Events.item_unequipped.connect(_on_item_unequipped)
 	if inventory_manager:
 		inventory_manager.item_added.connect(_on_item_added)
 		inventory_manager.item_removed.connect(_on_item_removed)
@@ -51,16 +53,33 @@ func update() -> void:
 	for child in items_flow_container.get_children():
 		child.queue_free()
 
+	var selected_item = item_description.item
+	item_description.item = null
+
 	for item in inventory_manager.items:
 		var box = ITEM_CARD.instantiate()
 		box.item = item
 		box.item_clicked.connect(_on_item_clicked)
+		box.selected = box.item == selected_item
+		item_description.item = selected_item
 		items_flow_container.add_child(box)
+
+	item_description.current_item_is_equipped = selected_item == inventory_manager.equipped_item
 
 
 func _on_item_clicked(source: ItemCard) -> void:
 	print("Item clicked: " + source.item.id + ": " + source.item.name)
-	item_description.item = source.item
+	if source.selected:
+		source.selected = false
+		item_description.item = null
+	else:
+		source.selected = true
+		item_description.item = source.item
+		for child in items_flow_container.get_children():
+			if child != source:
+				child.selected = false
+
+	item_description.current_item_is_equipped = inventory_manager.equipped_item == source.item
 
 
 func _on_item_added(_item: Item) -> void:
@@ -73,5 +92,21 @@ func _on_item_removed(item: Item) -> void:
 	update()
 
 
+func _on_item_equipped(_item: Item) -> void:
+	update()
+
+
+func _on_item_unequipped(_item: Item) -> void:
+	update()
+
+
 func _on_close_button_pressed() -> void:
 	open = false
+
+
+func _on_item_description_equip_clicked(item: Item) -> void:
+	inventory_manager.equip(item)
+
+
+func _on_item_description_unequip_clicked(_item: Item) -> void:
+	inventory_manager.unequip()

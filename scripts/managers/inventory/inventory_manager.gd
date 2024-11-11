@@ -5,6 +5,7 @@ signal item_added(item: Item)
 signal item_removed(item: Item)
 
 @export var items: Array[Item] = []
+@export var equipped_item: Item
 
 
 func _ready() -> void:
@@ -53,6 +54,19 @@ func take(item: Item) -> Item:
 	var item_taken = items.pop_at(index)
 	item_removed.emit(item_taken)
 	return item_taken
+
+
+func equip(item: Item) -> void:
+	if equipped_item != null && equipped_item != item:
+		unequip()
+	equipped_item = item
+	Events.item_equipped.emit(item)
+
+
+func unequip() -> void:
+	if equipped_item != null:
+		equipped_item = null
+		Events.item_unequipped.emit(equipped_item)
 
 
 func _on_picked_up_item(item: Item) -> void:

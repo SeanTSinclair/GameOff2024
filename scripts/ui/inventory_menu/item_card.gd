@@ -5,6 +5,12 @@ extends VBoxContainer
 signal item_clicked(source: ItemCard)
 
 @export var item: Item
+@export var selected: bool:
+	set(value):
+		selected = value
+		modulate = selected_color if selected else Color.WHITE
+
+@export var selected_color: Color = Color.BLUE_VIOLET
 
 @onready var item_button: Button = $ItemButton
 
