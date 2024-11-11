@@ -14,8 +14,9 @@
 [node name="Box" type="RigidBody3D"]
 script = ExtResource("1_hfqbw")
 
-[node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance") instance=ExtResource("1_no3ii")]
+[node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance", "interaction_component") instance=ExtResource("1_no3ii")]
 mesh_instance = NodePath("../MeshInstance3D")
+interaction_component = NodePath("../InteractionComponent")
 
 [node name="InteractionComponent" parent="." instance=ExtResource("2_eyog7")]
 

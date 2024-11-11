@@ -12,8 +12,9 @@ radius = 0.25
 
 [node name="TestItemObject1" type="Node3D"]
 
-[node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance") instance=ExtResource("1_7s6ef")]
+[node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance", "interaction_component") instance=ExtResource("1_7s6ef")]
 mesh_instance = NodePath("../TestItemScene1/MeshInstance3D")
+interaction_component = NodePath("../InteractionComponent")
 
 [node name="TestItemScene1" parent="." instance=ExtResource("2_ru75c")]
 

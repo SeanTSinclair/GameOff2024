@@ -6,4 +6,4 @@
 render_priority = 0
 shader = ExtResource("1_mbuxv")
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_thickness = 10.0
+shader_parameter/shadow_thickness = 3.0
