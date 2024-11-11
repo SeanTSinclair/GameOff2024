@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://fnwy8k3f6jof"]
+
+[ext_resource type="Script" path="res://testbeds/mansion/mansion.gd" id="1_6xf3e"]
+[ext_resource type="PackedScene" uid="uid://dmchvrycys1ak" path="res://assets/mansions2.glb" id="1_wexip"]
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_cjvh2"]
+[ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="3_wj11g"]
+[ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="5_mivfk"]
+
+[node name="Mansion" type="Node3D"]
+script = ExtResource("1_6xf3e")
+
+[node name="mansions2" parent="." instance=ExtResource("1_wexip")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188419, 0, -0.972087)
+
+[node name="Player" parent="." instance=ExtResource("2_cjvh2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.70662, 2.34012, -2.83388)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.847377, -0.0655343, 0.526931, -0.263281, 0.809925, 0.524123, -0.461123, -0.582861, 0.669058, 6.84685, 6.52462, 6.14845)
+shadow_enabled = true
+
+[node name="Box" parent="." instance=ExtResource("3_wj11g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45505, 2.11743, -7.46563)
+
+[node name="Secret-text" parent="." instance=ExtResource("5_mivfk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.38183, 4.05507, -1.17664)
