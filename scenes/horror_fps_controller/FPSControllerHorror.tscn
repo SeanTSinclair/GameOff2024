@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://wa0junudfbi0"]
+
+[ext_resource type="Script" path="res://scripts/fps_controller_horror/fps_controller_horror.gd" id="1_h3pat"]
+[ext_resource type="Script" path="res://scripts/fps_controller_horror/horror_fps_camera.gd" id="2_n4mpt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3plaa"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.000990868, -0.00176418, 0.00221086)
+script = ExtResource("1_h3pat")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3plaa")
+
+[node name="Head" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_n4mpt")
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456626, 0)
+
+[node name="HandItemSlot" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.475278, 0, -1.16118)
