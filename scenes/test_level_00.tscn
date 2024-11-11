@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=10 format=3 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="1_ibhvb"]
-[ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
+[ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
+[ext_resource type="PackedScene" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
 [ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="4_1w8h4"]
 [ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
 
@@ -149,6 +150,7 @@ environment = SubResource("Environment_ll1as")
 
 [node name="Secret-text" parent="." instance=ExtResource("4_sr0u4")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.43486, 4.94068)
+text_img = ExtResource("3_bgh7f")
 
 [node name="Items" type="Node3D" parent="."]
 
