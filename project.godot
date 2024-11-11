@@ -29,7 +29,7 @@ window/size/viewport_width=480
 window/size/viewport_height=360
 window/size/window_width_override=960
 window/size/window_height_override=720
-window/stretch/mode="canvas_items"
+window/stretch/mode="viewport"
 
 [gui]
 
