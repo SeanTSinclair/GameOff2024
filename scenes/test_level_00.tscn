@@ -2,144 +2,61 @@
 
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="1_ibhvb"]
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
-[ext_resource type="PackedScene" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
+[ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
 [ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="4_1w8h4"]
 [ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4x2xr"]
-size = Vector3(10, 0.1, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_4c0l8"]
-size = Vector3(10, 0.1, 10)
+[ext_resource type="PackedScene" uid="uid://bnmuj8qklqd2h" path="res://scenes/mansion3.glb" id="6_3b8es"]
+[ext_resource type="PackedScene" uid="uid://fg2yuj2gv58t" path="res://scenes/main-door_mansion.glb" id="7_pksne"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i3qnv"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
+background_energy_multiplier = 1.35
+ambient_light_color = Color(0.078815, 0.078815, 0.078815, 1)
+ambient_light_energy = 0.0
+reflected_light_source = 1
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.0892
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0747
+volumetric_fog_albedo = Color(0.325121, 0.172719, 0.412532, 1)
+volumetric_fog_length = 84.28
 
 [node name="TestLevel00" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_ibhvb")]
-transform = Transform3D(-0.999821, 0.00174194, -0.0188433, 0.00176688, 0.999998, -0.00130739, 0.0188409, -0.00134043, -0.999822, -3.72207, 1.39311, 0.305451)
+transform = Transform3D(-0.999821, 0.00174194, -0.0188433, 0.00176688, 0.999998, -0.00130739, 0.0188409, -0.00134043, -0.999822, -10.1676, 1.39311, -10.8869)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.16215, 4.96185, 0.267482)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.97789, 5.6159, -14.4469)
 light_color = Color(1, 0.482353, 0.215686, 1)
 light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
 omni_range = 7.928
 
-[node name="Room" type="Node3D" parent="."]
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0433, 8.14561, -14.9106)
+light_color = Color(1, 0.482353, 0.215686, 1)
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
 
-[node name="Ground" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.915195, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Ground"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Ground"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="wall" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.00459018, -0.999989, 0, 0.999989, -0.00459018, 0, 0, 0, 1, 4.1435, 4.77192, -0.0132989)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="Ground2" type="StaticBody3D" parent="Room"]
-transform = Transform3D(0.998146, -0.0608568, 0, 0.0608568, 0.998146, 0, 0, 0, 1, -0.947141, 0.00289059, -9.93413)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Ground2"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Ground2"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="wall2" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.0654378, -0.997856, 0, 0.997856, -0.0654378, 0, 0, 0, 1, 4.36108, 5.06746, -9.96028)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall2"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall2"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="Ground3" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9267, 0, -0.026149)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Ground3"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Ground3"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="Ground4" type="StaticBody3D" parent="Room"]
-transform = Transform3D(0.998146, -0.0608568, 0, 0.0608568, 0.998146, 0, 0, 0, 1, -10.9388, 0.00289059, -9.96028)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Ground4"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Ground4"]
-mesh = SubResource("BoxMesh_4c0l8")
-skeleton = NodePath("../../Ground3")
-
-[node name="wall4" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.000186163, -0.00283878, -0.999996, 0.997856, -0.0654378, 0, -0.0654376, -0.997852, 0.00284488, -0.608108, 5.06746, 5.27398)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall4"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall4"]
-mesh = SubResource("BoxMesh_4c0l8")
-skeleton = NodePath("../../wall2")
-
-[node name="wall5" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.00459018, -0.999989, 0, 0.999989, -0.00459018, 0, 0, 0, 1, -15.9398, 4.77192, -0.0132989)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall5"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall5"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="wall6" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.0654378, -0.997856, 0, 0.997856, -0.0654378, 0, 0, 0, 1, -15.7222, 5.06746, -9.96028)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall6"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall6"]
-mesh = SubResource("BoxMesh_4c0l8")
-skeleton = NodePath("../../wall2")
-
-[node name="wall7" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-1.80254e-05, -0.0039269, -0.999992, 0.999989, -0.00459018, 0, -0.00459014, -0.999981, 0.00392694, -10.7632, 4.77192, -14.8272)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall7"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall7"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="wall8" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.00025697, -0.00391852, -0.999992, 0.997856, -0.0654378, 0, -0.0654373, -0.997848, 0.00392694, -0.815479, 5.06746, -14.6487)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall8"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall8"]
-mesh = SubResource("BoxMesh_4c0l8")
-skeleton = NodePath("../../wall2")
-
-[node name="wall3" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-1.30585e-05, -0.00284485, -0.999996, 0.999989, -0.00459018, 0, -0.00459016, -0.999985, 0.00284488, -10.5557, 4.77192, 5.0847)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall3"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall3"]
-mesh = SubResource("BoxMesh_4c0l8")
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(0.0624423, 0, 0.998049, 0, 1, 0, -0.998049, 0, 0.0624423, -4.44461, 5.43284, -15.4342)
+light_color = Color(0.430688, 0.721368, 0.624365, 1)
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.07501, 0.535008, 4.28355)
@@ -165,3 +82,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76327, 2.44423, 0)
 
 [node name="Box3" parent="." instance=ExtResource("4_1w8h4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42872, 1.92173, -2.463)
+
+[node name="mansion3" parent="." instance=ExtResource("6_3b8es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42282, 0, -9.27177)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.945836, 0.324644, 0, -0.324644, 0.945836, 0, 0, 0)
+light_color = Color(0.982993, 0.349056, 0.354496, 1)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 3.524
+shadow_blur = 0.0
+
+[node name="main-door_mansion" parent="." instance=ExtResource("7_pksne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.91829, 0, -9.19953)
