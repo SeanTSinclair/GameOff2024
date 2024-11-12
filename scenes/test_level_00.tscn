@@ -29,7 +29,7 @@ volumetric_fog_length = 84.28
 transform = Transform3D(-0.999821, 0.00174194, -0.0188433, 0.00176688, 0.999998, -0.00130739, 0.0188409, -0.00134043, -0.999822, -10.1676, 1.39311, -10.8869)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.97789, 5.6159, -14.4469)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85307, 5.73306, -14.4469)
 light_color = Color(1, 0.482353, 0.215686, 1)
 light_cull_mask = 4294967037
 shadow_enabled = true
@@ -96,3 +96,33 @@ shadow_blur = 0.0
 
 [node name="main-door_mansion" parent="." instance=ExtResource("7_pksne")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.91829, 0, -9.19953)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5473, 3.39043, -14.5508)
+light_color = Color(1, 0.482353, 0.215686, 1)
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5473, 2.36577, -17.0837)
+light_color = Color(1, 0.482353, 0.215686, 1)
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10298, 5.12496, -17.5356)
+light_color = Color(1, 0.482353, 0.215686, 1)
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
