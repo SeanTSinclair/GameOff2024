@@ -23,6 +23,7 @@ var current_item_is_equipped: bool:
 @onready var inventory_item_view: InventoryItemView = %InventoryItemView
 @onready var equip_button: Button = %EquipButton
 @onready var combine_button: Button = %CombineButton
+@onready var sub_viewport_container: SubViewportContainer = %SubViewportContainer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -45,6 +46,9 @@ func _update() -> void:
 	description_label.clear()
 	description_label.append_text(item.description)
 	inventory_item_view.show_item(item)
+	sub_viewport_container.visible = item.item_scene != null
+
+	equip_button.visible = item.equippable
 
 	equip_button.text = "Unequip" if current_item_is_equipped else "Equip"
 	show()

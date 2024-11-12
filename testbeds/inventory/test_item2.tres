@@ -11,3 +11,4 @@ name = "Test item 2"
 inventory_texture = ExtResource("1_gqk37")
 item_scene = ExtResource("2_r8w0x")
 description = ""
+equippable = true

@@ -11,8 +11,6 @@ func show_item(item: Item) -> void:
 	if item.item_scene:
 		var scene = item.item_scene.instantiate()
 		item_layer.add_child(scene)
-	else:
-		push_error("Item " + item.id + " is missing scene")
 
 
 func hide_item() -> void:

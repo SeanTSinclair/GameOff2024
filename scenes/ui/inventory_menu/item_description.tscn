@@ -29,6 +29,7 @@ horizontal_alignment = 1
 text_overrun_behavior = 3
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(138, 138)
 layout_mode = 2
 

@@ -6,3 +6,4 @@ extends Resource
 @export var inventory_texture: Texture2D
 @export var item_scene: PackedScene
 @export_multiline var description: String = ""
+@export var equippable: bool
