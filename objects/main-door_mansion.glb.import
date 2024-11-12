@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bnmuj8qklqd2h"
-path="res://.godot/imported/mansion3.glb-ab1cc983b6b3b54121007337487870ac.scn"
+uid="uid://fg2yuj2gv58t"
+path="res://.godot/imported/main-door_mansion.glb-04df9c25ae440e3bb81f7bb72ac6719a.scn"
 
 [deps]
 
-source_file="res://scenes/mansion3.glb"
-dest_files=["res://.godot/imported/mansion3.glb-ab1cc983b6b3b54121007337487870ac.scn"]
+source_file="res://objects/main-door_mansion.glb"
+dest_files=["res://.godot/imported/main-door_mansion.glb-04df9c25ae440e3bb81f7bb72ac6719a.scn"]
 
 [params]
 
