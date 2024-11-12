@@ -1,8 +1,9 @@
 [gd_scene load_steps=12 format=4 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://objects/player.gd" id="1_ffboj"]
-[ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://objects/blacklight.tscn" id="2_k76ca"]
+[ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://scenes/game_objects/blacklight/blacklight.tscn" id="2_k76ca"]
 [ext_resource type="PackedScene" uid="uid://j85kjm3bqby5" path="res://scenes/components/interaction_ray/interaction_ray.tscn" id="2_osnc4"]
+
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3

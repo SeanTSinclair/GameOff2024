@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 [gd_scene load_steps=67 format=4 uid="uid://4wndb8147fjy"]
-=======
-[gd_scene load_steps=12 format=3 uid="uid://4wndb8147fjy"]
->>>>>>> 280bde5 (Intial work to make blacklight an item you can pick up and equipt)
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
 [ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="4_1w8h4"]
 [ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://bnmuj8qklqd2h" path="res://objects/mansion3.glb" id="6_3b8es"]
 [ext_resource type="PackedScene" uid="uid://fg2yuj2gv58t" path="res://objects/main-door_mansion.glb" id="7_pksne"]
 [ext_resource type="Script" path="res://scenes/idlefather_2.gd" id="8_cr2ov"]
@@ -28,16 +23,14 @@
 [ext_resource type="PackedScene" uid="uid://b7o8e6ib4bnpm" path="res://objects/small-items/sofa-table.glb" id="21_ynw3f"]
 [ext_resource type="PackedScene" uid="uid://br55m81f8vunk" path="res://objects/small-items/sofa.glb" id="22_vkwxh"]
 [ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/horror_fps_controller/FPSControllerHorror.tscn" id="23_6m7vs"]
-=======
 [ext_resource type="PackedScene" uid="uid://bck73kb2hhe6y" path="res://assets/models/table-simple-00-col.glb" id="6_mtrem"]
-[ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://objects/blacklight.tscn" id="7_pgpy4"]
+[ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://scenes/game_objects/blacklight/blacklight.tscn" id="7_pgpy4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4x2xr"]
 size = Vector3(10, 0.1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4c0l8"]
 size = Vector3(10, 0.1, 10)
->>>>>>> 280bde5 (Intial work to make blacklight an item you can pick up and equipt)
 
 [sub_resource type="BoxMesh" id="BoxMesh_i3qnv"]
 
@@ -1828,6 +1821,9 @@ text_img = ExtResource("3_bgh7f")
 
 [node name="TestItemObject1" parent="Items" instance=ExtResource("3_wpn6b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2684, 0.504458, 0)
+
+[node name="Blacklight" parent="Items" instance=ExtResource("7_pgpy4")]
+transform = Transform3D(0.0723505, -0.997379, 0, 0.997379, 0.0723505, 0, 0, 0, 1, -0.726087, 0.784098, -1.43182)
 
 [node name="Box1" parent="." instance=ExtResource("4_1w8h4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.62257, 0)

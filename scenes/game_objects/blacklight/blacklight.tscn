@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3ukd8df82o5b"]
+
+[ext_resource type="PackedScene" uid="uid://kdaij15gfg6o" path="res://assets/models/fleshlight.glb" id="1_clxvy"]
+[ext_resource type="PackedScene" uid="uid://xwdbemxk6fio" path="res://scenes/components/outline_component/outline_component.tscn" id="2_40kk5"]
+[ext_resource type="PackedScene" uid="uid://bkxp5t2pd7n4k" path="res://scenes/components/interaction_component/interaction_component.tscn" id="3_hjdap"]
+[ext_resource type="Script" path="res://scripts/components/item_component/item_component.gd" id="4_jbttf"]
+[ext_resource type="Resource" uid="uid://c8kuntkndmph4" path="res://scenes/game_objects/blacklight/blacklight.tres" id="5_de1ob"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ctll"]
+radius = 0.2
+height = 1.0
+
+[node name="Blacklight" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026912, -0.00897074)
+
+[node name="fleshlight" parent="." instance=ExtResource("1_clxvy")]
+
+[node name="Blacklight" type="SpotLight3D" parent="fleshlight"]
+transform = Transform3D(1, -3.18177e-12, 4.73855e-09, 4.73855e-09, 0.00130895, -0.999999, -3.02076e-12, 0.999999, 0.00130895, 0.000725292, 0.39645, 0.0104279)
+light_color = Color(0.00819214, 0.543307, 0.75216, 1)
+shadow_enabled = true
+spot_range = 10.0
+spot_attenuation = 0.85
+spot_angle = 35.3
+
+[node name="OutlineComponent" parent="." instance=ExtResource("2_40kk5")]
+
+[node name="InteractionComponent" parent="." instance=ExtResource("3_hjdap")]
+
+[node name="CollisionShape3D" parent="InteractionComponent" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17816, 0)
+shape = SubResource("CapsuleShape3D_1ctll")
+
+[node name="ItemComponent" type="Node" parent="." node_paths=PackedStringArray("interaction_component", "item_root")]
+script = ExtResource("4_jbttf")
+item = ExtResource("5_de1ob")
+interaction_component = NodePath("../InteractionComponent")
+item_root = NodePath("..")
+
+[editable path="InteractionComponent"]

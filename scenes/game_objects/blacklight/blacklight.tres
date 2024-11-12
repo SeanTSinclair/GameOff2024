@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://c8kuntkndmph4"]
+
+[ext_resource type="Texture2D" uid="uid://bnyxj51377odc" path="res://assets/blacklight-item-icon.png" id="1_onden"]
+[ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://scenes/game_objects/blacklight/blacklight.tscn" id="2_7slms"]
+[ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="3_a7nmy"]
+
+[resource]
+script = ExtResource("3_a7nmy")
+id = "9"
+name = "Blacklight"
+inventory_texture = ExtResource("1_onden")
+item_scene = ExtResource("2_7slms")
+description = "Show whats not visible by pure light"
+equippable = true
