@@ -2,10 +2,11 @@ extends CharacterBody3D
 
 signal footstep
 
-const BASE_SPEED = 2.0
-const SPRINT_SPEED = 2.5
+const BASE_SPEED = 1.15
+const SPRINT_SPEED = 1.5
 const JUMP_VELOCITY = 2.0
-const FOOTSTEP_INTERVAL = 2.0
+const WALK_FOOTSTEP_INTERVAL = 0.87
+const SPRINT_FOOSTEP_INTERVAL = 0.83
 
 var speed = BASE_SPEED
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -43,8 +44,14 @@ func calculate_velocity(delta: float) -> void:
 
 func footsteps(delta: float) -> void:
 	if velocity.x != 0 or velocity.z != 0:
+		var footstep_interval = WALK_FOOTSTEP_INTERVAL
+		if speed == SPRINT_SPEED:
+			footstep_interval = SPRINT_FOOSTEP_INTERVAL
+
 		footstep_timer += delta
-		if footstep_timer >= FOOTSTEP_INTERVAL:
+
+		if footstep_timer >= footstep_interval:
+			print("Footstep")
 			footstep.emit()
 			footstep_timer = 0.0
 	else:
