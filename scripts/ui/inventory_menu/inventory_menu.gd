@@ -61,6 +61,7 @@ func update() -> void:
 		box.item = item
 		box.item_clicked.connect(_on_item_clicked)
 		box.selected = box.item == selected_item
+		box.equipped = box.item == inventory_manager.equipped_item
 		item_description.item = selected_item
 		items_flow_container.add_child(box)
 

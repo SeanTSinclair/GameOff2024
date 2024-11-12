@@ -8,9 +8,21 @@ signal item_clicked(source: ItemCard)
 @export var selected: bool:
 	set(value):
 		selected = value
-		modulate = selected_color if selected else Color.WHITE
+		if equipped:
+			modulate = equipped_color
+		else:
+			modulate = selected_color if selected else Color.WHITE
+
+@export var equipped: bool:
+	set(value):
+		equipped = value
+		if equipped:
+			modulate = equipped_color
+		else:
+			modulate = selected_color if selected else Color.WHITE
 
 @export var selected_color: Color = Color.BLUE_VIOLET
+@export var equipped_color: Color = Color.GOLD
 
 @onready var item_button: Button = $ItemButton
 
