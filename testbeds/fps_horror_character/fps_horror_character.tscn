@@ -11,6 +11,9 @@ script = ExtResource("1_qhc08")
 [node name="mansions2" parent="." instance=ExtResource("2_bhmxl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188419, 0, -0.972087)
 
+[node name="mansions3" parent="." instance=ExtResource("2_bhmxl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188419, 0, -0.972087)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.847377, -0.0655343, 0.526931, -0.263281, 0.809925, 0.524123, -0.461123, -0.582861, 0.669058, 6.84685, 6.52462, 6.14845)
 shadow_enabled = true
