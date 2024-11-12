@@ -1255,7 +1255,7 @@ light_energy = 5.283
 light_cull_mask = 4294967037
 shadow_enabled = true
 shadow_bias = 0.052
-shadow_normal_bias = 0.0
+shadow_normal_bias = 0.758
 shadow_blur = 0.0
 omni_range = 14.275
 
@@ -1349,7 +1349,7 @@ shadow_blur = 0.0
 omni_range = 7.928
 
 [node name="idlefather2" type="Node3D" parent="."]
-transform = Transform3D(0.0436643, 0, -0.296805, 0, 0.3, 0, 0.296805, 0, 0.0436643, -1.81054, -0.00705981, -12.9254)
+transform = Transform3D(0.0436643, 0, -0.296805, 0, 0.3, 0, 0.296805, 0, 0.0436643, -7.40076, -0.00705981, -12.9254)
 script = ExtResource("8_cr2ov")
 
 [node name="Armature" type="Node3D" parent="idlefather2"]
