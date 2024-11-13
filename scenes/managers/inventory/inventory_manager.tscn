@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://747uiig7qjkh"]
+[gd_scene load_steps=4 format=3 uid="uid://747uiig7qjkh"]
 
 [ext_resource type="Script" path="res://scripts/managers/inventory/inventory_manager.gd" id="1_tptya"]
+[ext_resource type="Script" path="res://scripts/managers/inventory/recipe.gd" id="2_8k7i3"]
+[ext_resource type="Resource" uid="uid://dbdwi4pxu45wf" path="res://testbeds/inventory/test_recipe.tres" id="3_kw2uj"]
 
 [node name="InventoryManager" type="Node"]
 script = ExtResource("1_tptya")
+recipes = Array[ExtResource("2_8k7i3")]([ExtResource("3_kw2uj")])

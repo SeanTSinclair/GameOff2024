@@ -10,7 +10,6 @@ offset_bottom = 64.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_4umyn")
-equipped = null
 
 [node name="ItemButton" type="Button" parent="."]
 layout_mode = 2

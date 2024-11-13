@@ -1,27 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://501vdpjoci7f"]
+[gd_scene load_steps=8 format=3 uid="uid://501vdpjoci7f"]
 
 [ext_resource type="Script" path="res://testbeds/inventory/inventory_testbed.gd" id="1_tetqe"]
 [ext_resource type="Resource" uid="uid://dxecwfaahw8at" path="res://testbeds/inventory/test_item1.tres" id="2_wyrd1"]
 [ext_resource type="PackedScene" uid="uid://747uiig7qjkh" path="res://scenes/managers/inventory/inventory_manager.tscn" id="2_y68et"]
 [ext_resource type="Resource" uid="uid://pj7mrp2ct2m8" path="res://testbeds/inventory/test_item2.tres" id="3_gmreg"]
+[ext_resource type="Resource" uid="uid://cxta55k57it66" path="res://testbeds/inventory/test_item3.tres" id="5_femn0"]
 [ext_resource type="PackedScene" uid="uid://dqwxixxvncq6e" path="res://scenes/ui/inventory_menu/item_card.tscn" id="5_mvbmg"]
 [ext_resource type="PackedScene" uid="uid://cr4ffolpruv74" path="res://scenes/ui/inventory_menu/inventory_menu.tscn" id="5_yeajj"]
-[ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="6_1s1nf"]
-
-[sub_resource type="Gradient" id="Gradient_4himp"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_rko4k"]
-gradient = SubResource("Gradient_4himp")
-
-[sub_resource type="Resource" id="Resource_v8bwx"]
-script = ExtResource("6_1s1nf")
-id = "3"
-name = "Item 3"
-inventory_texture = SubResource("GradientTexture2D_rko4k")
-description = "This test item does not have any 3D scene attached.
-
-This is just so I can test how it looks without a scene."
-equippable = false
 
 [node name="InventoryTestbed" type="Node2D"]
 script = ExtResource("1_tetqe")
@@ -50,21 +35,18 @@ text = "Open inventory"
 
 [node name="ItemCard" parent="." instance=ExtResource("5_mvbmg")]
 item = ExtResource("2_wyrd1")
-equipped = false
 
 [node name="ItemCard2" parent="." instance=ExtResource("5_mvbmg")]
 offset_top = 83.0
 offset_bottom = 147.0
 item = ExtResource("3_gmreg")
-equipped = false
 
 [node name="ItemCard3" parent="." instance=ExtResource("5_mvbmg")]
 offset_left = 1.0
 offset_top = 170.0
 offset_right = 65.0
 offset_bottom = 234.0
-item = SubResource("Resource_v8bwx")
-equipped = false
+item = ExtResource("5_femn0")
 
 [node name="InventoryMenu" parent="." node_paths=PackedStringArray("inventory_manager") instance=ExtResource("5_yeajj")]
 inventory_manager = NodePath("../InventoryManager")

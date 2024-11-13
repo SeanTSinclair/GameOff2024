@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Recipe" load_steps=5 format=3 uid="uid://dbdwi4pxu45wf"]
+
+[ext_resource type="Script" path="res://scripts/managers/inventory/recipe.gd" id="1_jxq1w"]
+[ext_resource type="Resource" uid="uid://dxecwfaahw8at" path="res://testbeds/inventory/test_item1.tres" id="1_tcg1n"]
+[ext_resource type="Resource" uid="uid://pj7mrp2ct2m8" path="res://testbeds/inventory/test_item2.tres" id="2_dpcxo"]
+[ext_resource type="Resource" uid="uid://cxta55k57it66" path="res://testbeds/inventory/test_item3.tres" id="3_3gcb1"]
+
+[resource]
+script = ExtResource("1_jxq1w")
+item1 = ExtResource("1_tcg1n")
+item2 = ExtResource("2_dpcxo")
+produces = ExtResource("3_3gcb1")

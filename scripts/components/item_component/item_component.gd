@@ -16,6 +16,7 @@ func _ready() -> void:
 	if !item_root:
 		push_warning("Item root not specified: ")
 	interaction_component.interacted.connect(_on_interaction_component_interacted)
+	interaction_component.prompt_message = "Pick up"
 
 
 func _on_interaction_component_interacted() -> void:

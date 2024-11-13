@@ -59,112 +59,96 @@ size_flags_vertical = 3
 [node name="ItemCard" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("3_kktsq")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard3" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard4" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard5" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard6" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard7" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard8" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard9" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard10" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard11" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard12" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard13" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard14" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard15" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard16" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
 [node name="ItemCard17" parent="PanelContainer/VBoxContainer/HBoxContainer2/ScrollContainer/ItemsFlowContainer" instance=ExtResource("2_jxu38")]
 layout_mode = 2
 item = ExtResource("4_0rlp2")
-equipped = false
 selected_color = Color(0.827451, 0.827451, 0.827451, 1)
 equipped_color = Color(0, 0, 1, 1)
 
@@ -173,5 +157,6 @@ unique_name_in_owner = true
 layout_mode = 2
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="combine_clicked" from="PanelContainer/VBoxContainer/HBoxContainer2/ItemDescription" to="." method="_on_item_description_combine_clicked"]
 [connection signal="equip_clicked" from="PanelContainer/VBoxContainer/HBoxContainer2/ItemDescription" to="." method="_on_item_description_equip_clicked"]
 [connection signal="unequip_clicked" from="PanelContainer/VBoxContainer/HBoxContainer2/ItemDescription" to="." method="_on_item_description_unequip_clicked"]
