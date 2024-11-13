@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://cxta55k57it66"]
+
+[ext_resource type="Texture2D" uid="uid://2lsrwhl1rbpv" path="res://assets/help-00-test-blacklight.png" id="1_b4v0i"]
+[ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="1_iv614"]
+[ext_resource type="PackedScene" uid="uid://kdaij15gfg6o" path="res://assets/models/fleshlight.glb" id="2_3xahc"]
+
+[resource]
+script = ExtResource("1_iv614")
+id = "3"
+name = "CombinedItem"
+inventory_texture = ExtResource("1_b4v0i")
+item_scene = ExtResource("2_3xahc")
+description = "This is a "
+equippable = false

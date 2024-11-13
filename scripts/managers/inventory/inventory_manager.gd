@@ -4,8 +4,12 @@ extends Node
 signal item_added(item: Item)
 signal item_removed(item: Item)
 
+@export_group("Inventory")
 @export var items: Array[Item] = []
 @export var equipped_item: Item
+
+@export_group("Recipes")
+@export var recipes: Array[Recipe] = []
 
 
 func _ready() -> void:
@@ -67,6 +71,34 @@ func unequip() -> void:
 	if equipped_item != null:
 		equipped_item = null
 		Events.item_unequipped.emit(equipped_item)
+
+
+func combine(item1: Item, item2: Item) -> bool:
+	if !has_item(item1) || !has_item(item2):
+		push_warning(
+			(
+				"Attempting to combine two items, but we don't have both: "
+				+ item1.id
+				+ " + "
+				+ item2.id
+			)
+		)
+		return false
+
+	var recipe := find_recipe(item1, item2)
+	if !recipe:
+		return false
+
+	return recipe.combine(self)
+
+
+func find_recipe(item1: Item, item2: Item) -> Recipe:
+	for recipe in recipes:
+		if recipe.item1 == item1 && recipe.item2 == item2:
+			return recipe
+		if recipe.item2 == item1 && recipe.item1 == item2:
+			return recipe
+	return null
 
 
 func _on_picked_up_item(item: Item) -> void:

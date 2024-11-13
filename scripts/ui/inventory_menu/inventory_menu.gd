@@ -20,6 +20,8 @@ var open: bool:
 	get:
 		return open
 
+var combining: bool = false
+
 @onready var item_description: ItemDescription = %ItemDescription
 @onready var items_flow_container: HFlowContainer = %ItemsFlowContainer
 
@@ -37,6 +39,7 @@ func _ready() -> void:
 
 func _open() -> void:
 	is_closed = false
+	combining = false
 	show()
 	inventory_opened.emit()
 
@@ -46,6 +49,7 @@ func _close() -> void:
 		return
 	hide()
 	is_closed = true
+	combining = false
 	inventory_closed.emit()
 
 
@@ -74,6 +78,16 @@ func _on_item_clicked(source: ItemCard) -> void:
 		source.selected = false
 		item_description.item = null
 	else:
+		if combining && item_description.item:
+			print("attempting to combining " + item_description.item.id + " + " + source.item.id)
+			var result := inventory_manager.combine(source.item, item_description.item)
+			if result:
+				print("Items combined")
+			else:
+				print("Unable to combine items")
+			combining = false
+			return
+
 		source.selected = true
 		item_description.item = source.item
 		for child in items_flow_container.get_children():
@@ -84,20 +98,24 @@ func _on_item_clicked(source: ItemCard) -> void:
 
 
 func _on_item_added(_item: Item) -> void:
+	combining = false
 	update()
 
 
 func _on_item_removed(item: Item) -> void:
+	combining = false
 	if item_description.item && item_description.item.id == item.id:
 		item_description.item = null
 	update()
 
 
 func _on_item_equipped(_item: Item) -> void:
+	combining = false
 	update()
 
 
 func _on_item_unequipped(_item: Item) -> void:
+	combining = false
 	update()
 
 
@@ -111,3 +129,7 @@ func _on_item_description_equip_clicked(item: Item) -> void:
 
 func _on_item_description_unequip_clicked(_item: Item) -> void:
 	inventory_manager.unequip()
+
+
+func _on_item_description_combine_clicked(_item: Item) -> void:
+	combining = true

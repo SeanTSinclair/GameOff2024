@@ -67,8 +67,7 @@ text = "Equip"
 [node name="CombineButton" type="Button" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-toggle_mode = true
 text = "Combine"
 
 [connection signal="pressed" from="HBoxContainer/EquipButton" to="." method="_on_equip_button_pressed"]
-[connection signal="toggled" from="HBoxContainer/CombineButton" to="." method="_on_combine_button_toggled"]
+[connection signal="pressed" from="HBoxContainer/CombineButton" to="." method="_on_combine_button_pressed"]

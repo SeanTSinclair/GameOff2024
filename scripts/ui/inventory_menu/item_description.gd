@@ -5,6 +5,8 @@ extends VBoxContainer
 signal equip_clicked(item: Item)
 signal unequip_clicked(item: Item)
 
+signal combine_clicked(item: Item)
+
 @export var item: Item:
 	set(value):
 		item = value
@@ -61,5 +63,5 @@ func _on_equip_button_pressed() -> void:
 		equip_clicked.emit(item)
 
 
-func _on_combine_button_toggled(_toggled_on: bool) -> void:
-	pass
+func _on_combine_button_pressed() -> void:
+	combine_clicked.emit(item)
