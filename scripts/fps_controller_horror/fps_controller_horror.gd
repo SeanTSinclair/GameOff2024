@@ -11,6 +11,12 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var footstep_timer = 0.0
 
 @onready var sound_footsteps = $SoundFootsteps
+@onready var equip_slot = $HandItemSlot
+
+
+func _ready():
+	Events.item_equipped.connect(_on_item_equipped)
+	Events.item_unequipped.connect(_on_item_unequipped)
 
 
 func _physics_process(delta: float) -> void:
@@ -48,3 +54,13 @@ func footsteps() -> void:
 	if is_on_floor():
 		if abs(velocity.x) > 1 or abs(velocity.z) > 1:
 			sound_footsteps.stream_paused = false
+
+
+func _on_item_equipped(item: Item):
+	print("Adding : ", item.name)
+	equip_slot.add_child(item.item_scene.instantiate())
+
+
+func _on_item_unequipped(item: Item):
+	print("Removing : ", item.name)
+	equip_slot.remove_child(item.item_scene.instantiate())
