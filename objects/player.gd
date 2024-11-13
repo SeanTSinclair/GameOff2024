@@ -34,9 +34,12 @@ var tween: Tween
 @onready var container = $Head/Camera/SubViewportContainer/SubViewport/CameraItem/Container
 @onready var sound_footsteps = $SoundFootsteps
 @onready var blaster_cooldown = $Cooldown
+@onready var equip_slot = $Head/Camera/EquipSlot
 
 
 func _ready():
+	Events.item_equipped.connect(_on_item_equipped)
+	Events.item_unequipped.connect(_on_item_unequipped)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
@@ -181,3 +184,13 @@ func action_shoot():
 
 		muzzle.rotation_degrees.z = randf_range(-45, 45)
 		muzzle.scale = Vector3.ONE * randf_range(0.40, 0.75)
+
+
+func _on_item_equipped(item: Item):
+	print("Adding : ", item.name)
+	equip_slot.add_child(item.item_scene.instantiate())
+
+
+func _on_item_unequipped(item: Item):
+	print("Removing : ", item.name)
+	equip_slot.remove_child(item.item_scene.instantiate())

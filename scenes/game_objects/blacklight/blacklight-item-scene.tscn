@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3arwen67n1wu"]
+
+[ext_resource type="PackedScene" uid="uid://kdaij15gfg6o" path="res://assets/models/fleshlight.glb" id="1_51qk4"]
+
+[node name="Blacklight" type="Node3D"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, -0.026912, -0.00897074)
+
+[node name="fleshlight" parent="." instance=ExtResource("1_51qk4")]
+
+[node name="Blacklight" type="SpotLight3D" parent="fleshlight"]
+transform = Transform3D(1, -3.18177e-12, 1.39079e-19, 0, -4.37114e-08, -1, 3.18177e-12, 1, -4.37114e-08, 0.000725292, 0.39645, 0.0104279)
+layers = 257
+light_color = Color(0.00819214, 0.543307, 0.75216, 1)
+shadow_enabled = true
+spot_range = 10.0
+spot_attenuation = 0.85
+spot_angle = 35.3

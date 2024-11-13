@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ch5ye25fdbg1"]
+
+[ext_resource type="Texture2D" uid="uid://bnyxj51377odc" path="res://assets/blacklight-item-icon.png" id="1_onden"]
+[ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="3_ko765"]
+
+[resource]
+script = ExtResource("3_ko765")
+id = "1"
+name = "Blacklight"
+inventory_texture = ExtResource("1_onden")
+description = "This is a description of the item.
+
+It can have text on multiple lines.
+
+[b]Bold text[/b]
+
+And it can scroll
+
+More lines
+
+Even more lines
+
+And even more lines again"
+equippable = true

@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=4 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=11 format=4 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://objects/player.gd" id="1_ffboj"]
-[ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://objects/blacklight.tscn" id="2_k76ca"]
 [ext_resource type="PackedScene" uid="uid://j85kjm3bqby5" path="res://scenes/components/interaction_ray/interaction_ray.tscn" id="2_osnc4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
@@ -62,9 +61,6 @@ cull_mask = 1048573
 current = true
 fov = 80.0
 
-[node name="Blacklight" parent="Head/Camera" instance=ExtResource("2_k76ca")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.761517, -0.549318, -0.92424)
-
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Head/Camera"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -99,6 +95,9 @@ target_position = Vector3(0, 0, -10)
 collide_with_areas = true
 
 [node name="InteractionRay" parent="Head/Camera" instance=ExtResource("2_osnc4")]
+
+[node name="EquipSlot" type="Node3D" parent="Head/Camera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.798506, -0.547995, -0.900277)
 
 [node name="Shadow" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
