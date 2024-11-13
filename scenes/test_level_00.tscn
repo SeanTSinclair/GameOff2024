@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=67 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="1_ibhvb"]
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
@@ -9,8 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://fg2yuj2gv58t" path="res://objects/main-door_mansion.glb" id="7_pksne"]
 [ext_resource type="Script" path="res://scenes/idlefather_2.gd" id="8_cr2ov"]
 [ext_resource type="Texture2D" uid="uid://ct6leu41rufd7" path="res://idlefather2_fatherbig05.png" id="8_s3ip6"]
+[ext_resource type="PackedScene" uid="uid://c303raquq3yql" path="res://objects/small-items/barrel.glb" id="9_lxh53"]
 [ext_resource type="Material" uid="uid://dntcpsxggjkef" path="res://assets/materials/house-material.tres" id="10_p4ouj"]
+[ext_resource type="PackedScene" uid="uid://d2aveiic7fccs" path="res://objects/small-items/bed.glb" id="10_pwdff"]
 [ext_resource type="Texture2D" uid="uid://cw2kerj2peejj" path="res://objects/mansion3_mansion-3-tex-9.png" id="10_xtgia"]
+[ext_resource type="PackedScene" uid="uid://ctra4y86om45c" path="res://objects/small-items/workdesk.glb" id="11_p8pbm"]
+[ext_resource type="PackedScene" uid="uid://1gmyn147ohue" path="res://objects/small-items/double-bed.glb" id="12_y4ms3"]
+[ext_resource type="PackedScene" uid="uid://bsjrmxr00uo75" path="res://objects/small-items/oven.glb" id="13_dpf25"]
+[ext_resource type="PackedScene" uid="uid://db0b4j46g64x4" path="res://objects/small-items/radiator-wall.glb" id="13_ge3pu"]
+[ext_resource type="PackedScene" uid="uid://7oaom4yn15c" path="res://objects/small-items/comfy-chair.glb" id="14_v1ppb"]
+[ext_resource type="PackedScene" uid="uid://ble8f3kxvakvx" path="res://objects/small-items/sink.glb" id="15_hh1py"]
+[ext_resource type="PackedScene" uid="uid://cmxv8csugjrmu" path="res://objects/small-items/toilet.glb" id="16_temqm"]
+[ext_resource type="PackedScene" uid="uid://dc70pmm4vntk6" path="res://objects/small-items/bathtub.glb" id="17_lrqbp"]
+[ext_resource type="PackedScene" uid="uid://b7o8e6ib4bnpm" path="res://objects/small-items/sofa-table.glb" id="21_ynw3f"]
+[ext_resource type="PackedScene" uid="uid://br55m81f8vunk" path="res://objects/small-items/sofa.glb" id="22_vkwxh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i3qnv"]
 
@@ -1826,6 +1838,48 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/floor-second-story/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_whh4y")
 
+[node name="barrel" parent="mansion5" instance=ExtResource("9_lxh53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88826, -2.85, -9.48225)
+
+[node name="barrel2" parent="mansion5" instance=ExtResource("9_lxh53")]
+transform = Transform3D(0.772024, 0, 0.635593, 0, 1, 0, -0.635593, 0, 0.772024, -2.97071, -2.85, -6.72724)
+
+[node name="barrel3" parent="mansion5" instance=ExtResource("9_lxh53")]
+transform = Transform3D(0.125281, 0, -0.992121, 0, 1, 0, 0.992121, 0, 0.125281, -2.99226, -2.85, -8.82764)
+
+[node name="barrel4" parent="mansion5" instance=ExtResource("9_lxh53")]
+transform = Transform3D(-0.592323, 0.805701, 3.52183e-08, 0, -4.37114e-08, 1, 0.805701, 0.592323, 2.58912e-08, -2.71887, -2.54667, -7.35578)
+
+[node name="bed" parent="mansion5" instance=ExtResource("10_pwdff")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.0938, 2.85, -5.70915)
+
+[node name="workdesk" parent="mansion5" instance=ExtResource("11_p8pbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69195, 2.85, -4.91222)
+
+[node name="radiator-wall" parent="mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1998, 2.96071, -5.82447)
+
+[node name="radiator-wall2" parent="mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.55674, 2.97489, -9.90827)
+
+[node name="oven" parent="mansion5" instance=ExtResource("13_dpf25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81994, -1.19209e-07, 0.552286)
+
+[node name="sink" parent="mansion5" instance=ExtResource("15_hh1py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55018, 0.744995, 1.72216)
+
+[node name="radiator-wall3" parent="mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.13404, 2.98874, -1.49977)
+
+[node name="radiator-wall4" parent="mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000179768, 2.97553, 0.43059)
+
+[node name="radiator-wall5" parent="mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.73538, 3.00254, -3.09977)
+
+[node name="radiator-wall6" parent="mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.58893, 2.97352, 2.1)
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.945836, 0.324644, 0, -0.324644, 0.945836, 0, 0, 0)
 light_color = Color(0.982993, 0.349056, 0.354496, 1)
@@ -1839,7 +1893,7 @@ shadow_blur = 0.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.91829, 0, -9.19953)
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5473, 3.39043, -14.5508)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5746, 3.57488, -14.5508)
 light_color = Color(1, 0.482353, 0.215686, 1)
 light_cull_mask = 4294967037
 shadow_enabled = true
@@ -1860,7 +1914,8 @@ omni_range = 7.928
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10298, 5.12496, -17.5356)
-light_color = Color(1, 0.482353, 0.215686, 1)
+light_color = Color(0.752997, 0.631448, 0.469205, 1)
+light_energy = 3.286
 light_cull_mask = 4294967037
 shadow_enabled = true
 shadow_bias = 0.052
@@ -2176,6 +2231,111 @@ libraries = {
 [node name="OmniLight3D7" type="OmniLight3D" parent="."]
 transform = Transform3D(0.0624423, 0, 0.998049, 0, 1, 0, -0.998049, 0, 0.0624423, -19.9145, 5.43284, -10.0787)
 light_color = Color(0.430688, 0.721368, 0.624365, 1)
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
+
+[node name="double-bed" parent="." instance=ExtResource("12_y4ms3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16708, 2.85, -17.8812)
+
+[node name="radiator-wall" parent="." instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.16833, 3.09882, -13.972)
+
+[node name="comfy-chair" parent="." instance=ExtResource("14_v1ppb")]
+transform = Transform3D(-0.721615, 0, -0.692294, 0, 1, 0, 0.692294, 0, -0.721615, 1.74381, 2.85, -18.5195)
+
+[node name="radiator-wall2" parent="." instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.47332, 3.05521, -16.6509)
+
+[node name="sink" parent="." instance=ExtResource("15_hh1py")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.49901, 3.70947, -16.569)
+
+[node name="toilet" parent="." instance=ExtResource("16_temqm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.73938, 2.92735, -16.5733)
+
+[node name="bathtub" parent="." instance=ExtResource("17_lrqbp")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.50917, 2.85, -15.2039)
+
+[node name="barrel" parent="." instance=ExtResource("9_lxh53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.33968, -2.85, -12.5829)
+
+[node name="barrel2" parent="." instance=ExtResource("9_lxh53")]
+transform = Transform3D(-0.566478, 0, -0.824077, 0, 1, 0, 0.824077, 0, -0.566478, -5.89542, -2.85, -13.0889)
+
+[node name="barrel3" parent="." instance=ExtResource("9_lxh53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3966, -2.85, -15.1004)
+
+[node name="barrel4" parent="." instance=ExtResource("9_lxh53")]
+transform = Transform3D(0.668962, -0.743297, 3.24905e-08, 0, -4.37114e-08, -1, 0.743297, 0.668962, -2.92413e-08, -9.76845, -2.54742, -14.6968)
+
+[node name="barrel5" parent="." instance=ExtResource("9_lxh53")]
+transform = Transform3D(0.491041, 0, 0.871137, 0, 1, 0, -0.871137, 0, 0.491041, -9.70655, -2.85, -15.2059)
+
+[node name="sofa-table" parent="." instance=ExtResource("21_ynw3f")]
+transform = Transform3D(-6.11959e-08, 0, 1.4, 0, 1.4, 0, -1.4, 0, -6.11959e-08, -5.87638, 2.38419e-07, -10.2086)
+
+[node name="sofa" parent="." instance=ExtResource("22_vkwxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12341, 0, -10.2762)
+
+[node name="comfy-chair2" parent="." instance=ExtResource("14_v1ppb")]
+transform = Transform3D(0.350551, 0, -0.936544, 0, 1, 0, 0.936544, 0, 0.350551, -6.17209, -2.38419e-07, -11.6591)
+
+[node name="comfy-chair3" parent="." instance=ExtResource("14_v1ppb")]
+transform = Transform3D(-0.334925, 0, -0.942245, 0, 1, 0, 0.942245, 0, -0.334925, -5.08808, -2.38419e-07, -11.5738)
+
+[node name="comfy-chair4" parent="." instance=ExtResource("14_v1ppb")]
+transform = Transform3D(-0.375432, 0, 0.92685, 0, 1, 0, -0.92685, 0, -0.375432, -5.28585, -1.19209e-07, -8.94049)
+
+[node name="sofa-table2" parent="." instance=ExtResource("21_ynw3f")]
+transform = Transform3D(0.00185712, 0, -1.4, 0, 1.4, 0, 1.4, 0, 0.00185712, -2.09189, 2.84974, -9.14225)
+
+[node name="sofa2" parent="." instance=ExtResource("22_vkwxh")]
+transform = Transform3D(-0.999999, 0, -0.00132647, 0, 1, 0, 0.00132647, 0, -0.999999, -0.84476, 2.84973, -9.07633)
+
+[node name="comfy-chair5" parent="." instance=ExtResource("14_v1ppb")]
+transform = Transform3D(-0.351793, 0, 0.936078, 0, 1, 0, -0.936078, 0, -0.351793, -1.79425, 2.84973, -7.69212)
+
+[node name="comfy-chair6" parent="." instance=ExtResource("14_v1ppb")]
+transform = Transform3D(0.333675, 0, 0.942688, 0, 1, 0, -0.942688, 0, 0.333675, -2.87837, 2.84973, -7.77604)
+
+[node name="comfy-chair7" parent="." instance=ExtResource("14_v1ppb")]
+transform = Transform3D(0.376661, 0, -0.926351, 0, 1, 0, 0.926351, 0, 0.376661, -2.68409, 2.84973, -10.4096)
+
+[node name="toilet2" parent="." instance=ExtResource("16_temqm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0154, 2.85, -10.3622)
+
+[node name="sink2" parent="." instance=ExtResource("15_hh1py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0228, 3.44859, -9.79039)
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75335, 5.12496, -9.09993)
+light_color = Color(0.752997, 0.631448, 0.469205, 1)
+light_energy = 2.155
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57374, 2.55115, -9.99399)
+light_color = Color(0.752997, 0.631448, 0.469205, 1)
+light_energy = 2.155
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.246556, 2.55115, -9.99399)
+light_color = Color(0.752997, 0.631448, 0.469205, 1)
+light_energy = 2.155
 light_cull_mask = 4294967037
 shadow_enabled = true
 shadow_bias = 0.052
