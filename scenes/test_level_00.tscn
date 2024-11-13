@@ -1652,3 +1652,13 @@ skin = SubResource("Skin_reiab")
 libraries = {
 "": SubResource("AnimationLibrary_hiq71")
 }
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="."]
+transform = Transform3D(0.0624423, 0, 0.998049, 0, 1, 0, -0.998049, 0, 0.0624423, -19.9145, 5.43284, -10.0787)
+light_color = Color(0.430688, 0.721368, 0.624365, 1)
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
