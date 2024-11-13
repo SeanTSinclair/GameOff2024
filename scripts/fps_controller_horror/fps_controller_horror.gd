@@ -1,7 +1,5 @@
 extends CharacterBody3D
 
-signal footstep
-
 const BASE_SPEED = 1.15
 const SPRINT_SPEED = 1.5
 const JUMP_VELOCITY = 2.0
@@ -12,10 +10,12 @@ var speed = BASE_SPEED
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var footstep_timer = 0.0
 
+@onready var sound_footsteps = $SoundFootsteps
+
 
 func _physics_process(delta: float) -> void:
 	calculate_velocity(delta)  # Calculates velocity and direction to be used in move_and_slide
-	footsteps(delta)
+	footsteps()
 
 	move_and_slide()
 
@@ -42,17 +42,9 @@ func calculate_velocity(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, BASE_SPEED)
 
 
-func footsteps(delta: float) -> void:
-	if velocity.x != 0 or velocity.z != 0:
-		var footstep_interval = WALK_FOOTSTEP_INTERVAL
-		if speed == SPRINT_SPEED:
-			footstep_interval = SPRINT_FOOSTEP_INTERVAL
+func footsteps() -> void:
+	sound_footsteps.stream_paused = true
 
-		footstep_timer += delta
-
-		if footstep_timer >= footstep_interval:
-			print("Footstep")
-			footstep.emit()
-			footstep_timer = 0.0
-	else:
-		footstep_timer = 0.0
+	if is_on_floor():
+		if abs(velocity.x) > 1 or abs(velocity.z) > 1:
+			sound_footsteps.stream_paused = false
