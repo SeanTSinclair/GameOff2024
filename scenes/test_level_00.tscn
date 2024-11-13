@@ -1,6 +1,5 @@
 [gd_scene load_steps=67 format=4 uid="uid://4wndb8147fjy"]
 
-[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="1_ibhvb"]
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
 [ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="4_1w8h4"]
@@ -23,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dc70pmm4vntk6" path="res://objects/small-items/bathtub.glb" id="17_lrqbp"]
 [ext_resource type="PackedScene" uid="uid://b7o8e6ib4bnpm" path="res://objects/small-items/sofa-table.glb" id="21_ynw3f"]
 [ext_resource type="PackedScene" uid="uid://br55m81f8vunk" path="res://objects/small-items/sofa.glb" id="22_vkwxh"]
+[ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/horror_fps_controller/FPSControllerHorror.tscn" id="23_6m7vs"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i3qnv"]
 
@@ -1651,9 +1651,6 @@ _data = {
 
 [node name="TestLevel00" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("1_ibhvb")]
-transform = Transform3D(-0.999821, 0.00174194, -0.0188433, 0.00176688, 0.999998, -0.00130739, 0.0188409, -0.00134043, -0.999822, -10.1676, 1.39311, -11.8994)
-
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85307, 5.73306, -14.4469)
 light_color = Color(1, 0.7941, 0.703607, 1)
@@ -2342,3 +2339,6 @@ shadow_bias = 0.052
 shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
+
+[node name="Player" parent="." instance=ExtResource("23_6m7vs")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10.582, 0.70833, -10.4276)
