@@ -56,11 +56,23 @@ func footsteps() -> void:
 			sound_footsteps.stream_paused = false
 
 
+func get_item_scene_instance(item: Item):
+	if !item:
+		return
+	if !item.item_scene:
+		return
+	var item_scene = item.item_scene.instantiate()
+	if item_scene != null:
+		return item_scene
+
+
 func _on_item_equipped(item: Item):
-	print("Adding : ", item.name)
-	equip_slot.add_child(item.item_scene.instantiate())
+	var item_scene = get_item_scene_instance(item)
+	if item_scene != null:
+		equip_slot.add_child(item_scene)
 
 
 func _on_item_unequipped(item: Item):
-	print("Removing : ", item.name)
-	equip_slot.remove_child(item.item_scene.instantiate())
+	var item_scene = get_item_scene_instance(item)
+	if item_scene != null:
+		equip_slot.remove_child(item_scene)

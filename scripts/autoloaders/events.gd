@@ -8,3 +8,6 @@ signal item_equipped(item: Item)
 
 @warning_ignore("unused_signal")
 signal item_unequipped(item: Item)
+
+@warning_ignore("unused_signal")
+signal equipped_item_activation
