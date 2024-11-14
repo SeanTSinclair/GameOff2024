@@ -72,7 +72,7 @@ func _on_item_equipped(item: Item):
 		equip_slot.add_child(item_scene)
 
 
-func _on_item_unequipped(item: Item):
-	var item_scene = get_item_scene_instance(item)
-	if item_scene != null:
-		equip_slot.remove_child(item_scene)
+func _on_item_unequipped(_item: Item):
+	var children = equip_slot.get_children()
+	for child in children:
+		equip_slot.remove_child(child)
