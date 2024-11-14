@@ -20,10 +20,19 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	handle_controls(delta)
 	calculate_velocity(delta)  # Calculates velocity and direction to be used in move_and_slide
 	footsteps()
 
 	move_and_slide()
+
+
+func handle_controls(_delta):
+	# Using equiptable
+	if Input.is_action_just_pressed("shoot"):
+		var children = equip_slot.get_children()
+		for child in children:
+			child.use()
 
 
 func calculate_velocity(delta: float) -> void:

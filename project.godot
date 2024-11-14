@@ -22,6 +22,7 @@ buses/default_bus_layout="res://resources/audio_bus_layout.tres"
 [autoload]
 
 Events="*res://scripts/autoloaders/events.gd"
+State="*res://scripts/autoloaders/state.gd"
 
 [display]
 
