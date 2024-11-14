@@ -69,8 +69,9 @@ func equip(item: Item) -> void:
 
 func unequip() -> void:
 	if equipped_item != null:
+		var old_equipped_item = equipped_item
 		equipped_item = null
-		Events.item_unequipped.emit(equipped_item)
+		Events.item_unequipped.emit(old_equipped_item)
 
 
 func combine(item1: Item, item2: Item) -> bool:
