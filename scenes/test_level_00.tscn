@@ -1,10 +1,8 @@
-[gd_scene load_steps=71 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=66 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
-[ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
 [ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="4_1w8h4"]
 [ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
-[ext_resource type="PackedScene" uid="uid://bnmuj8qklqd2h" path="res://objects/mansion3.glb" id="6_3b8es"]
 [ext_resource type="PackedScene" uid="uid://bck73kb2hhe6y" path="res://assets/models/table-simple-00-col.glb" id="6_mtrem"]
 [ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://scenes/game_objects/blacklight/blacklight.tscn" id="7_pgpy4"]
 [ext_resource type="PackedScene" uid="uid://fg2yuj2gv58t" path="res://objects/main-door_mansion.glb" id="7_pksne"]
@@ -25,14 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://b7o8e6ib4bnpm" path="res://objects/small-items/sofa-table.glb" id="21_ynw3f"]
 [ext_resource type="PackedScene" uid="uid://br55m81f8vunk" path="res://objects/small-items/sofa.glb" id="22_vkwxh"]
 [ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/horror_fps_controller/FPSControllerHorror.tscn" id="23_6m7vs"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_4x2xr"]
-size = Vector3(10, 0.1, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_4c0l8"]
-size = Vector3(10, 0.1, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_i3qnv"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -1659,7 +1649,192 @@ _data = {
 
 [node name="TestLevel00" type="Node3D"]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ll1as")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.912499, -0.132805, 0.386922, 6.96707e-09, 0.945836, 0.324644, -0.409079, -0.296237, 0.863075, -1.444, 3.85475, 8.17466)
+light_color = Color(0.982993, 0.349056, 0.354496, 1)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 3.524
+shadow_reverse_cull_face = true
+shadow_blur = 0.0
+
+[node name="Player" parent="." instance=ExtResource("23_6m7vs")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10.582, 0.70833, -10.4276)
+
+[node name="Mansion" type="Node3D" parent="."]
+
+[node name="mansion5" type="Node3D" parent="Mansion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.423, 0, -9.272)
+
+[node name="basement" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_tejtn")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/basement"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/basement/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_00bp4")
+
+[node name="basement-ceiling" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_kf5nb")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/basement-ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/basement-ceiling/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_povvf")
+
+[node name="1st-story" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_n2aw3")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/1st-story"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/1st-story/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nlqp7")
+
+[node name="ceiling-1st-story" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_nxngc")
+mesh = SubResource("ArrayMesh_v6mof")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/ceiling-1st-story"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/ceiling-1st-story/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7c5nl")
+
+[node name="wooden_beams-2" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_isde2")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/wooden_beams-2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/wooden_beams-2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_n38mo")
+
+[node name="wooden_beams" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_ftu2p")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/wooden_beams"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/wooden_beams/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k8rr7")
+
+[node name="railings" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_xql37")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/railings"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/railings/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pqgra")
+
+[node name="roof-2nd_story" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_3o7sc")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/roof-2nd_story"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/roof-2nd_story/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ptl1c")
+
+[node name="2nd_story_right_wing" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_tbbvf")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/2nd_story_right_wing"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/2nd_story_right_wing/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c2b1h")
+
+[node name="2nd-story-left-wing" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_vb8wi")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/2nd-story-left-wing"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/2nd-story-left-wing/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_mcwik")
+
+[node name="floor-second-story" type="MeshInstance3D" parent="Mansion/mansion5"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_7s0pd")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/floor-second-story"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/floor-second-story/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_whh4y")
+
+[node name="barrel" parent="Mansion/mansion5" instance=ExtResource("9_lxh53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88826, -2.85, -9.48225)
+
+[node name="barrel2" parent="Mansion/mansion5" instance=ExtResource("9_lxh53")]
+transform = Transform3D(0.772024, 0, 0.635593, 0, 1, 0, -0.635593, 0, 0.772024, -2.97071, -2.85, -6.72724)
+
+[node name="barrel3" parent="Mansion/mansion5" instance=ExtResource("9_lxh53")]
+transform = Transform3D(0.125281, 0, -0.992121, 0, 1, 0, 0.992121, 0, 0.125281, -2.99226, -2.85, -8.82764)
+
+[node name="barrel4" parent="Mansion/mansion5" instance=ExtResource("9_lxh53")]
+transform = Transform3D(-0.592323, 0.805701, 3.52183e-08, 0, -4.37114e-08, 1, 0.805701, 0.592323, 2.58912e-08, -2.71887, -2.54667, -7.35578)
+
+[node name="bed" parent="Mansion/mansion5" instance=ExtResource("10_pwdff")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.0938, 2.85, -5.70915)
+
+[node name="workdesk" parent="Mansion/mansion5" instance=ExtResource("11_p8pbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69195, 2.85, -4.91222)
+
+[node name="radiator-wall" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1998, 2.96071, -5.82447)
+
+[node name="radiator-wall2" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.55674, 2.97489, -9.90827)
+
+[node name="oven" parent="Mansion/mansion5" instance=ExtResource("13_dpf25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81994, -1.19209e-07, 0.552286)
+
+[node name="sink" parent="Mansion/mansion5" instance=ExtResource("15_hh1py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55018, 0.744995, 1.72216)
+
+[node name="radiator-wall3" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.13404, 2.98874, -1.49977)
+
+[node name="radiator-wall4" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000179768, 2.97553, 0.43059)
+
+[node name="radiator-wall5" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.73538, 3.00254, -3.09977)
+
+[node name="radiator-wall6" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.58893, 2.97352, 2.1)
+
+[node name="Lights" type="Node" parent="Mansion"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Mansion/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85307, 5.73306, -14.4469)
 light_color = Color(1, 0.7941, 0.703607, 1)
 light_energy = 5.283
@@ -1670,7 +1845,7 @@ shadow_normal_bias = 0.758
 shadow_blur = 0.0
 omni_range = 14.275
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Mansion/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0433, 8.14561, -14.9106)
 light_color = Color(1, 0.482353, 0.215686, 1)
 light_cull_mask = 4294967037
@@ -1680,7 +1855,7 @@ shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Mansion/Lights"]
 transform = Transform3D(0.0624423, 0, 0.998049, 0, 1, 0, -0.998049, 0, 0.0624423, -4.44461, 5.43284, -15.4342)
 light_color = Color(0.430688, 0.721368, 0.624365, 1)
 light_cull_mask = 4294967037
@@ -1690,334 +1865,7 @@ shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
 
-[node name="Room" type="Node3D" parent="."]
-
-[node name="Ground" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.915195, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Ground"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Ground"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="table-simple-00-col" parent="Room/Ground" instance=ExtResource("6_mtrem")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000251055, 0.05, -1.41205)
-
-[node name="wall" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.00459018, -0.999989, 0, 0.999989, -0.00459018, 0, 0, 0, 1, 4.1435, 4.77192, -0.0132989)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="Ground2" type="StaticBody3D" parent="Room"]
-transform = Transform3D(0.998146, -0.0608568, 0, 0.0608568, 0.998146, 0, 0, 0, 1, -0.947141, 0.00289059, -9.93413)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Ground2"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Ground2"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="wall2" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.0654378, -0.997856, 0, 0.997856, -0.0654378, 0, 0, 0, 1, 4.36108, 5.06746, -9.96028)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall2"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall2"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="Ground3" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.9267, 0, -0.026149)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Ground3"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Ground3"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="Ground4" type="StaticBody3D" parent="Room"]
-transform = Transform3D(0.998146, -0.0608568, 0, 0.0608568, 0.998146, 0, 0, 0, 1, -10.9388, 0.00289059, -9.96028)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Ground4"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/Ground4"]
-mesh = SubResource("BoxMesh_4c0l8")
-skeleton = NodePath("../../Ground3")
-
-[node name="wall4" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.000186163, -0.00283878, -0.999996, 0.997856, -0.0654378, 0, -0.0654376, -0.997852, 0.00284488, -0.608108, 5.06746, 5.27398)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall4"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall4"]
-mesh = SubResource("BoxMesh_4c0l8")
-skeleton = NodePath("../../wall2")
-
-[node name="wall5" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.00459018, -0.999989, 0, 0.999989, -0.00459018, 0, 0, 0, 1, -15.9398, 4.77192, -0.0132989)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall5"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall5"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="wall6" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.0654378, -0.997856, 0, 0.997856, -0.0654378, 0, 0, 0, 1, -15.7222, 5.06746, -9.96028)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall6"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall6"]
-mesh = SubResource("BoxMesh_4c0l8")
-skeleton = NodePath("../../wall2")
-
-[node name="wall7" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-1.80254e-05, -0.0039269, -0.999992, 0.999989, -0.00459018, 0, -0.00459014, -0.999981, 0.00392694, -10.7632, 4.77192, -14.8272)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall7"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall7"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="wall8" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-0.00025697, -0.00391852, -0.999992, 0.997856, -0.0654378, 0, -0.0654373, -0.997848, 0.00392694, -0.815479, 5.06746, -14.6487)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall8"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall8"]
-mesh = SubResource("BoxMesh_4c0l8")
-skeleton = NodePath("../../wall2")
-
-[node name="wall3" type="StaticBody3D" parent="Room"]
-transform = Transform3D(-1.30585e-05, -0.00284485, -0.999996, 0.999989, -0.00459018, 0, -0.00459016, -0.999985, 0.00284488, -10.5557, 4.77192, 5.0847)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/wall3"]
-shape = SubResource("BoxShape3D_4x2xr")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Room/wall3"]
-mesh = SubResource("BoxMesh_4c0l8")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.999658, -0.0174097, 0.0195285, 0.0165106, 0.998837, 0.0452962, -0.0202944, -0.0449583, 0.998783, -1.07501, 0.535008, 4.28355)
-mesh = SubResource("BoxMesh_i3qnv")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ll1as")
-
-[node name="Secret-text" parent="." instance=ExtResource("4_sr0u4")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.43486, 4.94068)
-text_img = ExtResource("3_bgh7f")
-
-[node name="Items" type="Node3D" parent="."]
-
-[node name="TestItemObject1" parent="Items" instance=ExtResource("3_wpn6b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2684, 0.504458, 0)
-
-[node name="Blacklight" parent="Items" instance=ExtResource("7_pgpy4")]
-transform = Transform3D(0.0723505, -0.997379, 0, 0.997379, 0.0723505, 0, 0, 0, 1, -0.726087, 0.784098, -1.43182)
-
-[node name="Box1" parent="." instance=ExtResource("4_1w8h4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.62257, 0)
-
-[node name="Box2" parent="." instance=ExtResource("4_1w8h4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76327, 2.44423, 0)
-
-[node name="Box3" parent="." instance=ExtResource("4_1w8h4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.42872, 1.92173, -2.463)
-
-[node name="mansion3" parent="." instance=ExtResource("6_3b8es")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42282, 0, -9.27177)
-visible = false
-
-[node name="mansion5" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.423, 0, -9.272)
-
-[node name="basement" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_tejtn")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/basement"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/basement/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_00bp4")
-
-[node name="basement-ceiling" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_kf5nb")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/basement-ceiling"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/basement-ceiling/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_povvf")
-
-[node name="1st-story" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_n2aw3")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/1st-story"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/1st-story/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_nlqp7")
-
-[node name="ceiling-1st-story" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_nxngc")
-mesh = SubResource("ArrayMesh_v6mof")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/ceiling-1st-story"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/ceiling-1st-story/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_7c5nl")
-
-[node name="wooden_beams-2" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_isde2")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/wooden_beams-2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/wooden_beams-2/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_n38mo")
-
-[node name="wooden_beams" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_ftu2p")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/wooden_beams"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/wooden_beams/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_k8rr7")
-
-[node name="railings" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_xql37")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/railings"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/railings/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_pqgra")
-
-[node name="roof-2nd_story" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_3o7sc")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/roof-2nd_story"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/roof-2nd_story/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_ptl1c")
-
-[node name="2nd_story_right_wing" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_tbbvf")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/2nd_story_right_wing"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/2nd_story_right_wing/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_c2b1h")
-
-[node name="2nd-story-left-wing" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_vb8wi")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/2nd-story-left-wing"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/2nd-story-left-wing/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_mcwik")
-
-[node name="floor-second-story" type="MeshInstance3D" parent="mansion5"]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
-material_override = ExtResource("10_p4ouj")
-mesh = SubResource("ArrayMesh_7s0pd")
-skeleton = NodePath("")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="mansion5/floor-second-story"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="mansion5/floor-second-story/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_whh4y")
-
-[node name="barrel" parent="mansion5" instance=ExtResource("9_lxh53")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88826, -2.85, -9.48225)
-
-[node name="barrel2" parent="mansion5" instance=ExtResource("9_lxh53")]
-transform = Transform3D(0.772024, 0, 0.635593, 0, 1, 0, -0.635593, 0, 0.772024, -2.97071, -2.85, -6.72724)
-
-[node name="barrel3" parent="mansion5" instance=ExtResource("9_lxh53")]
-transform = Transform3D(0.125281, 0, -0.992121, 0, 1, 0, 0.992121, 0, 0.125281, -2.99226, -2.85, -8.82764)
-
-[node name="barrel4" parent="mansion5" instance=ExtResource("9_lxh53")]
-transform = Transform3D(-0.592323, 0.805701, 3.52183e-08, 0, -4.37114e-08, 1, 0.805701, 0.592323, 2.58912e-08, -2.71887, -2.54667, -7.35578)
-
-[node name="bed" parent="mansion5" instance=ExtResource("10_pwdff")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.0938, 2.85, -5.70915)
-
-[node name="workdesk" parent="mansion5" instance=ExtResource("11_p8pbm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69195, 2.85, -4.91222)
-
-[node name="radiator-wall" parent="mansion5" instance=ExtResource("13_ge3pu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1998, 2.96071, -5.82447)
-
-[node name="radiator-wall2" parent="mansion5" instance=ExtResource("13_ge3pu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.55674, 2.97489, -9.90827)
-
-[node name="oven" parent="mansion5" instance=ExtResource("13_dpf25")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81994, -1.19209e-07, 0.552286)
-
-[node name="sink" parent="mansion5" instance=ExtResource("15_hh1py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55018, 0.744995, 1.72216)
-
-[node name="radiator-wall3" parent="mansion5" instance=ExtResource("13_ge3pu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.13404, 2.98874, -1.49977)
-
-[node name="radiator-wall4" parent="mansion5" instance=ExtResource("13_ge3pu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000179768, 2.97553, 0.43059)
-
-[node name="radiator-wall5" parent="mansion5" instance=ExtResource("13_ge3pu")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.73538, 3.00254, -3.09977)
-
-[node name="radiator-wall6" parent="mansion5" instance=ExtResource("13_ge3pu")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.58893, 2.97352, 2.1)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.945836, 0.324644, 0, -0.324644, 0.945836, 0, 0, 0)
-light_color = Color(0.982993, 0.349056, 0.354496, 1)
-shadow_enabled = true
-shadow_bias = 0.0
-shadow_normal_bias = 3.524
-shadow_reverse_cull_face = true
-shadow_blur = 0.0
-
-[node name="main-door_mansion" parent="." instance=ExtResource("7_pksne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.91829, 0, -9.19953)
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+[node name="OmniLight3D4" type="OmniLight3D" parent="Mansion/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5746, 3.57488, -14.5508)
 light_color = Color(1, 0.482353, 0.215686, 1)
 light_cull_mask = 4294967037
@@ -2027,7 +1875,7 @@ shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+[node name="OmniLight3D5" type="OmniLight3D" parent="Mansion/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5473, 2.36577, -17.0837)
 light_color = Color(1, 0.482353, 0.215686, 1)
 light_cull_mask = 4294967037
@@ -2037,7 +1885,7 @@ shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="."]
+[node name="OmniLight3D6" type="OmniLight3D" parent="Mansion/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10298, 5.12496, -17.5356)
 light_color = Color(0.752997, 0.631448, 0.469205, 1)
 light_energy = 3.286
@@ -2048,14 +1896,59 @@ shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
 
-[node name="idlefather2" type="Node3D" parent="."]
+[node name="OmniLight3D8" type="OmniLight3D" parent="Mansion/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75335, 5.12496, -9.09993)
+light_color = Color(0.752997, 0.631448, 0.469205, 1)
+light_energy = 2.155
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Mansion/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57374, 2.55115, -9.99399)
+light_color = Color(0.752997, 0.631448, 0.469205, 1)
+light_energy = 2.155
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Mansion/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.246556, 2.55115, -9.99399)
+light_color = Color(0.752997, 0.631448, 0.469205, 1)
+light_energy = 2.155
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Mansion/Lights"]
+transform = Transform3D(0.0624423, 0, 0.998049, 0, 1, 0, -0.998049, 0, 0.0624423, -19.9145, 5.43284, -10.0787)
+light_color = Color(0.430688, 0.721368, 0.624365, 1)
+light_cull_mask = 4294967037
+shadow_enabled = true
+shadow_bias = 0.052
+shadow_normal_bias = 0.0
+shadow_blur = 0.0
+omni_range = 7.928
+
+[node name="Characters" type="Node" parent="Mansion"]
+
+[node name="idlefather2" type="Node3D" parent="Mansion/Characters"]
 transform = Transform3D(0.0436643, 0, -0.296805, 0, 0.3, 0, 0.296805, 0, 0.0436643, -7.40076, -0.00705981, -12.9254)
 script = ExtResource("8_cr2ov")
 
-[node name="Armature" type="Node3D" parent="idlefather2"]
+[node name="Armature" type="Node3D" parent="Mansion/Characters/idlefather2"]
 transform = Transform3D(0.00573232, 0, 0, 0, 0, -0.00573232, 0, 0.00573232, 0, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="idlefather2/Armature"]
+[node name="Skeleton3D" type="Skeleton3D" parent="Mansion/Characters/idlefather2/Armature"]
 bones/0/name = "mixamorig_Hips"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0.234317, -2.59915, -4.27163)
@@ -2344,142 +2237,103 @@ bones/40/position = Vector3(5.06621e-07, 27.6294, 2.38388e-07)
 bones/40/rotation = Quaternion(1.12667e-06, 3.54426e-07, -2.4811e-07, 1)
 bones/40/scale = Vector3(1, 1, 1)
 
-[node name="Cylinder" type="MeshInstance3D" parent="idlefather2/Armature/Skeleton3D"]
+[node name="Cylinder" type="MeshInstance3D" parent="Mansion/Characters/idlefather2/Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_67lqk")
 skin = SubResource("Skin_reiab")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="idlefather2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Mansion/Characters/idlefather2"]
 libraries = {
 "": SubResource("AnimationLibrary_hiq71")
 }
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="."]
-transform = Transform3D(0.0624423, 0, 0.998049, 0, 1, 0, -0.998049, 0, 0.0624423, -19.9145, 5.43284, -10.0787)
-light_color = Color(0.430688, 0.721368, 0.624365, 1)
-light_cull_mask = 4294967037
-shadow_enabled = true
-shadow_bias = 0.052
-shadow_normal_bias = 0.0
-shadow_blur = 0.0
-omni_range = 7.928
+[node name="Objects" type="Node" parent="Mansion"]
 
-[node name="double-bed" parent="." instance=ExtResource("12_y4ms3")]
+[node name="main-door_mansion" parent="Mansion/Objects" instance=ExtResource("7_pksne")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.91829, 0, -9.19953)
+
+[node name="double-bed" parent="Mansion/Objects" instance=ExtResource("12_y4ms3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.16708, 2.85, -17.8812)
 
-[node name="radiator-wall" parent="." instance=ExtResource("13_ge3pu")]
+[node name="radiator-wall" parent="Mansion/Objects" instance=ExtResource("13_ge3pu")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.16833, 3.09882, -13.972)
 
-[node name="comfy-chair" parent="." instance=ExtResource("14_v1ppb")]
+[node name="comfy-chair" parent="Mansion/Objects" instance=ExtResource("14_v1ppb")]
 transform = Transform3D(-0.721615, 0, -0.692294, 0, 1, 0, 0.692294, 0, -0.721615, 1.74381, 2.85, -18.5195)
 
-[node name="radiator-wall2" parent="." instance=ExtResource("13_ge3pu")]
+[node name="radiator-wall2" parent="Mansion/Objects" instance=ExtResource("13_ge3pu")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.47332, 3.05521, -16.6509)
 
-[node name="sink" parent="." instance=ExtResource("15_hh1py")]
+[node name="sink" parent="Mansion/Objects" instance=ExtResource("15_hh1py")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.49901, 3.70947, -16.569)
 
-[node name="toilet" parent="." instance=ExtResource("16_temqm")]
+[node name="toilet" parent="Mansion/Objects" instance=ExtResource("16_temqm")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.73938, 2.92735, -16.5733)
 
-[node name="bathtub" parent="." instance=ExtResource("17_lrqbp")]
+[node name="bathtub" parent="Mansion/Objects" instance=ExtResource("17_lrqbp")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.50917, 2.85, -15.2039)
 
-[node name="barrel" parent="." instance=ExtResource("9_lxh53")]
+[node name="barrel" parent="Mansion/Objects" instance=ExtResource("9_lxh53")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.33968, -2.85, -12.5829)
 
-[node name="barrel2" parent="." instance=ExtResource("9_lxh53")]
+[node name="barrel2" parent="Mansion/Objects" instance=ExtResource("9_lxh53")]
 transform = Transform3D(-0.566478, 0, -0.824077, 0, 1, 0, 0.824077, 0, -0.566478, -5.89542, -2.85, -13.0889)
 
-[node name="barrel3" parent="." instance=ExtResource("9_lxh53")]
+[node name="barrel3" parent="Mansion/Objects" instance=ExtResource("9_lxh53")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3966, -2.85, -15.1004)
 
-[node name="barrel4" parent="." instance=ExtResource("9_lxh53")]
+[node name="barrel4" parent="Mansion/Objects" instance=ExtResource("9_lxh53")]
 transform = Transform3D(0.668962, -0.743297, 3.24905e-08, 0, -4.37114e-08, -1, 0.743297, 0.668962, -2.92413e-08, -9.76845, -2.54742, -14.6968)
 
-[node name="barrel5" parent="." instance=ExtResource("9_lxh53")]
+[node name="barrel5" parent="Mansion/Objects" instance=ExtResource("9_lxh53")]
 transform = Transform3D(0.491041, 0, 0.871137, 0, 1, 0, -0.871137, 0, 0.491041, -9.70655, -2.85, -15.2059)
 
-[node name="sofa-table" parent="." instance=ExtResource("21_ynw3f")]
+[node name="sofa-table" parent="Mansion/Objects" instance=ExtResource("21_ynw3f")]
 transform = Transform3D(-6.11959e-08, 0, 1.4, 0, 1.4, 0, -1.4, 0, -6.11959e-08, -5.87638, 2.38419e-07, -10.2086)
 
-[node name="sofa" parent="." instance=ExtResource("22_vkwxh")]
+[node name="sofa" parent="Mansion/Objects" instance=ExtResource("22_vkwxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.12341, 0, -10.2762)
 
-[node name="comfy-chair2" parent="." instance=ExtResource("14_v1ppb")]
+[node name="comfy-chair2" parent="Mansion/Objects" instance=ExtResource("14_v1ppb")]
 transform = Transform3D(0.350551, 0, -0.936544, 0, 1, 0, 0.936544, 0, 0.350551, -6.17209, -2.38419e-07, -11.6591)
 
-[node name="comfy-chair3" parent="." instance=ExtResource("14_v1ppb")]
+[node name="comfy-chair3" parent="Mansion/Objects" instance=ExtResource("14_v1ppb")]
 transform = Transform3D(-0.334925, 0, -0.942245, 0, 1, 0, 0.942245, 0, -0.334925, -5.08808, -2.38419e-07, -11.5738)
 
-[node name="comfy-chair4" parent="." instance=ExtResource("14_v1ppb")]
+[node name="comfy-chair4" parent="Mansion/Objects" instance=ExtResource("14_v1ppb")]
 transform = Transform3D(-0.375432, 0, 0.92685, 0, 1, 0, -0.92685, 0, -0.375432, -5.28585, -1.19209e-07, -8.94049)
 
-[node name="sofa-table2" parent="." instance=ExtResource("21_ynw3f")]
+[node name="sofa-table2" parent="Mansion/Objects" instance=ExtResource("21_ynw3f")]
 transform = Transform3D(0.00185712, 0, -1.4, 0, 1.4, 0, 1.4, 0, 0.00185712, -2.09189, 2.84974, -9.14225)
 
-[node name="sofa2" parent="." instance=ExtResource("22_vkwxh")]
+[node name="sofa2" parent="Mansion/Objects" instance=ExtResource("22_vkwxh")]
 transform = Transform3D(-0.999999, 0, -0.00132647, 0, 1, 0, 0.00132647, 0, -0.999999, -0.84476, 2.84973, -9.07633)
 
-[node name="comfy-chair5" parent="." instance=ExtResource("14_v1ppb")]
+[node name="comfy-chair5" parent="Mansion/Objects" instance=ExtResource("14_v1ppb")]
 transform = Transform3D(-0.351793, 0, 0.936078, 0, 1, 0, -0.936078, 0, -0.351793, -1.79425, 2.84973, -7.69212)
 
-[node name="comfy-chair6" parent="." instance=ExtResource("14_v1ppb")]
+[node name="comfy-chair6" parent="Mansion/Objects" instance=ExtResource("14_v1ppb")]
 transform = Transform3D(0.333675, 0, 0.942688, 0, 1, 0, -0.942688, 0, 0.333675, -2.87837, 2.84973, -7.77604)
 
-[node name="comfy-chair7" parent="." instance=ExtResource("14_v1ppb")]
+[node name="comfy-chair7" parent="Mansion/Objects" instance=ExtResource("14_v1ppb")]
 transform = Transform3D(0.376661, 0, -0.926351, 0, 1, 0, 0.926351, 0, 0.376661, -2.68409, 2.84973, -10.4096)
 
-[node name="toilet2" parent="." instance=ExtResource("16_temqm")]
+[node name="toilet2" parent="Mansion/Objects" instance=ExtResource("16_temqm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0154, 2.85, -10.3622)
 
-[node name="sink2" parent="." instance=ExtResource("15_hh1py")]
+[node name="sink2" parent="Mansion/Objects" instance=ExtResource("15_hh1py")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0228, 3.44859, -9.79039)
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75335, 5.12496, -9.09993)
-light_color = Color(0.752997, 0.631448, 0.469205, 1)
-light_energy = 2.155
-light_cull_mask = 4294967037
-shadow_enabled = true
-shadow_bias = 0.052
-shadow_normal_bias = 0.0
-shadow_blur = 0.0
-omni_range = 7.928
-
-[node name="OmniLight3D9" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57374, 2.55115, -9.99399)
-light_color = Color(0.752997, 0.631448, 0.469205, 1)
-light_energy = 2.155
-light_cull_mask = 4294967037
-shadow_enabled = true
-shadow_bias = 0.052
-shadow_normal_bias = 0.0
-shadow_blur = 0.0
-omni_range = 7.928
-
-[node name="OmniLight3D10" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.246556, 2.55115, -9.99399)
-light_color = Color(0.752997, 0.631448, 0.469205, 1)
-light_energy = 2.155
-light_cull_mask = 4294967037
-shadow_enabled = true
-shadow_bias = 0.052
-shadow_normal_bias = 0.0
-shadow_blur = 0.0
-omni_range = 7.928
-
-[node name="Player" parent="." instance=ExtResource("23_6m7vs")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10.582, 0.70833, -10.4276)
-
-[node name="Blacklight" parent="." instance=ExtResource("7_pgpy4")]
-transform = Transform3D(0.0791126, -0.996842, -0.00678309, 0.99679, 0.0791883, -0.0117243, 0.0122244, -0.00583377, 0.999908, -0.726087, 0.784098, -1.43182)
-
-[node name="table-simple-00-col" parent="." instance=ExtResource("6_mtrem")]
+[node name="table-simple-00-col" parent="Mansion/Objects" instance=ExtResource("6_mtrem")]
 transform = Transform3D(0.0495645, 0, -0.998771, 0, 1, 0, 0.998771, 0, 0.0495645, -11.467, 0.0207779, -14.2965)
 
-[node name="Blacklight2" parent="." instance=ExtResource("7_pgpy4")]
-transform = Transform3D(0.00705113, -0.999975, 0, 0.999975, 0.00705113, 0, 0, 0, 1, -11.3193, 0.788394, -14.2535)
+[node name="Items" type="Node" parent="Mansion"]
 
-[node name="Secret-text2" parent="." instance=ExtResource("4_sr0u4")]
+[node name="Secret-text2" parent="Mansion/Items" instance=ExtResource("4_sr0u4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.58902, 0.990598, -11.1262)
 text_img = ExtResource("3_bgh7f")
+
+[node name="Blacklight2" parent="Mansion/Items" instance=ExtResource("7_pgpy4")]
+transform = Transform3D(0.00705113, -0.999975, 0, 0.999975, 0.00705113, 0, 0, 0, 1, -11.3193, 0.788394, -14.2535)
+
+[node name="Box1" parent="Mansion/Items" instance=ExtResource("4_1w8h4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2824, 2.62257, -18.1679)
