@@ -20,7 +20,8 @@ func add(item: Item) -> void:
 	if has_item(item):
 		push_warning("InventoryManager: Adding item that we already have in inventory: " + item.id)
 		return
-
+	if !equipped_item:
+		equip(item)
 	items.push_back(item)
 	item_added.emit(item)
 
