@@ -32,7 +32,8 @@ func handle_controls(_delta):
 	if Input.is_action_just_pressed("shoot"):
 		var children = equip_slot.get_children()
 		for child in children:
-			child.use()
+			if child.has_method("use"):
+				child.use()
 
 
 func calculate_velocity(delta: float) -> void:
