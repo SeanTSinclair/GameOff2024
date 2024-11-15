@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("3_ko765")
-id = "1"
+id = "BLACKLIGHT"
 name = "Blacklight"
 inventory_texture = ExtResource("1_onden")
 item_scene = ExtResource("2_b8jar")
