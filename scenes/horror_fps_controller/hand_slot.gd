@@ -13,6 +13,7 @@ func _input(event):
 			if child.has_method("use"):
 				child.use()
 
+
 func get_item_scene_instance(item: Item):
 	if !item:
 		return
