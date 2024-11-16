@@ -13,9 +13,11 @@ height = 1.0
 [node name="Blacklight" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026912, -0.00897074)
 
-[node name="fleshlight" parent="." instance=ExtResource("1_clxvy")]
+[node name="Flashlight" parent="." instance=ExtResource("1_clxvy")]
 
-[node name="OutlineComponent" parent="." instance=ExtResource("2_40kk5")]
+[node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance", "interaction_component") instance=ExtResource("2_40kk5")]
+mesh_instance = NodePath("../Flashlight/Cylinder")
+interaction_component = NodePath("../InteractionComponent")
 
 [node name="InteractionComponent" parent="." instance=ExtResource("3_hjdap")]
 
@@ -29,4 +31,5 @@ item = ExtResource("5_de1ob")
 interaction_component = NodePath("../InteractionComponent")
 item_root = NodePath("..")
 
+[editable path="Flashlight"]
 [editable path="InteractionComponent"]
