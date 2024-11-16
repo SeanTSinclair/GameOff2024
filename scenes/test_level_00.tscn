@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
 [ext_resource type="PackedScene" uid="uid://bck73kb2hhe6y" path="res://assets/models/table-simple-00-col.glb" id="6_mtrem"]
 [ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://scenes/game_objects/blacklight/blacklight.tscn" id="7_pgpy4"]
-[ext_resource type="PackedScene" uid="uid://fg2yuj2gv58t" path="res://objects/main-door_mansion.glb" id="7_pksne"]
+[ext_resource type="PackedScene" uid="uid://fg2yuj2gv58t" path="res://assets/models/mansion/main-door_mansion.glb" id="7_pksne"]
 [ext_resource type="PackedScene" uid="uid://c303raquq3yql" path="res://objects/small-items/barrel.glb" id="9_lxh53"]
-[ext_resource type="Material" uid="uid://dntcpsxggjkef" path="res://assets/materials/house-material.tres" id="10_p4ouj"]
+[ext_resource type="Material" uid="uid://dntcpsxggjkef" path="res://assets/materials/mansion-material.tres" id="10_p4ouj"]
 [ext_resource type="PackedScene" uid="uid://d2aveiic7fccs" path="res://objects/small-items/bed.glb" id="10_pwdff"]
-[ext_resource type="Texture2D" uid="uid://cw2kerj2peejj" path="res://objects/mansion3_mansion-3-tex-9.png" id="10_xtgia"]
+[ext_resource type="Texture2D" uid="uid://cw2kerj2peejj" path="res://assets/materials/mansion-texture.png" id="10_xtgia"]
 [ext_resource type="PackedScene" uid="uid://ctra4y86om45c" path="res://objects/small-items/workdesk.glb" id="11_p8pbm"]
 [ext_resource type="PackedScene" uid="uid://3g6evcig48il" path="res://scenes/game_objects/father/father.tscn" id="12_w7bug"]
 [ext_resource type="PackedScene" uid="uid://1gmyn147ohue" path="res://objects/small-items/double-bed.glb" id="12_y4ms3"]
@@ -448,170 +448,170 @@ transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10.582, 0.70833, -10.4
 
 [node name="Mansion" type="Node3D" parent="."]
 
-[node name="mansion5" type="Node3D" parent="Mansion"]
+[node name="Model" type="Node3D" parent="Mansion"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.423, 0, -9.272)
 
-[node name="basement" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="basement" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_tejtn")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/basement"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/basement"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/basement/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/basement/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_00bp4")
 
-[node name="basement-ceiling" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="basement-ceiling" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_kf5nb")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/basement-ceiling"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/basement-ceiling"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/basement-ceiling/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/basement-ceiling/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_povvf")
 
-[node name="1st-story" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="1st-story" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_n2aw3")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/1st-story"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/1st-story"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/1st-story/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/1st-story/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_nlqp7")
 
-[node name="ceiling-1st-story" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="ceiling-1st-story" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_nxngc")
 mesh = SubResource("ArrayMesh_v6mof")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/ceiling-1st-story"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/ceiling-1st-story"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/ceiling-1st-story/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/ceiling-1st-story/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7c5nl")
 
-[node name="wooden_beams-2" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="wooden_beams-2" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_isde2")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/wooden_beams-2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/wooden_beams-2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/wooden_beams-2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/wooden_beams-2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_n38mo")
 
-[node name="wooden_beams" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="wooden_beams" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_ftu2p")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/wooden_beams"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/wooden_beams"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/wooden_beams/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/wooden_beams/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_k8rr7")
 
-[node name="railings" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="railings" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_xql37")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/railings"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/railings"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/railings/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/railings/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_pqgra")
 
-[node name="roof-2nd_story" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="roof-2nd_story" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_3o7sc")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/roof-2nd_story"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/roof-2nd_story"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/roof-2nd_story/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/roof-2nd_story/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ptl1c")
 
-[node name="2nd_story_right_wing" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="2nd_story_right_wing" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_tbbvf")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/2nd_story_right_wing"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/2nd_story_right_wing"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/2nd_story_right_wing/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/2nd_story_right_wing/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_c2b1h")
 
-[node name="2nd-story-left-wing" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="2nd-story-left-wing" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_vb8wi")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/2nd-story-left-wing"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/2nd-story-left-wing"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/2nd-story-left-wing/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/2nd-story-left-wing/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_mcwik")
 
-[node name="floor-second-story" type="MeshInstance3D" parent="Mansion/mansion5"]
+[node name="floor-second-story" type="MeshInstance3D" parent="Mansion/Model"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 material_override = ExtResource("10_p4ouj")
 mesh = SubResource("ArrayMesh_7s0pd")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/mansion5/floor-second-story"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/floor-second-story"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/mansion5/floor-second-story/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/floor-second-story/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_whh4y")
 
-[node name="barrel" parent="Mansion/mansion5" instance=ExtResource("9_lxh53")]
+[node name="barrel" parent="Mansion/Model" instance=ExtResource("9_lxh53")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88826, -2.85, -9.48225)
 
-[node name="barrel2" parent="Mansion/mansion5" instance=ExtResource("9_lxh53")]
+[node name="barrel2" parent="Mansion/Model" instance=ExtResource("9_lxh53")]
 transform = Transform3D(0.772024, 0, 0.635593, 0, 1, 0, -0.635593, 0, 0.772024, -2.97071, -2.85, -6.72724)
 
-[node name="barrel3" parent="Mansion/mansion5" instance=ExtResource("9_lxh53")]
+[node name="barrel3" parent="Mansion/Model" instance=ExtResource("9_lxh53")]
 transform = Transform3D(0.125281, 0, -0.992121, 0, 1, 0, 0.992121, 0, 0.125281, -2.99226, -2.85, -8.82764)
 
-[node name="barrel4" parent="Mansion/mansion5" instance=ExtResource("9_lxh53")]
+[node name="barrel4" parent="Mansion/Model" instance=ExtResource("9_lxh53")]
 transform = Transform3D(-0.592323, 0.805701, 3.52183e-08, 0, -4.37114e-08, 1, 0.805701, 0.592323, 2.58912e-08, -2.71887, -2.54667, -7.35578)
 
-[node name="bed" parent="Mansion/mansion5" instance=ExtResource("10_pwdff")]
+[node name="bed" parent="Mansion/Model" instance=ExtResource("10_pwdff")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.0938, 2.85, -5.70915)
 
-[node name="workdesk" parent="Mansion/mansion5" instance=ExtResource("11_p8pbm")]
+[node name="workdesk" parent="Mansion/Model" instance=ExtResource("11_p8pbm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69195, 2.85, -4.91222)
 
-[node name="radiator-wall" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+[node name="radiator-wall" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1998, 2.96071, -5.82447)
 
-[node name="radiator-wall2" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+[node name="radiator-wall2" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.55674, 2.97489, -9.90827)
 
-[node name="oven" parent="Mansion/mansion5" instance=ExtResource("13_dpf25")]
+[node name="oven" parent="Mansion/Model" instance=ExtResource("13_dpf25")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81994, -1.19209e-07, 0.552286)
 
-[node name="sink" parent="Mansion/mansion5" instance=ExtResource("15_hh1py")]
+[node name="sink" parent="Mansion/Model" instance=ExtResource("15_hh1py")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55018, 0.744995, 1.72216)
 
-[node name="radiator-wall3" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+[node name="radiator-wall3" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.13404, 2.98874, -1.49977)
 
-[node name="radiator-wall4" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+[node name="radiator-wall4" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000179768, 2.97553, 0.43059)
 
-[node name="radiator-wall5" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+[node name="radiator-wall5" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.73538, 3.00254, -3.09977)
 
-[node name="radiator-wall6" parent="Mansion/mansion5" instance=ExtResource("13_ge3pu")]
+[node name="radiator-wall6" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.58893, 2.97352, 2.1)
 
 [node name="Lights" type="Node" parent="Mansion"]
