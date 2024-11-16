@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c82rfbjdt05py"]
+[gd_scene load_steps=6 format=3 uid="uid://c82rfbjdt05py"]
 
 [ext_resource type="Script" path="res://scripts/main/main.gd" id="1_42f4o"]
 [ext_resource type="PackedScene" uid="uid://4wndb8147fjy" path="res://scenes/test_level_00.tscn" id="2_6hw2h"]
 [ext_resource type="PackedScene" uid="uid://xd0icpyvik4w" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="3_vp4fl"]
 [ext_resource type="PackedScene" uid="uid://cr4ffolpruv74" path="res://scenes/ui/inventory_menu/inventory_menu.tscn" id="4_o5nqq"]
 [ext_resource type="PackedScene" uid="uid://747uiig7qjkh" path="res://scenes/managers/inventory/inventory_manager.tscn" id="5_cegwg"]
-[ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="6_bvyon"]
 
 [node name="Main" type="Node"]
 process_mode = 3
@@ -32,9 +31,6 @@ inventory_manager = NodePath("../../Managers/InventoryManager")
 [node name="Managers" type="Node" parent="."]
 
 [node name="InventoryManager" parent="Managers" instance=ExtResource("5_cegwg")]
-
-[node name="TestItemObject1" parent="." instance=ExtResource("6_bvyon")]
-transform = Transform3D(1, -0.000509935, 0.000669236, 0.000509533, 1, 0.000593858, -0.000669542, -0.000593513, 1, -11.2384, 0, -13.5838)
 
 [connection signal="pause_menu_closed" from="MenuLayer/PauseMenu" to="." method="_on_pause_menu_pause_menu_closed"]
 [connection signal="inventory_closed" from="MenuLayer/InventoryMenu" to="." method="_on_inventory_menu_inventory_closed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=66 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=67 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
+[ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
 [ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="4_1w8h4"]
 [ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
 [ext_resource type="PackedScene" uid="uid://bck73kb2hhe6y" path="res://assets/models/table-simple-00-col.glb" id="6_mtrem"]
@@ -2337,3 +2338,6 @@ transform = Transform3D(0.00705113, -0.999975, 0, 0.999975, 0.00705113, 0, 0, 0,
 
 [node name="Box1" parent="Mansion/Items" instance=ExtResource("4_1w8h4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2824, 2.62257, -18.1679)
+
+[node name="TestItemObject1" parent="Mansion/Items" instance=ExtResource("3_wpn6b")]
+transform = Transform3D(1, -0.000509935, 0.000669236, 0.000509533, 1, 0.000593858, -0.000669542, -0.000593513, 1, -11.2384, 0, -13.5838)
