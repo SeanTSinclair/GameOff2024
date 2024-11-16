@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dntcpsxggjkef"]
-
-[ext_resource type="Texture2D" uid="uid://cw2kerj2peejj" path="res://objects/mansion3_mansion-3-tex-9.png" id="1_unb36"]
-
-[resource]
-albedo_texture = ExtResource("1_unb36")
-metallic_specular = 0.0
-texture_filter = 2
-texture_repeat = false

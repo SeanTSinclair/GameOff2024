@@ -36,4 +36,3 @@ inventory_manager = NodePath("../../Managers/InventoryManager")
 [connection signal="inventory_closed" from="MenuLayer/InventoryMenu" to="." method="_on_inventory_menu_inventory_closed"]
 
 [editable path="WorldLayer/TestLevel00"]
-[editable path="WorldLayer/TestLevel00/Mansion/Characters/officialfather"]
