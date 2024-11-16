@@ -8,6 +8,7 @@ const MAIN_MENU := "res://scenes/ui/main_menu/main_menu.tscn"
 
 var is_closed := false
 var options_scene := preload("res://scenes/ui/options_menu/options_menu.tscn")
+var options_instance: OptionsMenu
 
 var open: bool:
 	set(value):
@@ -35,6 +36,8 @@ func _close() -> void:
 	is_closed = true
 	pause_menu_closed.emit()
 
+	_on_options_closed()
+
 
 func _on_resume_button_pressed() -> void:
 	open = false
@@ -48,12 +51,13 @@ func _on_quit_button_pressed() -> void:
 func _on_options_button_pressed() -> void:
 	panel_container.visible = false
 
-	var options_instance: OptionsMenu = options_scene.instantiate()
+	options_instance = options_scene.instantiate()
 	add_child(options_instance)
-	options_instance.back_pressed.connect(_on_options_closed.bind(options_instance))
+	options_instance.back_pressed.connect(_on_options_closed)
 
 
-func _on_options_closed(instance: OptionsMenu) -> void:
+func _on_options_closed() -> void:
 	panel_container.visible = true
 
-	instance.queue_free()
+	if options_instance:
+		options_instance.queue_free()
