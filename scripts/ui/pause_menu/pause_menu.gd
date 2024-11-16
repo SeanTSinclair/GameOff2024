@@ -59,5 +59,5 @@ func _on_options_button_pressed() -> void:
 func _on_options_closed() -> void:
 	panel_container.visible = true
 
-	if options_instance:
+	if is_instance_valid(options_instance):
 		options_instance.queue_free()
