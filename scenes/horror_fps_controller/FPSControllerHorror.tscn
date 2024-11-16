@@ -32,6 +32,7 @@ script = ExtResource("2_n4mpt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456626, 0)
 
 [node name="InteractionRay" parent="Head" instance=ExtResource("3_akbrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456626, 0)
 
 [node name="HandItemSlot" type="Node3D" parent="Head"]
 unique_name_in_owner = true
