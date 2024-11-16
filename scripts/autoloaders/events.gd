@@ -11,3 +11,9 @@ signal item_unequipped(item: Item)
 
 @warning_ignore("unused_signal")
 signal equipped_item_activation
+
+@warning_ignore("unused_signal")
+signal journal(message: String)
+
+@warning_ignore("unused_signal")
+signal feedback_given(time: int, message: String)
