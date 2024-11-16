@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://c82rfbjdt05py"]
+[gd_scene load_steps=9 format=3 uid="uid://c82rfbjdt05py"]
 
 [ext_resource type="Script" path="res://scripts/main/main.gd" id="1_42f4o"]
 [ext_resource type="PackedScene" uid="uid://4wndb8147fjy" path="res://scenes/test_level_00.tscn" id="2_6hw2h"]
+[ext_resource type="PackedScene" uid="uid://dpbmloset6yc2" path="res://scenes/ui/journal_menu/feedback.tscn" id="3_6vjco"]
 [ext_resource type="PackedScene" uid="uid://xd0icpyvik4w" path="res://scenes/ui/pause_menu/pause_menu.tscn" id="3_vp4fl"]
 [ext_resource type="PackedScene" uid="uid://cr4ffolpruv74" path="res://scenes/ui/inventory_menu/inventory_menu.tscn" id="4_o5nqq"]
+[ext_resource type="PackedScene" uid="uid://86agcslpkfho" path="res://scenes/ui/journal_menu/journal_menu.tscn" id="5_5fjdc"]
 [ext_resource type="PackedScene" uid="uid://747uiig7qjkh" path="res://scenes/managers/inventory/inventory_manager.tscn" id="5_cegwg"]
+[ext_resource type="PackedScene" uid="uid://dathaidn6rgod" path="res://scenes/managers/journal/journal_manager.tscn" id="6_eg3ms"]
 
 [node name="Main" type="Node"]
 process_mode = 3
@@ -15,6 +18,8 @@ unique_name_in_owner = true
 process_mode = 1
 
 [node name="TestLevel00" parent="WorldLayer" instance=ExtResource("2_6hw2h")]
+
+[node name="Feedback" parent="WorldLayer" instance=ExtResource("3_6vjco")]
 
 [node name="MenuLayer" type="Node" parent="."]
 process_mode = 2
@@ -28,11 +33,19 @@ unique_name_in_owner = true
 visible = false
 inventory_manager = NodePath("../../Managers/InventoryManager")
 
+[node name="JournalMenu" parent="MenuLayer" node_paths=PackedStringArray("journal_manager") instance=ExtResource("5_5fjdc")]
+unique_name_in_owner = true
+visible = false
+journal_manager = NodePath("../../Managers/JournalManager")
+
 [node name="Managers" type="Node" parent="."]
 
 [node name="InventoryManager" parent="Managers" instance=ExtResource("5_cegwg")]
 
+[node name="JournalManager" parent="Managers" instance=ExtResource("6_eg3ms")]
+
 [connection signal="pause_menu_closed" from="MenuLayer/PauseMenu" to="." method="_on_pause_menu_pause_menu_closed"]
 [connection signal="inventory_closed" from="MenuLayer/InventoryMenu" to="." method="_on_inventory_menu_inventory_closed"]
+[connection signal="journal_closed" from="MenuLayer/JournalMenu" to="." method="_on_journal_menu_journal_closed"]
 
 [editable path="WorldLayer/TestLevel00"]

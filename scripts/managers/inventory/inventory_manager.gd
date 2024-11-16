@@ -105,3 +105,4 @@ func find_recipe(item1: Item, item2: Item) -> Recipe:
 
 func _on_picked_up_item(item: Item) -> void:
 	add(item)
+	Events.journal.emit("Picked up " + item.name)
