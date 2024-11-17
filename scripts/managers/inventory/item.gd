@@ -7,3 +7,4 @@ extends Resource
 @export var item_scene: PackedScene
 @export_multiline var description: String = ""
 @export var equippable: bool
+@export var hint_message: String

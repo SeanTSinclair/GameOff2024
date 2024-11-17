@@ -8,10 +8,15 @@ signal journal_event_written(time: int, message: String)
 
 func _ready() -> void:
 	Events.journal.connect(_on_journal)
+	Events.feedback.connect(_on_feedback)
 
 
 func _on_journal(message: String) -> void:
 	journal_event_written.emit(get_current_time_in_sec(), message)
+
+
+func _on_feedback(message: String) -> void:
+	Events.feedback_given.emit(get_current_time_in_sec(), message)
 
 
 func get_current_time_in_sec() -> int:
