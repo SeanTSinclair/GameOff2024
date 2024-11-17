@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=67 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -436,6 +436,20 @@ data = PackedVector3Array(1.4, -9.9, -2.85, 0, -7.3, -2.85, 8.88178e-16, -9.9, -
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xxooh"]
 data = PackedVector3Array(-0.9, 0.05, 1.46, 0.9, 0.05, 1.46, -0.9, -0.05, 1.46, 0.9, 0.05, 1.46, 0.9, -0.05, 1.46, -0.9, -0.05, 1.46, 0.9, 0.05, -1.46, -0.9, 0.05, -1.46, 0.9, -0.05, -1.46, -0.9, 0.05, -1.46, -0.9, -0.05, -1.46, 0.9, -0.05, -1.46, 0.9, 0.05, 1.46, 0.9, 0.05, -1.46, 0.9, -0.05, 1.46, 0.9, 0.05, -1.46, 0.9, -0.05, -1.46, 0.9, -0.05, 1.46, -0.9, 0.05, -1.46, -0.9, 0.05, 1.46, -0.9, -0.05, -1.46, -0.9, 0.05, 1.46, -0.9, -0.05, 1.46, -0.9, -0.05, -1.46, 0.9, 0.05, 1.46, -0.9, 0.05, 1.46, 0.9, 0.05, -1.46, -0.9, 0.05, 1.46, -0.9, 0.05, -1.46, 0.9, 0.05, -1.46, -0.9, -0.05, 1.46, 0.9, -0.05, 1.46, -0.9, -0.05, -1.46, 0.9, -0.05, 1.46, 0.9, -0.05, -1.46, -0.9, -0.05, -1.46)
 
+[sub_resource type="Curve3D" id="Curve3D_g3ifb"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.8435, 0, -14.3235, 0, 0, 0, 0, 0, 0, -8.62808, 0, -14.3433, 0, 0, 0, 0, 0, 0, -8.84336, 0, -14.3457, 0, 0, 0, 0, 0, 0, -8.8189, 0, -12.8754, 0, 0, 0, 0, 0, 0, -8.54995, 0, -12.8748, 0, 0, 0, 0, 0, 0, -2.62251, 0, -12.862, 0, 0, 0, 0, 0, 0, -2.6028, 0, -11.3842, 0, 0, 0, 0, 0, 0, -2.74106, 0, -11.0557, 0, 0, 0, 0, 0, 0, -4.1752, 0, -7.64783, 0, 0, 0, 0, 0, 0, -2.44711, 0, -12.8788, 0, 0, 0, 0, 0, 0, -6.8435, 0, -14.3235),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 11
+
+[sub_resource type="Curve3D" id="Curve3D_1n5rm"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -13.2577, 0, -12.9301, 0, 0, 0, 0, 0, 0, -11.3272, 0, -12.6966, 0, 0, 0, 0, 0, 0, -11.3428, 0, -13.6462, 0, 0, 0, 0, 0, 0, -11.0937, 0, -12.6654, 0, 0, 0, 0, 0, 0, -13.2577, 0, -12.9301),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
 [node name="TestLevel00" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -730,11 +744,13 @@ omni_range = 7.928
 
 [node name="Characters" type="Node" parent="Mansion"]
 
-[node name="Father" parent="Mansion/Characters" instance=ExtResource("12_w7bug")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.06, 0, -13.928)
+[node name="Father" parent="Mansion/Characters" node_paths=PackedStringArray("path_to_follow") instance=ExtResource("12_w7bug")]
+transform = Transform3D(-0.011121, 0, -0.999934, 0, 1, 0, 0.999934, 0, -0.011121, -6.8435, 0, -14.3235)
+path_to_follow = NodePath("../../Paths/FatherPath/PathFollow3D")
 
-[node name="Mother" parent="Mansion/Characters" instance=ExtResource("11_k7m57")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4102, 0.0138543, -13.1076)
+[node name="Mother" parent="Mansion/Characters" node_paths=PackedStringArray("path_to_follow") instance=ExtResource("11_k7m57")]
+transform = Transform3D(0.120093, 0, 0.992763, 0, 1, 0, -0.992763, 0, 0.120093, -13.2577, 0, -12.9301)
+path_to_follow = NodePath("../../Paths/MotherPath/PathFollow3D")
 
 [node name="Grandmother" parent="Mansion/Characters" instance=ExtResource("12_hrdkg")]
 transform = Transform3D(0.359823, 0, -0.174721, 0, 0.4, 0, 0.174721, 0, 0.359823, -5.123, -0.019, -11.493)
@@ -942,5 +958,27 @@ transform = Transform3D(-4.37114e-08, 0.546102, 0.837719, 0, 0.837719, -0.546102
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Items/stairs_col5"]
 shape = SubResource("ConcavePolygonShape3D_xxooh")
+
+[node name="Paths" type="Node" parent="Mansion"]
+
+[node name="FatherPath" type="Path3D" parent="Mansion/Paths"]
+curve = SubResource("Curve3D_g3ifb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Mansion/Paths/FatherPath"]
+transform = Transform3D(0.0111211, 0, 0.999934, 0, 1, 0, -0.999934, 0, 0.0111211, -6.8435, 0, -14.3235)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Mansion/Paths/FatherPath/PathFollow3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+remote_path = NodePath("../../../../Characters/Father")
+
+[node name="MotherPath" type="Path3D" parent="Mansion/Paths"]
+curve = SubResource("Curve3D_1n5rm")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Mansion/Paths/MotherPath"]
+transform = Transform3D(-0.120093, 0, -0.992763, 0, 1, 0, 0.992763, 0, -0.120093, -13.2577, 0, -12.9301)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Mansion/Paths/MotherPath/PathFollow3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+remote_path = NodePath("../../../../Characters/Mother")
 
 [editable path="Mansion/Characters/CrawlingFather"]
