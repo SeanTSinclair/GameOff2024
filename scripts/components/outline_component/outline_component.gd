@@ -16,8 +16,14 @@ func _ready() -> void:
 
 
 func show_outline() -> void:
+	if not mesh_instance:
+		return
+
 	mesh_instance.material_overlay = outline_material
 
 
 func hide_outline() -> void:
+	if not mesh_instance:
+		return
+
 	mesh_instance.material_overlay = null
