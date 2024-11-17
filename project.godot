@@ -28,15 +28,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"father": "res://scenes/dialogic/characters/father.dch",
-"grandmother": "res://scenes/dialogic/characters/grandmother.dch",
-"mother": "res://scenes/dialogic/characters/mother.dch"
+"father": "res://dialogic/characters/father.dch"
 }
 directories/dtl_directory={
-"testTimeline": "res://scenes/dialogic/timeline/testTimeline.dtl"
+"testTimeline": "res://dialogic/timeline/testTimeline.dtl"
 }
-layout/style_list=["res://scenes/dialogic/test.tres", "res://scenes/dialogic/default_style.tres"]
-layout/default_style="res://scenes/dialogic/default_style.tres"
+layout/style_list=["res://dialogic/characters/default.tres"]
+layout/default_style="res://dialogic/characters/default.tres"
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
@@ -58,6 +56,7 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+variables={}
 
 [display]
 
