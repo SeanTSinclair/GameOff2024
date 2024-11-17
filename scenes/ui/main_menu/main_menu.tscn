@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://1rq421t2hdrq"]
+[gd_scene load_steps=52 format=3 uid="uid://1rq421t2hdrq"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu/main_menu.gd" id="1_vagoh"]
 [ext_resource type="Texture2D" uid="uid://d3ftwbof0navg" path="res://assets/balnk_no_name.png" id="2_3ixmi"]
@@ -194,6 +194,9 @@ animations = [{
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4lwsb"]
 
+[sub_resource type="FontVariation" id="FontVariation_44r32"]
+spacing_glyph = 8
+
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_vagoh")
 
@@ -237,8 +240,9 @@ theme_override_constants/separation = 100
 
 [node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "The Game"
+theme_override_fonts/font = SubResource("FontVariation_44r32")
+theme_override_font_sizes/font_size = 48
+text = "SECLICA"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)

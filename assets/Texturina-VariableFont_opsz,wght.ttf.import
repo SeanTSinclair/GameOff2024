@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://bagvpwbyv8mqd"
-path="res://.godot/imported/PixelifySans.ttf-66c7c9456dcd7906679fee240bcc72a4.fontdata"
+uid="uid://d2qbsjmpma811"
+path="res://.godot/imported/Texturina-VariableFont_opsz,wght.ttf-f5458e3e96a2a546f27923ff5162f84b.fontdata"
 
 [deps]
 
-source_file="res://assets/PixelifySans.ttf"
-dest_files=["res://.godot/imported/PixelifySans.ttf-66c7c9456dcd7906679fee240bcc72a4.fontdata"]
+source_file="res://assets/Texturina-VariableFont_opsz,wght.ttf"
+dest_files=["res://.godot/imported/Texturina-VariableFont_opsz,wght.ttf-f5458e3e96a2a546f27923ff5162f84b.fontdata"]
 
 [params]
 

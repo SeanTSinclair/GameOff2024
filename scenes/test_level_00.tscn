@@ -745,11 +745,11 @@ omni_range = 7.928
 [node name="Characters" type="Node" parent="Mansion"]
 
 [node name="Father" parent="Mansion/Characters" node_paths=PackedStringArray("path_to_follow") instance=ExtResource("12_w7bug")]
-transform = Transform3D(-0.011121, 0, -0.999934, 0, 1, 0, 0.999934, 0, -0.011121, -6.8435, 0, -14.3235)
+transform = Transform3D(-0.0110944, 0, -0.999934, 0, 1, 0, 0.999934, 0, -0.0110944, -6.8435, 0, -14.3235)
 path_to_follow = NodePath("../../Paths/FatherPath/PathFollow3D")
 
 [node name="Mother" parent="Mansion/Characters" node_paths=PackedStringArray("path_to_follow") instance=ExtResource("11_k7m57")]
-transform = Transform3D(0.120093, 0, 0.992763, 0, 1, 0, -0.992763, 0, 0.120093, -13.2577, 0, -12.9301)
+transform = Transform3D(0.120078, 0, 0.992765, 0, 1, 0, -0.992765, 0, 0.120078, -13.2577, 0, -12.9301)
 path_to_follow = NodePath("../../Paths/MotherPath/PathFollow3D")
 
 [node name="Grandmother" parent="Mansion/Characters" instance=ExtResource("12_hrdkg")]
@@ -965,7 +965,7 @@ shape = SubResource("ConcavePolygonShape3D_xxooh")
 curve = SubResource("Curve3D_g3ifb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Mansion/Paths/FatherPath"]
-transform = Transform3D(0.0111211, 0, 0.999934, 0, 1, 0, -0.999934, 0, 0.0111211, -6.8435, 0, -14.3235)
+transform = Transform3D(0.0110945, 0, 0.999934, 0, 1, 0, -0.999934, 0, 0.0110945, -6.8435, 0, -14.3235)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Mansion/Paths/FatherPath/PathFollow3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -975,7 +975,7 @@ remote_path = NodePath("../../../../Characters/Father")
 curve = SubResource("Curve3D_1n5rm")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Mansion/Paths/MotherPath"]
-transform = Transform3D(-0.120093, 0, -0.992763, 0, 1, 0, 0.992763, 0, -0.120093, -13.2577, 0, -12.9301)
+transform = Transform3D(-0.120078, 0, -0.992765, 0, 1, 0, 0.992765, 0, -0.120078, -13.2577, 0, -12.9301)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Mansion/Paths/MotherPath/PathFollow3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
