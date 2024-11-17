@@ -1,5 +1,6 @@
 extends Node
 
+var max_power = 100.0
 var power = 100.0
 
 
@@ -15,6 +16,9 @@ func _process(_delta):
 
 func get_power():
 	return power
+	
+func get_max_power():
+	return max_power
 
 
 func remove_power(usage: float):
