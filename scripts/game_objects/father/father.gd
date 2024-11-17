@@ -1,8 +1,8 @@
 class_name Father
 extends Node3D
 
-@onready var animation_player: AnimationPlayer = $officialfather/AnimationPlayer
 @onready var interaction_component: InteractionComponent = $InteractionComponent
+@onready var animation_player: AnimationPlayer = $FatherFullAnimation_2/AnimationPlayer
 
 
 func _ready():

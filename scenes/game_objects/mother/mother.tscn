@@ -22,7 +22,7 @@ transform = Transform3D(0.620403, 0, 0, 0, 1, 0, 0, 0, 0.560503, 0.037279, 0.952
 shape = SubResource("CapsuleShape3D_ct51m")
 
 [node name="MotherOfificialAnimation" parent="." instance=ExtResource("4_ajbk3")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 0, 0, 0)
 
 [node name="Skeleton3D" parent="MotherOfificialAnimation/Armature" index="0"]
 bones/0/position = Vector3(10.4493, -1.85399, -245.675)
