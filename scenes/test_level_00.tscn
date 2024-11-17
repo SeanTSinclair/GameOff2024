@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=63 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cw2kerj2peejj" path="res://assets/materials/mansion-texture.png" id="10_xtgia"]
 [ext_resource type="PackedScene" uid="uid://c7xmnonleveug" path="res://scenes/game_objects/mother/mother.tscn" id="11_k7m57"]
 [ext_resource type="PackedScene" uid="uid://ctra4y86om45c" path="res://objects/small-items/workdesk.glb" id="11_p8pbm"]
+[ext_resource type="PackedScene" uid="uid://cspfovy4up3gj" path="res://scenes/game_objects/grandmother/grandmother.tscn" id="12_hrdkg"]
 [ext_resource type="PackedScene" uid="uid://3g6evcig48il" path="res://scenes/game_objects/father/father.tscn" id="12_w7bug"]
 [ext_resource type="PackedScene" uid="uid://1gmyn147ohue" path="res://objects/small-items/double-bed.glb" id="12_y4ms3"]
 [ext_resource type="PackedScene" uid="uid://bsjrmxr00uo75" path="res://objects/small-items/oven.glb" id="13_dpf25"]
@@ -732,6 +733,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.05979, -0.245676, -13.9282
 
 [node name="Mother" parent="Mansion/Characters" instance=ExtResource("11_k7m57")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4102, 0.0138543, -13.1076)
+
+[node name="Grandmother" parent="Mansion/Characters" instance=ExtResource("12_hrdkg")]
+transform = Transform3D(0.359823, 0, -0.174721, 0, 0.4, 0, 0.174721, 0, 0.359823, -5.123, -0.019, -11.493)
 
 [node name="Objects" type="Node" parent="Mansion"]
 
