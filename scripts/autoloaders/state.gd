@@ -16,7 +16,8 @@ func _process(_delta):
 
 func get_power():
 	return power
-	
+
+
 func get_max_power():
 	return max_power
 
