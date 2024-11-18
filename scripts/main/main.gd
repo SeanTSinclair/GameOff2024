@@ -3,7 +3,7 @@ extends Node
 
 enum MainStates { ACTIVE, INVENTORY_MENU, JOURNAL_MENU, PAUSE_MENU }
 
-#var pause_menu_scene := preload("res://scenes/ui/pause_menu/pause_menu.tscn")
+const FIND_BLACKLIGHT = preload("res://resources/tasks/find_blacklight.tres")
 
 var state: MainStates = MainStates.ACTIVE
 
@@ -11,6 +11,15 @@ var state: MainStates = MainStates.ACTIVE
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var inventory_menu: InventoryMenu = %InventoryMenu
 @onready var journal_menu: JournalMenu = %JournalMenu
+
+
+func _ready() -> void:
+	# Trigger the first task - Should be removed when we have an actual first task
+	call_deferred("_initial_tasks")
+
+
+func _initial_tasks() -> void:
+	Events.task_received.emit(FIND_BLACKLIGHT)
 
 
 func _input(event: InputEvent) -> void:

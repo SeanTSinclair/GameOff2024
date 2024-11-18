@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://bjn8omuvof6ys"]
+
+[ext_resource type="Script" path="res://scripts/managers/journal/task.gd" id="1_a55px"]
+
+[resource]
+script = ExtResource("1_a55px")
+id = "FINDBATTERIES"
+description = "Find batteries"
+task_received_message = "The blacklight is out of batteries"
+task_completed_message = "I managed to put new batteries into the blacklight"

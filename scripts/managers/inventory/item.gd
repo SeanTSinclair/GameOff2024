@@ -8,3 +8,6 @@ extends Resource
 @export_multiline var description: String = ""
 @export var equippable: bool
 @export var hint_message: String
+
+@export var pickup_completes_task: Task
+@export var pickup_triggers_task: Task

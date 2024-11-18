@@ -109,3 +109,8 @@ func _on_picked_up_item(item: Item) -> void:
 	if item.hint_message:
 		message += ". " + item.hint_message
 	Events.journal.emit(message)
+
+	if item.pickup_completes_task:
+		Events.task_completed.emit(item.pickup_completes_task)
+	if item.pickup_triggers_task:
+		Events.task_received.emit(item.pickup_triggers_task)
