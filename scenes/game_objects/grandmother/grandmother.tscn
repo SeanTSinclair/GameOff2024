@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cspfovy4up3gj"]
+[gd_scene load_steps=5 format=3 uid="uid://cspfovy4up3gj"]
 
 [ext_resource type="Script" path="res://scripts/game_objects/grandmother/grandmother.gd" id="1_8hi5a"]
-[ext_resource type="PackedScene" uid="uid://xwdbemxk6fio" path="res://scenes/components/outline_component/outline_component.tscn" id="2_3ch2p"]
 [ext_resource type="PackedScene" uid="uid://bkxp5t2pd7n4k" path="res://scenes/components/interaction_component/interaction_component.tscn" id="3_sxtuw"]
 [ext_resource type="PackedScene" uid="uid://bx5xsnkjhemte" path="res://assets/models/grandmother/GrannOfficialAnimation.glb" id="4_nmfln"]
 
@@ -9,10 +8,6 @@
 
 [node name="Grandmother" type="Node3D"]
 script = ExtResource("1_8hi5a")
-
-[node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance", "interaction_component") instance=ExtResource("2_3ch2p")]
-mesh_instance = NodePath("../GrannOfficialAnimation/Armature/Skeleton3D/Grandma")
-interaction_component = NodePath("../InteractionComponent")
 
 [node name="InteractionComponent" parent="." instance=ExtResource("3_sxtuw")]
 prompt_message = "Talk"
