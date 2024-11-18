@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="DialogicGlossary" load_steps=2 format=3 uid="uid://cijg708ggb2jv"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Modules/Glossary/glossary_resource.gd" id="1_54a3s"]
+
+[resource]
+script = ExtResource("1_54a3s")
+entries = {
+"relic": {
+"case_sensitive": true,
+"name": "relic",
+"text": "An unkown relic that is hiding in the basement",
+"title": "The relic"
+}
+}
+enabled = true
+_translation_id = ""
+_translation_keys = {}
