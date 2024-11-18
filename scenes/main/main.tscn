@@ -20,13 +20,13 @@ process_mode = 1
 [node name="TestLevel00" parent="WorldLayer" instance=ExtResource("2_6hw2h")]
 
 [node name="Father" parent="WorldLayer/TestLevel00/Mansion/Characters" index="0"]
-transform = Transform3D(-0.0110944, 0, -0.999934, 0, 1, 0, 0.999934, 0, -0.0110944, -6.8435, 0, -14.3235)
+transform = Transform3D(-0.0110944, 0, -0.999933, 0, 1, 0, 0.999933, 0, -0.0110944, -6.8435, 0, -14.3235)
 
 [node name="Mother" parent="WorldLayer/TestLevel00/Mansion/Characters" index="1"]
 transform = Transform3D(0.120078, 0, 0.992765, 0, 1, 0, -0.992765, 0, 0.120078, -13.2577, 0, -12.9301)
 
 [node name="PathFollow3D" parent="WorldLayer/TestLevel00/Mansion/Paths/FatherPath" index="0"]
-transform = Transform3D(0.0110945, 0, 0.999934, 0, 1, 0, -0.999934, 0, 0.0110945, -6.8435, 0, -14.3235)
+transform = Transform3D(0.0110945, 0, 0.999933, 0, 1, 0, -0.999933, 0, 0.0110945, -6.8435, 0, -14.3235)
 
 [node name="PathFollow3D" parent="WorldLayer/TestLevel00/Mansion/Paths/MotherPath" index="0"]
 transform = Transform3D(-0.120078, 0, -0.992765, 0, 1, 0, 0.992765, 0, -0.120078, -13.2577, 0, -12.9301)

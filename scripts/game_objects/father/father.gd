@@ -5,6 +5,7 @@ extends Node3D
 @export var path_to_follow: PathFollow3D
 
 var is_stopped := false
+var chatting = false
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
 @onready var animation_player: AnimationPlayer = $FatherFullAnimation_2/AnimationPlayer
@@ -15,6 +16,7 @@ func _ready():
 	animation_player.get_animation("Idle").loop_mode = Animation.LOOP_LINEAR
 	animation_player.get_animation("Walking").loop_mode = Animation.LOOP_LINEAR
 	interaction_component.interacted.connect(_on_interacted)
+	Dialogic.signal_event.connect(_on_dialogue_ended)
 
 
 func _physics_process(delta: float) -> void:
@@ -29,4 +31,20 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_interacted() -> void:
-	print("implement talk to father here")
+	if chatting:
+		return
+	run_dialogue("testTimeline")
+
+
+func run_dialogue(dialouge_string):
+	chatting = true
+	is_stopped = true
+	print("Dialogue started: " + dialouge_string)
+	Dialogic.start(dialouge_string)
+
+
+func _on_dialogue_ended(argument: String):
+	print("Dialoge ended!")
+	print(argument)
+	chatting = false
+	is_stopped = false
