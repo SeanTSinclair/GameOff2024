@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://bm26n8r6ak8nc"]
+
+[ext_resource type="Script" path="res://scripts/managers/journal/task.gd" id="1_owr3t"]
+
+[resource]
+script = ExtResource("1_owr3t")
+id = "FINDBLACKLIGHT"
+description = "Find my blacklight"
+task_received_message = "I should find my blacklight"
+task_completed_message = "I found my trusty old blacklight"

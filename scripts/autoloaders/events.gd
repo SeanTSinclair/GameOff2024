@@ -20,3 +20,9 @@ signal feedback(message: String)
 
 @warning_ignore("unused_signal")
 signal feedback_given(time: int, message: String)
+
+@warning_ignore("unused_signal")
+signal task_received(task: Task)
+
+@warning_ignore("unused_signal")
+signal task_completed(task: Task)
