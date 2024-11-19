@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://wa0junudfbi0"]
+[gd_scene load_steps=10 format=4 uid="uid://wa0junudfbi0"]
 
 [ext_resource type="Script" path="res://scripts/fps_controller_horror/fps_controller_horror.gd" id="1_h3pat"]
 [ext_resource type="Script" path="res://scripts/fps_controller_horror/horror_fps_camera.gd" id="2_n4mpt"]
 [ext_resource type="Script" path="res://scenes/horror_fps_controller/footstep.gd" id="3_4bkvp"]
 [ext_resource type="PackedScene" uid="uid://j85kjm3bqby5" path="res://scenes/components/interaction_ray/interaction_ray.tscn" id="3_akbrg"]
 [ext_resource type="Script" path="res://scenes/horror_fps_controller/hand_slot.gd" id="4_ed7aw"]
+[ext_resource type="Script" path="res://scripts/fps_controller_horror/reticle.gd" id="6_r1p75"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3plaa"]
 
@@ -45,5 +46,29 @@ volume_db = -6.2
 autoplay = true
 bus = &"sfx"
 script = ExtResource("3_4bkvp")
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Reticle" type="CenterContainer" parent="UserInterface"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_r1p75")
 
 [connection signal="finished" from="SoundFootsteps" to="SoundFootsteps" method="_on_finished"]
