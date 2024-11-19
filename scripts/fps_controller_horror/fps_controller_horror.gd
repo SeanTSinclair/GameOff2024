@@ -15,6 +15,7 @@ var is_crouching = false
 @onready var sound_footsteps = $SoundFootsteps
 @onready var collision_shape = $CollisionShape3D
 @onready var head = $Head
+@onready var up_ray = $UpRay
 
 
 func _physics_process(delta: float) -> void:
@@ -61,7 +62,7 @@ func handle_crouch() -> void:
 		if not is_crouching:
 			is_crouching = true
 			adjust_crouch(true)
-	elif is_crouching:
+	elif is_crouching and not up_ray.is_colliding():
 		is_crouching = false
 		adjust_crouch(false)
 
