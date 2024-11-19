@@ -25,6 +25,9 @@ script = ExtResource("1_h3pat")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_3plaa")
 
+[node name="UpRay" type="RayCast3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0.413048, 0)
+
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
 script = ExtResource("2_n4mpt")
