@@ -466,7 +466,6 @@ shadow_blur = 0.0
 
 [node name="Player" parent="." instance=ExtResource("23_6m7vs")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10.582, 0.70833, -10.4276)
-base_speed = 5.0
 
 [node name="Mansion" type="Node3D" parent="."]
 
