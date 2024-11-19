@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://scenes/game_objects/blacklight/blacklight.tscn" id="7_pgpy4"]
 [ext_resource type="PackedScene" uid="uid://fg2yuj2gv58t" path="res://assets/models/mansion/main-door_mansion.glb" id="7_pksne"]
 [ext_resource type="PackedScene" uid="uid://c303raquq3yql" path="res://objects/small-items/barrel.glb" id="9_lxh53"]
-[ext_resource type="Material" uid="uid://dntcpsxggjkef" path="res://assets/materials/mansion-material.tres" id="10_p4ouj"]
+[ext_resource type="Material" path="res://assets/materials/mansion-material.tres" id="10_p4ouj"]
 [ext_resource type="PackedScene" uid="uid://d2aveiic7fccs" path="res://objects/small-items/bed.glb" id="10_pwdff"]
 [ext_resource type="Texture2D" uid="uid://cw2kerj2peejj" path="res://assets/materials/mansion-texture.png" id="10_xtgia"]
 [ext_resource type="PackedScene" uid="uid://c7xmnonleveug" path="res://scenes/game_objects/mother/mother.tscn" id="11_k7m57"]
