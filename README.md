@@ -58,3 +58,19 @@ pip install -r requirements.txt
 ```
 
 Also - I can highly recommend lazygit if you prefer the terminal.
+
+
+# Credits
+
+## Participants
+
+- Aina
+- Espen
+- Irina
+- Kristian 
+- Marius B
+- Marius H
+- Martin
+- Sean
+- Uni
+- Vidar
