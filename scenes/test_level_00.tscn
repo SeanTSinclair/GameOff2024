@@ -466,6 +466,7 @@ shadow_blur = 0.0
 
 [node name="Player" parent="." instance=ExtResource("23_6m7vs")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10.582, 0.70833, -10.4276)
+base_speed = 5.0
 
 [node name="Mansion" type="Node3D" parent="."]
 
@@ -957,6 +958,12 @@ shape = SubResource("ConcavePolygonShape3D_xxooh")
 transform = Transform3D(-4.37114e-08, 0.546102, 0.837719, 0, 0.837719, -0.546102, -1, -2.38709e-08, -3.66178e-08, -9.788, -2.3, -19.987)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Items/stairs_col5"]
+shape = SubResource("ConcavePolygonShape3D_xxooh")
+
+[node name="stairs_col6" type="StaticBody3D" parent="Mansion/Items"]
+transform = Transform3D(-4.37114e-08, 0.422618, 0.906308, 0, 0.906308, -0.422618, -1, -1.84732e-08, -3.9616e-08, -6.78056, -3.44747, -11.3096)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Items/stairs_col6"]
 shape = SubResource("ConcavePolygonShape3D_xxooh")
 
 [node name="Paths" type="Node" parent="Mansion"]
