@@ -9,7 +9,7 @@ extends Node3D
 var active = false
 var flicker_timer: float = 0.0
 
-@onready var light = $fleshlight/Blacklight
+@onready var light = $flashlight/Blacklight
 
 
 # Called when the node enters the scene tree for the first time.

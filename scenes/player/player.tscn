@@ -34,6 +34,7 @@ script = ExtResource("2_wuyh7")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456626, 0)
+current = true
 
 [node name="InteractionRay" parent="Head" instance=ExtResource("3_tjnq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456626, 0)
