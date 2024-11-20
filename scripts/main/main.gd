@@ -11,6 +11,13 @@ var state: MainStates = MainStates.ACTIVE
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var inventory_menu: InventoryMenu = %InventoryMenu
 @onready var journal_menu: JournalMenu = %JournalMenu
+@onready var father: Father = $WorldLayer/TestLevel00/Mansion/Characters/Father
+@onready var player: CharacterBody3D = $WorldLayer/TestLevel00/Player
+
+
+func _ready():
+	print(player)
+	father.set_player(player)
 
 
 func _input(event: InputEvent) -> void:

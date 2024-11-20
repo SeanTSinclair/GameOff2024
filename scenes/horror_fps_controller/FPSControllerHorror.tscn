@@ -17,7 +17,7 @@ sampling_rate = 44100.0
 packet_sequence = SubResource("OggPacketSequence_de1uj")
 loop = true
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.000990868, -0.00176418, 0.00221086)
 script = ExtResource("1_h3pat")
 
