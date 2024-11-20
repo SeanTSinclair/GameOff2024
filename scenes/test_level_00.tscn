@@ -438,7 +438,7 @@ data = PackedVector3Array(-0.9, 0.05, 1.46, 0.9, 0.05, 1.46, -0.9, -0.05, 1.46, 
 
 [sub_resource type="Curve3D" id="Curve3D_g3ifb"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.8435, 0, -14.3235, 0, 0, 0, 0, 0, 0, -8.62808, 0, -14.3433, 0, 0, 0, 0, 0, 0, -8.84336, 0, -14.3457, 0, 0, 0, 0, 0, 0, -8.8189, 0, -12.8754, 0, 0, 0, 0, 0, 0, -8.54995, 0, -12.8748, 0, 0, 0, 0, 0, 0, -2.62251, 0, -12.862, 0, 0, 0, 0, 0, 0, -2.6028, 0, -11.3842, 0, 0, 0, 0, 0, 0, -2.74106, 0, -11.0557, 0, 0, 0, 0, 0, 0, -4.1752, 0, -7.64783, 0, 0, 0, 0, 0, 0, -2.44711, 0, -12.8788, 0, 0, 0, 0, 0, 0, -6.8435, 0, -14.3235),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.8435, 0, -14.3454, 0, 0, 0, 0, 0, 0, -8.73015, 0, -14.336, 0, 0, 0, 0, 0, 0, -8.74681, 0, -12.8748, 0, 0, 0, 0, 0, 0, -2.62251, 0, -12.862, 0, 0, 0, 0, 0, 0, -2.6028, 0, -11.3842, 0, 0, 0, 0, 0, 0, -2.74106, 0, -11.0557, 0, 0, 0, 0, 0, 0, -4.1752, 0, -7.64783, 0, 0, 0, 0, 0, 0, -2.44711, 0, -12.8788, 0, 0, 0, 0, 0, 0, -8.87039, 0, -12.858, 0, 0, 0, 0, 0, 0, -8.87768, 0, -14.349, 0, 0, 0, 0, 0, 0, -6.8435, 0, -14.3454),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 11
@@ -479,6 +479,7 @@ mesh = SubResource("ArrayMesh_tejtn")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/basement"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/basement/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_00bp4")
@@ -490,6 +491,7 @@ mesh = SubResource("ArrayMesh_kf5nb")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/basement-ceiling"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/basement-ceiling/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_povvf")
@@ -501,6 +503,7 @@ mesh = SubResource("ArrayMesh_n2aw3")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/1st-story"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/1st-story/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_nlqp7")
@@ -512,6 +515,7 @@ mesh = SubResource("ArrayMesh_v6mof")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/ceiling-1st-story"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/ceiling-1st-story/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_7c5nl")
@@ -523,6 +527,7 @@ mesh = SubResource("ArrayMesh_isde2")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/wooden_beams-2"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/wooden_beams-2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_n38mo")
@@ -534,6 +539,7 @@ mesh = SubResource("ArrayMesh_ftu2p")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/wooden_beams"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/wooden_beams/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_k8rr7")
@@ -545,6 +551,7 @@ mesh = SubResource("ArrayMesh_xql37")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/railings"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/railings/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_pqgra")
@@ -556,6 +563,7 @@ mesh = SubResource("ArrayMesh_3o7sc")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/roof-2nd_story"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/roof-2nd_story/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ptl1c")
@@ -567,6 +575,7 @@ mesh = SubResource("ArrayMesh_tbbvf")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/2nd_story_right_wing"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/2nd_story_right_wing/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_c2b1h")
@@ -578,6 +587,7 @@ mesh = SubResource("ArrayMesh_vb8wi")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/2nd-story-left-wing"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/2nd-story-left-wing/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_mcwik")
@@ -589,6 +599,7 @@ mesh = SubResource("ArrayMesh_7s0pd")
 skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/floor-second-story"]
+collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/floor-second-story/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_whh4y")
@@ -745,7 +756,7 @@ omni_range = 7.928
 [node name="Characters" type="Node" parent="Mansion"]
 
 [node name="Father" parent="Mansion/Characters" node_paths=PackedStringArray("path_to_follow") instance=ExtResource("12_w7bug")]
-transform = Transform3D(-0.0110944, 0, -0.999934, 0, 1, 0, 0.999934, 0, -0.0110944, -6.8435, 0, -14.3235)
+transform = Transform3D(0.00498204, 0, -0.999974, 0, 1, 0, 0.999974, 0, 0.00498204, -6.8435, 0, -14.3454)
 path_to_follow = NodePath("../../Paths/FatherPath/PathFollow3D")
 
 [node name="Mother" parent="Mansion/Characters" node_paths=PackedStringArray("path_to_follow") instance=ExtResource("11_k7m57")]
@@ -971,7 +982,7 @@ shape = SubResource("ConcavePolygonShape3D_xxooh")
 curve = SubResource("Curve3D_g3ifb")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Mansion/Paths/FatherPath"]
-transform = Transform3D(0.0110945, 0, 0.999934, 0, 1, 0, -0.999934, 0, 0.0110945, -6.8435, 0, -14.3235)
+transform = Transform3D(-0.00498195, 0, 0.999974, 0, 1, 0, -0.999974, 0, -0.00498195, -6.8435, 0, -14.3454)
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="Mansion/Paths/FatherPath/PathFollow3D"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
