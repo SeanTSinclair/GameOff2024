@@ -3,7 +3,7 @@ extends Node
 
 enum MainStates { ACTIVE, INVENTORY_MENU, JOURNAL_MENU, PAUSE_MENU }
 
-#var pause_menu_scene := preload("res://scenes/ui/pause_menu/pause_menu.tscn")
+const FIND_BLACKLIGHT = preload("res://resources/tasks/find_blacklight.tres")
 
 var state: MainStates = MainStates.ACTIVE
 
@@ -17,6 +17,15 @@ var state: MainStates = MainStates.ACTIVE
 
 func _ready():
 	father.set_player(player)
+
+
+func _ready() -> void:
+	# Trigger the first task - Should be removed when we have an actual first task
+	call_deferred("_initial_tasks")
+
+
+func _initial_tasks() -> void:
+	Events.task_received.emit(FIND_BLACKLIGHT)
 
 
 func _input(event: InputEvent) -> void:
@@ -92,6 +101,11 @@ func menu_closed() -> void:
 	state = MainStates.ACTIVE
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
+	call_deferred("signal_unpaused")
+
+
+func signal_unpaused() -> void:
+	Events.game_unpaused.emit()
 
 
 func _on_inventory_menu_inventory_closed() -> void:

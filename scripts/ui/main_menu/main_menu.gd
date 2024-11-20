@@ -27,3 +27,7 @@ func _on_options_closed(instance: OptionsMenu) -> void:
 	panel_container.visible = true
 
 	instance.queue_free()
+
+
+func _on_credits_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/credits/credits.tscn")

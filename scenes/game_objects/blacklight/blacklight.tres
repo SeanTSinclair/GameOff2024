@@ -1,8 +1,10 @@
-[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://ch5ye25fdbg1"]
+[gd_resource type="Resource" script_class="Item" load_steps=6 format=3 uid="uid://ch5ye25fdbg1"]
 
 [ext_resource type="Texture2D" uid="uid://bnyxj51377odc" path="res://assets/blacklight-item-icon.png" id="1_onden"]
 [ext_resource type="PackedScene" uid="uid://c3arwen67n1wu" path="res://scenes/game_objects/blacklight/blacklight-item-scene.tscn" id="2_b8jar"]
 [ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="3_ko765"]
+[ext_resource type="Resource" uid="uid://bm26n8r6ak8nc" path="res://resources/tasks/find_blacklight.tres" id="3_vjp47"]
+[ext_resource type="Resource" uid="uid://bjn8omuvof6ys" path="res://resources/tasks/find_batteries.tres" id="4_xb2av"]
 
 [resource]
 script = ExtResource("3_ko765")
@@ -24,3 +26,6 @@ Even more lines
 
 And even more lines again"
 equippable = true
+hint_message = "This looks like my old blacklight"
+pickup_completes_task = ExtResource("3_vjp47")
+pickup_triggers_task = ExtResource("4_xb2av")

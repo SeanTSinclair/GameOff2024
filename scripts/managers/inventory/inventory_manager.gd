@@ -105,4 +105,12 @@ func find_recipe(item1: Item, item2: Item) -> Recipe:
 
 func _on_picked_up_item(item: Item) -> void:
 	add(item)
-	Events.journal.emit("Picked up " + item.name)
+	var message: String = "Picked up " + item.name
+	if item.hint_message:
+		message += ". " + item.hint_message
+	Events.journal.emit(message)
+
+	if item.pickup_completes_task:
+		Events.task_completed.emit(item.pickup_completes_task)
+	if item.pickup_triggers_task:
+		Events.task_received.emit(item.pickup_triggers_task)
