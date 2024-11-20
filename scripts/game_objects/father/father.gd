@@ -48,7 +48,9 @@ func run_dialogue(dialouge_string):
 	Dialogic.start(dialouge_string)
 
 
-func _on_dialogue_ended():
+func _on_dialogue_ended(argument: String):
+	if argument == "test_dialogue_ended":
+		print("Test dialogue ended")
 	chatting = false
 	is_stopped = false
 	player.player_in_dialogue = false
