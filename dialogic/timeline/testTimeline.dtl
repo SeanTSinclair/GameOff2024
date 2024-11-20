@@ -1,3 +1,3 @@
 hello
 father: have you seen the relic
-[signal arg="dialogue_ended"]
+[signal arg="test_dialogue_ended"]
