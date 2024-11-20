@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://scenes/game_objects/blacklight/blacklight.tscn" id="7_pgpy4"]
 [ext_resource type="PackedScene" uid="uid://fg2yuj2gv58t" path="res://assets/models/mansion/main-door_mansion.glb" id="7_pksne"]
 [ext_resource type="PackedScene" uid="uid://c303raquq3yql" path="res://objects/small-items/barrel.glb" id="9_lxh53"]
-[ext_resource type="Material" path="res://assets/materials/mansion-material.tres" id="10_p4ouj"]
+[ext_resource type="Material" uid="uid://dntcpsxggjkef" path="res://assets/materials/mansion-material.tres" id="10_p4ouj"]
 [ext_resource type="PackedScene" uid="uid://d2aveiic7fccs" path="res://objects/small-items/bed.glb" id="10_pwdff"]
 [ext_resource type="Texture2D" uid="uid://cw2kerj2peejj" path="res://assets/materials/mansion-texture.png" id="10_xtgia"]
 [ext_resource type="PackedScene" uid="uid://c7xmnonleveug" path="res://scenes/game_objects/mother/mother.tscn" id="11_k7m57"]
@@ -26,7 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dc70pmm4vntk6" path="res://objects/small-items/bathtub.glb" id="17_lrqbp"]
 [ext_resource type="PackedScene" uid="uid://b7o8e6ib4bnpm" path="res://objects/small-items/sofa-table.glb" id="21_ynw3f"]
 [ext_resource type="PackedScene" uid="uid://br55m81f8vunk" path="res://objects/small-items/sofa.glb" id="22_vkwxh"]
-[ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/horror_fps_controller/FPSControllerHorror.tscn" id="23_6m7vs"]
+[ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/player/player.tscn" id="23_6m7vs"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35

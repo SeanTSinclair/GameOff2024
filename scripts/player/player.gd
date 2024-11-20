@@ -1,9 +1,10 @@
+class_name Player
 extends CharacterBody3D
 
-@export var base_speed := 1.15
-@export var sprint_speed := 1.5
+@export var base_speed := 2
+@export var sprint_speed := 2.5
 @export var crouch_speed := 0.8
-@export var jump_velocity := 2.0
+@export var jump_velocity := 2.8
 @export var crouch_height := 1.0
 @export var stand_height := 2.0
 
