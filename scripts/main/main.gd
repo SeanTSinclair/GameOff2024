@@ -16,7 +16,6 @@ var state: MainStates = MainStates.ACTIVE
 
 
 func _ready():
-	print(player)
 	father.set_player(player)
 
 
