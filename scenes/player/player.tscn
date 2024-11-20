@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=4 uid="uid://wa0junudfbi0"]
 
-[ext_resource type="Script" path="res://scripts/fps_controller_horror/fps_controller_horror.gd" id="1_h3pat"]
-[ext_resource type="Script" path="res://scripts/fps_controller_horror/horror_fps_camera.gd" id="2_n4mpt"]
-[ext_resource type="Script" path="res://scenes/horror_fps_controller/footstep.gd" id="3_4bkvp"]
-[ext_resource type="PackedScene" uid="uid://j85kjm3bqby5" path="res://scenes/components/interaction_ray/interaction_ray.tscn" id="3_akbrg"]
-[ext_resource type="Script" path="res://scenes/horror_fps_controller/hand_slot.gd" id="4_ed7aw"]
-[ext_resource type="Script" path="res://scripts/fps_controller_horror/reticle.gd" id="6_r1p75"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_6yhn5"]
+[ext_resource type="Script" path="res://scripts/player/horror_fps_camera.gd" id="2_wuyh7"]
+[ext_resource type="PackedScene" uid="uid://j85kjm3bqby5" path="res://scenes/components/interaction_ray/interaction_ray.tscn" id="3_tjnq1"]
+[ext_resource type="Script" path="res://scenes/player/hand_slot.gd" id="4_wqstd"]
+[ext_resource type="Script" path="res://scenes/player/footstep.gd" id="5_er2bu"]
+[ext_resource type="Script" path="res://scripts/player/reticle.gd" id="6_67t18"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3plaa"]
 
@@ -18,9 +18,9 @@ sampling_rate = 44100.0
 packet_sequence = SubResource("OggPacketSequence_de1uj")
 loop = true
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.000990868, -0.00176418, 0.00221086)
-script = ExtResource("1_h3pat")
+script = ExtResource("1_6yhn5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_3plaa")
@@ -30,25 +30,25 @@ transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0.4
 
 [node name="Head" type="Node3D" parent="."]
 unique_name_in_owner = true
-script = ExtResource("2_n4mpt")
+script = ExtResource("2_wuyh7")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456626, 0)
 
-[node name="InteractionRay" parent="Head" instance=ExtResource("3_akbrg")]
+[node name="InteractionRay" parent="Head" instance=ExtResource("3_tjnq1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456626, 0)
 
 [node name="HandItemSlot" type="Node3D" parent="Head"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.475278, 0, -1.16118)
-script = ExtResource("4_ed7aw")
+script = ExtResource("4_wqstd")
 
 [node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamOggVorbis_6tbs6")
 volume_db = -6.2
 autoplay = true
 bus = &"sfx"
-script = ExtResource("3_4bkvp")
+script = ExtResource("5_er2bu")
 
 [node name="UserInterface" type="Control" parent="."]
 layout_mode = 3
@@ -72,6 +72,6 @@ offset_right = 15.0
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("6_r1p75")
+script = ExtResource("6_67t18")
 
 [connection signal="finished" from="SoundFootsteps" to="SoundFootsteps" method="_on_finished"]
