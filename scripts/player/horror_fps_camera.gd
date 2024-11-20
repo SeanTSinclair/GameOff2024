@@ -7,16 +7,32 @@ var bob_speed = 5.0  # Speed of the bobbing effect
 var bob_timer = 0.0  # Tracks time for sine wave movement
 var base_position: Vector3  # Stores the initial position of the camera
 
+var defined_viewport_size: Vector2
+var actual_window_size: Vector2
+var current_scale: float
+
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	base_position = position  # Store the starting position
 
+	defined_viewport_size = get_viewport().get_visible_rect().size
+	_update_actual_window_size()
+	get_tree().root.size_changed.connect(_update_actual_window_size)
+	Events.game_unpaused.connect(_update_actual_window_size)
+
+
+func _update_actual_window_size() -> void:
+	actual_window_size = get_viewport().size
+	var x_scale = actual_window_size.x / defined_viewport_size.x
+	var y_scale = actual_window_size.y / defined_viewport_size.y
+	current_scale = (x_scale if x_scale < y_scale else y_scale) / 2
+
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		get_parent().rotate_y(-event.relative.x * camera_sens)
-		rotate_x(-event.relative.y * camera_sens)
+		get_parent().rotate_y(-event.relative.x * camera_sens * current_scale)
+		rotate_x(-event.relative.y * camera_sens * current_scale)
 		rotation.x = clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
 
 

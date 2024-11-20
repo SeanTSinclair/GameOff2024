@@ -95,6 +95,11 @@ func menu_closed() -> void:
 	state = MainStates.ACTIVE
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().paused = false
+	call_deferred("signal_unpaused")
+
+
+func signal_unpaused() -> void:
+	Events.game_unpaused.emit()
 
 
 func _on_inventory_menu_inventory_closed() -> void:
