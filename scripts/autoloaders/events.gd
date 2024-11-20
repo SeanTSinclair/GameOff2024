@@ -26,3 +26,6 @@ signal task_received(task: Task)
 
 @warning_ignore("unused_signal")
 signal task_completed(task: Task)
+
+@warning_ignore("unused_signal")
+signal game_unpaused
