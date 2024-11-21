@@ -2,7 +2,9 @@ class_name OptionsMenu
 extends CanvasLayer
 
 signal back_pressed
+signal keybinds_pressed
 
+@onready var keybinds_scene = preload("res://scenes/ui/keybinds/keybinds_menu.tscn")
 @onready var back_button: Button = %BackButton
 @onready var display_button: Button = %DisplayButton
 @onready var sfx_slider: HSlider = %SfxSlider
@@ -53,3 +55,7 @@ func _set_bus_volume_precent(bus_name: String, percent: float) -> void:
 
 func _on_audio_slide_changed(value: float, bus_name: String) -> void:
 	_set_bus_volume_precent(bus_name, value)
+
+
+func _on_keybinds_button_pressed() -> void:
+	print("I don't know how to get the keybinds menu on the screen :(")
