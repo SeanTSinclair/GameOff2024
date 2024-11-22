@@ -1,7 +1,7 @@
 extends Node
 
 var max_power = 100.0
-var power = 100.0
+var power = 0.0
 
 
 # Called when the node enters the scene tree for the first time.

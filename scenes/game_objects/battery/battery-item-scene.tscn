@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dq3ocoigjokba"]
+
+[ext_resource type="Script" path="res://scenes/game_objects/battery/battery_item_scene.gd" id="1_2ji5j"]
+[ext_resource type="PackedScene" uid="uid://cxad6q2hovdeh" path="res://objects/small-items/battery.glb" id="2_pk7oi"]
+
+[node name="Battery" type="Node3D"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, -0.026912, -0.00897074)
+script = ExtResource("1_2ji5j")
+
+[node name="battery" parent="." instance=ExtResource("2_pk7oi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00421032, -0.0046262, 0.0132659)
