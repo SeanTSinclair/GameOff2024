@@ -58,4 +58,4 @@ func _on_audio_slide_changed(value: float, bus_name: String) -> void:
 
 
 func _on_keybinds_button_pressed() -> void:
-	print("I don't know how to get the keybinds menu on the screen :(")
+	get_tree().change_scene_to_packed(keybinds_scene)

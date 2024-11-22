@@ -1,6 +1,7 @@
-[gd_scene load_steps=49 format=3 uid="uid://cg12pllyd0b7h"]
+[gd_scene load_steps=50 format=3 uid="uid://cg12pllyd0b7h"]
 
 [ext_resource type="Texture2D" uid="uid://b6asdhbkql22a" path="res://assets/menu-sprite/splash-main_0000_Layer-45.png" id="1_6yxqa"]
+[ext_resource type="Script" path="res://scripts/ui/keybinds/keybinds_menu.gd" id="1_bi1ok"]
 [ext_resource type="Texture2D" uid="uid://dif6c3ytknkhd" path="res://assets/menu-sprite/splash-main_0001_Layer-44.png" id="2_yhwo6"]
 [ext_resource type="Texture2D" uid="uid://dgvjum6q0g0pb" path="res://assets/menu-sprite/splash-main_0002_Layer-43.png" id="3_nlnyc"]
 [ext_resource type="Texture2D" uid="uid://bjhondyivtpvi" path="res://assets/menu-sprite/splash-main_0003_Layer-42.png" id="4_e7giw"]
@@ -192,6 +193,7 @@ animations = [{
 }]
 
 [node name="KeybindsMenu" type="CanvasLayer"]
+script = ExtResource("1_bi1ok")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -269,3 +271,5 @@ layout_mode = 2
 size_flags_horizontal = 0
 focus_mode = 0
 text = "Reset"
+
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
