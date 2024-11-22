@@ -9,6 +9,7 @@ signal keybinds_pressed
 @onready var display_button: Button = %DisplayButton
 @onready var sfx_slider: HSlider = %SfxSlider
 @onready var music_slider: HSlider = %MusicSlider
+@onready var panel_container: PanelContainer = %PanelContainer
 
 
 func _ready() -> void:
@@ -58,4 +59,11 @@ func _on_audio_slide_changed(value: float, bus_name: String) -> void:
 
 
 func _on_keybinds_button_pressed() -> void:
-	get_tree().change_scene_to_packed(keybinds_scene)
+	panel_container.visible = false
+	var keybinds_instance: KeybindsMenu = keybinds_scene.instantiate()
+	keybinds_instance.back_pressed.connect(_on_keybinds_back_pressed)
+	add_child(keybinds_instance)
+
+
+func _on_keybinds_back_pressed() -> void:
+	panel_container.visible = true

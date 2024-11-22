@@ -1,3 +1,4 @@
+class_name KeybindsManager
 extends Control
 
 var is_remapping = false
@@ -19,11 +20,10 @@ var input_actions = {
 
 
 func _ready() -> void:
-	_create_action_list()
+	create_action_list()
 
 
-func _create_action_list() -> void:
-	InputMap.load_from_project_settings()
+func create_action_list() -> void:
 	for item in action_list.get_children():
 		item.queue_free()
 
@@ -71,7 +71,3 @@ func _input(event: InputEvent) -> void:
 
 func _update_action_list(button, event) -> void:
 	button.find_child("LabelInput").text = event.as_text().trim_suffix(" (Physical)")
-
-
-func _on_reset_button_pressed() -> void:
-	_create_action_list()
