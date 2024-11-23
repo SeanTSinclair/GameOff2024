@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_a55px")
 id = "FINDBATTERIES"
-description = "Find batteries"
+description = "Put new batteries in the blacklight"
 task_received_message = "The blacklight is out of batteries"
 task_completed_message = "I managed to put new batteries into the blacklight"
