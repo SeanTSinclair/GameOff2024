@@ -16,6 +16,7 @@ var state: MainStates = MainStates.ACTIVE
 
 
 func _ready():
+	State.reset()
 	# Trigger the first task - Should be removed when we have an actual first task
 	call_deferred("_initial_tasks")
 	father.set_player(player)

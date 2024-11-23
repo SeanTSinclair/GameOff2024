@@ -2,7 +2,6 @@ class_name OptionsMenu
 extends CanvasLayer
 
 signal back_pressed
-signal keybinds_pressed
 
 @onready var keybinds_scene = preload("res://scenes/ui/keybinds/keybinds_menu.tscn")
 @onready var back_button: Button = %BackButton
