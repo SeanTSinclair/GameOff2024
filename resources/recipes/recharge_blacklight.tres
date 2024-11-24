@@ -3,10 +3,10 @@
 [ext_resource type="Resource" uid="uid://bjn8omuvof6ys" path="res://resources/tasks/find_batteries.tres" id="1_46nl0"]
 [ext_resource type="Resource" uid="uid://ch5ye25fdbg1" path="res://scenes/game_objects/blacklight/blacklight.tres" id="1_dh76i"]
 [ext_resource type="Script" path="res://resources/recipes/recharge_blacklight.gd" id="1_itlq3"]
-[ext_resource type="Resource" uid="uid://dxecwfaahw8at" path="res://testbeds/inventory/test_item1.tres" id="2_l6wyl"]
+[ext_resource type="Resource" uid="uid://bxq28vsj0pp21" path="res://scenes/game_objects/battery/battery1.tres" id="3_623qu"]
 
 [resource]
 script = ExtResource("1_itlq3")
 completes_task = ExtResource("1_46nl0")
 item1 = ExtResource("1_dh76i")
-item2 = ExtResource("2_l6wyl")
+item2 = ExtResource("3_623qu")

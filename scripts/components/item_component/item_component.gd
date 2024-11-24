@@ -20,10 +20,6 @@ func _ready() -> void:
 
 
 func _on_interaction_component_interacted() -> void:
-	# TODO : add use item in item manager instead?
-	if item.id == "BATTERY":
-		State.add_power(10.0)
-	else:
-		Events.picked_up_item.emit(item)
+	Events.picked_up_item.emit(item)
 	if item_root:
 		item_root.queue_free()

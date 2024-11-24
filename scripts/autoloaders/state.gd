@@ -23,4 +23,4 @@ func remove_power(usage: float):
 
 
 func add_power(energy: float):
-	power += energy
+	power = min(power + energy, max_power)
