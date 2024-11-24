@@ -6,6 +6,7 @@ extends Node3D
 
 var is_stopped := false
 var chatting = false
+var player
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
 @onready var animation_player: AnimationPlayer = $FatherFullAnimation_2/AnimationPlayer
@@ -17,6 +18,10 @@ func _ready():
 	animation_player.get_animation("Walking").loop_mode = Animation.LOOP_LINEAR
 	interaction_component.interacted.connect(_on_interacted)
 	Dialogic.signal_event.connect(_on_dialogue_ended)
+
+
+func set_player(player_node):
+	player = player_node
 
 
 func _physics_process(delta: float) -> void:
@@ -39,12 +44,13 @@ func _on_interacted() -> void:
 func run_dialogue(dialouge_string):
 	chatting = true
 	is_stopped = true
-	print("Dialogue started: " + dialouge_string)
+	player.player_in_dialogue = true
 	Dialogic.start(dialouge_string)
 
 
 func _on_dialogue_ended(argument: String):
-	print("Dialoge ended!")
-	print(argument)
+	if argument == "test_dialogue_ended":
+		print("Test dialogue ended")
 	chatting = false
 	is_stopped = false
+	player.player_in_dialogue = false

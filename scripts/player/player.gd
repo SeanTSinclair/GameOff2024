@@ -12,6 +12,7 @@ var speed = base_speed
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var footstep_timer = 0.0
 var is_crouching = false
+var player_in_dialogue = false
 
 @onready var sound_footsteps = $SoundFootsteps
 @onready var collision_shape = $CollisionShape3D
@@ -27,6 +28,11 @@ func _physics_process(delta: float) -> void:
 
 
 func calculate_velocity(delta: float) -> void:
+	if player_in_dialogue:
+		velocity.x = 0
+		velocity.z = 0
+		return
+
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 

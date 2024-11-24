@@ -1,17 +1,13 @@
 extends Node
 
+# Blacklight state variables
 var max_power = 100.0
+var initial_power = 0.0
 var power = 0.0
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass  # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
+func reset() -> void:
+	power = initial_power
 
 
 func get_power():

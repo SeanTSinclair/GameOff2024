@@ -3,10 +3,12 @@ extends CanvasLayer
 
 signal back_pressed
 
+@onready var keybinds_scene = preload("res://scenes/ui/keybinds/keybinds_menu.tscn")
 @onready var back_button: Button = %BackButton
 @onready var display_button: Button = %DisplayButton
 @onready var sfx_slider: HSlider = %SfxSlider
 @onready var music_slider: HSlider = %MusicSlider
+@onready var panel_container: PanelContainer = %PanelContainer
 
 
 func _ready() -> void:
@@ -53,3 +55,14 @@ func _set_bus_volume_precent(bus_name: String, percent: float) -> void:
 
 func _on_audio_slide_changed(value: float, bus_name: String) -> void:
 	_set_bus_volume_precent(bus_name, value)
+
+
+func _on_keybinds_button_pressed() -> void:
+	panel_container.visible = false
+	var keybinds_instance: KeybindsMenu = keybinds_scene.instantiate()
+	keybinds_instance.back_pressed.connect(_on_keybinds_back_pressed)
+	add_child(keybinds_instance)
+
+
+func _on_keybinds_back_pressed() -> void:
+	panel_container.visible = true
