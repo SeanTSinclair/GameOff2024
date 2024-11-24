@@ -11,6 +11,7 @@ var state: MainStates = MainStates.ACTIVE
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var inventory_menu: InventoryMenu = %InventoryMenu
 @onready var journal_menu: JournalMenu = %JournalMenu
+@onready var scene_anim_player: AnimationPlayer = %WorldLayer/TestLevel00/AnimationPlayer
 @onready var father: Father = $WorldLayer/TestLevel00/Mansion/Characters/Father
 @onready var player: CharacterBody3D = $WorldLayer/TestLevel00/Player
 
@@ -18,6 +19,8 @@ var state: MainStates = MainStates.ACTIVE
 func _ready():
 	State.reset()
 	# Trigger the first task - Should be removed when we have an actual first task
+	scene_anim_player.play("Intro")
+
 	call_deferred("_initial_tasks")
 	father.set_player(player)
 

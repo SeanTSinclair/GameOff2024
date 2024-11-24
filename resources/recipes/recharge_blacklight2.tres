@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="RechargeBlacklight" load_steps=5 format=3 uid="uid://bmknkdg48kex5"]
+
+[ext_resource type="Resource" uid="uid://bjn8omuvof6ys" path="res://resources/tasks/find_batteries.tres" id="1_s5wss"]
+[ext_resource type="Resource" uid="uid://ch5ye25fdbg1" path="res://scenes/game_objects/blacklight/blacklight.tres" id="2_px6lt"]
+[ext_resource type="Resource" uid="uid://b07eftp6yeiv7" path="res://scenes/game_objects/battery/battery2.tres" id="3_dy83f"]
+[ext_resource type="Script" path="res://resources/recipes/recharge_blacklight.gd" id="4_dj51t"]
+
+[resource]
+script = ExtResource("4_dj51t")
+completes_task = ExtResource("1_s5wss")
+item1 = ExtResource("2_px6lt")
+item2 = ExtResource("3_dy83f")

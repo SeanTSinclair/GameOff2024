@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6ef8k1k7lvtf"]
+
+[ext_resource type="Script" path="res://scripts/game_objects/battery/battery.gd" id="1_ryg06"]
+[ext_resource type="PackedScene" uid="uid://xwdbemxk6fio" path="res://scenes/components/outline_component/outline_component.tscn" id="3_ih4g3"]
+[ext_resource type="PackedScene" uid="uid://bkxp5t2pd7n4k" path="res://scenes/components/interaction_component/interaction_component.tscn" id="4_001jt"]
+[ext_resource type="Resource" uid="uid://bxq28vsj0pp21" path="res://scenes/game_objects/battery/battery1.tres" id="4_mukaj"]
+[ext_resource type="PackedScene" uid="uid://cxad6q2hovdeh" path="res://objects/small-items/battery.glb" id="5_44g03"]
+[ext_resource type="Script" path="res://scripts/components/item_component/item_component.gd" id="5_tvh1c"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ctll"]
+radius = 0.0433794
+height = 0.0978204
+
+[node name="Battery" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026912, -0.00897074)
+script = ExtResource("1_ryg06")
+
+[node name="OutlineComponent" parent="." node_paths=PackedStringArray("interaction_component") instance=ExtResource("3_ih4g3")]
+interaction_component = NodePath("../InteractionComponent")
+
+[node name="InteractionComponent" parent="." instance=ExtResource("4_001jt")]
+
+[node name="CollisionShape3D" parent="InteractionComponent" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0361588, 0)
+shape = SubResource("CapsuleShape3D_1ctll")
+
+[node name="ItemComponent" type="Node" parent="." node_paths=PackedStringArray("interaction_component", "item_root")]
+script = ExtResource("5_tvh1c")
+item = ExtResource("4_mukaj")
+interaction_component = NodePath("../InteractionComponent")
+item_root = NodePath("..")
+
+[node name="battery" parent="." instance=ExtResource("5_44g03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0378778, 0)
+
+[editable path="InteractionComponent"]

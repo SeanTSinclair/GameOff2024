@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3ukd8df82o5b"]
+[gd_scene load_steps=8 format=3 uid="uid://b3ukd8df82o5b"]
 
 [ext_resource type="PackedScene" uid="uid://kdaij15gfg6o" path="res://assets/models/fleshlight.glb" id="1_clxvy"]
+[ext_resource type="PackedScene" uid="uid://ii3fmwie83wl" path="res://assets/models/flashlight.glb" id="1_qh42q"]
 [ext_resource type="PackedScene" uid="uid://xwdbemxk6fio" path="res://scenes/components/outline_component/outline_component.tscn" id="2_40kk5"]
 [ext_resource type="PackedScene" uid="uid://bkxp5t2pd7n4k" path="res://scenes/components/interaction_component/interaction_component.tscn" id="3_hjdap"]
 [ext_resource type="Script" path="res://scripts/components/item_component/item_component.gd" id="4_jbttf"]
@@ -13,7 +14,11 @@ height = 1.0
 [node name="Blacklight" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026912, -0.00897074)
 
+[node name="flashlight" parent="." instance=ExtResource("1_qh42q")]
+transform = Transform3D(-8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0, 2, 0.0268072, 0, -0.0733233)
+
 [node name="Flashlight" parent="." instance=ExtResource("1_clxvy")]
+visible = false
 
 [node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance", "interaction_component") instance=ExtResource("2_40kk5")]
 mesh_instance = NodePath("../Flashlight/Cylinder")

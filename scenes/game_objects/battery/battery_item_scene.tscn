@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq3ocoigjokba"]
+
+[ext_resource type="PackedScene" uid="uid://cxad6q2hovdeh" path="res://objects/small-items/battery.glb" id="2_2ee70"]
+
+[node name="Battery" type="Node3D"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, -0.026912, -0.00897074)
+
+[node name="battery" parent="." instance=ExtResource("2_2ee70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00421032, -0.0046262, 0.0132659)
