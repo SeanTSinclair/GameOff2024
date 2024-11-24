@@ -648,7 +648,7 @@ shadow_reverse_cull_face = true
 shadow_blur = 0.0
 
 [node name="Player" parent="." instance=ExtResource("23_6m7vs")]
-transform = Transform3D(0.728535, 0, 0, 0, -3.18453e-08, -0.728535, 0, 0.728535, -3.18453e-08, -15.396, 3.45742, -14.6622)
+transform = Transform3D(0.728535, 0, 0, 0, 0.728535, 0, 0, 0, 0.728535, -15.396, 3.45742, -14.6622)
 
 [node name="Mansion" type="Node3D" parent="."]
 
@@ -1228,13 +1228,13 @@ material_override = SubResource("StandardMaterial3D_og7ah")
 mesh = SubResource("PlaneMesh_ybbnh")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="IntroBlackThing/MeshInstance3D"]
-transform = Transform3D(0.183848, -0.982955, 8.59326e-08, 0.982955, 0.183848, 7.13502e-08, -8.59326e-08, 7.13502e-08, 1, 0.284016, 1.0421, 0)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 1.42109e-14, -1.42109e-14, 8.47033e-22, 1, 0.119882, 1.0421, -0.00729561)
 material_override = SubResource("StandardMaterial3D_og7ah")
 mesh = SubResource("PlaneMesh_ybbnh")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="IntroBlackThing/MeshInstance3D"]
-transform = Transform3D(0.20289, 0.979201, -8.56045e-08, -0.979202, 0.20289, 6.96856e-08, 8.56045e-08, 6.96856e-08, 1, -0.370963, 1.05555, 0)
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 7.10543e-15, 7.10543e-15, 4.23516e-22, 1, -0.187215, 1.05555, 0)
 material_override = SubResource("StandardMaterial3D_og7ah")
 mesh = SubResource("PlaneMesh_ybbnh")
 skeleton = NodePath("../..")
@@ -1244,12 +1244,12 @@ transform = Transform3D(5.97313, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 
 mesh = SubResource("PlaneMesh_cbovl")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="IntroBlackThing/MeshInstance3D2"]
-transform = Transform3D(0.0972877, -0.995256, 8.70081e-08, 0.995256, 0.0972877, 7.89176e-08, -8.70081e-08, 7.89176e-08, 1, 0.169258, 1.02976, 0)
+transform = Transform3D(-0.00698124, -0.999975, 0, 0.999975, -0.00698124, 0, 0, 0, 1, 0.0665262, 1.02976, 0.0117397)
 mesh = SubResource("PlaneMesh_cbovl")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="IntroBlackThing/MeshInstance3D2"]
-transform = Transform3D(0.16336, 0.986566, -8.62484e-08, -0.986566, 0.16336, 7.31414e-08, 8.62484e-08, 7.31414e-08, 1, -0.303016, 1.06276, 0)
+transform = Transform3D(-4.37114e-08, 0.999999, 0, -1, -4.37114e-08, 0, 0, 0, 1, -0.118318, 1.06276, 0)
 mesh = SubResource("PlaneMesh_cbovl")
 skeleton = NodePath("../..")
 
