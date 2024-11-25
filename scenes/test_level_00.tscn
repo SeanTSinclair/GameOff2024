@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=79 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -30,6 +30,8 @@
 [ext_resource type="PackedScene" uid="uid://br55m81f8vunk" path="res://objects/small-items/sofa.glb" id="22_vkwxh"]
 [ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/player/player.tscn" id="23_6m7vs"]
 [ext_resource type="PackedScene" uid="uid://b6ef8k1k7lvtf" path="res://scenes/game_objects/battery/battery.tscn" id="30_vml1e"]
+[ext_resource type="Resource" uid="uid://bxq28vsj0pp21" path="res://scenes/game_objects/battery/battery1.tres" id="31_oj6vm"]
+[ext_resource type="Resource" uid="uid://b07eftp6yeiv7" path="res://scenes/game_objects/battery/battery2.tres" id="32_lqkqq"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -452,10 +454,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
-
-[sub_resource type="GDScript" id="GDScript_7tygk"]
-script/source = "extends Node3D
-         "
 
 [sub_resource type="Animation" id="Animation_f3xto"]
 resource_name = "Intro"
@@ -1208,11 +1206,11 @@ remote_path = NodePath("../../../../Characters/Mother")
 
 [node name="Battery" parent="Mansion" instance=ExtResource("30_vml1e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1028, 3.31548, -16.3812)
-script = SubResource("GDScript_7tygk")
+battery_item = ExtResource("31_oj6vm")
 
 [node name="Battery2" parent="Mansion" instance=ExtResource("30_vml1e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0727, 3.30666, -16.4987)
-script = SubResource("GDScript_7tygk")
+battery_item = ExtResource("32_lqkqq")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
