@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/ui/keybinds/keybinds_manager.gd" id="47_l8l0h"]
 
 [node name="KeybindsMenu" type="CanvasLayer"]
-layer = 2
+layer = 100
 script = ExtResource("1_bi1ok")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

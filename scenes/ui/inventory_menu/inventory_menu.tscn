@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cd5vyidrabpx8" path="res://scenes/ui/inventory_menu/item_description.tscn" id="5_7un42"]
 
 [node name="InventoryMenu" type="CanvasLayer"]
+layer = 99
 script = ExtResource("1_1eewc")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/ui/journal_menu/journal_menu.gd" id="1_ao0i1"]
 
 [node name="JournalMenu" type="CanvasLayer"]
+layer = 99
 script = ExtResource("1_ao0i1")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
