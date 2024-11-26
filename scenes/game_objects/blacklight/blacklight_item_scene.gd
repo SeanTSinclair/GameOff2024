@@ -10,15 +10,18 @@ var active = false
 var flicker_timer: float = 0.0
 
 @onready var light = $flashlight/Blacklight
+@onready var ray = $flashlight/RayCast3D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ray.enabled = false
 	pass  # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	ray.enabled = active
 	if active:
 		var power = State.get_power()
 		print("Power left : ", power)
@@ -33,7 +36,17 @@ func _process(delta):
 		if flicker_timer >= flicker_speed:
 			flicker_timer = 0.0
 			apply_flicker(power)
-
+		
+		if ray.is_colliding():
+			var collision: Area3D = ray.get_collider()
+			print(collision)
+			var secret = collision.get_parent_node_3d().get_parent_node_3d()
+			if secret is SecretText:
+				var secret_id = secret.secret_text_id
+				var secret_found = State.is_secret_found(secret_id)
+				if secret_found == null:
+					State.add_secret_found(secret_id)
+					Events.journal.emit(secret.text)
 
 func use():
 	active = !active
