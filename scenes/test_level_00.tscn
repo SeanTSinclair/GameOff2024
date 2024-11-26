@@ -670,7 +670,7 @@ shadow_reverse_cull_face = true
 shadow_blur = 0.0
 
 [node name="Player" parent="." instance=ExtResource("23_6m7vs")]
-transform = Transform3D(0.728535, 0, 0, 0, 0.728491, -0.00800147, 0, 0.00800147, 0.728491, -15.396, 3.45742, -14.6622)
+transform = Transform3D(0.728535, 0, 0, 0, -3.18453e-08, -0.728535, 0, 0.728535, -3.18453e-08, -15.396, 3.45742, -14.6622)
 can_move = false
 
 [node name="Mansion" type="Node3D" parent="."]
@@ -866,6 +866,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8479, 3.30752, -6.78232)
 
 [node name="kitchen-1" parent="Mansion/Model" instance=ExtResource("32_581fm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00149059, 0, -0.00385952)
+
+[node name="Secret-text" parent="Mansion/Model" instance=ExtResource("4_sr0u4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.0243, 3.97885, -8.55135)
+text_img = ExtResource("3_bgh7f")
+text = "HELP"
+secret_text_id = "bedroom_help"
 
 [node name="Lights" type="Node" parent="Mansion"]
 

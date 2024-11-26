@@ -1,6 +1,9 @@
+class_name SecretText
 extends Node3D
 
 @export var text_img: Texture2D
+@export var text: String
+@export var secret_text_id: String
 
 @onready var text_plane = $MeshInstance3D
 
