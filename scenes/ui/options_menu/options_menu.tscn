@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/ui/options_menu/options_menu.gd" id="1_0oowt"]
 
 [node name="OptionsMenu" type="CanvasLayer"]
+layer = 99
 script = ExtResource("1_0oowt")
 
 [node name="ColorRect" type="ColorRect" parent="."]

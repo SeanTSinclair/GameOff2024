@@ -30,16 +30,6 @@ navigation_mesh = SubResource("NavigationMesh_8i66k")
 
 [node name="TestLevel00" parent="WorldLayer/NavigationRegion3D" instance=ExtResource("2_6hw2h")]
 
-[node name="Player" parent="WorldLayer/NavigationRegion3D/TestLevel00" index="2"]
-transform = Transform3D(0.6, 0, 0, 0, -2.62268e-08, -0.6, 0, 0.6, -2.62268e-08, -15.396, 3.45742, -14.6622)
-can_move = false
-
-[node name="Father" parent="WorldLayer/NavigationRegion3D/TestLevel00/Mansion/Characters" index="0"]
-transform = Transform3D(0.00498207, 0, -0.999981, 0, 1, 0, 0.999981, 0, 0.00498207, -6.8435, 0, -14.3454)
-
-[node name="PathFollow3D" parent="WorldLayer/NavigationRegion3D/TestLevel00/Mansion/Paths/FatherPath" index="0"]
-transform = Transform3D(-0.00498198, 0, 0.999981, 0, 1, 0, -0.999981, 0, -0.00498198, -6.8435, 0, -14.3454)
-
 [node name="Feedback" parent="WorldLayer" instance=ExtResource("3_6vjco")]
 
 [node name="MenuLayer" type="Node" parent="."]
@@ -68,6 +58,3 @@ journal_manager = NodePath("../../Managers/JournalManager")
 [connection signal="pause_menu_closed" from="MenuLayer/PauseMenu" to="." method="_on_pause_menu_pause_menu_closed"]
 [connection signal="inventory_closed" from="MenuLayer/InventoryMenu" to="." method="_on_inventory_menu_inventory_closed"]
 [connection signal="journal_closed" from="MenuLayer/JournalMenu" to="." method="_on_journal_menu_journal_closed"]
-
-[editable path="WorldLayer/NavigationRegion3D/TestLevel00"]
-[editable path="WorldLayer/NavigationRegion3D/TestLevel00/Mansion/Characters/CrawlingFather"]
