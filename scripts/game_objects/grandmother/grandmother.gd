@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
-@onready var animation_player: AnimationPlayer = $GrannOfficialAnimation/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Body/AnimationPlayer
 
 
 func _ready():

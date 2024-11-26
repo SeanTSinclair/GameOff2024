@@ -1,6 +1,5 @@
-extends Node3D
+extends NPC
 
-@export var move_speed: float = 0.4
 @export var path_nodes_act_1: Array[Node3D]
 
 var is_stopped := false
@@ -8,17 +7,12 @@ var is_traveling_to_room := false
 var next_travel_destination
 var movement_delta: float
 
-@onready var interaction_component: InteractionComponent = $InteractionComponent
-@onready var animation_player: AnimationPlayer = $MotherOfificialAnimation/AnimationPlayer
-@onready var navigation_agent: NavigationAgent3D = %NavigationAgent3D
-@onready var armature: Node3D = $MotherOfificialAnimation/Armature
-
 
 func _ready():
+	super._ready()
 	animation_player.play("Idle")
 	animation_player.get_animation("Idle").loop_mode = Animation.LOOP_LINEAR
 	animation_player.get_animation("Walk").loop_mode = Animation.LOOP_LINEAR
-	interaction_component.interacted.connect(_on_interacted)
 	navigation_agent.target_position = _get_random_path_node(path_nodes_act_1)
 	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 

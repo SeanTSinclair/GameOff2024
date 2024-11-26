@@ -1,3 +1,4 @@
+class_name Father
 extends Node3D
 
 @export var move_speed: float = 0.15
@@ -8,7 +9,7 @@ var chatting = false
 var player
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
-@onready var animation_player: AnimationPlayer = $FatherFullAnimation_2/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Body/AnimationPlayer
 
 
 func _ready():
