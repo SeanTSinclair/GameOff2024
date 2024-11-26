@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cdao2dapu7uks"
+path.s3tc="res://.godot/imported/kitchen-1_kitchen-tex-1.png-1bef660c75b5a69f5fa1990f013327ec.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "d3cea208f300a6f7ac9333552fa550ce"
+}
+
+[deps]
+
+source_file="res://objects/small-items/kitchen-1_kitchen-tex-1.png"
+dest_files=["res://.godot/imported/kitchen-1_kitchen-tex-1.png-1bef660c75b5a69f5fa1990f013327ec.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
