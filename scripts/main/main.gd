@@ -13,7 +13,7 @@ var state: MainStates = MainStates.ACTIVE
 @onready var journal_menu: JournalMenu = %JournalMenu
 @onready
 var scene_anim_player: AnimationPlayer = %WorldLayer/NavigationRegion3D/TestLevel00/AnimationPlayer
-@onready var father: Father = $WorldLayer/NavigationRegion3D/TestLevel00/Mansion/Characters/Father
+# @onready var father: Father = $WorldLayer/NavigationRegion3D/TestLevel00/Mansion/Characters/Father
 @onready var player: CharacterBody3D = $WorldLayer/NavigationRegion3D/TestLevel00/Player
 
 
@@ -23,7 +23,7 @@ func _ready():
 	scene_anim_player.play("Intro")
 
 	call_deferred("_initial_tasks")
-	father.set_player(player)
+	#father.set_player(player)
 
 
 func _initial_tasks() -> void:

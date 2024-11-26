@@ -37,14 +37,15 @@ func _physics_process(delta: float) -> void:
 func _on_interacted() -> void:
 	if chatting:
 		return
-	run_dialogue("testTimeline")
 
 
-func run_dialogue(dialouge_string):
-	chatting = true
-	is_stopped = true
-	player.player_in_dialogue = true
-	Dialogic.start(dialouge_string)
+##	run_dialogue("testTimeline")
+
+##func run_dialogue(dialouge_string):
+##	chatting = true
+##	is_stopped = true
+##	player.player_in_dialogue = true
+##	Dialogic.start(dialouge_string)
 
 
 func _on_dialogue_ended(argument: String):
