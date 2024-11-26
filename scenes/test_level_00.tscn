@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=100 format=4 uid="uid://4wndb8147fjy"]
+=======
+[gd_scene load_steps=72 format=4 uid="uid://4wndb8147fjy"]
+>>>>>>> Stashed changes
 
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="1_ibhvb"]
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
@@ -22,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://dc70pmm4vntk6" path="res://objects/small-items/bathtub.glb" id="17_lrqbp"]
 [ext_resource type="PackedScene" uid="uid://b7o8e6ib4bnpm" path="res://objects/small-items/sofa-table.glb" id="21_ynw3f"]
 [ext_resource type="PackedScene" uid="uid://br55m81f8vunk" path="res://objects/small-items/sofa.glb" id="22_vkwxh"]
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://scenes/father_full_animation_2.gd" id="23_8bt2u"]
 [ext_resource type="Texture2D" uid="uid://dyy00ogp0xqkr" path="res://assets/models/FatherFullAnimation_2_fatherbig05.png" id="24_klnv1"]
 [ext_resource type="Script" path="res://scenes/grann_official_animation.gd" id="25_jh3x6"]
@@ -30,6 +35,14 @@
 [ext_resource type="Script" path="res://scenes/mother_ofificial_animation.gd" id="27_ra6p8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_i3qnv"]
+=======
+[ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/horror_fps_controller/FPSControllerHorror.tscn" id="23_6m7vs"]
+[ext_resource type="PackedScene" uid="uid://uie7d712andi" path="res://objects/small-items/kitchen-1.glb" id="23_udacy"]
+[ext_resource type="PackedScene" uid="uid://cv3wrpg6h3hwm" path="res://objects/small-items/table_eat.glb" id="24_h3q8v"]
+[ext_resource type="PackedScene" uid="uid://digp0st3alor6" path="res://objects/small-items/chair.glb" id="25_8furr"]
+[ext_resource type="PackedScene" uid="uid://c0msoattlpk7r" path="res://objects/small-items/mansion-basement-door.glb" id="31_kxj88"]
+[ext_resource type="PackedScene" uid="uid://qo051qtuapx4" path="res://objects/small-items/mansion_standard_door.glb" id="32_b04kb"]
+>>>>>>> Stashed changes
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -5816,7 +5829,190 @@ _data = {
 [node name="Player" parent="." instance=ExtResource("1_ibhvb")]
 transform = Transform3D(-0.999821, 0.00174194, -0.0188433, 0.00176688, 0.999998, -0.00130739, 0.0188409, -0.00134043, -0.999822, -10.1676, 1.39311, -11.8994)
 
+<<<<<<< Updated upstream
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
+=======
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.912499, -0.132805, 0.386922, 6.96707e-09, 0.945836, 0.324644, -0.409079, -0.296237, 0.863075, -1.444, 3.85475, 8.17466)
+light_color = Color(0.982993, 0.349056, 0.354496, 1)
+shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 3.524
+shadow_reverse_cull_face = true
+shadow_blur = 0.0
+
+[node name="Player" parent="." instance=ExtResource("23_6m7vs")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -10.582, 0.70833, -10.4276)
+
+[node name="Mansion" type="Node3D" parent="."]
+
+[node name="Model" type="Node3D" parent="Mansion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.423, 0, -9.272)
+
+[node name="basement" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_tejtn")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/basement"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/basement/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_00bp4")
+
+[node name="basement-ceiling" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_kf5nb")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/basement-ceiling"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/basement-ceiling/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_povvf")
+
+[node name="1st-story" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_n2aw3")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/1st-story"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/1st-story/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nlqp7")
+
+[node name="ceiling-1st-story" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_nxngc")
+mesh = SubResource("ArrayMesh_v6mof")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/ceiling-1st-story"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/ceiling-1st-story/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7c5nl")
+
+[node name="wooden_beams-2" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_isde2")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/wooden_beams-2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/wooden_beams-2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_n38mo")
+
+[node name="wooden_beams" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_ftu2p")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/wooden_beams"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/wooden_beams/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k8rr7")
+
+[node name="railings" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_xql37")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/railings"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/railings/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_pqgra")
+
+[node name="roof-2nd_story" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_3o7sc")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/roof-2nd_story"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/roof-2nd_story/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ptl1c")
+
+[node name="2nd_story_right_wing" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_tbbvf")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/2nd_story_right_wing"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/2nd_story_right_wing/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_c2b1h")
+
+[node name="2nd-story-left-wing" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_vb8wi")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/2nd-story-left-wing"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/2nd-story-left-wing/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_mcwik")
+
+[node name="floor-second-story" type="MeshInstance3D" parent="Mansion/Model"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+material_override = ExtResource("10_p4ouj")
+mesh = SubResource("ArrayMesh_7s0pd")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Mansion/Model/floor-second-story"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Model/floor-second-story/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_whh4y")
+
+[node name="barrel" parent="Mansion/Model" instance=ExtResource("9_lxh53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88826, -2.85, -9.48225)
+
+[node name="barrel2" parent="Mansion/Model" instance=ExtResource("9_lxh53")]
+transform = Transform3D(0.772024, 0, 0.635593, 0, 1, 0, -0.635593, 0, 0.772024, -2.97071, -2.85, -6.72724)
+
+[node name="barrel3" parent="Mansion/Model" instance=ExtResource("9_lxh53")]
+transform = Transform3D(0.125281, 0, -0.992121, 0, 1, 0, 0.992121, 0, 0.125281, -2.99226, -2.85, -8.82764)
+
+[node name="barrel4" parent="Mansion/Model" instance=ExtResource("9_lxh53")]
+transform = Transform3D(-0.592323, 0.805701, 3.52183e-08, 0, -4.37114e-08, 1, 0.805701, 0.592323, 2.58912e-08, -2.71887, -2.54667, -7.35578)
+
+[node name="bed" parent="Mansion/Model" instance=ExtResource("10_pwdff")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.0938, 2.85, -5.70915)
+
+[node name="workdesk" parent="Mansion/Model" instance=ExtResource("11_p8pbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.69195, 2.85, -4.91222)
+
+[node name="radiator-wall" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1998, 2.96071, -5.82447)
+
+[node name="radiator-wall2" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.55674, 2.97489, -9.90827)
+
+[node name="oven" parent="Mansion/Model" instance=ExtResource("13_dpf25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81994, -1.19209e-07, 0.312686)
+
+[node name="radiator-wall3" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.13404, 2.98874, -1.49977)
+
+[node name="radiator-wall4" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000179768, 2.97553, 0.43059)
+
+[node name="radiator-wall5" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.73538, 3.00254, -3.09977)
+
+[node name="radiator-wall6" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.58893, 2.97352, 2.1)
+
+[node name="Lights" type="Node" parent="Mansion"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Mansion/Lights"]
+>>>>>>> Stashed changes
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85307, 5.73306, -14.4469)
 light_color = Color(1, 0.7941, 0.703607, 1)
 light_energy = 5.283
@@ -6480,8 +6676,13 @@ shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
 
+<<<<<<< Updated upstream
 [node name="OmniLight3D9" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57374, 2.55115, -9.99399)
+=======
+[node name="OmniLight3D9" type="OmniLight3D" parent="Mansion/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57374, 2.48058, -9.99399)
+>>>>>>> Stashed changes
 light_color = Color(0.752997, 0.631448, 0.469205, 1)
 light_energy = 2.155
 light_cull_mask = 4294967037
@@ -6491,8 +6692,13 @@ shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
 
+<<<<<<< Updated upstream
 [node name="OmniLight3D10" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.246556, 2.55115, -9.99399)
+=======
+[node name="OmniLight3D10" type="OmniLight3D" parent="Mansion/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.246556, 2.23586, -9.99399)
+>>>>>>> Stashed changes
 light_color = Color(0.752997, 0.631448, 0.469205, 1)
 light_energy = 2.155
 light_cull_mask = 4294967037
@@ -7233,13 +7439,20 @@ libraries = {
 "": SubResource("AnimationLibrary_pc67m")
 }
 
+<<<<<<< Updated upstream
 [node name="MotherOfificialAnimation" type="Node3D" parent="."]
 transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, -10.1719, -0.0203628, -14.306)
 script = ExtResource("27_ra6p8")
+=======
+[node name="sink2" parent="Mansion/Objects" instance=ExtResource("15_hh1py")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0369, 3.47865, -9.77697)
+visible = false
+>>>>>>> Stashed changes
 
 [node name="Armature" type="Node3D" parent="MotherOfificialAnimation"]
 transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
 
+<<<<<<< Updated upstream
 [node name="Skeleton3D" type="Skeleton3D" parent="MotherOfificialAnimation/Armature"]
 bones/0/name = "mixamorig_Hips"
 bones/0/parent = -1
@@ -7472,12 +7685,110 @@ bones/32/enabled = true
 bones/32/position = Vector3(7.15256e-07, 13.3602, -1.43051e-06)
 bones/32/rotation = Quaternion(9.84874e-07, 1.85799e-07, -2.9779e-07, 1)
 bones/32/scale = Vector3(1, 1, 1)
+=======
+[node name="kitchen-1" parent="Mansion/Objects" instance=ExtResource("23_udacy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4194, 0.0131242, -9.27712)
+
+[node name="table_eat" parent="Mansion/Objects" instance=ExtResource("24_h3q8v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.33655, 1.19209e-07, -8.59685)
+
+[node name="chair" parent="Mansion/Objects" instance=ExtResource("25_8furr")]
+transform = Transform3D(0.16429, 0, -0.986412, 0, 1, 0, 0.986412, 0, 0.16429, 1.20574, 0, -9.12075)
+
+[node name="chair2" parent="Mansion/Objects" instance=ExtResource("25_8furr")]
+transform = Transform3D(-0.0772063, 0, -0.997015, 0, 1, 0, 0.997015, 0, -0.0772063, 1.88114, 0, -9.12075)
+
+[node name="chair3" parent="Mansion/Objects" instance=ExtResource("25_8furr")]
+transform = Transform3D(-0.258448, 0, 0.966025, 0, 1, 0, -0.966025, 0, -0.258448, 2.01767, 0, -8.0248)
+
+[node name="chair4" parent="Mansion/Objects" instance=ExtResource("25_8furr")]
+transform = Transform3D(-0.526318, 0, 0.850288, 0, 1, 0, -0.850288, 0, -0.526318, 1.34541, 0, -7.59864)
+
+[node name="radiator-wall3" parent="Mansion/Objects" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.610841, 0.166179, -7.172)
+
+[node name="radiator-wall4" parent="Mansion/Objects" instance=ExtResource("13_ge3pu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.47959, 0.166179, -10.653)
+
+[node name="Items" type="Node" parent="Mansion"]
+>>>>>>> Stashed changes
 
 [node name="Mother" type="MeshInstance3D" parent="MotherOfificialAnimation/Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_1vh2r")
 skin = SubResource("Skin_634ae")
 
+<<<<<<< Updated upstream
 [node name="AnimationPlayer" type="AnimationPlayer" parent="MotherOfificialAnimation"]
 libraries = {
 "": SubResource("AnimationLibrary_3n2sa")
 }
+=======
+[node name="Blacklight2" parent="Mansion/Items" instance=ExtResource("7_pgpy4")]
+transform = Transform3D(0.00705113, -0.999975, 0, 0.999975, 0.00705113, 0, 0, 0, 1, -11.3193, 0.788394, -14.2535)
+
+[node name="Box1" parent="Mansion/Items" instance=ExtResource("4_1w8h4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2824, 2.62257, -18.1679)
+
+[node name="TestItemObject1" parent="Mansion/Items" instance=ExtResource("3_wpn6b")]
+transform = Transform3D(1, -0.000509935, 0.000669236, 0.000509533, 1, 0.000593858, -0.000669542, -0.000593513, 1, -11.2384, 0, -13.5838)
+
+[node name="stairs_col" type="StaticBody3D" parent="Mansion/Items"]
+transform = Transform3D(1, 0, 0, 0, 0.858065, -0.513541, 0, 0.513541, 0.858065, -9.935, 0.716, -17.658)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Items/stairs_col"]
+shape = SubResource("ConcavePolygonShape3D_xxooh")
+
+[node name="stairs_col2" type="StaticBody3D" parent="Mansion/Items"]
+transform = Transform3D(-1, 4.48952e-08, 7.50144e-08, 0, 0.858065, -0.513541, -8.74228e-08, -0.513541, -0.858065, -11.598, 2.129, -17.981)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Items/stairs_col2"]
+shape = SubResource("ConcavePolygonShape3D_xxooh")
+
+[node name="stairs_col3" type="StaticBody3D" parent="Mansion/Items"]
+transform = Transform3D(-1, 4.48952e-08, 7.50144e-08, 0, 0.858065, -0.513541, -8.74228e-08, -0.513541, -0.858065, -8.25, 2.129, -17.981)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Items/stairs_col3"]
+shape = SubResource("ConcavePolygonShape3D_xxooh")
+
+[node name="stairs_col4" type="StaticBody3D" parent="Mansion/Items"]
+transform = Transform3D(-1, -4.77417e-08, -7.32357e-08, 0, 0.837719, -0.546102, 8.74228e-08, -0.546102, -0.837719, -11.685, -0.798, -18.338)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Items/stairs_col4"]
+shape = SubResource("ConcavePolygonShape3D_xxooh")
+
+[node name="stairs_col5" type="StaticBody3D" parent="Mansion/Items"]
+transform = Transform3D(-4.37114e-08, 0.546102, 0.837719, 0, 0.837719, -0.546102, -1, -2.38709e-08, -3.66178e-08, -9.788, -2.3, -19.987)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Items/stairs_col5"]
+shape = SubResource("ConcavePolygonShape3D_xxooh")
+
+[node name="Paths" type="Node" parent="Mansion"]
+
+[node name="FatherPath" type="Path3D" parent="Mansion/Paths"]
+curve = SubResource("Curve3D_g3ifb")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Mansion/Paths/FatherPath"]
+transform = Transform3D(0.0110945, 0, 0.999934, 0, 1, 0, -0.999934, 0, 0.0110945, -6.8435, 0, -14.3235)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Mansion/Paths/FatherPath/PathFollow3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+remote_path = NodePath("../../../../Characters/Father")
+
+[node name="MotherPath" type="Path3D" parent="Mansion/Paths"]
+curve = SubResource("Curve3D_1n5rm")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Mansion/Paths/MotherPath"]
+transform = Transform3D(-0.120078, 0, -0.992765, 0, 1, 0, 0.992765, 0, -0.120078, -13.2577, 0, -12.9301)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Mansion/Paths/MotherPath/PathFollow3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+remote_path = NodePath("../../../../Characters/Mother")
+
+[node name="mansion-basement-door" parent="." instance=ExtResource("31_kxj88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70394, -2.85, -15.6175)
+
+[node name="mansion_standard_door" parent="." instance=ExtResource("32_b04kb")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.72528, 2.38419e-07, -16.9268)
+
+[editable path="Mansion/Characters/CrawlingFather"]
+>>>>>>> Stashed changes
