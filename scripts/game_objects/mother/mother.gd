@@ -12,6 +12,7 @@ var movement_delta: float
 @onready var interaction_component: InteractionComponent = $InteractionComponent
 @onready var animation_player: AnimationPlayer = $MotherOfificialAnimation/AnimationPlayer
 @onready var navigation_agent: NavigationAgent3D = %NavigationAgent3D
+@onready var armature: Node3D = $MotherOfificialAnimation/Armature
 
 
 func _ready():
@@ -47,6 +48,10 @@ func _physics_process(delta: float) -> void:
 		navigation_agent.set_velocity(new_velocity)
 	else:
 		_on_velocity_computed(new_velocity)
+
+	if global_position.distance_to(next_path_position) > 0.01:
+		var direction = global_position.direction_to(next_path_position)
+		rotation.y = atan2(direction.x, direction.z)
 
 
 func _on_interacted() -> void:
