@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=80 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -32,6 +32,7 @@
 [ext_resource type="Resource" uid="uid://bxq28vsj0pp21" path="res://scenes/game_objects/battery/battery1.tres" id="31_oj6vm"]
 [ext_resource type="PackedScene" uid="uid://ou3ebo3uguee" path="res://objects/small-items/kitchen-1.glb" id="32_581fm"]
 [ext_resource type="Resource" uid="uid://b07eftp6yeiv7" path="res://scenes/game_objects/battery/battery2.tres" id="32_lqkqq"]
+[ext_resource type="Script" path="res://scripts/managers/navigation/navigation_manager.gd" id="33_io6f0"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -988,7 +989,7 @@ path_to_follow = NodePath("../../Paths/FatherPath/PathFollow3D")
 
 [node name="Mother" parent="Mansion/Characters" node_paths=PackedStringArray("path_nodes_act_1") instance=ExtResource("11_k7m57")]
 transform = Transform3D(0.120078, 0, 0.992765, 0, 1, 0, -0.992765, 0, 0.120078, -13.2577, 0, -12.9301)
-path_nodes_act_1 = [NodePath("../../Room Pos Nodes/L1LivingRoom"), NodePath("../../Room Pos Nodes/L1RandomRoom")]
+path_nodes_act_1 = [NodePath("../../Room Pos Nodes/DiningRoom"), NodePath("../../Room Pos Nodes/BedroomGrandma")]
 
 [node name="Grandmother" parent="Mansion/Characters" instance=ExtResource("12_hrdkg")]
 transform = Transform3D(0.359823, 0, -0.174721, 0, 0.4, 0, 0.174721, 0, 0.359823, -5.123, -0.019, -11.493)
@@ -1242,11 +1243,74 @@ battery_item = ExtResource("32_lqkqq")
 
 [node name="Room Pos Nodes" type="Node" parent="Mansion"]
 
-[node name="L1LivingRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
+[node name="DiningRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60833, 0, -9.91731)
 
-[node name="L1RandomRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
+[node name="Entrance" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9877, 0, -9.86035)
+
+[node name="StairsFirstFloor" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.88519, 0.00200915, -15.5774)
+
+[node name="StairsSecondFloor" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.84524, 2.91334, -16.2112)
+
+[node name="StairsMiddleFloor" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.88519, 1.54133, -20.0414)
+
+[node name="Kitchen" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.787982, 0, -8.73372)
+
+[node name="Study" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7528, 0, -12.9311)
+
+[node name="BedroomGrandma" type="Node3D" parent="Mansion/Room Pos Nodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.786141, 0, -17.2596)
+
+[node name="BedroomMC" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2226, 2.87454, -17.0724)
+
+[node name="Lavatory" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3496, 2.87454, -10.0831)
+
+[node name="Playroom" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9904, 2.87454, -12.5617)
+
+[node name="SecondFloorOutlookCorner1" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9648, 2.87454, -16.087)
+
+[node name="SecondFloorOutlookCorner2" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32467, 2.55495, -16.5718)
+
+[node name="SecondFloorOutlookCorner3" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9648, 2.87454, -10.602)
+
+[node name="SecondFloorOutlookCorner4" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.88348, 2.87858, -11.4383)
+
+[node name="BroomCloset" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36722, 2.87454, -18.021)
+
+[node name="BasementFirstRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18622, -2.87788, -18.021)
+
+[node name="StairsBasement" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7025, -1.4782, -20.1314)
+
+[node name="BasementSecondRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.55286, -2.87788, -11.7802)
+
+[node name="LivingRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36722, 2.87454, -9.83492)
+
+[node name="Bathroom" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.47047, 2.87454, -15.8757)
+
+[node name="BedroomParents" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.761427, 2.87454, -17.6248)
+
+[node name="BedroomGuests" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699231, 2.87454, -10.8041)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -1293,5 +1357,34 @@ transform = Transform3D(1, -0.000353329, 1.54445e-11, 0, -4.37114e-08, -1, 0.000
 text = " Darkness is all around us, within us, inside us..."
 autowrap_mode = 3
 width = 250.0
+
+[node name="Managers" type="Node" parent="."]
+
+[node name="NavigationManager" type="Node" parent="Managers" node_paths=PackedStringArray("mc_bedroom", "grandma_bedroom", "parents_bedroom", "guest_bedroom", "living_room", "kitchen", "main_entrance", "hallway_stairs_first_floor", "hallway_stairs_middle_floor", "hallway_stairs_second_floor", "hallway_stairs_basement", "dining_room", "basement_first_room", "basement_second_room", "broom_closet", "study", "bathroom", "lavatory", "playroom", "portrait_room", "outlook_corner_1", "outlook_corner_2", "outlook_corner_3", "outlook_corner_4") groups=["navigation_manager"]]
+script = ExtResource("33_io6f0")
+mc_bedroom = NodePath("../../Mansion/Room Pos Nodes/BedroomMC")
+grandma_bedroom = NodePath("../../Mansion/Room Pos Nodes/BedroomGrandma")
+parents_bedroom = NodePath("../../Mansion/Room Pos Nodes/BedroomParents")
+guest_bedroom = NodePath("../../Mansion/Room Pos Nodes/BedroomGuests")
+living_room = NodePath("../../Mansion/Room Pos Nodes/LivingRoom")
+kitchen = NodePath("../../Mansion/Room Pos Nodes/Kitchen")
+main_entrance = NodePath("../../Mansion/Room Pos Nodes/Entrance")
+hallway_stairs_first_floor = NodePath("../../Mansion/Room Pos Nodes/StairsFirstFloor")
+hallway_stairs_middle_floor = NodePath("../../Mansion/Room Pos Nodes/StairsMiddleFloor")
+hallway_stairs_second_floor = NodePath("../../Mansion/Room Pos Nodes/StairsSecondFloor")
+hallway_stairs_basement = NodePath("../../Mansion/Room Pos Nodes/StairsBasement")
+dining_room = NodePath("../../Mansion/Room Pos Nodes/DiningRoom")
+basement_first_room = NodePath("../../Mansion/Room Pos Nodes/BasementFirstRoom")
+basement_second_room = NodePath("../../Mansion/Room Pos Nodes/BasementSecondRoom")
+broom_closet = NodePath("../../Mansion/Room Pos Nodes/BroomCloset")
+study = NodePath("../../Mansion/Room Pos Nodes/Study")
+bathroom = NodePath("../../Mansion/Room Pos Nodes/Bathroom")
+lavatory = NodePath("../../Mansion/Room Pos Nodes/Lavatory")
+playroom = NodePath("../../Mansion/Room Pos Nodes/Playroom")
+portrait_room = NodePath("../../Mansion/Room Pos Nodes/LivingRoom")
+outlook_corner_1 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner1")
+outlook_corner_2 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner2")
+outlook_corner_3 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner3")
+outlook_corner_4 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner4")
 
 [editable path="Mansion/Characters/CrawlingFather"]

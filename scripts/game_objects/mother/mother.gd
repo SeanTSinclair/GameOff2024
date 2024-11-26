@@ -1,4 +1,3 @@
-class_name Mother
 extends Node3D
 
 @export var move_speed: float = 0.4

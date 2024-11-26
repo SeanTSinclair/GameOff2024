@@ -1,4 +1,3 @@
-class_name Grandmother
 extends Node3D
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
