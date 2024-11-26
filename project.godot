@@ -75,6 +75,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [gui]
 
 theme/custom="res://resources/theme.tres"

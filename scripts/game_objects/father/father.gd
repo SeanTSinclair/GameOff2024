@@ -41,6 +41,8 @@ func _on_interacted() -> void:
 
 
 func run_dialogue(dialouge_string):
+	if player == null:
+		return
 	chatting = true
 	is_stopped = true
 	player.player_in_dialogue = true
