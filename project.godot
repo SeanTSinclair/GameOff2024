@@ -200,6 +200,10 @@ crouch={
 3d_physics/layer_1="world"
 3d_physics/layer_2="interact_object"
 
+[navigation]
+
+3d/merge_rasterizer_cell_scale=0.001
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
