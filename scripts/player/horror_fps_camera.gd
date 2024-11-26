@@ -29,13 +29,6 @@ func _update_actual_window_size() -> void:
 	current_scale = (x_scale if x_scale < y_scale else y_scale) / 2
 
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
-		get_parent().rotate_y(-event.relative.x * camera_sens * current_scale)
-		rotate_x(-event.relative.y * camera_sens * current_scale)
-		rotation.x = clamp(rotation.x, deg_to_rad(-90), deg_to_rad(90))
-
-
 func _process(delta: float) -> void:
 	# Increment timer based on delta to create a continuous wave
 	bob_timer += delta * bob_speed

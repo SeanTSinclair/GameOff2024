@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var jump_velocity := 2.8
 @export var crouch_height := 1.0
 @export var stand_height := 2.0
+@export var can_move := true
 
 var speed = base_speed
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -27,8 +28,15 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
+func _input(event: InputEvent) -> void:
+	if can_move and event is InputEventMouseMotion:
+		rotate_y(-event.relative.x * head.camera_sens * head.current_scale)
+		head.rotate_x(-event.relative.y * head.camera_sens * head.current_scale)
+		head.rotation.x = clamp(head.rotation.x, deg_to_rad(-90), deg_to_rad(90))
+
+
 func calculate_velocity(delta: float) -> void:
-	if player_in_dialogue:
+	if player_in_dialogue or !can_move:
 		velocity.x = 0
 		velocity.z = 0
 		return
