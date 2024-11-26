@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=79 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/player/player.tscn" id="23_6m7vs"]
 [ext_resource type="PackedScene" uid="uid://b6ef8k1k7lvtf" path="res://scenes/game_objects/battery/battery.tscn" id="30_vml1e"]
 [ext_resource type="Resource" uid="uid://bxq28vsj0pp21" path="res://scenes/game_objects/battery/battery1.tres" id="31_oj6vm"]
+[ext_resource type="PackedScene" uid="uid://ou3ebo3uguee" path="res://objects/small-items/kitchen-1.glb" id="32_581fm"]
 [ext_resource type="Resource" uid="uid://b07eftp6yeiv7" path="res://scenes/game_objects/battery/battery2.tres" id="32_lqkqq"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
@@ -834,10 +835,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1998, 2.96071, -5.82447)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.55674, 2.97489, -9.90827)
 
 [node name="oven" parent="Mansion/Model" instance=ExtResource("13_dpf25")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81994, -1.19209e-07, 0.552286)
-
-[node name="sink" parent="Mansion/Model" instance=ExtResource("15_hh1py")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55018, 0.744995, 1.72216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81994, -1.19209e-07, 0.320714)
 
 [node name="radiator-wall3" parent="Mansion/Model" instance=ExtResource("13_ge3pu")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.13404, 2.98874, -1.49977)
@@ -865,6 +863,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8479, 2.97184, -6.85218)
 
 [node name="book4" parent="Mansion/Model" instance=ExtResource("11_ny8aa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8479, 3.30752, -6.78232)
+
+[node name="kitchen-1" parent="Mansion/Model" instance=ExtResource("32_581fm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00149059, 0, -0.00385952)
 
 [node name="Lights" type="Node" parent="Mansion"]
 
