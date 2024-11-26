@@ -72,6 +72,9 @@ bones/31/rotation = Quaternion(0.366602, -0.0723033, 0.0264679, 0.927186)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 unique_name_in_owner = true
+path_max_distance = 1.01
 path_postprocessing = 1
+simplify_path = true
+debug_enabled = true
 
 [editable path="MotherOfificialAnimation"]
