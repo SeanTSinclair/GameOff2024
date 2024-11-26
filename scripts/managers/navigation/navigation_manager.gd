@@ -51,7 +51,11 @@ func _ready() -> void:
 		bathroom,
 		lavatory,
 		playroom,
-		portrait_room
+		portrait_room,
+		outlook_corner_1,
+		outlook_corner_2,
+		outlook_corner_3,
+		outlook_corner_4
 	]
 
 	for room in rooms:
