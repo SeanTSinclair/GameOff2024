@@ -11,9 +11,10 @@ var state: MainStates = MainStates.ACTIVE
 @onready var pause_menu: PauseMenu = %PauseMenu
 @onready var inventory_menu: InventoryMenu = %InventoryMenu
 @onready var journal_menu: JournalMenu = %JournalMenu
-@onready var scene_anim_player: AnimationPlayer = %WorldLayer/TestLevel00/AnimationPlayer
-@onready var father: Father = $WorldLayer/TestLevel00/Mansion/Characters/Father
-@onready var player: CharacterBody3D = $WorldLayer/TestLevel00/Player
+@onready
+var scene_anim_player: AnimationPlayer = %WorldLayer/NavigationRegion3D/TestLevel00/AnimationPlayer
+@onready var father: Father = $WorldLayer/NavigationRegion3D/TestLevel00/Mansion/Characters/Father
+@onready var player: CharacterBody3D = $WorldLayer/NavigationRegion3D/TestLevel00/Player
 
 
 func _ready():

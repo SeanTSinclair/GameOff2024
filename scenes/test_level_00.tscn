@@ -1,8 +1,7 @@
-[gd_scene load_steps=79 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=78 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
-[ext_resource type="PackedScene" uid="uid://cmrduyydccrfe" path="res://scenes/game_objects/box/box.tscn" id="4_1w8h4"]
 [ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
 [ext_resource type="PackedScene" uid="uid://bck73kb2hhe6y" path="res://assets/models/table-simple-00-col.glb" id="6_mtrem"]
 [ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://scenes/game_objects/blacklight/blacklight.tscn" id="7_pgpy4"]
@@ -541,6 +540,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [true, true, false]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Player:can_move")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 9.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_efc7c"]
 length = 0.001
@@ -613,6 +624,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player:can_move")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rqkj3"]
 _data = {
@@ -646,7 +669,8 @@ shadow_reverse_cull_face = true
 shadow_blur = 0.0
 
 [node name="Player" parent="." instance=ExtResource("23_6m7vs")]
-transform = Transform3D(0.728535, 0, 0, 0, 0.728535, 0, 0, 0, 0.728535, -15.396, 3.45742, -14.6622)
+transform = Transform3D(0.728535, 0, 0, 0, 0.728491, -0.00800147, 0, 0.00800147, 0.728491, -15.396, 3.45742, -14.6622)
+can_move = false
 
 [node name="Mansion" type="Node3D" parent="."]
 
@@ -955,9 +979,9 @@ omni_range = 7.928
 transform = Transform3D(0.00498204, 0, -0.999974, 0, 1, 0, 0.999974, 0, 0.00498204, -6.8435, 0, -14.3454)
 path_to_follow = NodePath("../../Paths/FatherPath/PathFollow3D")
 
-[node name="Mother" parent="Mansion/Characters" node_paths=PackedStringArray("path_to_follow") instance=ExtResource("11_k7m57")]
+[node name="Mother" parent="Mansion/Characters" node_paths=PackedStringArray("path_nodes_act_1") instance=ExtResource("11_k7m57")]
 transform = Transform3D(0.120078, 0, 0.992765, 0, 1, 0, -0.992765, 0, 0.120078, -13.2577, 0, -12.9301)
-path_to_follow = NodePath("../../Paths/MotherPath/PathFollow3D")
+path_nodes_act_1 = [NodePath("../../Room Pos Nodes/L1LivingRoom"), NodePath("../../Room Pos Nodes/L1RandomRoom")]
 
 [node name="Grandmother" parent="Mansion/Characters" instance=ExtResource("12_hrdkg")]
 transform = Transform3D(0.359823, 0, -0.174721, 0, 0.4, 0, 0.174721, 0, 0.359823, -5.123, -0.019, -11.493)
@@ -1140,9 +1164,6 @@ text_img = ExtResource("3_bgh7f")
 [node name="Blacklight2" parent="Mansion/Items" instance=ExtResource("7_pgpy4")]
 transform = Transform3D(0.00705113, -0.999975, 0, 0.999975, 0.00705113, 0, 0, 0, 1, -16.2926, 3.66657, -14.2535)
 
-[node name="Box1" parent="Mansion/Items" instance=ExtResource("4_1w8h4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2824, 2.62257, -18.1679)
-
 [node name="TestItemObject1" parent="Mansion/Items" instance=ExtResource("3_wpn6b")]
 transform = Transform3D(1, -0.000509935, 0.000669236, 0.000509533, 1, 0.000593858, -0.000669542, -0.000593513, 1, -11.2384, 0, -13.5838)
 
@@ -1212,10 +1233,19 @@ battery_item = ExtResource("31_oj6vm")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.0727, 3.30666, -16.4987)
 battery_item = ExtResource("32_lqkqq")
 
+[node name="Room Pos Nodes" type="Node" parent="Mansion"]
+
+[node name="L1LivingRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60833, 0, -9.91731)
+
+[node name="L1RandomRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.786141, 0, -17.2596)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_rqkj3")
 }
+speed_scale = 4.0
 
 [node name="IntroBlackThing" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5422, 4.40993, -14.4542)
