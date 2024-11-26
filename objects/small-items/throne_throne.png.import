@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wi6400wr31hk"
-path.s3tc="res://.godot/imported/mansion_standard_door_mansion-door-2.png-1e89f0a40b6f09ab74ca9aa5326a6c12.s3tc.ctex"
+uid="uid://cxgo4o1ert26u"
+path.s3tc="res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "f35710c36d1f12c806d1b2518ae8662f"
+}
 
 [deps]
 
-source_file="res://objects/small-items/mansion_standard_door_mansion-door-2.png"
-dest_files=["res://.godot/imported/mansion_standard_door_mansion-door-2.png-1e89f0a40b6f09ab74ca9aa5326a6c12.s3tc.ctex"]
+source_file="res://objects/small-items/throne_throne.png"
+dest_files=["res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.s3tc.ctex"]
 
 [params]
 

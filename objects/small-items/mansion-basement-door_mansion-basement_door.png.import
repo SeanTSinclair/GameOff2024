@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://58txgggurpwp"
+uid="uid://blkwdj8qvhca4"
 path.s3tc="res://.godot/imported/mansion-basement-door_mansion-basement_door.png-3ae7f0538319d456fdd2eb4806ab1a26.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "2d24f55e10150550c0f0ec4e74c33fc1"
 }
 
 [deps]

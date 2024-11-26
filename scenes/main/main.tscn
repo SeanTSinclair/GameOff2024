@@ -31,8 +31,16 @@ process_mode = 1
 [node name="MeshInstance3D" parent="WorldLayer/TestLevel00/Box1" index="2"]
 material_override = SubResource("StandardMaterial3D_1mtd0")
 
+<<<<<<< Updated upstream
 [node name="MeshInstance3D" parent="WorldLayer/TestLevel00/Box2" index="2"]
 material_override = SubResource("StandardMaterial3D_ok75e")
+=======
+[node name="sink" parent="WorldLayer/TestLevel00/Mansion/Model" index="20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55018, 0.633834, 1.72216)
+
+[node name="Father" parent="WorldLayer/TestLevel00/Mansion/Characters" index="0"]
+transform = Transform3D(0.00498207, 0, -0.999981, 0, 1, 0, 0.999981, 0, 0.00498207, -6.8435, 0, -14.3454)
+>>>>>>> Stashed changes
 
 [node name="MeshInstance3D" parent="WorldLayer/TestLevel00/Box3" index="2"]
 material_override = SubResource("StandardMaterial3D_gifhl")

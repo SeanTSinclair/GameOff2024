@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://jxjvlt3a7bvj"
-path="res://.godot/imported/mansion-basement-door.glb-38eb81e6e89f675264242744ab6c355b.scn"
+uid="uid://cu3pdi33v6d2c"
+path="res://.godot/imported/throne.glb-b339e708be5bd73dcb65c6aeeaf18c3b.scn"
 
 [deps]
 
-source_file="res://objects/small-items/mansion-basement-door.glb"
-dest_files=["res://.godot/imported/mansion-basement-door.glb-38eb81e6e89f675264242744ab6c355b.scn"]
+source_file="res://objects/small-items/throne.glb"
+dest_files=["res://.godot/imported/throne.glb-b339e708be5bd73dcb65c6aeeaf18c3b.scn"]
 
 [params]
 
@@ -32,5 +32,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=0
+gltf/naming_version=1
 gltf/embedded_image_handling=1
