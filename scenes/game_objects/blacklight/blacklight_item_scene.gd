@@ -16,7 +16,6 @@ var flicker_timer: float = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ray.enabled = false
-	pass  # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +35,7 @@ func _process(delta):
 		if flicker_timer >= flicker_speed:
 			flicker_timer = 0.0
 			apply_flicker(power)
-		
+
 		if ray.is_colliding():
 			var collision: Area3D = ray.get_collider()
 			print(collision)
@@ -47,6 +46,7 @@ func _process(delta):
 				if secret_found == null:
 					State.add_secret_found(secret_id)
 					Events.journal.emit(secret.text)
+
 
 func use():
 	active = !active

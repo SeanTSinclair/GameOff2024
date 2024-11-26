@@ -1,4 +1,4 @@
-class_name SecretText 
+class_name SecretText
 extends Node3D
 
 @export var text_img: Texture2D
