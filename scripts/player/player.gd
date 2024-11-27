@@ -21,6 +21,11 @@ var player_in_dialogue = false
 @onready var up_ray = $UpRay
 
 
+func _ready():
+	if DialogueManager != null:
+		DialogueManager.set_player(self)
+
+
 func _physics_process(delta: float) -> void:
 	calculate_velocity(delta)  # Calculates velocity and direction to be used in move_and_slide
 	footsteps()
@@ -89,3 +94,11 @@ func adjust_crouch(to_crouch: bool) -> void:
 	else:
 		collision_shape.shape.height = stand_height
 		head.position.y += (stand_height - crouch_height) / 2
+
+
+func freeze():
+	player_in_dialogue = true
+
+
+func unfreeze():
+	player_in_dialogue = false

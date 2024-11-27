@@ -1,7 +1,10 @@
 extends Node3D
 
+signal interacted
+
 @export var move_speed: float = 0.4
 @export var path_nodes_act_1: Array[Node3D]
+@export var timeline = "mother_timeline"
 
 var is_stopped := false
 var is_traveling_to_room := false
@@ -21,6 +24,8 @@ func _ready():
 	interaction_component.interacted.connect(_on_interacted)
 	navigation_agent.target_position = _get_random_path_node(path_nodes_act_1)
 	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+	if DialogueManager != null:
+		DialogueManager.register_npc(self)
 
 
 func set_movement_target(movement_target: Vector3):
@@ -54,7 +59,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_interacted() -> void:
-	print("implement talk to mother here")
+	if is_stopped:
+		return
+	emit_signal("interacted", self)
 
 
 func _get_random_path_node(nodes: Array[Node3D]) -> Vector3:
@@ -65,3 +72,11 @@ func _get_random_path_node(nodes: Array[Node3D]) -> Vector3:
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
+
+
+func freeze():
+	is_stopped = true
+
+
+func unfreeze():
+	is_stopped = false
