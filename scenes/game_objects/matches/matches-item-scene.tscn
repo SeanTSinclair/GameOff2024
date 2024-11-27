@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4jlo8egoso25"]
+[gd_scene load_steps=3 format=3 uid="uid://dqrpkepykfwwq"]
 
-[ext_resource type="Script" path="res://scenes/game_objects/matches/matches_item_scene.gd" id="1_8vd0d"]
-[ext_resource type="PackedScene" uid="uid://cjvuasttnnjtl" path="res://assets/models/matchbox.glb" id="2_uqxsh"]
+[ext_resource type="Script" path="res://scenes/game_objects/key/key_item_scene.gd" id="1_2yjvc"]
+[ext_resource type="PackedScene" uid="uid://cjvuasttnnjtl" path="res://assets/models/matchbox.glb" id="2_w7qoq"]
 
 [node name="Matches" type="Node3D"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, -0.026912, -0.00897074)
-script = ExtResource("1_8vd0d")
+script = ExtResource("1_2yjvc")
 
-[node name="matchbox" parent="." instance=ExtResource("2_uqxsh")]
+[node name="matchbox" parent="." instance=ExtResource("2_w7qoq")]

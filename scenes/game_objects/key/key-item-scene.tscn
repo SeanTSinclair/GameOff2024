@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4jlo8egoso25"]
+
+[ext_resource type="Script" path="res://scenes/game_objects/key/key_item_scene.gd" id="1_eh0as"]
+[ext_resource type="PackedScene" uid="uid://s6p5pejqpq5y" path="res://assets/models/key.glb" id="2_s4dt0"]
+
+[node name="Key" type="Node3D"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, -0.026912, -0.00897074)
+script = ExtResource("1_eh0as")
+
+[node name="key" parent="." instance=ExtResource("2_s4dt0")]

@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bff0q5s85pv81"]
 
-[ext_resource type="Script" path="res://scenes/game_objects/matches/matches_item_scene.gd" id="1_os0fw"]
+[ext_resource type="Script" path="res://scenes/game_objects/key/key_item_scene.gd" id="1_ek3mb"]
 [ext_resource type="PackedScene" uid="uid://d4hsrc2d1vwoq" path="res://assets/models/MedicineBottle.glb" id="2_02lge"]
 
 [node name="MedicineBottle" type="Node3D"]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, -0.026912, -0.00897074)
-script = ExtResource("1_os0fw")
+script = ExtResource("1_ek3mb")
 
 [node name="MedicineBottle" parent="." instance=ExtResource("2_02lge")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0107713, -0.00021696, -9.48366e-12)
