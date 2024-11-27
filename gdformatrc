@@ -2,3 +2,4 @@ excluded_directories: !!set
   .git: null
   addons: null
   dialogic: null
+  dialogic/timeline: null
