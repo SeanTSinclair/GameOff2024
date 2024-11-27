@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://crrbf5h1dlbt8"]
+
+[ext_resource type="Texture2D" uid="uid://2lsrwhl1rbpv" path="res://assets/help-00-test-blacklight.png" id="1_s5akg"]
+[ext_resource type="PackedScene" uid="uid://bff0q5s85pv81" path="res://scenes/game_objects/medicine_bottle/medicine-bottle-item-scene.tscn" id="2_74ese"]
+[ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="3_3u4s1"]
+
+[resource]
+script = ExtResource("3_3u4s1")
+id = "MEDICINEBOTTLE"
+name = "Medicine Bottle"
+inventory_texture = ExtResource("1_s5akg")
+item_scene = ExtResource("2_74ese")
+description = "Father will like these, smells like citrus"
+equippable = true
+hint_message = "Burn"
