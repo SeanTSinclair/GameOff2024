@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://b07eftp6yeiv7"]
 
-[ext_resource type="Texture2D" uid="uid://cjvvmtlfvr8v3" path="res://assets/battery-item.png" id="1_fdmxy"]
+[ext_resource type="Texture2D" uid="uid://b3ch5fuskpmum" path="res://assets/icons/icon-battery.png" id="1_1syqd"]
 [ext_resource type="PackedScene" uid="uid://dq3ocoigjokba" path="res://scenes/game_objects/battery/battery_item_scene.tscn" id="2_2iyoc"]
 [ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="3_ts64v"]
 
@@ -8,7 +8,7 @@
 script = ExtResource("3_ts64v")
 id = "BATTERY2"
 name = "Battery"
-inventory_texture = ExtResource("1_fdmxy")
+inventory_texture = ExtResource("1_1syqd")
 item_scene = ExtResource("2_2iyoc")
 description = "Add power to you electric equipment.
 

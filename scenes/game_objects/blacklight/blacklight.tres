@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=6 format=3 uid="uid://ch5ye25fdbg1"]
 
-[ext_resource type="Texture2D" uid="uid://bnyxj51377odc" path="res://assets/blacklight-item-icon.png" id="1_onden"]
+[ext_resource type="Texture2D" uid="uid://ckdb4n7oylg8l" path="res://assets/icons/icon-flashlight.png" id="1_jdb2v"]
 [ext_resource type="PackedScene" uid="uid://c3arwen67n1wu" path="res://scenes/game_objects/blacklight/blacklight-item-scene.tscn" id="2_b8jar"]
 [ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="3_ko765"]
 [ext_resource type="Resource" uid="uid://bm26n8r6ak8nc" path="res://resources/tasks/find_blacklight.tres" id="3_rtoxd"]
@@ -10,7 +10,7 @@
 script = ExtResource("3_ko765")
 id = "BLACKLIGHT"
 name = "Blacklight"
-inventory_texture = ExtResource("1_onden")
+inventory_texture = ExtResource("1_jdb2v")
 item_scene = ExtResource("2_b8jar")
 description = "This is a description of the item.
 
