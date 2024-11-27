@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var key_id: String = ""
+
 var open = false
 
 @onready
@@ -13,8 +15,16 @@ func _ready():
 
 
 func _on_interacted() -> void:
-	open = !open
-	if open:
-		anim_player.play("Open")
+	var origin_open = open
+	if key_id != "":
+		if State.is_key_found(key_id):
+			print("Hey")
+			open = !open
 	else:
-		anim_player.play_backwards("Open")
+		open = !open
+
+	if origin_open != open:
+		if open:
+			anim_player.play("Open")
+		else:
+			anim_player.play_backwards("Open")
