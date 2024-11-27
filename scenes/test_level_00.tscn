@@ -987,9 +987,8 @@ omni_range = 7.928
 transform = Transform3D(0.00498204, 0, -0.999974, 0, 1, 0, 0.999974, 0, 0.00498204, -6.8435, 0, -14.3454)
 path_to_follow = NodePath("../../Paths/FatherPath/PathFollow3D")
 
-[node name="Mother" parent="Mansion/Characters" node_paths=PackedStringArray("path_nodes_act_1") instance=ExtResource("11_k7m57")]
+[node name="Mother" parent="Mansion/Characters" instance=ExtResource("11_k7m57")]
 transform = Transform3D(0.120078, 0, 0.992765, 0, 1, 0, -0.992765, 0, 0.120078, -13.2577, 0, -12.9301)
-path_nodes_act_1 = [NodePath("../../Room Pos Nodes/DiningRoom"), NodePath("../../Room Pos Nodes/BedroomGrandma")]
 
 [node name="Grandmother" parent="Mansion/Characters" instance=ExtResource("12_hrdkg")]
 transform = Transform3D(0.359823, 0, -0.174721, 0, 0.4, 0, 0.174721, 0, 0.359823, -5.123, -0.019, -11.493)
