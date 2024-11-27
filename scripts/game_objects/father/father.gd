@@ -1,7 +1,10 @@
 extends Node3D
 
+signal interacted
+
 @export var move_speed: float = 0.15
 @export var path_to_follow: PathFollow3D
+@export var timeline = "testTimeline"
 
 var is_stopped := false
 var chatting = false
@@ -16,7 +19,8 @@ func _ready():
 	animation_player.get_animation("Idle").loop_mode = Animation.LOOP_LINEAR
 	animation_player.get_animation("Walking").loop_mode = Animation.LOOP_LINEAR
 	interaction_component.interacted.connect(_on_interacted)
-	Dialogic.signal_event.connect(_on_dialogue_ended)
+	if DialogueManager != null:
+		DialogueManager.register_npc(self)
 
 
 func set_player(player_node):
@@ -37,21 +41,14 @@ func _physics_process(delta: float) -> void:
 func _on_interacted() -> void:
 	if chatting:
 		return
-	run_dialogue("testTimeline")
+	emit_signal("interacted", self)
 
 
-func run_dialogue(dialouge_string):
-	if player == null:
-		return
-	chatting = true
+func freeze():
 	is_stopped = true
-	player.player_in_dialogue = true
-	Dialogic.start(dialouge_string)
+	chatting = true
 
 
-func _on_dialogue_ended(argument: String):
-	if argument == "test_dialogue_ended":
-		print("Test dialogue ended")
-	chatting = false
+func unfreeze():
 	is_stopped = false
-	player.player_in_dialogue = false
+	chatting = false

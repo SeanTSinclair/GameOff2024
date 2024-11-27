@@ -24,6 +24,7 @@ buses/default_bus_layout="res://resources/audio_bus_layout.tres"
 Events="*res://scripts/autoloaders/events.gd"
 State="*res://scripts/autoloaders/state.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+DialogueManager="*res://scripts/managers/dialogue/dialogue_manager.gd"
 
 [dialogic]
 

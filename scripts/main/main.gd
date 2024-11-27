@@ -11,8 +11,6 @@ var state: MainStates = MainStates.ACTIVE
 @onready var journal_menu: JournalMenu = %JournalMenu
 @onready
 var scene_anim_player: AnimationPlayer = %WorldLayer/NavigationRegion3D/TestLevel00/AnimationPlayer
-@onready var father: Node3D = $Mansion/Characters/Father
-@onready var player: Player = $Player
 
 
 func _ready():
@@ -20,7 +18,6 @@ func _ready():
 	# Trigger the first task - Should be removed when we have an actual first task
 	scene_anim_player.play("Intro")
 	call_deferred("_initial_tasks")
-	# father.set_player(player)
 
 
 func _initial_tasks() -> void:
