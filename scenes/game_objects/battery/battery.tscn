@@ -8,8 +8,8 @@
 [ext_resource type="Resource" uid="uid://bxq28vsj0pp21" path="res://scenes/game_objects/battery/battery1.tres" id="5_wp44d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1ctll"]
-radius = 0.0433794
-height = 0.0978204
+radius = 0.0482628
+height = 0.205543
 
 [node name="Battery" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026912, -0.00897074)

@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjw5ajf6bnv07"
+uid="uid://bt6mfbhj1v26u"
 path.s3tc="res://.godot/imported/TheBeast_beastex5.png-149e55da0baa59b21df870d75857a86f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "39da648b78fd9ec39aafe1681d29f266"
 }
 
 [deps]

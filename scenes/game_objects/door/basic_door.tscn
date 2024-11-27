@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://das4voeed8v6e"]
+
+[ext_resource type="PackedScene" uid="uid://hlc22i851rs6" path="res://assets/models/mansion_standard_door.glb" id="1_8mcg5"]
+[ext_resource type="Script" path="res://scenes/game_objects/door/basic_door.gd" id="1_17eor"]
+[ext_resource type="PackedScene" uid="uid://bkxp5t2pd7n4k" path="res://scenes/components/interaction_component/interaction_component.tscn" id="2_64jhs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s61fs"]
+size = Vector3(0.209412, 2.15326, 1)
+
+[sub_resource type="Animation" id="Animation_7pved"]
+resource_name = "Open"
+length = 0.25
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mansion_standard_door")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.25, 1, 0, 0.7192, 0, 0.694803)
+
+[sub_resource type="Animation" id="Animation_yuh0n"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mansion_standard_door")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xnh6x"]
+_data = {
+"Open": SubResource("Animation_7pved"),
+"RESET": SubResource("Animation_yuh0n")
+}
+
+[node name="BasicDoor" type="Node3D"]
+script = ExtResource("1_17eor")
+
+[node name="mansion_standard_door" parent="." instance=ExtResource("1_8mcg5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="InteractionComponent" parent="mansion_standard_door" instance=ExtResource("2_64jhs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+prompt_message = "open"
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="mansion_standard_door/InteractionComponent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00942993, 1.05275, -0.505621)
+shape = SubResource("BoxShape3D_s61fs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xnh6x")
+}
