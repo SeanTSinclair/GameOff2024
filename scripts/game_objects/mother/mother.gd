@@ -1,6 +1,6 @@
 extends NPC
 
-@export var path_nodes_act_1: Array[Node3D]
+signal interacted
 
 
 func _ready():
@@ -10,4 +10,15 @@ func _ready():
 
 
 func _on_interacted() -> void:
-	print("implement talk to mother here")
+	print("Implement this dude...")
+	if is_stopped:
+		return
+	emit_signal("interacted", self)
+
+
+func freeze():
+	is_stopped = true
+
+
+func unfreeze():
+	is_stopped = false
