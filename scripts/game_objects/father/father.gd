@@ -4,11 +4,9 @@ signal interacted
 
 @export var move_speed: float = 0.15
 @export var path_to_follow: PathFollow3D
-@export var timeline = "testTimeline"
+@export var timeline = "father_timeline"
 
 var is_stopped := false
-var chatting = false
-var player
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
 @onready var animation_player: AnimationPlayer = $FatherFullAnimation_2/AnimationPlayer
@@ -23,10 +21,6 @@ func _ready():
 		DialogueManager.register_npc(self)
 
 
-func set_player(player_node):
-	player = player_node
-
-
 func _physics_process(delta: float) -> void:
 	if not path_to_follow:
 		return
@@ -39,16 +33,14 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_interacted() -> void:
-	if chatting:
+	if is_stopped:
 		return
 	emit_signal("interacted", self)
 
 
 func freeze():
 	is_stopped = true
-	chatting = true
 
 
 func unfreeze():
 	is_stopped = false
-	chatting = false

@@ -29,12 +29,15 @@ DialogueManager="*res://scripts/managers/dialogue/dialogue_manager.gd"
 [dialogic]
 
 directories/dch_directory={
+"being": "res://dialogic/characters/being.dch",
 "father": "res://dialogic/characters/father.dch",
 "grandmother": "res://dialogic/characters/grandmother.dch",
 "mother": "res://dialogic/characters/mother.dch",
 "player": "res://dialogic/characters/player.dch"
 }
 directories/dtl_directory={
+"father_timeline": "res://dialogic/timeline/father_timeline.dtl",
+"grandmother_timeline": "res://dialogic/timeline/grandmother_timeline.dtl",
 "testTimeline": "res://dialogic/timeline/testTimeline.dtl"
 }
 layout/style_list=["res://dialogic/styles/default.tres"]
@@ -60,7 +63,9 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-variables={}
+variables={
+"bottleFound": true
+}
 glossary/glossary_files=["res://dialogic/glossary.tres"]
 text/autocolor_names=false
 
