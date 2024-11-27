@@ -24,16 +24,21 @@ buses/default_bus_layout="res://resources/audio_bus_layout.tres"
 Events="*res://scripts/autoloaders/events.gd"
 State="*res://scripts/autoloaders/state.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+DialogueManager="*res://scripts/managers/dialogue/dialogue_manager.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"being": "res://dialogic/characters/being.dch",
 "father": "res://dialogic/characters/father.dch",
 "grandmother": "res://dialogic/characters/grandmother.dch",
 "mother": "res://dialogic/characters/mother.dch",
 "player": "res://dialogic/characters/player.dch"
 }
 directories/dtl_directory={
+"father_timeline": "res://dialogic/timeline/father_timeline.dtl",
+"grandmother_timeline": "res://dialogic/timeline/grandmother_timeline.dtl",
+"mother_timeline": "res://dialogic/timeline/mother_timeline.dtl",
 "testTimeline": "res://dialogic/timeline/testTimeline.dtl"
 }
 layout/style_list=["res://dialogic/styles/default.tres"]
@@ -74,6 +79,10 @@ window/stretch/mode="viewport"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
 
 [gui]
 
