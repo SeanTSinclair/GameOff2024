@@ -38,10 +38,8 @@ _data = {
 script = ExtResource("1_17eor")
 
 [node name="mansion_standard_door" parent="." instance=ExtResource("1_8mcg5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="InteractionComponent" parent="mansion_standard_door" instance=ExtResource("2_64jhs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 prompt_message = "open"
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="mansion_standard_door/InteractionComponent"]
