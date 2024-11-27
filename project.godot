@@ -41,7 +41,7 @@ directories/dtl_directory={
 "mother_timeline": "res://dialogic/timeline/mother_timeline.dtl",
 "testTimeline": "res://dialogic/timeline/testTimeline.dtl"
 }
-layout/style_list=["res://dialogic/styles/default.tres"]
+layout/style_list=["res://dialogic/styles/default.tres", "res://dialogic/styles/being.tres"]
 layout/default_style="res://dialogic/styles/default.tres"
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
