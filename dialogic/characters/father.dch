@@ -12,7 +12,7 @@
 "pitch_base": 1.0,
 "pitch_variance": 0.0,
 "skip_characters": 0.0,
-"sound_path": "",
+"sound_path": "res://addons/dialogic/Example Assets/sound-effects/typing2.wav",
 "volume_base": 0.0,
 "volume_variance": 0.0
 }
