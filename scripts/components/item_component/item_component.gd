@@ -23,3 +23,4 @@ func _on_interaction_component_interacted() -> void:
 	Events.picked_up_item.emit(item)
 	if item_root:
 		item_root.queue_free()
+		queue_free()
