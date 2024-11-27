@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwklif3owofm"]
+
+[ext_resource type="Script" path="res://scenes/game_objects/jerry_can/jerry_can_item_scene.gd" id="1_6luya"]
+[ext_resource type="PackedScene" uid="uid://cn7irrrt4osth" path="res://assets/models/jerry-can.glb" id="2_cq6xh"]
+
+[node name="JerryCan" type="Node3D"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, -0.026912, -0.00897074)
+script = ExtResource("1_6luya")
+
+[node name="jerry-can" parent="." instance=ExtResource("2_cq6xh")]
