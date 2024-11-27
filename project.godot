@@ -64,7 +64,9 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-variables={}
+variables={
+"bottleFound": false
+}
 glossary/glossary_files=["res://dialogic/glossary.tres"]
 text/autocolor_names=false
 
