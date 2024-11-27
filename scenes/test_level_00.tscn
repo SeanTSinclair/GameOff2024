@@ -1390,7 +1390,7 @@ outlook_corner_3 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorn
 outlook_corner_4 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner4")
 
 [node name="BasicDoor" parent="." instance=ExtResource("34_al8nw")]
-transform = Transform3D(0.0346029, 3.02508e-09, -0.999401, 8.74228e-08, -1, 0, -0.999401, -8.73704e-08, -0.0346029, -13.6003, 4.91598, -16.7058)
+transform = Transform3D(0.0346029, 3.02508e-09, -0.999401, 8.74228e-08, -1, 0, -0.999401, -8.73704e-08, -0.0346029, -13.6298, 4.94789, -16.8521)
 
 [node name="JerryCan" parent="." instance=ExtResource("35_fw434")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5575, 2.82309, -10.5568)
