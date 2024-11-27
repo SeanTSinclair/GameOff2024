@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=83 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -33,6 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://ou3ebo3uguee" path="res://objects/small-items/kitchen-1.glb" id="32_581fm"]
 [ext_resource type="Resource" uid="uid://b07eftp6yeiv7" path="res://scenes/game_objects/battery/battery2.tres" id="32_lqkqq"]
 [ext_resource type="Script" path="res://scripts/managers/navigation/navigation_manager.gd" id="33_io6f0"]
+[ext_resource type="PackedScene" uid="uid://das4voeed8v6e" path="res://scenes/game_objects/door/basic_door.tscn" id="34_al8nw"]
+[ext_resource type="PackedScene" uid="uid://w86tuoo0lxtr" path="res://scenes/game_objects/jerry_can/jerry_can.tscn" id="35_fw434"]
+[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/matches/matches.tscn" id="36_6j4jq"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -987,9 +990,8 @@ omni_range = 7.928
 transform = Transform3D(0.00498204, 0, -0.999974, 0, 1, 0, 0.999974, 0, 0.00498204, -6.8435, 0, -14.3454)
 path_to_follow = NodePath("../../Paths/FatherPath/PathFollow3D")
 
-[node name="Mother" parent="Mansion/Characters" node_paths=PackedStringArray("path_nodes_act_1") instance=ExtResource("11_k7m57")]
+[node name="Mother" parent="Mansion/Characters" instance=ExtResource("11_k7m57")]
 transform = Transform3D(0.120078, 0, 0.992765, 0, 1, 0, -0.992765, 0, 0.120078, -13.2577, 0, -12.9301)
-path_nodes_act_1 = [NodePath("../../Room Pos Nodes/DiningRoom"), NodePath("../../Room Pos Nodes/BedroomGrandma")]
 
 [node name="Grandmother" parent="Mansion/Characters" instance=ExtResource("12_hrdkg")]
 transform = Transform3D(0.359823, 0, -0.174721, 0, 0.4, 0, 0.174721, 0, 0.359823, -5.123, -0.019, -11.493)
@@ -1386,5 +1388,14 @@ outlook_corner_1 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorn
 outlook_corner_2 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner2")
 outlook_corner_3 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner3")
 outlook_corner_4 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner4")
+
+[node name="BasicDoor" parent="." instance=ExtResource("34_al8nw")]
+transform = Transform3D(0.0346029, 3.02508e-09, -0.999401, 8.74228e-08, -1, 0, -0.999401, -8.73704e-08, -0.0346029, -13.6298, 4.94789, -16.8521)
+
+[node name="JerryCan" parent="." instance=ExtResource("35_fw434")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5575, 2.82309, -10.5568)
+
+[node name="Matches" parent="." instance=ExtResource("36_6j4jq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.8047, 2.82309, -9.56148)
 
 [editable path="Mansion/Characters/CrawlingFather"]

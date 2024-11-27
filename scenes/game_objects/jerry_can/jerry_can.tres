@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://b7vx4y1782x17"]
+
+[ext_resource type="Texture2D" uid="uid://bi1kgemp0c8mg" path="res://assets/icons/icon-jerry-can.png" id="1_n8klk"]
+[ext_resource type="PackedScene" uid="uid://cwklif3owofm" path="res://scenes/game_objects/jerry_can/jerry-item-scene.tscn" id="2_57ist"]
+[ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="5_pen0h"]
+
+[resource]
+script = ExtResource("5_pen0h")
+id = "JERRYCAN"
+name = "Jerry Can"
+inventory_texture = ExtResource("1_n8klk")
+item_scene = ExtResource("2_57ist")
+description = "Burn Baby Burn"
+equippable = true
+hint_message = "Burn"

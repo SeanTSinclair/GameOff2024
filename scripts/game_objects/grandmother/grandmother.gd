@@ -7,7 +7,7 @@ signal interacted
 var is_stopped = false
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
-@onready var animation_player: AnimationPlayer = $GrannOfficialAnimation/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Body/AnimationPlayer
 
 
 func _ready():
