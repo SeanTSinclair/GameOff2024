@@ -1,3 +1,4 @@
+class_name Father
 extends Node3D
 
 signal interacted
@@ -9,7 +10,7 @@ signal interacted
 var is_stopped := false
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
-@onready var animation_player: AnimationPlayer = $FatherFullAnimation_2/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $Body/AnimationPlayer
 
 
 func _ready():
