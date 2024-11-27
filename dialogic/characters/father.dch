@@ -4,7 +4,7 @@
 "_translation_id": "",
 "color": Color(1, 1, 1, 1),
 "custom_info": {
-"sound_mood_default": "",
+"sound_mood_default": "Mood 1",
 "sound_moods": {
 "Mood 1": {
 "mode": 0,

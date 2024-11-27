@@ -1,6 +1,7 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=18 format=3 uid="uid://cg8s1j47ph88l"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=19 format=3 uid="uid://cg8s1j47ph88l"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_n3y88"]
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://addons/dialogic/Modules/DefaultLayoutParts/Base_Default/default_layout_base.tscn" id="1_pmges"]
 [ext_resource type="PackedScene" uid="uid://c1k5m0w3r40xf" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_FullBackground/full_background_layer.tscn" id="2_2t5qk"]
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="3_ns5q0"]
 [ext_resource type="PackedScene" uid="uid://by6waso0mjpjp" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/textbox_with_speaker_portrait.tscn" id="4_sqvdu"]
@@ -12,6 +13,7 @@
 
 [sub_resource type="Resource" id="Resource_vp6ih"]
 script = ExtResource("1_n3y88")
+scene = ExtResource("1_pmges")
 overrides = {
 "follow_viewport": "true"
 }
