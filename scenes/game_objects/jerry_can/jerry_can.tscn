@@ -12,8 +12,7 @@ size = Vector3(0.421631, 0.526001, 0.181427)
 [node name="JerryCan" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.026912, -0.00897074)
 
-[node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance", "interaction_component") instance=ExtResource("3_axvr4")]
-mesh_instance = NodePath("")
+[node name="OutlineComponent" parent="." node_paths=PackedStringArray("interaction_component") instance=ExtResource("3_axvr4")]
 interaction_component = NodePath("../InteractionComponent")
 
 [node name="InteractionComponent" parent="." instance=ExtResource("4_jxfak")]
