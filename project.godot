@@ -38,6 +38,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "father_timeline": "res://dialogic/timeline/father_timeline.dtl",
 "grandmother_timeline": "res://dialogic/timeline/grandmother_timeline.dtl",
+"mother_timeline": "res://dialogic/timeline/mother_timeline.dtl",
 "testTimeline": "res://dialogic/timeline/testTimeline.dtl"
 }
 layout/style_list=["res://dialogic/styles/default.tres"]
@@ -64,7 +65,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
-"bottleFound": true
+"bottleFound": false
 }
 glossary/glossary_files=["res://dialogic/glossary.tres"]
 text/autocolor_names=false

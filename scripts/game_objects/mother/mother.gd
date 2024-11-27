@@ -4,7 +4,7 @@ signal interacted
 
 @export var move_speed: float = 0.4
 @export var path_nodes_act_1: Array[Node3D]
-@export var timeline = "testTimeline"
+@export var timeline = "mother_timeline"
 
 var is_stopped := false
 var is_traveling_to_room := false
