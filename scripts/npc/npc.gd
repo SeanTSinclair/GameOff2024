@@ -1,6 +1,8 @@
 class_name NPC
 extends Node3D
 
+signal interacted
+
 @export_category("Movement")
 @export var move_speed: float = 0.4
 @export var should_move: bool = false
@@ -8,7 +10,6 @@ extends Node3D
 @export_category("Animations")
 @export var idle_animation_string: String = "Idle"
 @export var walk_animation_string: String = "Walk"
-# @export var sit_animation_string = "Sitting_Idle" #Granny idle anim
 
 @export_category("Dialogue")
 @export var timeline: String
@@ -24,21 +25,35 @@ var is_stopped: bool = false
 
 
 func _ready() -> void:
-	# Setup Nav and Player refs
-	if !navigation_manager and should_move:
-		navigation_manager = get_tree().get_first_node_in_group("navigation_manager")
+	_movement_setup()
+	_animations_setup()
+
 	player = get_tree().get_first_node_in_group("player")
 
-	if should_move:
-		assert(navigation_manager, "NavigationManager not found from node " + name)
 	assert(player, "Player reference not found from node " + name)
 
 	# Interaction setup
 	interaction_component.interacted.connect(_on_interacted)
-	navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 
+	if DialogueManager != null:
+		DialogueManager.register_npc(self)
+
+
+func _movement_setup() -> void:
+	# Setup Nav and Player refs
 	if should_move:
+		if !navigation_manager:
+			navigation_manager = get_tree().get_first_node_in_group("navigation_manager")
+		assert(navigation_manager, "NavigationManager not found from node " + name)
+		if navigation_agent:
+			navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
+
 		call_deferred("_navigate_to_random_location")
+
+
+func _animations_setup() -> void:
+	animation_player.get_animation(idle_animation_string).loop_mode = Animation.LOOP_LINEAR
+	animation_player.get_animation(walk_animation_string).loop_mode = Animation.LOOP_LINEAR
 
 
 func _navigate_to_random_location():
@@ -87,3 +102,11 @@ func _on_velocity_computed(safe_velocity: Vector3) -> void:
 
 func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
+
+
+func freeze():
+	is_stopped = true
+
+
+func unfreeze():
+	is_stopped = false
