@@ -1,13 +1,13 @@
-[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dydx204s350te"]
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bdx6eynw7r86o"]
 
 [ext_resource type="Texture2D" uid="uid://ct85ilsn4x2mn" path="res://assets/icons/icon-matchbox.png" id="1_n8ddc"]
-[ext_resource type="PackedScene" uid="uid://b4jlo8egoso25" path="res://scenes/game_objects/key/key-item-scene.tscn" id="2_7i8yy"]
+[ext_resource type="PackedScene" uid="uid://b4jlo8egoso25" path="res://scenes/game_objects/matches/matches-item-scene.tscn" id="2_7i8yy"]
 [ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="3_ymj0x"]
 
 [resource]
 script = ExtResource("3_ymj0x")
 id = "MATCHES"
-name = "MAtches"
+name = "Matches"
 inventory_texture = ExtResource("1_n8ddc")
 item_scene = ExtResource("2_7i8yy")
 description = "Burn Baby Burn"
