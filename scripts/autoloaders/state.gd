@@ -13,6 +13,7 @@ var keys_found = {}
 func reset() -> void:
 	power = initial_power
 	secret_texts_found = initial_secrets_found
+	keys_found = initial_keys_found
 
 
 func get_power():

@@ -1,0 +1,4 @@
+[background arg="res://dialogic/backgrounds/blackScreen.png" fade="0.0"]
+Darkness is all around us, [br]within us, inside us...
+[wait_input hide_text="false"]
+[end_timeline]

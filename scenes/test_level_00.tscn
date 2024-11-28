@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=86 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -560,6 +560,105 @@ tracks/9/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_kjyrb"]
+resource_name = "Intro"
+length = 10.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -14.7253, 3.644, -14.882, 5.2333, 1, -14.7253, 3.644, -14.882, 10, 1, -15.396, 3.45742, -14.6622)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 90, 0, 0, 1, 10, 1, 0, 0, 0, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/path = NodePath("Mansion/Lights/OmniLight3D4:omni_range")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1e+06, 0.000205297),
+"update": 0,
+"values": [0.0, 7.928]
+}
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707, 0, 0, 0.707, 5.23333, 1, 0.707, 0, 0, 0.707, 10, 1, 0, 0, 0, 1)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("IntroBlackThing/Label3D:transparency")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("IntroBlackThing/MeshInstance3D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.00452232, 0.118425, -0.924691, 2.3, 1, -0.00452232, 0.118425, -0.924691, 4.7, 1, -0.00452232, 0.118425, -1.92469)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/path = NodePath("IntroBlackThing/MeshInstance3D2")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, -0.00452232, 0.118425, 0.58867, 2.3, 1, -0.00452232, 0.118425, 0.58867, 4.73333, 1, -0.00452232, 0.118425, 1.58867)
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/path = NodePath("IntroBlackThing/MeshInstance3D:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 4.73333, 4.93333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = false
+tracks/8/path = NodePath("IntroBlackThing/MeshInstance3D2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 4.73333, 4.96667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Player:can_move")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 9.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="Animation" id="Animation_efc7c"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -647,6 +746,7 @@ tracks/7/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rqkj3"]
 _data = {
 "Intro": SubResource("Animation_f3xto"),
+"Intro no black": SubResource("Animation_kjyrb"),
 "RESET": SubResource("Animation_efc7c")
 }
 
@@ -676,7 +776,7 @@ shadow_reverse_cull_face = true
 shadow_blur = 0.0
 
 [node name="Player" parent="." instance=ExtResource("23_6m7vs")]
-transform = Transform3D(0.728535, 0, 0, 0, -3.18453e-08, -0.728535, 0, 0.728535, -3.18453e-08, -15.396, 3.45742, -14.6622)
+transform = Transform3D(0.728535, 0, 0, 0, -3.18453e-08, -0.728535, 0, 0.728535, -3.18453e-08, -14.7253, 3.644, -14.882)
 can_move = false
 
 [node name="Mansion" type="Node3D" parent="."]
@@ -920,7 +1020,7 @@ shadow_enabled = true
 shadow_bias = 0.052
 shadow_normal_bias = 0.0
 shadow_blur = 0.0
-omni_range = 7.928
+omni_range = 0.0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="Mansion/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5473, 2.36577, -17.0837)
@@ -1267,6 +1367,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.761427, 2.87454, -17.6248)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699231, 2.87454, -10.8041)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_rqkj3")
 }

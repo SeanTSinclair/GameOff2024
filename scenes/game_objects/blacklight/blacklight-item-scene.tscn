@@ -29,3 +29,6 @@ collide_with_areas = true
 
 [node name="fleshlight" parent="." instance=ExtResource("1_51qk4")]
 visible = false
+
+[editable path="flashlight"]
+[editable path="fleshlight"]
