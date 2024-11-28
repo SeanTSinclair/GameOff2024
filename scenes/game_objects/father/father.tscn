@@ -8,6 +8,9 @@
 
 [node name="Father" type="Node3D"]
 script = ExtResource("1_wkf6p")
+should_move = true
+walk_animation_string = "Walking"
+timeline = "father_timeline"
 
 [node name="InteractionComponent" parent="." instance=ExtResource("3_svhgf")]
 prompt_message = "Talk"
@@ -90,6 +93,9 @@ bones/38/rotation = Quaternion(0.646685, -0.105259, -0.234951, 0.717996)
 bones/39/position = Vector3(4.77071e-06, 32.5502, 1.0115e-06)
 bones/39/rotation = Quaternion(0.64624, 0.140839, 0.00999161, 0.749959)
 bones/40/position = Vector3(-2.47359e-06, 11.2355, -9.83479e-07)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
 
 [editable path="InteractionComponent"]
 [editable path="Body"]
