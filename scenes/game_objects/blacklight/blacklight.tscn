@@ -36,5 +36,6 @@ item = ExtResource("5_de1ob")
 interaction_component = NodePath("../InteractionComponent")
 item_root = NodePath("..")
 
+[editable path="flashlight"]
 [editable path="Flashlight"]
 [editable path="InteractionComponent"]
