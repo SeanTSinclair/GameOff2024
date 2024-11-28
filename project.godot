@@ -24,6 +24,7 @@ buses/default_bus_layout="res://resources/audio_bus_layout.tres"
 Events="*res://scripts/autoloaders/events.gd"
 State="*res://scripts/autoloaders/state.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+DialogueManager="*res://scripts/managers/dialogue/dialogue_manager.gd"
 
 [dialogic]
 
@@ -74,6 +75,10 @@ window/stretch/mode="viewport"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
 
 [gui]
 
@@ -199,6 +204,10 @@ crouch={
 3d_render/layer_2="UV"
 3d_physics/layer_1="world"
 3d_physics/layer_2="interact_object"
+
+[navigation]
+
+3d/merge_rasterizer_cell_scale=0.001
 
 [rendering]
 

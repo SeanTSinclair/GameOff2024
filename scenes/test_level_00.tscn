@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=114 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -32,6 +32,40 @@
 [ext_resource type="Resource" uid="uid://bxq28vsj0pp21" path="res://scenes/game_objects/battery/battery1.tres" id="31_oj6vm"]
 [ext_resource type="PackedScene" uid="uid://ou3ebo3uguee" path="res://objects/small-items/kitchen-1.glb" id="32_581fm"]
 [ext_resource type="Resource" uid="uid://b07eftp6yeiv7" path="res://scenes/game_objects/battery/battery2.tres" id="32_lqkqq"]
+[ext_resource type="Texture2D" uid="uid://dmerd6m40ckrm" path="res://assets/flames_sprite/flames3_01_Layer.png" id="33_fxjx8"]
+[ext_resource type="Texture2D" uid="uid://bl1jnjjxutecu" path="res://assets/flames_sprite/flames3_02_Layer.png" id="34_b7xfc"]
+[ext_resource type="Texture2D" uid="uid://mqti0bdpqv8d" path="res://assets/flames_sprite/flames3_03_Layer.png" id="35_nryk3"]
+[ext_resource type="Texture2D" uid="uid://bgpr5gkaven2n" path="res://assets/flames_sprite/flames3_04_Layer.png" id="36_3ld0e"]
+[ext_resource type="Texture2D" uid="uid://vrurcl8kio14" path="res://assets/flames_sprite/flames3_05_Layer.png" id="37_bjncq"]
+[ext_resource type="Texture2D" uid="uid://ddxya441p65r6" path="res://assets/flames_sprite/flames3_06_Layer.png" id="38_3cbv1"]
+[ext_resource type="Texture2D" uid="uid://cv8e1mpoc0yr4" path="res://assets/flames_sprite/flames3_07_Layer.png" id="39_nk2n4"]
+[ext_resource type="Texture2D" uid="uid://bcrpua5symoy2" path="res://assets/flames_sprite/flames3_08_Layer.png" id="40_uydqi"]
+[ext_resource type="Texture2D" uid="uid://d1l8r0lrjhm2q" path="res://assets/flames_sprite/flames3_09_Layer.png" id="41_dkf2j"]
+[ext_resource type="Texture2D" uid="uid://d14hqrk0udfse" path="res://assets/flames_sprite/flames3_10_Layer.png" id="42_y7lyn"]
+[ext_resource type="Texture2D" uid="uid://bwf6qyn0af7hx" path="res://assets/flames_sprite/flames3_11_Layer.png" id="43_lphf4"]
+[ext_resource type="Texture2D" uid="uid://4rv68sv14rsi" path="res://assets/flames_sprite/flames3_12_Layer.png" id="44_r7a0h"]
+[ext_resource type="Texture2D" uid="uid://d1fvs2gfbf1hf" path="res://assets/flames_sprite/flames3_13_Layer.png" id="45_w5nmu"]
+[ext_resource type="Texture2D" uid="uid://bxcyxag6bea78" path="res://assets/flames_sprite/flames3_14_Layer.png" id="46_cihg5"]
+[ext_resource type="Texture2D" uid="uid://x1ng2xg4p5e3" path="res://assets/flames_sprite/flames3_15_Layer.png" id="47_aeuse"]
+[ext_resource type="Texture2D" uid="uid://dv61c5n73cx85" path="res://assets/flames_sprite/flames3_16_Layer.png" id="48_yle0p"]
+[ext_resource type="Texture2D" uid="uid://duq0x0gs4w7rt" path="res://assets/flames_sprite/flames3_17_Layer.png" id="49_06x81"]
+[ext_resource type="Texture2D" uid="uid://b0kb5etae78tp" path="res://assets/flames_sprite/flames3_18_Layer.png" id="50_77uap"]
+[ext_resource type="Texture2D" uid="uid://dfalx7d21yyjq" path="res://assets/flames_sprite/flames3_19_Layer.png" id="51_ll5se"]
+[ext_resource type="Texture2D" uid="uid://dubeqineo5vaf" path="res://assets/flames_sprite/flames3_20_Layer.png" id="52_she34"]
+[ext_resource type="Texture2D" uid="uid://b2rr2hbj5fhdw" path="res://assets/flames_sprite/flames3_22_Layer.png" id="53_ct64r"]
+[ext_resource type="Texture2D" uid="uid://cf48iso85yb7x" path="res://assets/flames_sprite/flames3_23_Layer.png" id="54_uepb3"]
+[ext_resource type="Texture2D" uid="uid://ciacvdwdiaddd" path="res://assets/flames_sprite/flames3_24_Layer.png" id="55_gunxo"]
+[ext_resource type="Texture2D" uid="uid://bmeaoatid5lku" path="res://assets/flames_sprite/flames3_25_Layer.png" id="56_0obu4"]
+[ext_resource type="Texture2D" uid="uid://dog5ya2do56rk" path="res://assets/flames_sprite/flames3_26_Layer.png" id="57_mf14c"]
+[ext_resource type="Texture2D" uid="uid://b78svnow0nw6j" path="res://assets/flames_sprite/flames3_27_Layer.png" id="58_4xj7i"]
+[ext_resource type="Texture2D" uid="uid://dos5cvflub7nt" path="res://assets/flames_sprite/flames3_28_Layer.png" id="59_10lld"]
+[ext_resource type="Texture2D" uid="uid://dpqfteni6o5ni" path="res://assets/flames_sprite/flames3_29_Layer.png" id="60_0k246"]
+[ext_resource type="Texture2D" uid="uid://c1n0komgs55fr" path="res://assets/flames_sprite/flames3_30_Layer.png" id="61_7ncq3"]
+[ext_resource type="Texture2D" uid="uid://bbspfbip0rp57" path="res://assets/flames_sprite/flames3_31_Layer.png" id="62_7ro0n"]
+[ext_resource type="Texture2D" uid="uid://ij0gt5ibrhfs" path="res://assets/flames_sprite/flames3_32_Layer.png" id="63_ple4m"]
+[ext_resource type="Texture2D" uid="uid://bwstth58ipi0d" path="res://assets/flames_sprite/flames3_33_Layer.png" id="64_6axme"]
+[ext_resource type="Texture2D" uid="uid://c572gnegnet8h" path="res://assets/flames_sprite/flames3_34_Layer.png" id="65_vn1ei"]
+[ext_resource type="Script" path="res://scenes/fire_omnilight.gd" id="66_l4jbj"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -654,6 +688,113 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cbovl"]
 material = SubResource("StandardMaterial3D_0551u")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5pudd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_fxjx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_b7xfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_nryk3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3ld0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_bjncq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_3cbv1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_nk2n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_uydqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_dkf2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_y7lyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_lphf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_r7a0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_w5nmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_cihg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_aeuse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_yle0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_06x81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_77uap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ll5se")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_she34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_ct64r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_uepb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_gunxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_0obu4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_mf14c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_4xj7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_10lld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_0k246")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_7ncq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_7ro0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ple4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_6axme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_vn1ei")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
 
 [node name="TestLevel00" type="Node3D"]
 
@@ -1287,5 +1428,25 @@ transform = Transform3D(1, -0.000353329, 1.54445e-11, 0, -4.37114e-08, -1, 0.000
 text = " Darkness is all around us, within us, inside us..."
 autowrap_mode = 3
 width = 250.0
+
+[node name="fire_sprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4159, 3.48602, -18.1788)
+cast_shadow = 0
+billboard = 1
+double_sided = false
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_5pudd")
+autoplay = "default"
+frame_progress = 0.067768
+
+[node name="OmniLight" type="OmniLight3D" parent="fire_sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.385257, 0)
+light_color = Color(1, 0.47451, 0.0313726, 1)
+light_energy = 6.0
+script = ExtResource("66_l4jbj")
+
+[node name="FlickerTimer" type="Timer" parent="fire_sprite/OmniLight"]
+wait_time = 0.1
+autostart = true
 
 [editable path="Mansion/Characters/CrawlingFather"]
