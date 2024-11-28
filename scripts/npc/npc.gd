@@ -67,7 +67,6 @@ func _physics_process(delta: float) -> void:
 
 	animation_player.play(walk_animation_string)
 
-	# Do not query when the map has never synchronized and is empty.
 	if should_move:
 		if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
 			return
@@ -98,6 +97,10 @@ func _on_interacted() -> void:
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
 	global_position = global_position.move_toward(global_position + safe_velocity, movement_delta)
+
+
+func teleport_to_node(node: Node3D):
+	global_position = node.position
 
 
 func set_movement_target(movement_target: Vector3):
