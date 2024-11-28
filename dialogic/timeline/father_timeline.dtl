@@ -1,19 +1,15 @@
 father: Your mothers eyes haunt me boy.
 [sound volume="0.0"]
-father: There’s something I’m missin’, \
-something I’ve lost
-player: What’s that father? Where can I find it?
-father: It’s lost... I can’t find it. \
-But the darkness, it knows where.
-being: Memories are secrets wrapped in time, \
-where’s that bottle?
+father: There’s something I’m missin’, [br] something I’ve lost
+player: What’s that father? [br]Where can I find it?
+father: It’s lost... I can’t find it. [br]But the darkness, it knows where.
+being: Memories are secrets wrapped in time,[br] where’s that bottle?
 if {MEDICINEBOTTLE} == true:
 	[sound volume="0.0"]
 	father: She was here…once.
 	player: It feels cold in this house
 	[sound volume="0.0"]
-	being: In hiding you’ll find the warmth, \
-find the flames.
+	being: In hiding you’ll find the warmth, find the flames.
 else:
 	player: What is that voice?
 	[end_timeline]

@@ -65,7 +65,6 @@ func _physics_process(delta: float) -> void:
 	if is_stopped:
 		animation_player.play(idle_animation_string)
 		return
-	print(walk_animation_string)
 	animation_player.play(walk_animation_string)
 
 	if should_move:
