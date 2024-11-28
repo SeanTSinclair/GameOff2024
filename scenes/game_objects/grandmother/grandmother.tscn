@@ -103,4 +103,6 @@ bones/47/position = Vector3(1.068e-05, 37.2523, 7.20996e-07)
 bones/47/rotation = Quaternion(0.349674, -0.0188637, 0.00852435, 0.936643)
 bones/48/position = Vector3(-1.73412e-05, 12.7846, 1.78788e-07)
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
 [editable path="Body"]
