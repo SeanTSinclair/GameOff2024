@@ -108,6 +108,8 @@ func _on_picked_up_item(item: Item) -> void:
 	var message: String = "Picked up " + item.name
 	if item.hint_message:
 		message += ". " + item.hint_message
+	if Dialogic.VAR.get_variable(item.id) != null:
+		Dialogic.VAR.set_variable(item.id, true)
 	Events.journal.emit(message)
 
 	if item.pickup_completes_task:

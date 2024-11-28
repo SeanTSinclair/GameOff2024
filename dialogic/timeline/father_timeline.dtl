@@ -7,7 +7,7 @@ father: It’s lost... I can’t find it. \
 But the darkness, it knows where.
 being: Memories are secrets wrapped in time, \
 where’s that bottle?
-if {bottleFound} == true:
+if {MEDICINEBOTTLE} == true:
 	[sound volume="0.0"]
 	father: She was here…once.
 	player: It feels cold in this house

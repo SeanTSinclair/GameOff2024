@@ -65,7 +65,11 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 variables={
-"bottleFound": false
+"BATTERY1": false,
+"BATTERY2": false,
+"BLACKLIGHT": false,
+"MATCHES": false,
+"MEDICINEBOTTLE": false
 }
 glossary/glossary_files=["res://dialogic/glossary.tres"]
 text/autocolor_names=false

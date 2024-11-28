@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=85 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -35,10 +35,9 @@
 [ext_resource type="Script" path="res://scripts/managers/navigation/navigation_manager.gd" id="33_io6f0"]
 [ext_resource type="PackedScene" uid="uid://das4voeed8v6e" path="res://scenes/game_objects/door/basic_door.tscn" id="34_al8nw"]
 [ext_resource type="PackedScene" uid="uid://w86tuoo0lxtr" path="res://scenes/game_objects/jerry_can/jerry_can.tscn" id="35_fw434"]
-[ext_resource type="PackedScene" uid="uid://dxb5x7fgao2bg" path="res://scenes/game_objects/matches/matches.tscn" id="36_6j4jq"]
 [ext_resource type="PackedScene" uid="uid://dhsddsuwfrrq0" path="res://scenes/game_objects/medicine_bottle/medicine-bottle.tscn" id="37_xpdxs"]
 [ext_resource type="PackedScene" uid="uid://bht5o11q0xh3t" path="res://assets/models/table_eat.glb" id="38_21tky"]
-[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/key/key.tscn" id="39_je7ar"]
+[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/matches/matches.tscn" id="39_je7ar"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -989,15 +988,18 @@ omni_range = 7.928
 
 [node name="Characters" type="Node" parent="Mansion"]
 
-[node name="Father" parent="Mansion/Characters" node_paths=PackedStringArray("path_to_follow") instance=ExtResource("12_w7bug")]
+[node name="Father" parent="Mansion/Characters" instance=ExtResource("12_w7bug")]
 transform = Transform3D(0.00498204, 0, -0.999974, 0, 1, 0, 0.999974, 0, 0.00498204, -6.8435, 0, -14.3454)
-path_to_follow = NodePath("../../Paths/FatherPath/PathFollow3D")
 
 [node name="Mother" parent="Mansion/Characters" instance=ExtResource("11_k7m57")]
 transform = Transform3D(0.120078, 0, 0.992765, 0, 1, 0, -0.992765, 0, 0.120078, -13.2577, 0, -12.9301)
+timeline = ""
 
 [node name="Grandmother" parent="Mansion/Characters" instance=ExtResource("12_hrdkg")]
 transform = Transform3D(0.359823, 0, -0.174721, 0, 0.4, 0, 0.174721, 0, 0.359823, -5.123, -0.019, -11.493)
+idle_animation_string = "Idle"
+walk_animation_string = "Walk"
+timeline = ""
 
 [node name="CrawlingFather" parent="Mansion/Characters" instance=ExtResource("13_px4lr")]
 transform = Transform3D(0.33006, 3.93141e-09, -0.259732, 0.259732, -1.13532e-08, 0.33006, -3.93141e-09, -0.42, -1.13532e-08, -8.672, 5.041, -9.398)
@@ -1352,7 +1354,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5575, 2.82309, -10.5568)
 [node name="MedicineBottle" parent="." instance=ExtResource("37_xpdxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10721, 3.4652, -9.36132)
 
-[node name="Matches" parent="." instance=ExtResource("36_6j4jq")]
+[node name="Matches" parent="." instance=ExtResource("39_je7ar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9194, 2.82309, -9.68316)
 
 [node name="table_eat" parent="." instance=ExtResource("38_21tky")]
@@ -1360,7 +1362,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3277, 2.85, -18.6741)
 
 [node name="Key" parent="." instance=ExtResource("39_je7ar")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.681, 3.5605, -18.5998)
-key_id = "Door1"
 
 [node name="BasicDoor2" parent="." instance=ExtResource("34_al8nw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.4262, 2.86742, -10.794)

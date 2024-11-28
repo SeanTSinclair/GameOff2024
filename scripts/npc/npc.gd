@@ -1,6 +1,7 @@
 class_name NPC
 extends Node3D
 
+@warning_ignore("unused_signal")
 signal interacted
 
 @export_category("Movement")
@@ -64,7 +65,7 @@ func _physics_process(delta: float) -> void:
 	if is_stopped:
 		animation_player.play(idle_animation_string)
 		return
-
+	print(walk_animation_string)
 	animation_player.play(walk_animation_string)
 
 	if should_move:
