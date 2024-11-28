@@ -9,6 +9,7 @@
 [node name="Mother" type="Node3D"]
 script = ExtResource("1_tkuxa")
 should_move = true
+timeline = "mother_timeline"
 
 [node name="InteractionComponent" parent="." instance=ExtResource("3_x42uo")]
 prompt_message = "Talk"
@@ -73,10 +74,8 @@ bones/30/rotation = Quaternion(0.435021, -0.00169065, -0.0317002, 0.899861)
 bones/31/rotation = Quaternion(0.38028, -0.0840416, 0.029816, 0.920562)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-unique_name_in_owner = true
 path_max_distance = 1.01
 path_postprocessing = 1
 simplify_path = true
-debug_enabled = true
 
 [editable path="Body"]

@@ -6,9 +6,12 @@ extends Node3D
 @export var should_move: bool = false
 
 @export_category("Animations")
-@export var idle_animation_string = "Idle"
-@export var walk_animation_string = "Walk"
-@export var sit_animation_string = "Sitting_Idle"
+@export var idle_animation_string: String = "Idle"
+@export var walk_animation_string: String = "Walk"
+# @export var sit_animation_string = "Sitting_Idle" #Granny idle anim
+
+@export_category("Dialogue")
+@export var timeline: String
 
 var navigation_manager: NavigationManager
 var player: Player
@@ -17,16 +20,17 @@ var is_stopped: bool = false
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
 @onready var animation_player: AnimationPlayer = $Body/AnimationPlayer
-@onready var navigation_agent: NavigationAgent3D = %NavigationAgent3D
+@onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 
 
 func _ready() -> void:
 	# Setup Nav and Player refs
-	if !navigation_manager:
+	if !navigation_manager and should_move:
 		navigation_manager = get_tree().get_first_node_in_group("navigation_manager")
 	player = get_tree().get_first_node_in_group("player")
 
-	assert(navigation_manager, "NavigationManager not found from node " + name)
+	if should_move:
+		assert(navigation_manager, "NavigationManager not found from node " + name)
 	assert(player, "Player reference not found from node " + name)
 
 	# Interaction setup
@@ -49,13 +53,14 @@ func _physics_process(delta: float) -> void:
 	animation_player.play(walk_animation_string)
 
 	# Do not query when the map has never synchronized and is empty.
-	if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
-		return
-	if navigation_agent.is_navigation_finished():
-		animation_player.play(idle_animation_string)
-		return
+	if should_move:
+		if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
+			return
+		if navigation_agent.is_navigation_finished():
+			animation_player.play(idle_animation_string)
+			return
 
-	_handle_movement(delta)
+		_handle_movement(delta)
 
 
 func _handle_movement(delta: float) -> void:

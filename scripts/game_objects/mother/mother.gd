@@ -10,7 +10,6 @@ func _ready():
 
 
 func _on_interacted() -> void:
-	print("Implement this dude...")
 	if is_stopped:
 		return
 	emit_signal("interacted", self)
