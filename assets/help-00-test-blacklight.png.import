@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://2lsrwhl1rbpv"
 path.s3tc="res://.godot/imported/help-00-test-blacklight.png-8428474fa5a6a68dd2d582001021d58a.s3tc.ctex"
+path.etc2="res://.godot/imported/help-00-test-blacklight.png-8428474fa5a6a68dd2d582001021d58a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/help-00-test-blacklight.png"
-dest_files=["res://.godot/imported/help-00-test-blacklight.png-8428474fa5a6a68dd2d582001021d58a.s3tc.ctex"]
+dest_files=["res://.godot/imported/help-00-test-blacklight.png-8428474fa5a6a68dd2d582001021d58a.s3tc.ctex", "res://.godot/imported/help-00-test-blacklight.png-8428474fa5a6a68dd2d582001021d58a.etc2.ctex"]
 
 [params]
 

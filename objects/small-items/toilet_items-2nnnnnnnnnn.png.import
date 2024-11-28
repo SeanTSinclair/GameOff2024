@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b78rq3t21gu71"
 path.s3tc="res://.godot/imported/toilet_items-2nnnnnnnnnn.png-9711f0ee5f880f51cd3054b78058b99f.s3tc.ctex"
+path.etc2="res://.godot/imported/toilet_items-2nnnnnnnnnn.png-9711f0ee5f880f51cd3054b78058b99f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://objects/small-items/toilet_items-2nnnnnnnnnn.png"
-dest_files=["res://.godot/imported/toilet_items-2nnnnnnnnnn.png-9711f0ee5f880f51cd3054b78058b99f.s3tc.ctex"]
+dest_files=["res://.godot/imported/toilet_items-2nnnnnnnnnn.png-9711f0ee5f880f51cd3054b78058b99f.s3tc.ctex", "res://.godot/imported/toilet_items-2nnnnnnnnnn.png-9711f0ee5f880f51cd3054b78058b99f.etc2.ctex"]
 
 [params]
 

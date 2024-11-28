@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://belfk3acipk76"
 path.s3tc="res://.godot/imported/main-door_mansion_main_door_mansion.png-f572f6d9de4ea8ab52d91b2fc1935a8b.s3tc.ctex"
+path.etc2="res://.godot/imported/main-door_mansion_main_door_mansion.png-f572f6d9de4ea8ab52d91b2fc1935a8b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/mansion/main-door_mansion_main_door_mansion.png"
-dest_files=["res://.godot/imported/main-door_mansion_main_door_mansion.png-f572f6d9de4ea8ab52d91b2fc1935a8b.s3tc.ctex"]
+dest_files=["res://.godot/imported/main-door_mansion_main_door_mansion.png-f572f6d9de4ea8ab52d91b2fc1935a8b.s3tc.ctex", "res://.godot/imported/main-door_mansion_main_door_mansion.png-f572f6d9de4ea8ab52d91b2fc1935a8b.etc2.ctex"]
 
 [params]
 

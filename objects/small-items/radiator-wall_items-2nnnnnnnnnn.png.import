@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://sqt2c1sj6x25"
 path.s3tc="res://.godot/imported/radiator-wall_items-2nnnnnnnnnn.png-df9b5e6c5903cb7a36766aefb18d793f.s3tc.ctex"
+path.etc2="res://.godot/imported/radiator-wall_items-2nnnnnnnnnn.png-df9b5e6c5903cb7a36766aefb18d793f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://objects/small-items/radiator-wall_items-2nnnnnnnnnn.png"
-dest_files=["res://.godot/imported/radiator-wall_items-2nnnnnnnnnn.png-df9b5e6c5903cb7a36766aefb18d793f.s3tc.ctex"]
+dest_files=["res://.godot/imported/radiator-wall_items-2nnnnnnnnnn.png-df9b5e6c5903cb7a36766aefb18d793f.s3tc.ctex", "res://.godot/imported/radiator-wall_items-2nnnnnnnnnn.png-df9b5e6c5903cb7a36766aefb18d793f.etc2.ctex"]
 
 [params]
 

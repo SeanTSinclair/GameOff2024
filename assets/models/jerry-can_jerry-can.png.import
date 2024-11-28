@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://0wajj0pvcy2a"
 path.s3tc="res://.godot/imported/jerry-can_jerry-can.png-4cb5a6c4a2fddfc7df59c15f779df05e.s3tc.ctex"
+path.etc2="res://.godot/imported/jerry-can_jerry-can.png-4cb5a6c4a2fddfc7df59c15f779df05e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/models/jerry-can_jerry-can.png"
-dest_files=["res://.godot/imported/jerry-can_jerry-can.png-4cb5a6c4a2fddfc7df59c15f779df05e.s3tc.ctex"]
+dest_files=["res://.godot/imported/jerry-can_jerry-can.png-4cb5a6c4a2fddfc7df59c15f779df05e.s3tc.ctex", "res://.godot/imported/jerry-can_jerry-can.png-4cb5a6c4a2fddfc7df59c15f779df05e.etc2.ctex"]
 
 [params]
 

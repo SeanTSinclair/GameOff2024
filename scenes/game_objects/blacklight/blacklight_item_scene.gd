@@ -38,7 +38,6 @@ func _process(delta):
 
 		if ray.is_colliding():
 			var collision: Area3D = ray.get_collider()
-			print(collision)
 			var secret = collision.get_parent_node_3d().get_parent_node_3d()
 			if secret is SecretText:
 				var secret_id = secret.secret_text_id
