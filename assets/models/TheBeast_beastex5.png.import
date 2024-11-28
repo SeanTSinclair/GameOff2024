@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt6mfbhj1v26u"
 path.s3tc="res://.godot/imported/TheBeast_beastex5.png-149e55da0baa59b21df870d75857a86f.s3tc.ctex"
+path.etc2="res://.godot/imported/TheBeast_beastex5.png-149e55da0baa59b21df870d75857a86f.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/TheBeast_beastex5.png"
-dest_files=["res://.godot/imported/TheBeast_beastex5.png-149e55da0baa59b21df870d75857a86f.s3tc.ctex"]
+dest_files=["res://.godot/imported/TheBeast_beastex5.png-149e55da0baa59b21df870d75857a86f.s3tc.ctex", "res://.godot/imported/TheBeast_beastex5.png-149e55da0baa59b21df870d75857a86f.etc2.ctex"]
 
 [params]
 
