@@ -39,6 +39,7 @@ directories/dtl_directory={
 "father_timeline": "res://dialogic/timeline/father_timeline.dtl",
 "grandmother_timeline": "res://dialogic/timeline/grandmother_timeline.dtl",
 "mother_timeline": "res://dialogic/timeline/mother_timeline.dtl",
+"start": "res://dialogic/timeline/start.dtl",
 "testTimeline": "res://dialogic/timeline/testTimeline.dtl"
 }
 layout/style_list=["res://dialogic/styles/default.tres", "res://dialogic/styles/being.tres"]

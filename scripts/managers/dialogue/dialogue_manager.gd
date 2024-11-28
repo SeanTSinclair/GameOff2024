@@ -28,6 +28,8 @@ func unregister_npc(npc):
 
 #test
 func start_dialogue(npc_reference: Node = null):
+	if player.is_on_floor() == false:
+		return
 	current_npc = npc_reference
 	var timeline_name = current_npc.timeline
 	if player == null:
@@ -44,14 +46,14 @@ func _on_dialogue_end():
 
 
 func freeze_all():
-	if player:
+	if player != null:
 		player.freeze()
-	if current_npc:
+	if current_npc != null:
 		current_npc.freeze()
 
 
 func unfreeze_all():
-	if player:
+	if player != null:
 		player.unfreeze()
-	if current_npc:
+	if current_npc != null:
 		current_npc.unfreeze()

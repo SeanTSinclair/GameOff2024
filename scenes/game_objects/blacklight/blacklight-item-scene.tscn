@@ -30,3 +30,6 @@ collide_with_bodies = false
 
 [node name="fleshlight" parent="." instance=ExtResource("1_51qk4")]
 visible = false
+
+[editable path="flashlight"]
+[editable path="fleshlight"]

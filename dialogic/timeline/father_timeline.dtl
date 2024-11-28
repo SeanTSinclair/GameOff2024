@@ -9,7 +9,7 @@ if {MEDICINEBOTTLE} == true:
 	father: She was here…once.
 	player: It feels cold in this house
 	[sound volume="0.0"]
-	being: In hiding you’ll find the warmth, find the flames.
+	being: In hiding you’ll find the warmth,[br]find the flames.
 	set {MEDICINEBOTTLE} = false
 else:
 	player: What is that voice?
