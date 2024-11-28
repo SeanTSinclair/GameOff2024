@@ -68,6 +68,7 @@ variables={
 "BATTERY1": false,
 "BATTERY2": false,
 "BLACKLIGHT": false,
+"KEY": false,
 "MATCHES": false,
 "MEDICINEBOTTLE": false
 }
