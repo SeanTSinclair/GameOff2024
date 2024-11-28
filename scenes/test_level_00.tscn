@@ -1430,17 +1430,18 @@ autowrap_mode = 3
 width = 250.0
 
 [node name="fire_sprite" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4159, 3.48602, -18.1788)
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -14.4159, 2.85642, -18.1788)
 cast_shadow = 0
+offset = Vector2(0, 63.46)
 billboard = 1
 double_sided = false
-texture_filter = 0
+texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_5pudd")
 autoplay = "default"
 frame_progress = 0.067768
 
 [node name="OmniLight" type="OmniLight3D" parent="fire_sprite"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.385257, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.463192, 0)
 light_color = Color(1, 0.47451, 0.0313726, 1)
 light_energy = 6.0
 script = ExtResource("66_l4jbj")
