@@ -15,14 +15,14 @@ var scene_anim_player: AnimationPlayer = %WorldLayer/NavigationRegion3D/TestLeve
 
 func _ready():
 	State.reset()
+	Dialogic.clear()
+	DialogueManager.start_dialogue_no_npc("start")
+	DialogueManager.connect("timeline_finished", Callable(self, "_play_animation"))
 
-	scene_anim_player.animation_finished.connect(_on_scene_anim_player_animation_finished)
-	scene_anim_player.play("Intro")
 
-
-func _on_scene_anim_player_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "Intro":
-		call_deferred("_initial_tasks")
+func _play_animation():
+	scene_anim_player.play("Intro_dialogue")
+	call_deferred("_initial_tasks")
 
 
 func _initial_tasks() -> void:

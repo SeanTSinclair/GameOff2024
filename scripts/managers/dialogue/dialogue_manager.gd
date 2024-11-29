@@ -1,5 +1,8 @@
 extends Node
 
+@warning_ignore("unused_signal")
+signal timeline_finished
+
 var player
 var npcs = []
 var current_npc: Node = null
@@ -26,7 +29,15 @@ func unregister_npc(npc):
 		npcs.erase(npc)
 
 
-#test
+func start_dialogue_no_npc(timeline_name: String):
+	if player == null:
+		print("Error: Player not set!")
+		return
+	freeze_all()
+	Dialogic.start(timeline_name)
+	Dialogic.timeline_ended.connect(_on_dialogue_end_no_npc)
+
+
 func start_dialogue(npc_reference: Node = null):
 	if player.is_on_floor() == false:
 		return
@@ -42,6 +53,12 @@ func start_dialogue(npc_reference: Node = null):
 
 func _on_dialogue_end():
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end)
+	unfreeze_all()
+
+
+func _on_dialogue_end_no_npc():
+	emit_signal("timeline_finished")
+	Dialogic.timeline_ended.disconnect(_on_dialogue_end_no_npc)
 	unfreeze_all()
 
 

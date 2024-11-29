@@ -12,19 +12,7 @@ id = "BLACKLIGHT"
 name = "Blacklight"
 inventory_texture = ExtResource("1_jdb2v")
 item_scene = ExtResource("2_b8jar")
-description = "This is a description of the item.
-
-It can have text on multiple lines.
-
-[b]Bold text[/b]
-
-And it can scroll
-
-More lines
-
-Even more lines
-
-And even more lines again"
+description = "Its my blacklight"
 equippable = true
 hint_message = ""
 pickup_completes_task = ExtResource("3_rtoxd")
