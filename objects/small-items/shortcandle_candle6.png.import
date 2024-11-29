@@ -2,18 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ijkej8fdnd77"
-path.s3tc="res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.s3tc.ctex"
-path.etc2="res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.etc2.ctex"
+uid="uid://m5gtoh41xyhv"
+path.s3tc="res://.godot/imported/shortcandle_candle6.png-396d8160ae411f477db70042f85e6448.s3tc.ctex"
+path.etc2="res://.godot/imported/shortcandle_candle6.png-396d8160ae411f477db70042f85e6448.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "539853686a0dbdbe145e8d63750a7370"
+}
 
 [deps]
 
-source_file="res://objects/small-items/throne_throne.png"
-dest_files=["res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.s3tc.ctex", "res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.etc2.ctex"]
+source_file="res://objects/small-items/shortcandle_candle6.png"
+dest_files=["res://.godot/imported/shortcandle_candle6.png-396d8160ae411f477db70042f85e6448.s3tc.ctex", "res://.godot/imported/shortcandle_candle6.png-396d8160ae411f477db70042f85e6448.etc2.ctex"]
 
 [params]
 
