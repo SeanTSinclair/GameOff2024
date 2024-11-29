@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://cplt10ewtg24x"
-=======
-uid="uid://cu4jwwm7foyi7"
->>>>>>> Stashed changes
-path.s3tc="res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.s3tc.ctex"
+uid="uid://cap011weo0io0"
+path.s3tc="res://.godot/imported/TheBeast_beastex5.png-3a585cd16d9444037dbcecd33eef843d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f35710c36d1f12c806d1b2518ae8662f"
+"md5": "39da648b78fd9ec39aafe1681d29f266"
 }
 
 [deps]
 
-source_file="res://objects/small-items/throne_throne.png"
-dest_files=["res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.s3tc.ctex"]
+source_file="res://assets/models/ancient_relic/TheBeast_beastex5.png"
+dest_files=["res://.godot/imported/TheBeast_beastex5.png-3a585cd16d9444037dbcecd33eef843d.s3tc.ctex"]
 
 [params]
 

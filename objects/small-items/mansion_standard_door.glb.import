@@ -3,17 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< Updated upstream
-uid="uid://c40pa2wmby6la"
-=======
-uid="uid://dtxmeg4fcfj88"
->>>>>>> Stashed changes
-path="res://.godot/imported/throne.glb-b339e708be5bd73dcb65c6aeeaf18c3b.scn"
+uid="uid://coflwlvhnm7y7"
+path="res://.godot/imported/mansion_standard_door.glb-603b816ca1db9d21672291c279dfedbf.scn"
 
 [deps]
 
-source_file="res://objects/small-items/throne.glb"
-dest_files=["res://.godot/imported/throne.glb-b339e708be5bd73dcb65c6aeeaf18c3b.scn"]
+source_file="res://objects/small-items/mansion_standard_door.glb"
+dest_files=["res://.godot/imported/mansion_standard_door.glb-603b816ca1db9d21672291c279dfedbf.scn"]
 
 [params]
 

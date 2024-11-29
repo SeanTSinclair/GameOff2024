@@ -3,17 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< Updated upstream
-uid="uid://c40pa2wmby6la"
-=======
-uid="uid://dtxmeg4fcfj88"
->>>>>>> Stashed changes
-path="res://.godot/imported/throne.glb-b339e708be5bd73dcb65c6aeeaf18c3b.scn"
+uid="uid://cndt6rr87is64"
+path="res://.godot/imported/TheBeast.glb-14e64711acc33bddde642ed069c520bf.scn"
 
 [deps]
 
-source_file="res://objects/small-items/throne.glb"
-dest_files=["res://.godot/imported/throne.glb-b339e708be5bd73dcb65c6aeeaf18c3b.scn"]
+source_file="res://assets/models/ancient_relic/TheBeast.glb"
+dest_files=["res://.godot/imported/TheBeast.glb-14e64711acc33bddde642ed069c520bf.scn"]
 
 [params]
 

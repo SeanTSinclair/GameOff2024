@@ -2,24 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< Updated upstream
-uid="uid://cplt10ewtg24x"
-=======
-uid="uid://cu4jwwm7foyi7"
->>>>>>> Stashed changes
-path.s3tc="res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.s3tc.ctex"
+uid="uid://b3w2bavugivgj"
+path.s3tc="res://.godot/imported/mansion-basement-door_mansion-basement_door.png-3ae7f0538319d456fdd2eb4806ab1a26.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f35710c36d1f12c806d1b2518ae8662f"
+"md5": "2d24f55e10150550c0f0ec4e74c33fc1"
 }
 
 [deps]
 
-source_file="res://objects/small-items/throne_throne.png"
-dest_files=["res://.godot/imported/throne_throne.png-c04712940e0ced0082b5416f76e936b2.s3tc.ctex"]
+source_file="res://objects/small-items/mansion-basement-door_mansion-basement_door.png"
+dest_files=["res://.godot/imported/mansion-basement-door_mansion-basement_door.png-3ae7f0538319d456fdd2eb4806ab1a26.s3tc.ctex"]
 
 [params]
 
