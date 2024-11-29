@@ -1,0 +1,39 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bsv6ro2hvytdi"
+path.s3tc="res://.godot/imported/wardrobe_bookshelf-wardrobe-uv.png-07cb06885dc5c53c46e036f6fdf182ba.s3tc.ctex"
+path.etc2="res://.godot/imported/wardrobe_bookshelf-wardrobe-uv.png-07cb06885dc5c53c46e036f6fdf182ba.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "c1f4d7394bb43e9576b36c51819b4163"
+}
+
+[deps]
+
+source_file="res://objects/small-items/wardrobe_bookshelf-wardrobe-uv.png"
+dest_files=["res://.godot/imported/wardrobe_bookshelf-wardrobe-uv.png-07cb06885dc5c53c46e036f6fdf182ba.s3tc.ctex", "res://.godot/imported/wardrobe_bookshelf-wardrobe-uv.png-07cb06885dc5c53c46e036f6fdf182ba.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
