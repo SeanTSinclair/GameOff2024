@@ -15,9 +15,14 @@ var scene_anim_player: AnimationPlayer = %WorldLayer/NavigationRegion3D/TestLeve
 
 func _ready():
 	State.reset()
-	# Trigger the first task - Should be removed when we have an actual first task
+
+	scene_anim_player.animation_finished.connect(_on_scene_anim_player_animation_finished)
 	scene_anim_player.play("Intro")
-	call_deferred("_initial_tasks")
+
+
+func _on_scene_anim_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "Intro":
+		call_deferred("_initial_tasks")
 
 
 func _initial_tasks() -> void:
