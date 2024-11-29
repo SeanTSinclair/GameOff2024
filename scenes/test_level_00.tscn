@@ -1,4 +1,4 @@
-[gd_scene load_steps=154 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=155 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://ble8f3kxvakvx" path="res://objects/small-items/sink.glb" id="15_hh1py"]
 [ext_resource type="PackedScene" uid="uid://cmxv8csugjrmu" path="res://objects/small-items/toilet.glb" id="16_temqm"]
 [ext_resource type="PackedScene" uid="uid://dc70pmm4vntk6" path="res://objects/small-items/bathtub.glb" id="17_lrqbp"]
+[ext_resource type="Script" path="res://scenes/the_beast.gd" id="19_ey2wh"]
 [ext_resource type="Texture2D" uid="uid://b60r1xoyrcqsh" path="res://assets/models/relic/TheBeast (1)_beastex5.png" id="19_kryju"]
 [ext_resource type="PackedScene" uid="uid://b7o8e6ib4bnpm" path="res://objects/small-items/sofa-table.glb" id="21_ynw3f"]
 [ext_resource type="PackedScene" uid="uid://br55m81f8vunk" path="res://objects/small-items/sofa.glb" id="22_vkwxh"]
@@ -2838,6 +2839,7 @@ autoplay = "Crawl"
 
 [node name="TheBeast" type="Node3D" parent="Mansion/Characters"]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.81326, -3.68024, -18.2685)
+script = ExtResource("19_ey2wh")
 
 [node name="Armature" type="Node3D" parent="Mansion/Characters/TheBeast"]
 transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
