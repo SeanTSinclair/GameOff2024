@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://wa0junudfbi0"]
+[gd_scene load_steps=11 format=4 uid="uid://wa0junudfbi0"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_6yhn5"]
 [ext_resource type="Script" path="res://scripts/player/horror_fps_camera.gd" id="2_wuyh7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scenes/player/hand_slot.gd" id="4_wqstd"]
 [ext_resource type="Script" path="res://scenes/player/footstep.gd" id="5_er2bu"]
 [ext_resource type="Script" path="res://scripts/player/reticle.gd" id="6_67t18"]
+[ext_resource type="Script" path="res://scripts/room_text.gd" id="7_n7pm2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3plaa"]
 
@@ -41,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456626, 0)
 
 [node name="HandItemSlot" type="Node3D" parent="Head"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.475278, 0, -1.16118)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.431573, 0.0810053, -0.555893)
 script = ExtResource("4_wqstd")
 
 [node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]
@@ -71,5 +72,13 @@ grow_vertical = 2
 [node name="Reticle" type="CenterContainer" parent="UserInterface/CenterContainer"]
 layout_mode = 2
 script = ExtResource("6_67t18")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UserInterface"]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 210.0
+offset_bottom = 50.0
+text = "Your room1112"
+script = ExtResource("7_n7pm2")
 
 [connection signal="finished" from="SoundFootsteps" to="SoundFootsteps" method="_on_finished"]

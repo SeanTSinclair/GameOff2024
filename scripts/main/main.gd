@@ -18,6 +18,7 @@ func _ready():
 
 	scene_anim_player.animation_finished.connect(_on_scene_anim_player_animation_finished)
 	scene_anim_player.play("Intro")
+	SoundManager.play_sfx("TEST", 0, -20, 0.37)
 
 
 func _on_scene_anim_player_animation_finished(anim_name: StringName) -> void:
