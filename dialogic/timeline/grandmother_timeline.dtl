@@ -2,3 +2,4 @@ grandmother: There is a darkness in this house, [br] darkness we couldn’t have
 player: Grandmother?
 grandmother: Child, what keeps us here, [br]only we know.
 grandmother: Speak to your father... [br] I’m hearing... strange sounds
+do DialogueManager.start_task("find_father")

@@ -1,4 +1,5 @@
 father: Your mothers eyes haunt me boy.
+do DialogueManager.finish_task("find_father")
 [sound volume="0.0"]
 father: There’s something I’m missin’, [br] something I’ve lost
 player: What’s that father? [br]Where can I find it?
@@ -13,4 +14,5 @@ if {MEDICINEBOTTLE} == true:
 	set {MEDICINEBOTTLE} = false
 else:
 	player: What is that voice?
+	do DialogueManager.start_dialogue("find_medicine_bottle")
 	[end_timeline]

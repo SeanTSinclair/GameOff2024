@@ -26,6 +26,8 @@ func _on_feedback(message: String) -> void:
 
 
 func _on_task_received(task: Task) -> void:
+	print("Recieveing task:")
+	print(task.id)
 	if active_tasks.has(task.id) || completed_tasks.has(task.id):
 		return
 

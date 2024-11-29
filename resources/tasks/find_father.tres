@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://bgyybxi72u8e"]
+
+[ext_resource type="Script" path="res://scripts/managers/journal/task.gd" id="1_r5jyk"]
+
+[resource]
+script = ExtResource("1_r5jyk")
+id = "FINDFATHER"
+description = "Find my father, grandmother told me to find him"
+task_received_message = "I should find my  Father"
+task_completed_message = "I found my old man"

@@ -1,5 +1,8 @@
 extends Node
 
+const FIND_FATHER = preload("res://resources/tasks/find_father.tres")
+const FIND_MEDICINE_BOTTLE = preload("res://resources/tasks/find_medicine_bottle.tres")
+
 var player
 var npcs = []
 var current_npc: Node = null
@@ -57,3 +60,19 @@ func unfreeze_all():
 		player.unfreeze()
 	if current_npc != null:
 		current_npc.unfreeze()
+
+
+func start_task(task_name: String):
+	match task_name:
+		"find_father":
+			Events.task_received.emit(FIND_FATHER)
+		"find_medicine_bottle":
+			Events.task_received.emit(FIND_MEDICINE_BOTTLE)
+
+
+func finish_task(task_name: String):
+	match task_name:
+		"find_father":
+			Events.task_completed.emit(FIND_FATHER)
+		"find_medicine_bottle":
+			Events.task_received.emit(FIND_MEDICINE_BOTTLE)
