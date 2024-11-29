@@ -1,5 +1,5 @@
 # This is just for fun to have a crawling father on the wall
-class_name shortcandle
+class_name ShortCandle
 extends Node3D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
