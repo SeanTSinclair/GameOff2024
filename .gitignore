@@ -7,8 +7,6 @@
 *.tmp
 # Godot-specific ignores
 .import/
-export.cfg
-export_presets.cfg
 
 # Imported translations (automatically generated from CSV files)
 *.translation
@@ -238,3 +236,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/godot,macos,linux,windows,visualstudiocode,jetbrains,vim
+
+# Output folder for builds
+builds/
