@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=116 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://b7o8e6ib4bnpm" path="res://objects/small-items/sofa-table.glb" id="21_ynw3f"]
 [ext_resource type="PackedScene" uid="uid://br55m81f8vunk" path="res://objects/small-items/sofa.glb" id="22_vkwxh"]
 [ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/player/player.tscn" id="23_6m7vs"]
+[ext_resource type="PackedScene" uid="uid://erj6tj2xc3g7" path="res://objects/small-items/wardrobe.glb" id="26_v5try"]
+[ext_resource type="PackedScene" uid="uid://dusaa10sjcvtv" path="res://objects/small-items/bookshelf.glb" id="27_jwh3r"]
 [ext_resource type="PackedScene" uid="uid://b6ef8k1k7lvtf" path="res://scenes/game_objects/battery/battery.tscn" id="30_vml1e"]
 [ext_resource type="Resource" uid="uid://bxq28vsj0pp21" path="res://scenes/game_objects/battery/battery1.tres" id="31_oj6vm"]
 [ext_resource type="PackedScene" uid="uid://ou3ebo3uguee" path="res://objects/small-items/kitchen-1.glb" id="32_581fm"]
@@ -1296,6 +1298,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.0228, 3.44859, -9.79039)
 
 [node name="table-simple-00-col" parent="Mansion/Objects" instance=ExtResource("6_mtrem")]
 transform = Transform3D(0.0495645, 0, -0.998771, 0, 1, 0, 0.998771, 0, 0.0495645, -11.467, 0.0207779, -14.2965)
+
+[node name="wardrobe" parent="Mansion/Objects" instance=ExtResource("26_v5try")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.423, 0, -9.272)
+
+[node name="bookshelf" parent="Mansion/Objects" instance=ExtResource("27_jwh3r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.423, 0, -9.272)
 
 [node name="Items" type="Node" parent="Mansion"]
 
