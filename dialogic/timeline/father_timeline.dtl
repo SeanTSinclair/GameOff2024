@@ -3,6 +3,7 @@ father: Your mothers eyes haunt me boy.
 father: There’s something I’m missin’, [br] something I’ve lost
 player: What’s that father? [br]Where can I find it?
 father: It’s lost... I can’t find it. [br]But the darkness, it knows where.
+[sound path="res://assets/sounds/being_1_cut.mp3" volume="0.0"]
 being: Memories are secrets wrapped in time,[br] where’s that bottle?
 if {MEDICINEBOTTLE} == true:
 	[sound volume="0.0"]

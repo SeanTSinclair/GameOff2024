@@ -9,8 +9,8 @@
 "Mood 1": {
 "mode": 0,
 "name": "Mood 1",
-"pitch_base": 0.5,
-"pitch_variance": 0.3,
+"pitch_base": 0.7,
+"pitch_variance": 0.5,
 "skip_characters": 8.0,
 "sound_path": "res://assets/sounds/mother_1_cut.mp3",
 "volume_base": 0.0,
