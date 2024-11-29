@@ -7,6 +7,10 @@ var options_scene := preload("res://scenes/ui/options_menu/options_menu.tscn")
 @onready var panel_container: PanelContainer = %PanelContainer
 
 
+func _enter_tree() -> void:
+	SoundManager.play_bgm("BGM")
+
+
 func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_packed(main_scene)
 

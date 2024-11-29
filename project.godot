@@ -25,6 +25,7 @@ Events="*res://scripts/autoloaders/events.gd"
 State="*res://scripts/autoloaders/state.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 DialogueManager="*res://scripts/managers/dialogue/dialogue_manager.gd"
+SoundManager="*res://addons/sound_manager/module/SoundManager.tscn"
 
 [dialogic]
 
@@ -86,7 +87,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [filesystem]
 

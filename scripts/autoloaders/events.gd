@@ -29,3 +29,5 @@ signal task_completed(task: Task)
 
 @warning_ignore("unused_signal")
 signal game_unpaused
+
+signal entered_room(room: String)
