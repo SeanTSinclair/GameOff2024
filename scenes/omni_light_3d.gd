@@ -4,6 +4,7 @@ extends OmniLight3D
 @export var max_energy: float = 3  # Maximum brightness
 @export var flicker_interval: float = 0.1  # Time between flickers
 
+
 func _ready():
 	var timer: Timer = $FlickerTimer  # Replace with your Timer node's name or path if different
 	if timer:
@@ -13,6 +14,7 @@ func _ready():
 		timer.start(flicker_interval)
 	else:
 		print("Timer not found")
+
 
 func _on_Timer_timeout():
 	# Change the light's energy using the correct property
