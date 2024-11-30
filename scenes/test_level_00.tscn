@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=156 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -84,8 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://gl7rsdbw3n70" path="res://assets/flame_sprite/flames3_33_Layer.png" id="76_8k6h5"]
 [ext_resource type="Texture2D" uid="uid://b8x25r3o5i2r6" path="res://assets/flame_sprite/flames3_34_Layer.png" id="77_hp0ct"]
 [ext_resource type="Script" path="res://scenes/omni_light_3d.gd" id="78_m6v72"]
-[ext_resource type="PackedScene" uid="uid://bhhwgpwottsdi" path="res://scenes/game_objects/key/key.tscn" id="86_cgnmu"]
-[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/matches/matches.tscn" id="86_xcgnl"]
+[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/key/key.tscn" id="86_cgnmu"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -2691,7 +2690,7 @@ omni_range = 14.275
 [node name="Characters" type="Node" parent="Mansion"]
 
 [node name="Father" parent="Mansion/Characters" instance=ExtResource("12_w7bug")]
-transform = Transform3D(0.00498204, 0, -0.999974, 0, 1, 0, 0.999974, 0, 0.00498204, -6.8435, 0, -14.3454)
+transform = Transform3D(0.999329, 0, -0.0362515, 0, 1, 0, 0.0362515, 0, 0.999329, 0.649001, 2.87479, -17.7119)
 
 [node name="Mother" parent="Mansion/Characters" instance=ExtResource("11_k7m57")]
 transform = Transform3D(0.120078, 0, 0.992765, 0, 1, 0, -0.992765, 0, 0.120078, -13.2577, 0, -12.9301)
@@ -3613,7 +3612,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5575, 2.82309, -10.5568)
 [node name="MedicineBottle" parent="." instance=ExtResource("37_xpdxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10721, 3.4652, -9.36132)
 
-[node name="Matches" parent="." instance=ExtResource("86_xcgnl")]
+[node name="Matches" parent="." instance=ExtResource("86_cgnmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9194, 2.82309, -9.68316)
 
 [node name="table_eat" parent="." instance=ExtResource("38_21tky")]
