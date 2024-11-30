@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=156 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -84,8 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://gl7rsdbw3n70" path="res://assets/flame_sprite/flames3_33_Layer.png" id="76_8k6h5"]
 [ext_resource type="Texture2D" uid="uid://b8x25r3o5i2r6" path="res://assets/flame_sprite/flames3_34_Layer.png" id="77_hp0ct"]
 [ext_resource type="Script" path="res://scenes/omni_light_3d.gd" id="78_m6v72"]
-[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/matches/matches.tscn" id="86_pxrl2"]
-[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/key/key.tscn" id="86_xcgnl"]
+[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/matches/matches.tscn" id="86_xcgnl"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -3613,7 +3612,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5575, 2.82309, -10.5568)
 [node name="MedicineBottle" parent="." instance=ExtResource("37_xpdxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10721, 3.4652, -9.36132)
 
-[node name="Matches" parent="." instance=ExtResource("86_pxrl2")]
+[node name="Matches" parent="." instance=ExtResource("86_xcgnl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9194, 2.82309, -9.68316)
 
 [node name="table_eat" parent="." instance=ExtResource("38_21tky")]
@@ -3642,9 +3641,5 @@ script = ExtResource("78_m6v72")
 [node name="FlickerTimer" type="Timer" parent="AnimatedSprite3D/OmniLight3D"]
 wait_time = 0.1
 autostart = true
-
-[node name="Key" parent="." instance=ExtResource("86_xcgnl")]
-transform = Transform3D(0.0656614, -0.997035, 0.0401279, 0.997704, 0.0662675, 0.0139622, -0.01658, 0.039119, 0.999097, -17.06, 3.849, -10.75)
-key_id = "Door1"
 
 [editable path="Mansion/Characters/CrawlingFather"]
