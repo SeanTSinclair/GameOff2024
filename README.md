@@ -14,18 +14,16 @@ Let's make a game at GitHub's 2024 GameOff Game Jam!
 ### [Godot](https://godotengine.org/download/archive/4.3-stable/)
 > We make the game here.
 
-### [Suno](https://suno.com/)
-> AI Music generation
+#### Plugins for Godot: 
+- [Dialogic](https://github.com/dialogic-godot/dialogic)
+- [SoundManager](https://gitlab.com/Xecestel/sound-manager)
 
-You may use this tool to create a set amount of free songs every day, you can use the generated songs for non-commercial projects.
+### [Blender](https://www.blender.org/)
+> We make the 3D models here
 
-### [Kenney](https://kenney.nl/)
-> Awesome free CC0 game assets
+### [Logic Pro](https://www.apple.com/logic-pro/)
+> We make the music and SFX here
 
-### [OpenGameArt](https://opengameart.org/)
-> Free game assets - But beware the copyright licences. 
-
-This resource has a lot of nice resources which are mostly free to use. 
 
 ## Contributing
 
@@ -62,15 +60,17 @@ Also - I can highly recommend lazygit if you prefer the terminal.
 
 # Credits
 
-## Participants
+## Contributors
 
-- Aina
-- Espen
-- Irina
-- Kristian 
-- Marius B
-- Marius H
-- Martin
-- Sean
-- Uni
-- Vidar
+- Aina - Writer/Storyboard/Developer
+- Espen Susort - 3D artist/Level designer
+- Irina - Game designer
+- Kristian Hiim - Developer
+- Marius Bakkeli - Developer
+- Marius Horne - Developer
+- Martin Aarsland - Music/SFX
+- Sean Sinclair - Project manager/Developer
+- Uni Susort - Game director/3D artist
+- Vidar Hiim - QA
+
+Huge thanks to everyone that contributed, it was an amazing journey! ❤️
