@@ -1,4 +1,4 @@
-[gd_scene load_steps=170 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=169 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -99,19 +99,6 @@
 [ext_resource type="Texture2D" uid="uid://5wba1ryy2lpm" path="res://objects/small-items/mother.png" id="97_ssosk"]
 [ext_resource type="Texture2D" uid="uid://c4kguy7ts3p4h" path="res://objects/small-items/seashore.png" id="98_gqm64"]
 [ext_resource type="Texture2D" uid="uid://5733axja85ns" path="res://objects/small-items/spirit.png" id="99_ah8kb"]
-
-[sub_resource type="Environment" id="Environment_ll1as"]
-background_energy_multiplier = 1.35
-ambient_light_color = Color(0.078815, 0.078815, 0.078815, 1)
-ambient_light_energy = 0.0
-reflected_light_source = 1
-fog_enabled = true
-fog_light_color = Color(0, 0, 0, 1)
-fog_density = 0.0892
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0747
-volumetric_fog_albedo = Color(0.325121, 0.172719, 0.412532, 1)
-volumetric_fog_length = 84.28
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns3qn"]
 resource_name = "FrontColor"
@@ -2371,9 +2358,6 @@ animations = [{
 }]
 
 [node name="TestLevel00" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ll1as")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.912499, -0.132805, 0.386922, 6.96707e-09, 0.945836, 0.324644, -0.409079, -0.296237, 0.863075, -1.444, 3.85475, 8.17466)
