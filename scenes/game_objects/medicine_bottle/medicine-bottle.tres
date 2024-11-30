@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://crrbf5h1dlbt8"]
 
+[ext_resource type="Texture2D" uid="uid://nntfmxtaiww4" path="res://assets/icons/icon_bottle.png" id="1_g221d"]
 [ext_resource type="PackedScene" uid="uid://bff0q5s85pv81" path="res://scenes/game_objects/medicine_bottle/medicine-bottle-item-scene.tscn" id="2_74ese"]
 [ext_resource type="Resource" uid="uid://chdhsc3t1hk42" path="res://resources/tasks/find_medicine.tres" id="2_jy7ig"]
 [ext_resource type="Script" path="res://scripts/managers/inventory/item.gd" id="3_3u4s1"]
@@ -8,6 +9,7 @@
 script = ExtResource("3_3u4s1")
 id = "MEDICINEBOTTLE"
 name = "Medicine Bottle"
+inventory_texture = ExtResource("1_g221d")
 item_scene = ExtResource("2_74ese")
 description = "Father's medicine bottle, smells like citrus"
 equippable = true

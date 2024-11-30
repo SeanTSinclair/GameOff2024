@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=156 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -48,9 +48,9 @@
 [ext_resource type="Script" path="res://scenes/longcandle.gd" id="37_sp0l4"]
 [ext_resource type="PackedScene" uid="uid://dhsddsuwfrrq0" path="res://scenes/game_objects/medicine_bottle/medicine-bottle.tscn" id="37_xpdxs"]
 [ext_resource type="PackedScene" uid="uid://bht5o11q0xh3t" path="res://assets/models/table_eat.glb" id="38_21tky"]
+[ext_resource type="Texture2D" uid="uid://c6km8a05pm1wu" path="res://assets/hidden-text-wall/Theworld.png" id="40_jkij7"]
 [ext_resource type="PackedScene" uid="uid://4bt3f0pb7ssv" path="res://objects/small-items/table_eat.glb" id="43_b8yah"]
 [ext_resource type="Texture2D" uid="uid://5ngct3ewuogh" path="res://assets/flame_sprite/flames3_01_Layer.png" id="45_sorp4"]
-[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/matches/matches.tscn" id="45_xbsxb"]
 [ext_resource type="Texture2D" uid="uid://b5p5sgh3pdndo" path="res://assets/flame_sprite/flames3_02_Layer.png" id="46_e8sym"]
 [ext_resource type="Texture2D" uid="uid://dbf3wf477c4g8" path="res://assets/flame_sprite/flames3_03_Layer.png" id="47_bg0y2"]
 [ext_resource type="Texture2D" uid="uid://cr7iyuvxclf02" path="res://assets/flame_sprite/flames3_04_Layer.png" id="48_hxr5o"]
@@ -84,6 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://gl7rsdbw3n70" path="res://assets/flame_sprite/flames3_33_Layer.png" id="76_8k6h5"]
 [ext_resource type="Texture2D" uid="uid://b8x25r3o5i2r6" path="res://assets/flame_sprite/flames3_34_Layer.png" id="77_hp0ct"]
 [ext_resource type="Script" path="res://scenes/omni_light_3d.gd" id="78_m6v72"]
+[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/key/key.tscn" id="86_pxrl2"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -2146,6 +2147,55 @@ tracks/4/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_kjyrb"]
+resource_name = "Intro"
+length = 2.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -14.7253, 3.644, -14.882, 0.233333, 1, -14.7253, 3.644, -14.882, 1.96667, 1, -15.396, 3.45742, -14.6622)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("Player")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 90, 0, 0, 1, 1.96667, 1, 0, 0, 0, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Mansion/Lights/OmniLight3D4:omni_range")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1e+06, 0.000205297),
+"update": 0,
+"values": [0.0, 7.928]
+}
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.707, 0, 0, 0.707, 0.233333, 1, 0.707, 0, 0, 0.707, 1.96667, 1, 0, 0, 0, 1)
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:can_move")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="Animation" id="Animation_efc7c"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -3379,7 +3429,7 @@ omni_range = 1.25
 
 [node name="Secret-text2" parent="Mansion/Items" instance=ExtResource("4_sr0u4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.58902, 0.990598, -11.1262)
-text_img = ExtResource("3_bgh7f")
+text_img = ExtResource("40_jkij7")
 
 [node name="Blacklight2" parent="Mansion/Items" instance=ExtResource("7_pgpy4")]
 transform = Transform3D(0.00705113, -0.999975, 0, 0.999975, 0.00705113, 0, 0, 0, 1, -16.2926, 3.66657, -14.2535)
@@ -3611,14 +3661,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5575, 2.82309, -10.5568)
 [node name="MedicineBottle" parent="." instance=ExtResource("37_xpdxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10721, 3.4652, -9.36132)
 
-[node name="Matches" parent="." instance=ExtResource("45_xbsxb")]
+[node name="Matches" parent="." instance=ExtResource("86_pxrl2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9194, 2.82309, -9.68316)
 
 [node name="table_eat" parent="." instance=ExtResource("38_21tky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3277, 2.85, -18.6741)
-
-[node name="Key" parent="." instance=ExtResource("45_xbsxb")]
-transform = Transform3D(1, 0, 0, 0, -0.06603, -0.997818, 0, 0.997818, -0.06603, -16.681, 3.52831, -18.6088)
 
 [node name="BasicDoor2" parent="." instance=ExtResource("34_al8nw")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.4262, 2.86742, -10.794)
@@ -3643,5 +3690,9 @@ script = ExtResource("78_m6v72")
 [node name="FlickerTimer" type="Timer" parent="AnimatedSprite3D/OmniLight3D"]
 wait_time = 0.1
 autostart = true
+
+[node name="Key2" parent="." instance=ExtResource("86_pxrl2")]
+transform = Transform3D(0.0658973, -0.99705, 0.0393435, 0.997697, 0.0664736, 0.0135232, -0.0160986, 0.0383621, 0.999134, -17.0605, 3.84945, -10.7502)
+key_id = "Door1"
 
 [editable path="Mansion/Characters/CrawlingFather"]
