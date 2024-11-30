@@ -3,6 +3,7 @@ extends Node3D
 @export var key_id: String = ""
 
 var open = false
+var unlocked = false
 
 @onready
 var interaction_component: InteractionComponent = $mansion_standard_door/InteractionComponent
@@ -20,7 +21,9 @@ func _on_interacted() -> void:
 		if State.is_key_found(key_id):
 			print("Hey")
 			open = !open
-			Events.feedback.emit("Used a key to unlock the door")
+			if !unlocked:
+				Events.feedback.emit("Used a key to unlock the door")
+			unlocked = true
 		else:
 			Events.feedback.emit("The door is locked")
 	else:
