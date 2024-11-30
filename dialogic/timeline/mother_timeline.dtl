@@ -1,5 +1,5 @@
 if {dialogue_choices.MOTHERTALK} == true:
-	player: Mother? Are you there? Do you know anything about a deal?
+	player: Mother?[br] Do you know anything about a deal?
 	mother: **Mumbles**
 	player: What?
 	mother: Its cold. Please stop it. You have to burn it

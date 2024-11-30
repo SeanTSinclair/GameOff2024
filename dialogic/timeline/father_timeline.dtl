@@ -8,7 +8,7 @@ if {dialogue_choices.FATHERTALKED} == false:
 		father: What’s left is not her.
 		player: What?
 		father: It's only her empty shell walking [br]around.
-		being: I wonder what you are going [be]to do once you figure out the truth?
+		being: I wonder what you are going [br]to do once you figure out the truth?
 		player: The truth?
 		set {dialogue_choices.FATHERTALKED} = true
 	else:
