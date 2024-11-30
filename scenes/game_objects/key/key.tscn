@@ -4,9 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://xwdbemxk6fio" path="res://scenes/components/outline_component/outline_component.tscn" id="1_8tvgd"]
 [ext_resource type="PackedScene" uid="uid://bkxp5t2pd7n4k" path="res://scenes/components/interaction_component/interaction_component.tscn" id="2_juhw1"]
 [ext_resource type="Script" path="res://scripts/components/item_component/item_component.gd" id="3_bykvk"]
-[ext_resource type="Resource" uid="uid://bdx6eynw7r86o" path="res://scenes/game_objects/matches/matches.tres" id="4_17bdf"]
+[ext_resource type="Resource" uid="uid://bdx6eynw7r86o" path="res://scenes/game_objects/key/key.tres" id="5_aryxl"]
 [ext_resource type="PackedScene" uid="uid://s6p5pejqpq5y" path="res://assets/models/key.glb" id="5_atroc"]
-[ext_resource type="Resource" uid="uid://bdx6eynw7r86o" path="res://scenes/game_objects/key/key.tres" id="5_v11wy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rpcd5"]
 size = Vector3(0.365734, 0.221346, 0.181427)
@@ -26,7 +25,7 @@ shape = SubResource("BoxShape3D_rpcd5")
 
 [node name="ItemComponent" type="Node" parent="." node_paths=PackedStringArray("interaction_component", "item_root")]
 script = ExtResource("3_bykvk")
-item = ExtResource("5_v11wy")
+item = ExtResource("5_aryxl")
 interaction_component = NodePath("../InteractionComponent")
 item_root = NodePath("..")
 

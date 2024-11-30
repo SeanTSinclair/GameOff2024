@@ -20,6 +20,9 @@ func _on_interacted() -> void:
 		if State.is_key_found(key_id):
 			print("Hey")
 			open = !open
+			Events.feedback.emit("Used a key to unlock the door")
+		else:
+			Events.feedback.emit("The door is locked")
 	else:
 		open = !open
 
