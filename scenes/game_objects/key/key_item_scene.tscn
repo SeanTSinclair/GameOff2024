@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://drf87da26leit"]
+
+[ext_resource type="PackedScene" uid="uid://s6p5pejqpq5y" path="res://assets/models/key.glb" id="2_s4dt0"]
+
+[node name="KeyItemScene" type="Node3D"]
+
+[node name="key" parent="." instance=ExtResource("2_s4dt0")]
+
+[node name="CollisionShape3D" parent="key/key/StaticBody3D" index="0"]
+disabled = true
+
+[editable path="key"]
