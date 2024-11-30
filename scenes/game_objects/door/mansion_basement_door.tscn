@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dninp77aswcu5"]
+
+[ext_resource type="Script" path="res://scripts/components/being_room/being_door.gd" id="1_e4u4g"]
+[ext_resource type="PackedScene" uid="uid://cwpc4y8pixpus" path="res://assets/models/mansion-basement-door.glb" id="1_u6i1p"]
+[ext_resource type="PackedScene" uid="uid://xwdbemxk6fio" path="res://scenes/components/outline_component/outline_component.tscn" id="3_4t1ot"]
+[ext_resource type="PackedScene" uid="uid://bkxp5t2pd7n4k" path="res://scenes/components/interaction_component/interaction_component.tscn" id="3_5kbv0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rts38"]
+size = Vector3(1.00592, 2.11414, 0.0579834)
+
+[node name="BasementDoor" type="Node3D"]
+script = ExtResource("1_e4u4g")
+
+[node name="Model" parent="." instance=ExtResource("1_u6i1p")]
+
+[node name="InteractionComponent" parent="." instance=ExtResource("3_5kbv0")]
+prompt_message = "Open"
+
+[node name="CollisionShape3D" parent="InteractionComponent" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50528, 1.05585, 0.00238037)
+shape = SubResource("BoxShape3D_rts38")
+
+[node name="OutlineComponent" parent="." node_paths=PackedStringArray("mesh_instance", "interaction_component") instance=ExtResource("3_4t1ot")]
+mesh_instance = NodePath("../Model/mansion-basement_door")
+interaction_component = NodePath("../InteractionComponent")
+
+[connection signal="interacted" from="InteractionComponent" to="." method="_on_interaction_component_interacted"]
+
+[editable path="Model"]
+[editable path="InteractionComponent"]
