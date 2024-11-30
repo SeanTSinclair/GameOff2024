@@ -8,3 +8,8 @@ transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.371
 script = ExtResource("1_2yjvc")
 
 [node name="matchbox" parent="." instance=ExtResource("2_w7qoq")]
+
+[node name="CollisionShape3D" parent="matchbox/matchbox/StaticBody3D" index="0"]
+disabled = true
+
+[editable path="matchbox"]

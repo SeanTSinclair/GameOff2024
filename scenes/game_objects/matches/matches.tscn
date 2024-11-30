@@ -30,3 +30,4 @@ item_root = NodePath("..")
 [node name="matchbox" parent="." instance=ExtResource("5_8ecal")]
 
 [editable path="InteractionComponent"]
+[editable path="matchbox"]
