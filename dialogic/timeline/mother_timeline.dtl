@@ -1,1 +1,12 @@
-mother: Is it only me trapped [br] inside this forlorn whisper?
+if {dialogue_choices.MOTHERTALK} == true:
+	player: Mother? Are you there? Do you know anything about a deal?
+	mother: **Mumbles**
+	player: What?
+	mother: Its cold. Please stop it. You have to burn it
+	player: What?
+	mother: You have to [u]burn it[/u]
+	do DialogueManager.start_task("matches")
+	do DialogueManager.start_task("gasoline")
+else:
+	mother: <Is it only me trapped like this?/Its so cold/Why am I here? I can't remember.>
+	do DialogueManager.start_task("mother_mystery")

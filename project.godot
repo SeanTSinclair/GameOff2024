@@ -37,6 +37,7 @@ directories/dch_directory={
 "player": "res://dialogic/characters/player.dch"
 }
 directories/dtl_directory={
+"being": "res://dialogic/timeline/being.dtl",
 "father_timeline": "res://dialogic/timeline/father_timeline.dtl",
 "grandmother_timeline": "res://dialogic/timeline/grandmother_timeline.dtl",
 "mother_timeline": "res://dialogic/timeline/mother_timeline.dtl",
@@ -47,7 +48,7 @@ layout/style_list=["res://dialogic/styles/default.tres", "res://dialogic/styles/
 layout/default_style="res://dialogic/styles/default.tres"
 glossary/default_case_sensitive=true
 extensions_folder="res://addons/dialogic_additions"
-text/letter_speed=0.01
+text/letter_speed=0.03
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -70,9 +71,15 @@ variables={
 "BATTERY1": false,
 "BATTERY2": false,
 "BLACKLIGHT": false,
+"JERRYCAN": false,
 "KEY": false,
 "MATCHES": false,
-"MEDICINEBOTTLE": false
+"MEDICINEBOTTLE": false,
+"dialogue_choices": {
+"FATHERTALKED": false,
+"GRANDMOTHERTALKED": false,
+"MOTHERTALK": false
+}
 }
 glossary/glossary_files=["res://dialogic/glossary.tres"]
 text/autocolor_names=false
