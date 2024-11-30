@@ -1,5 +1,6 @@
-[gd_scene load_steps=78 format=4 uid="uid://bafvtsrmtcw8c"]
+[gd_scene load_steps=83 format=4 uid="uid://bafvtsrmtcw8c"]
 
+[ext_resource type="Script" path="res://scripts/main/final_scene.gd" id="1_a5p8g"]
 [ext_resource type="PackedScene" uid="uid://vsyu3ffqtip5" path="res://objects/small-items/throne.glb" id="1_jgt78"]
 [ext_resource type="PackedScene" uid="uid://cig3msw8miadn" path="res://objects/small-items/mansion5-moss.glb" id="2_tkiph"]
 [ext_resource type="Script" path="res://scenes/shortcandle.gd" id="3_tkquj"]
@@ -1731,7 +1732,149 @@ _data = {
 "Sitting Idle": SubResource("Animation_yplvq")
 }
 
+[sub_resource type="Animation" id="Animation_8f4rs"]
+resource_name = "final_scene"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.4, 1.8, 2, 2.4, 2.83333, 3.2, 3.66667, 4.6, 5.26667, 7.03333, 8.26667, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-6.25266, -2.06855, -16.908), Vector3(-6.25266, -1.78318, -16.908), Vector3(-6.25266, -1.87456, -16.908), Vector3(-6.25266, -1.82503, -16.908), Vector3(-6.25266, -1.82503, -16.5217), Vector3(-6.25266, -1.82503, -15.266), Vector3(-6.56939, -1.82503, -13.6711), Vector3(-9.21985, -1.82503, -13.2185), Vector3(-9.50022, -1.82503, -12.199), Vector3(-9.47972, -1.82474, -11.7894), Vector3(-9.33897, -1.82474, -11.5854), Vector3(-9.33897, -1.82474, -11.5854), Vector3(-3.63753, -3.34948, -11.5854), Vector3(-2.67739, -2.91138, -13.5424)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.7, 1, 2.4, 2.83333, 3.66667, 4.16667, 4.6, 5.26667, 7.03333, 8.26667, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0, -3.07178, 0), Vector3(0, -3.1765, 0), Vector3(0, -3.14159, 0), Vector3(0, -2.803, 0), Vector3(0, -4.4279, 0), Vector3(0, -2.71189, 0), Vector3(0, -2.33577, 0), Vector3(0, -1.82691, 0), Vector3(0, -1.57781, 0), Vector3(0, -1.57781, 0), Vector3(0, -1.08844, 0), Vector3(0, 0.0196866, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Objects/mansion-basement-door:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.4, 1.86667, 2.03333, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 2.80733, 0), Vector3(0, 3.06146, 0), Vector3(0, 2.58089, 0), Vector3(0, 2.04371, 0), Vector3(0, 1.34064, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Objects/mansion-basement-door-mteal:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.66667, 5.53333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, -3.12239, 0)]
+}
+tracks/4/type = "method"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(10.9667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_hover"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_k8hge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-6.25266, -2.06855, -16.908)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Objects/mansion-basement-door:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.13325, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Objects/mansion-basement-door-mteal:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g6pgf"]
+resource_name = "hover"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-2.67739, -2.91138, -13.5424), Vector3(-2.677, -2.891, -13.542), Vector3(-2.67739, -2.91138, -13.5424)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mfwqn"]
+_data = {
+"RESET": SubResource("Animation_k8hge"),
+"final_scene": SubResource("Animation_8f4rs"),
+"hover": SubResource("Animation_g6pgf")
+}
+
 [node name="BeastRoomStandalone" type="Node3D"]
+script = ExtResource("1_a5p8g")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1x7jg")
@@ -1922,7 +2065,8 @@ light_color = Color(0.943595, 0.664773, 0.423158, 1)
 omni_range = 1.25
 
 [node name="Fire" type="AnimatedSprite3D" parent="Objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74982, -4.05076, -13.7132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74982, -4.05076, -13.0608)
+visible = false
 offset = Vector2(0, 64)
 pixel_size = 0.02
 billboard = 1
@@ -1942,7 +2086,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="mansion-basement-door" parent="Objects" instance=ExtResource("41_ngx2g")]
-transform = Transform3D(-0.999965, 0, -0.0083425, 0, 1, 0, 0.0083425, 0, -0.999965, -6.70552, -2.85, -15.6218)
+transform = Transform3D(-0.999965, 0, -0.00834256, 0, 1, 0, 0.00834256, 0, -0.999965, -6.70552, -2.85, -15.6218)
 
 [node name="mansion-basement-door-mteal" parent="Objects" instance=ExtResource("45_15b32")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.16018, -2.85, -10.8743)
@@ -2246,4 +2390,9 @@ libraries = {
 autoplay = "Sitting Idle"
 
 [node name="Player" parent="." instance=ExtResource("46_tcnpo")]
-transform = Transform3D(-0.728535, 0, -6.36905e-08, 0, 0.728535, 0, 6.36905e-08, 0, -0.728535, -6.25266, -1.90034, -16.908)
+transform = Transform3D(-0.728535, 0, -1.10006e-07, 0, 0.728535, 0, 1.10006e-07, 0, -0.728535, -6.25266, -2.06855, -16.908)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mfwqn")
+}
