@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bh41o6gj3i7fd"]
+
+[ext_resource type="PackedScene" uid="uid://ou3ebo3uguee" path="res://objects/small-items/kitchen-1.glb" id="1_m1jsn"]
+
+[node name="Kitchen" type="Node3D"]
+
+[node name="kitchen-1" parent="." instance=ExtResource("1_m1jsn")]
