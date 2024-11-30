@@ -29,3 +29,9 @@ signal task_completed(task: Task)
 
 @warning_ignore("unused_signal")
 signal game_unpaused
+
+@warning_ignore("unused_signal")
+signal secret_message_found(id: String)
+
+@warning_ignore("unused_signal")
+signal secret_book_interacted_with

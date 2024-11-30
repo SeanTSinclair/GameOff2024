@@ -12,7 +12,9 @@ var keys_found = {}
 
 func reset() -> void:
 	power = initial_power
+	secret_texts_found.clear()
 	secret_texts_found = initial_secrets_found
+	keys_found.clear()
 	keys_found = initial_keys_found
 
 
@@ -34,6 +36,7 @@ func add_power(energy: float):
 
 func add_secret_found(secret_text_id: String):
 	secret_texts_found[secret_text_id] = true
+	Events.secret_message_found.emit(secret_text_id)
 
 
 func is_secret_found(secret_text_id: String):

@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dckbnhni1rcck"
-path.s3tc="res://.godot/imported/eternallife.png-0349561e65c7c237a22d8a53395ff740.s3tc.ctex"
-path.etc2="res://.godot/imported/eternallife.png-0349561e65c7c237a22d8a53395ff740.etc2.ctex"
+uid="uid://otdtot40idr2"
+path.s3tc="res://.godot/imported/dontDeadOpenInside.png-da5e856c24f3592e31adea7a4a56c2b7.s3tc.ctex"
+path.etc2="res://.godot/imported/dontDeadOpenInside.png-da5e856c24f3592e31adea7a4a56c2b7.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/hidden-text-wall/eternallife.png"
-dest_files=["res://.godot/imported/eternallife.png-0349561e65c7c237a22d8a53395ff740.s3tc.ctex", "res://.godot/imported/eternallife.png-0349561e65c7c237a22d8a53395ff740.etc2.ctex"]
+source_file="res://assets/hidden-text-wall/dontDeadOpenInside.png"
+dest_files=["res://.godot/imported/dontDeadOpenInside.png-da5e856c24f3592e31adea7a4a56c2b7.s3tc.ctex", "res://.godot/imported/dontDeadOpenInside.png-da5e856c24f3592e31adea7a4a56c2b7.etc2.ctex"]
 
 [params]
 

@@ -1,7 +1,6 @@
-[gd_scene load_steps=169 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=172 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
-[ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
 [ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
 [ext_resource type="PackedScene" uid="uid://bck73kb2hhe6y" path="res://assets/models/table-simple-00-col.glb" id="6_mtrem"]
 [ext_resource type="PackedScene" uid="uid://b3ukd8df82o5b" path="res://scenes/game_objects/blacklight/blacklight.tscn" id="7_pgpy4"]
@@ -49,12 +48,16 @@
 [ext_resource type="PackedScene" uid="uid://dhsddsuwfrrq0" path="res://scenes/game_objects/medicine_bottle/medicine-bottle.tscn" id="37_xpdxs"]
 [ext_resource type="PackedScene" uid="uid://bht5o11q0xh3t" path="res://assets/models/table_eat.glb" id="38_21tky"]
 [ext_resource type="Texture2D" uid="uid://c6km8a05pm1wu" path="res://assets/hidden-text-wall/Theworld.png" id="40_jkij7"]
+[ext_resource type="Texture2D" uid="uid://otdtot40idr2" path="res://assets/hidden-text-wall/dontDeadOpenInside.png" id="43_5r2s0"]
 [ext_resource type="PackedScene" uid="uid://4bt3f0pb7ssv" path="res://objects/small-items/table_eat.glb" id="43_b8yah"]
+[ext_resource type="Texture2D" uid="uid://cp0hkfj2ahuth" path="res://assets/hidden-text-wall/Book.png" id="43_bans0"]
+[ext_resource type="PackedScene" uid="uid://cacflbm5mok8d" path="res://scenes/game_objects/wardrobe/wardrobe.tscn" id="44_pws7r"]
 [ext_resource type="Texture2D" uid="uid://5ngct3ewuogh" path="res://assets/flame_sprite/flames3_01_Layer.png" id="45_sorp4"]
 [ext_resource type="Texture2D" uid="uid://b5p5sgh3pdndo" path="res://assets/flame_sprite/flames3_02_Layer.png" id="46_e8sym"]
 [ext_resource type="PackedScene" uid="uid://c4ai6ys1jqecg" path="res://objects/small-items/mansion-basement-door-mteal.glb" id="46_rsckd"]
 [ext_resource type="Texture2D" uid="uid://dbf3wf477c4g8" path="res://assets/flame_sprite/flames3_03_Layer.png" id="47_bg0y2"]
 [ext_resource type="Texture2D" uid="uid://cr7iyuvxclf02" path="res://assets/flame_sprite/flames3_04_Layer.png" id="48_hxr5o"]
+[ext_resource type="PackedScene" uid="uid://dx5m2n5foou0w" path="res://scenes/game_objects/book/interact_with_book.tscn" id="48_kal6b"]
 [ext_resource type="Texture2D" uid="uid://cgepxjw05eia0" path="res://assets/flame_sprite/flames3_05_Layer.png" id="49_mc2aq"]
 [ext_resource type="Texture2D" uid="uid://civc58rgk5jjr" path="res://assets/flame_sprite/flames3_06_Layer.png" id="50_x54ed"]
 [ext_resource type="Texture2D" uid="uid://bu7acrha7kckm" path="res://assets/flame_sprite/flames3_07_Layer.png" id="51_y0rwi"]
@@ -2563,12 +2566,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8479, 2.97184, -6.85218)
 [node name="book4" parent="Mansion/Model" instance=ExtResource("11_ny8aa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8479, 3.30752, -6.78232)
 
-[node name="Secret-text" parent="Mansion/Model" instance=ExtResource("4_sr0u4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.0243, 3.97885, -8.55135)
-text_img = ExtResource("3_bgh7f")
-text = "HELP"
-secret_text_id = "bedroom_help"
-
 [node name="Kitchen" parent="Mansion/Model" instance=ExtResource("13_b8qgg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00161695, -0.000217557, -0.00480652)
 
@@ -3122,9 +3119,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.423, 0, -9.272)
 [node name="throne" parent="Mansion/Objects" instance=ExtResource("29_honv7")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -2.78738, -4.05, -18.3448)
 
-[node name="wardrobe" parent="Mansion/Objects" instance=ExtResource("30_gj3tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.423, 0, -9.272)
-
 [node name="bookshelf2" parent="Mansion/Objects" instance=ExtResource("28_m4cu7")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -4.858, 0, -0.528)
 
@@ -3379,12 +3373,11 @@ omni_range = 1.25
 [node name="Secret-text2" parent="Mansion/Items" instance=ExtResource("4_sr0u4")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.58902, 0.990598, -11.1262)
 text_img = ExtResource("40_jkij7")
+text = "Found a secret text. There might be more"
+secret_text_id = "the_world_secret_text"
 
 [node name="Blacklight2" parent="Mansion/Items" instance=ExtResource("7_pgpy4")]
 transform = Transform3D(0.00705113, -0.999975, 0, 0.999975, 0.00705113, 0, 0, 0, 1, -16.2926, 3.66657, -14.2535)
-
-[node name="TestItemObject1" parent="Mansion/Items" instance=ExtResource("3_wpn6b")]
-transform = Transform3D(1, -0.000509935, 0.000669236, 0.000509533, 1, 0.000593858, -0.000669542, -0.000593513, 1, -11.2384, 0, -13.5838)
 
 [node name="stairs_col" type="StaticBody3D" parent="Mansion/Items"]
 transform = Transform3D(1, 0, 0, 0, 0.858065, -0.513541, 0, 0.513541, 0.858065, -9.935, 0.716, -17.658)
@@ -3421,6 +3414,27 @@ transform = Transform3D(-4.37114e-08, 0.422618, 0.906308, 0, 0.906308, -0.422618
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mansion/Items/stairs_col6"]
 shape = SubResource("ConcavePolygonShape3D_xxooh")
+
+[node name="Secret-text" parent="Mansion/Items" instance=ExtResource("4_sr0u4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18.5575, 4.12723, -17.9026)
+text_img = ExtResource("3_bgh7f")
+text = "Someone wrote HELP on the wall. Maybe I can find other secret messages"
+secret_text_id = "bedroom_help"
+
+[node name="Secret-text3" parent="Mansion/Items" instance=ExtResource("4_sr0u4")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.96342, -1.91551, -15.794)
+text_img = ExtResource("43_5r2s0")
+text = "I should probably not enter the door in the basement before I am prepared"
+secret_text_id = "basement_warning"
+
+[node name="Secret-text4" parent="Mansion/Items" instance=ExtResource("4_sr0u4")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.46026, 4.16621, -17.4867)
+text_img = ExtResource("43_bans0")
+text = "Maybe I should look for a book in father's study"
+secret_text_id = "secret_text_book"
+
+[node name="wardrobe" parent="Mansion/Items" instance=ExtResource("44_pws7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.423, 0, -9.272)
 
 [node name="Paths" type="Node" parent="Mansion"]
 
@@ -3525,6 +3539,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699231, 2.87454, -10.8041)
 
 [node name="mansion-basement-door-mteal" parent="Mansion" instance=ExtResource("46_rsckd")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.16018, -2.85, -10.8743)
+
+[node name="InteractWithBook" parent="Mansion" instance=ExtResource("48_kal6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.89, 1.21963, -12.2391)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
