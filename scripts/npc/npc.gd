@@ -15,14 +15,20 @@ signal interacted
 @export_category("Dialogue")
 @export var timeline: String
 
+@export_category("AI")
+@export_range(1, 100) var min_linger_duration_in_seconds = 5
+@export_range(1, 100) var max_linger_duration_in_seconds = 50
+
 var navigation_manager: NavigationManager
 var player: Player
 var movement_delta: float
 var is_stopped: bool = false
+var is_waiting_for_next_assignment: bool = false
 
 @onready var interaction_component: InteractionComponent = $InteractionComponent
 @onready var animation_player: AnimationPlayer = $Body/AnimationPlayer
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
+@onready var navigation_timer: Timer = $NavigationTimer
 
 
 func _ready() -> void:
@@ -32,6 +38,11 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 
 	assert(player, "Player reference not found from node " + name)
+	assert(navigation_timer)
+	assert(
+		min_linger_duration_in_seconds < max_linger_duration_in_seconds,
+		"Min linger duration is not smaller than max you goof.."
+	)
 
 	# Interaction setup
 	interaction_component.interacted.connect(_on_interacted)
@@ -49,7 +60,7 @@ func _movement_setup() -> void:
 		if navigation_agent:
 			navigation_agent.velocity_computed.connect(Callable(_on_velocity_computed))
 
-		call_deferred("_navigate_to_random_location")
+		navigation_timer.timeout.connect(_navigate_to_random_location)
 
 
 func _animations_setup() -> void:
@@ -59,6 +70,7 @@ func _animations_setup() -> void:
 
 func _navigate_to_random_location():
 	navigation_agent.target_position = navigation_manager.get_random_location().position
+	is_waiting_for_next_assignment = false
 
 
 func _physics_process(delta: float) -> void:
@@ -66,6 +78,13 @@ func _physics_process(delta: float) -> void:
 		animation_player.play(idle_animation_string)
 		return
 	animation_player.play(walk_animation_string)
+
+	if navigation_agent.is_navigation_finished() and !is_waiting_for_next_assignment:
+		is_waiting_for_next_assignment = true
+		var wait_duration := randf_range(
+			min_linger_duration_in_seconds, max_linger_duration_in_seconds
+		)
+		navigation_timer.start(wait_duration)
 
 	if should_move:
 		if NavigationServer3D.map_get_iteration_id(navigation_agent.get_navigation_map()) == 0:
@@ -93,6 +112,10 @@ func _handle_movement(delta: float) -> void:
 
 func _on_interacted() -> void:
 	print("NOT YET IMPLEMENTED.")
+
+
+func _begin_move_to_new_location() -> void:
+	navigation_agent.target_position = navigation_manager.get_random_location().position
 
 
 func _on_velocity_computed(safe_velocity: Vector3) -> void:
