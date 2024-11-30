@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=170 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://5alys2ncf4c7" path="res://testbeds/inventory/test_item_object1.tscn" id="3_wpn6b"]
@@ -52,7 +52,9 @@
 [ext_resource type="PackedScene" uid="uid://4bt3f0pb7ssv" path="res://objects/small-items/table_eat.glb" id="43_b8yah"]
 [ext_resource type="Texture2D" uid="uid://5ngct3ewuogh" path="res://assets/flame_sprite/flames3_01_Layer.png" id="45_sorp4"]
 [ext_resource type="Texture2D" uid="uid://b5p5sgh3pdndo" path="res://assets/flame_sprite/flames3_02_Layer.png" id="46_e8sym"]
+[ext_resource type="PackedScene" uid="uid://c4ai6ys1jqecg" path="res://objects/small-items/mansion-basement-door-mteal.glb" id="46_rsckd"]
 [ext_resource type="Texture2D" uid="uid://dbf3wf477c4g8" path="res://assets/flame_sprite/flames3_03_Layer.png" id="47_bg0y2"]
+[ext_resource type="PackedScene" uid="uid://cwpc4y8pixpus" path="res://assets/models/mansion-basement-door.glb" id="47_vpwcb"]
 [ext_resource type="Texture2D" uid="uid://cr7iyuvxclf02" path="res://assets/flame_sprite/flames3_04_Layer.png" id="48_hxr5o"]
 [ext_resource type="Texture2D" uid="uid://cgepxjw05eia0" path="res://assets/flame_sprite/flames3_05_Layer.png" id="49_mc2aq"]
 [ext_resource type="Texture2D" uid="uid://civc58rgk5jjr" path="res://assets/flame_sprite/flames3_06_Layer.png" id="50_x54ed"]
@@ -86,6 +88,17 @@
 [ext_resource type="Script" path="res://scenes/omni_light_3d.gd" id="78_m6v72"]
 [ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/matches/matches.tscn" id="86_cgnmu"]
 [ext_resource type="PackedScene" uid="uid://bhhwgpwottsdi" path="res://scenes/game_objects/key/key.tscn" id="86_wfd8f"]
+[ext_resource type="PackedScene" uid="uid://b34k81o68rp4u" path="res://objects/small-items/mansion-wall.glb" id="89_cpdhq"]
+[ext_resource type="Texture2D" uid="uid://dvsqrwbpb6k6" path="res://objects/small-items/curtains_open-red.png" id="90_adrt7"]
+[ext_resource type="Texture2D" uid="uid://lamu26v55rq" path="res://objects/small-items/carpet-08.png" id="91_7pihn"]
+[ext_resource type="Texture2D" uid="uid://cj1pot8j0husa" path="res://objects/small-items/carpet-03.png" id="92_g8lcu"]
+[ext_resource type="Texture2D" uid="uid://dll84evlgi7sg" path="res://objects/small-items/carpet-01.png" id="93_tkib3"]
+[ext_resource type="Texture2D" uid="uid://ducag8h5cbwso" path="res://objects/small-items/carpet-07.png" id="94_j4v73"]
+[ext_resource type="Texture2D" uid="uid://dtq7r4h5l3ydy" path="res://objects/small-items/carpet-06.png" id="95_gu1ph"]
+[ext_resource type="Texture2D" uid="uid://cigktedf5tos6" path="res://objects/small-items/family.png" id="96_1y03n"]
+[ext_resource type="Texture2D" uid="uid://5wba1ryy2lpm" path="res://objects/small-items/mother.png" id="97_ssosk"]
+[ext_resource type="Texture2D" uid="uid://c4kguy7ts3p4h" path="res://objects/small-items/seashore.png" id="98_gqm64"]
+[ext_resource type="Texture2D" uid="uid://5733axja85ns" path="res://objects/small-items/spirit.png" id="99_ah8kb"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -2628,12 +2641,12 @@ shadow_blur = 0.0
 omni_range = 7.928
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="Mansion/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10298, 5.00809, -17.5356)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10298, 4.43841, -17.5356)
 light_color = Color(0.752997, 0.631448, 0.469205, 1)
 light_energy = 3.286
 light_cull_mask = 4294967037
 shadow_enabled = true
-shadow_bias = 0.148
+shadow_bias = 0.06
 shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
@@ -2643,13 +2656,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75335, 4.95629, -9.09993)
 light_color = Color(0.752997, 0.631448, 0.469205, 1)
 light_cull_mask = 4294967037
 shadow_enabled = true
-shadow_bias = 0.244
+shadow_bias = 0.084
 shadow_normal_bias = 0.0
 shadow_blur = 0.0
 omni_range = 7.928
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="Mansion/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.57374, 2.10319, -9.99399)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.86011, 2.10319, -9.99399)
 light_color = Color(0.752997, 0.631448, 0.469205, 1)
 light_cull_mask = 4294967037
 shadow_enabled = true
@@ -3526,6 +3539,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.761427, 2.87454, -17.6248)
 [node name="BedroomGuests" type="Node3D" parent="Mansion/Room Pos Nodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.699231, 2.87454, -10.8041)
 
+[node name="mansion-basement-door-mteal" parent="Mansion" instance=ExtResource("46_rsckd")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8.16018, -2.85, -10.8743)
+
+[node name="mansion-basement-door" parent="Mansion" instance=ExtResource("47_vpwcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.70496, -2.85, -15.6218)
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 reset_on_save = false
 libraries = {
@@ -3646,5 +3665,110 @@ autostart = true
 [node name="Key" parent="." instance=ExtResource("86_wfd8f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8885, 3.97684, -10.7219)
 key_id = "Door1"
+
+[node name="BasicDoor3" parent="." instance=ExtResource("34_al8nw")]
+transform = Transform3D(0.0346029, 3.02508e-09, -0.999401, 8.74228e-08, -1, 0, -0.999401, -8.73704e-08, -0.0346029, -12.1209, 2.10196, -16.9449)
+
+[node name="BasicDoor4" parent="." instance=ExtResource("34_al8nw")]
+transform = Transform3D(0.0346029, 3.02508e-09, -0.999401, 8.74228e-08, -1, 0, -0.999401, -8.73704e-08, -0.0346029, -13.6219, 2.10196, -15.4195)
+
+[node name="mansion-wall" parent="." instance=ExtResource("89_cpdhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.51347, 0.484421, -9.16404)
+
+[node name="curtains" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1764, 4.24595, -9.46206)
+pixel_size = 0.012
+shaded = true
+texture_filter = 2
+texture = ExtResource("90_adrt7")
+
+[node name="curtains2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42444, 4.09638, -7.2315)
+pixel_size = 0.012
+shaded = true
+texture_filter = 2
+texture = ExtResource("90_adrt7")
+
+[node name="curtains3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.60063, 4.09638, -7.2315)
+pixel_size = 0.012
+shaded = true
+texture_filter = 2
+texture = ExtResource("90_adrt7")
+
+[node name="curtains4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.04918, 4.09638, -7.2315)
+pixel_size = 0.012
+shaded = true
+texture_filter = 2
+texture = ExtResource("90_adrt7")
+
+[node name="curtains5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.22537, 4.09638, -7.2315)
+pixel_size = 0.012
+shaded = true
+texture_filter = 2
+texture = ExtResource("90_adrt7")
+
+[node name="carpet-08" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -10.0207, 0.00131299, -11.6105)
+pixel_size = 0.02
+shaded = true
+texture_filter = 2
+texture = ExtResource("91_7pihn")
+
+[node name="carpet-03" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -3.37686, 0.00754893, -9.97415)
+pixel_size = 0.02
+shaded = true
+texture_filter = 2
+texture = ExtResource("92_g8lcu")
+
+[node name="carpet-01" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -5.58578, 2.85981, -8.82685)
+pixel_size = 0.02
+shaded = true
+texture_filter = 2
+texture = ExtResource("93_tkib3")
+
+[node name="carpet-07" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.08438, 2.87384, -17.5751)
+pixel_size = 0.02
+shaded = true
+texture_filter = 2
+texture = ExtResource("94_j4v73")
+
+[node name="carpet-06" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -16.6893, 2.86429, -16.3387)
+pixel_size = 0.02
+shaded = true
+texture_filter = 2
+texture = ExtResource("95_gu1ph")
+
+[node name="painting-01" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.12888, 4.16457, -12.3656)
+shaded = true
+texture_filter = 2
+texture = ExtResource("96_1y03n")
+
+[node name="painting-02" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.47653, 4.31926, -15.3918)
+shaded = true
+texture_filter = 2
+texture = ExtResource("97_ssosk")
+
+[node name="painting-03" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.3118, 1.37198, -10.8582)
+pixel_size = 0.012
+shaded = true
+texture_filter = 2
+texture = ExtResource("98_gqm64")
+
+[node name="painting-04" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.97404, 1.22105, -8.92522)
+pixel_size = 0.015
+shaded = true
+texture_filter = 2
+texture = ExtResource("99_ah8kb")
 
 [editable path="Mansion/Characters/CrawlingFather"]
