@@ -105,4 +105,6 @@ bones/48/position = Vector3(-1.73412e-05, 12.7846, 1.78788e-07)
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
+[node name="NavigationTimer" type="Timer" parent="."]
+
 [editable path="Body"]

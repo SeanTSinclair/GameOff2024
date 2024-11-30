@@ -78,4 +78,7 @@ path_max_distance = 1.01
 path_postprocessing = 1
 simplify_path = true
 
+[node name="NavigationTimer" type="Timer" parent="."]
+one_shot = true
+
 [editable path="Body"]
