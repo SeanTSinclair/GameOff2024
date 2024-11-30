@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://cacflbm5mok8d"]
+
+[ext_resource type="PackedScene" uid="uid://c45cri7qr74dh" path="res://objects/small-items/wardrobe.glb" id="1_celsc"]
+[ext_resource type="Script" path="res://scenes/game_objects/wardrobe/wardrobe.gd" id="2_7w8a1"]
+
+[sub_resource type="Animation" id="Animation_tgme8"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wardrobe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-12.5483, 0, 7.13305)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wardrobe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0), Vector3(1.5708, -1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_w8xph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("wardrobe:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("wardrobe:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5708, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8rt5o"]
+_data = {
+"RESET": SubResource("Animation_w8xph"),
+"open": SubResource("Animation_tgme8")
+}
+
+[node name="wardrobe" instance=ExtResource("1_celsc")]
+script = ExtResource("2_7w8a1")
+
+[node name="wardrobe" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_8rt5o")
+}

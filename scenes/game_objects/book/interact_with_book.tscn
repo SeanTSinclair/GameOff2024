@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx5m2n5foou0w"]
+
+[ext_resource type="Script" path="res://scenes/game_objects/book/interact_with_book.gd" id="1_xea5a"]
+[ext_resource type="PackedScene" uid="uid://bkxp5t2pd7n4k" path="res://scenes/components/interaction_component/interaction_component.tscn" id="2_njibw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ra27e"]
+
+[node name="InteractWithBook" type="Node3D"]
+script = ExtResource("1_xea5a")
+
+[node name="InteractionComponent" parent="." instance=ExtResource("2_njibw")]
+enabled = false
+
+[node name="CollisionShape3D" parent="InteractionComponent" index="0"]
+shape = SubResource("BoxShape3D_ra27e")
+
+[editable path="InteractionComponent"]
