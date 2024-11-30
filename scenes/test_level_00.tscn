@@ -84,7 +84,7 @@
 [ext_resource type="Texture2D" uid="uid://gl7rsdbw3n70" path="res://assets/flame_sprite/flames3_33_Layer.png" id="76_8k6h5"]
 [ext_resource type="Texture2D" uid="uid://b8x25r3o5i2r6" path="res://assets/flame_sprite/flames3_34_Layer.png" id="77_hp0ct"]
 [ext_resource type="Script" path="res://scenes/omni_light_3d.gd" id="78_m6v72"]
-[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/key/key.tscn" id="86_pxrl2"]
+[ext_resource type="PackedScene" uid="uid://dd8hkyoo43l87" path="res://scenes/game_objects/matches/matches.tscn" id="86_pxrl2"]
 
 [sub_resource type="Environment" id="Environment_ll1as"]
 background_energy_multiplier = 1.35
@@ -3644,6 +3644,5 @@ autostart = true
 
 [node name="Key2" parent="." instance=ExtResource("86_pxrl2")]
 transform = Transform3D(0.0658973, -0.99705, 0.0393435, 0.997697, 0.0664736, 0.0135232, -0.0160986, 0.0383621, 0.999134, -17.0605, 3.84945, -10.7502)
-key_id = "Door1"
 
 [editable path="Mansion/Characters/CrawlingFather"]

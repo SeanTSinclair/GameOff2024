@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://bbfs7dn1i3xnv"]
+
+[ext_resource type="Script" path="res://scripts/managers/journal/task.gd" id="1_h6fsn"]
+
+[resource]
+script = ExtResource("1_h6fsn")
+id = "STARTFIRE"
+description = "I should find something to start a fire with"
+task_received_message = "I should find something to start a fire"
+task_completed_message = "This should work"

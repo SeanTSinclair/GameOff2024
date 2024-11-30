@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://dikwroq3al7po"]
+
+[ext_resource type="Script" path="res://scripts/managers/journal/task.gd" id="1_vfxdn"]
+
+[resource]
+script = ExtResource("1_vfxdn")
+id = "FINDGRANDMOTHER"
+description = "I should ask grandmother if she knows more about what's going on"
+task_received_message = "Maybe grandmother will know"
+task_completed_message = ""

@@ -1,4 +1,22 @@
-grandmother: There is a darkness in this house, [br] darkness we couldn’t have known
-player: Grandmother?
-grandmother: Child, what keeps us here, [br]only we know.
-grandmother: Speak to your father... [br] I’m hearing... strange sounds
+if {dialogue_choices.GRANDMOTHERTALKED} == false:
+	grandmother: There is a darkness in this house, [br] darkness we couldn’t have known
+	[sound volume="0.0"]
+	player: Grandmother?
+	grandmother: Oh, what have we done.
+	being: A deal is a deal
+	grandmother: You should speak to your father… [br] I’m hearing... strange sounds
+	do DialogueManager.start_task("find_father")
+	set {dialogue_choices.GRANDMOTHERTALKED} = true
+	player: What was that voice?
+else:
+	do DialogueManager.finish_task("find_grandmother")
+	player: Grandmother why is father [br]saying that mother is gone? [br]She’s right here.
+	grandmother: Some things are too dark for a child to know.
+	player: Tell me more, please [br]something is not right.
+	grandmother: Oh, forgive me… [br]That is not your mother, [br]only a shell left behind.
+	grandmother: We made a deal for a terrible price.
+	grandmother: I fear we made the wrong choice.[br] We made a deal with that being.
+	grandmother: … If you want to know the truth, [br]go to the basement.
+	player: *Before I do, I should talk to mother [br]to see if there is truly nothing left.*
+	do DialogueManager.start_task("talk_mother")
+	set {dialogue_choices.MOTHERTALK} = true

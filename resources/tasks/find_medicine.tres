@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://chdhsc3t1hk42"]
+
+[ext_resource type="Script" path="res://scripts/managers/journal/task.gd" id="1_6jdk4"]
+
+[resource]
+script = ExtResource("1_6jdk4")
+id = "FINDMEDICINE"
+description = "Find the medicine bottle"
+task_received_message = "I should find the medicine bottle for father"
+task_completed_message = "I found the medicine, I should take this to father!"

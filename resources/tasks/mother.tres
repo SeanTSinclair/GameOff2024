@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://db77n5ktrg1j8"]
+
+[ext_resource type="Script" path="res://scripts/managers/journal/task.gd" id="1_8a1nf"]
+
+[resource]
+script = ExtResource("1_8a1nf")
+id = "MOTHERMYSTERY"
+description = "What is going on with mother"
+task_received_message = "Mother is acting weird I should figure out what is going on"
+task_completed_message = ""

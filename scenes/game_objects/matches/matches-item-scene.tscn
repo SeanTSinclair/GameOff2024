@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqrpkepykfwwq"]
+[gd_scene load_steps=3 format=3 uid="uid://b4jlo8egoso25"]
 
 [ext_resource type="Script" path="res://scenes/game_objects/key/key_item_scene.gd" id="1_2yjvc"]
 [ext_resource type="PackedScene" uid="uid://cjvuasttnnjtl" path="res://assets/models/matchbox.glb" id="2_w7qoq"]

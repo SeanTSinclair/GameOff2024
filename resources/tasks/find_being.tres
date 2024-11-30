@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://60acv4labjsp"]
+
+[ext_resource type="Script" path="res://scripts/managers/journal/task.gd" id="1_2ex2l"]
+
+[resource]
+script = ExtResource("1_2ex2l")
+id = "FINDBEING"
+description = "See what's in the basement"
+task_received_message = "I should go see what's in the basement when I'm ready"
+task_completed_message = "What is this being"

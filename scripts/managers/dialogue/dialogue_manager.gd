@@ -3,6 +3,15 @@ extends Node
 @warning_ignore("unused_signal")
 signal timeline_finished
 
+const FIND_FATHER = preload("res://resources/tasks/find_father.tres")
+const FIND_MEDICINE = preload("res://resources/tasks/find_medicine.tres")
+const FIND_MOTHER = preload("res://resources/tasks/talk_mother.tres")
+const FIND_GRANDMOTHER = preload("res://resources/tasks/find_grandmother.tres")
+const MATCHES = preload("res://resources/tasks/matches.tres")
+const GASOLINE = preload("res://resources/tasks/gasoline.tres")
+const BEINGTALK = preload("res://resources/tasks/find_being.tres")
+const MOTHERMYSTERY = preload("res://resources/tasks/mother.tres")
+
 var player
 var npcs = []
 var current_npc: Node = null
@@ -74,3 +83,43 @@ func unfreeze_all():
 		player.unfreeze()
 	if current_npc != null:
 		current_npc.unfreeze()
+
+
+func start_task(task_name: String):
+	match task_name:
+		"find_father":
+			Events.task_received.emit(FIND_FATHER)
+		"find_medicine_bottle":
+			Events.task_received.emit(FIND_MEDICINE)
+		"talk_mother":
+			Events.task_received.emit(FIND_MOTHER)
+		"matches":
+			Events.task_received.emit(MATCHES)
+		"gasoline":
+			Events.task_received.emit(GASOLINE)
+		"find_being":
+			Events.task_received.emit(BEINGTALK)
+		"find_grandmother":
+			Events.task_received.emit(FIND_GRANDMOTHER)
+		"mother_mystery":
+			Events.task_received.emit(MOTHERMYSTERY)
+
+
+func finish_task(task_name: String):
+	match task_name:
+		"find_father":
+			Events.task_completed.emit(FIND_FATHER)
+		"find_medicine_bottle":
+			Events.task_received.emit(FIND_MEDICINE)
+		"talk_mother":
+			Events.task_received.emit(FIND_MOTHER)
+		"matches":
+			Events.task_received.emit(MATCHES)
+		"gasoline":
+			Events.task_received.emit(GASOLINE)
+		"find_being":
+			Events.task_received.emit(BEINGTALK)
+		"find_grandmother":
+			Events.task_received.emit(FIND_GRANDMOTHER)
+		"mother_mystery":
+			Events.task_received.emit(MOTHERMYSTERY)

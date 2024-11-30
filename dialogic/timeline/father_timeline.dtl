@@ -1,17 +1,30 @@
-father: Your mothers eyes haunt me boy.
-[sound volume="0.0"]
-father: There’s something I’m missin’, [br] something I’ve lost
-player: What’s that father? [br]Where can I find it?
-father: It’s lost... I can’t find it. [br]But the darkness, it knows where.
-[sound path="res://assets/sounds/being_1_cut.mp3" volume="0.0"]
-being: Memories are secrets wrapped in time,[br] where’s that bottle?
-if {MEDICINEBOTTLE} == true:
-	[sound volume="0.0"]
-	father: She was here…once.
-	player: It feels cold in this house
-	[sound volume="0.0"]
-	being: In hiding you’ll find the warmth,[br]find the flames.
-	set {MEDICINEBOTTLE} = false
+if {dialogue_choices.FATHERTALKED} == false:
+	do DialogueManager.finish_task("find_father")
+	if {MEDICINEBOTTLE} == true:
+		father: Thank you.
+		father: I remember now.
+		[sound volume="0.0"]
+		father: ...Your mother. [br]She was here…once.
+		father: What’s left is not her.
+		player: What?
+		father: It's only her empty shell walking [br]around.
+		being: I wonder what you are going [br]to do once you figure out the truth?
+		player: The truth?
+		set {dialogue_choices.FATHERTALKED} = true
+	else:
+		[sound volume="0.0"]
+		father: I can’t remember, [br]why can’t I remember?
+		father: I’ve lost someone?
+		player: Father? [br]What can I do to help?
+		father: My medicine, [br]that will help me remember. [br]Have you seen it?
+		do DialogueManager.start_task("find_medicine_bottle")
 else:
-	player: What is that voice?
-	[end_timeline]
+	father: What have we done...
+	if {dialogue_choices.GRANDMOTHERTALKED} == true:
+		player: I should go speak with grandmother again, [br]maybe she knows what's going on.
+		do DialogueManager.start_task("find_grandmother")
+		set {dialogue_choices.GRANDMOTHERTALKED} = true
+	else:
+		player: Maybe someone else [br]will tell me what's going on?
+		set {dialogue_choices.GRANDMOTHERTALKED} = true
+		do DialogueManager.start_task("find_grandmother")

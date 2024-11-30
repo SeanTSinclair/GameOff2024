@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Task" load_steps=2 format=3 uid="uid://dv4i3cm7515ve"]
+
+[ext_resource type="Script" path="res://scripts/managers/journal/task.gd" id="1_fxr3i"]
+
+[resource]
+script = ExtResource("1_fxr3i")
+id = "GASOLINE"
+description = "I need something to set help start the fire"
+task_received_message = ""
+task_completed_message = ""
