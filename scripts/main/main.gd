@@ -11,6 +11,7 @@ var state: MainStates = MainStates.ACTIVE
 @onready var journal_menu: JournalMenu = %JournalMenu
 @onready
 var scene_anim_player: AnimationPlayer = %WorldLayer/NavigationRegion3D/TestLevel00/AnimationPlayer
+@onready var final_scene: PackedScene = preload("res://scenes/beast_room_standalone.tscn")
 
 
 func _ready():
@@ -108,6 +109,11 @@ func menu_closed() -> void:
 
 func signal_unpaused() -> void:
 	Events.game_unpaused.emit()
+
+
+func switch_to_final_scene():
+	%WorldLayer/NavigationRegion3D.queue_free()
+	world_layer.add_child(final_scene.instantiate())
 
 
 func _on_inventory_menu_inventory_closed() -> void:
