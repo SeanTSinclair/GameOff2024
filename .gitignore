@@ -239,3 +239,4 @@ $RECYCLE.BIN/
 
 # Output folder for builds
 builds/
+/.venv/
