@@ -41,7 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.456626, 0)
 
 [node name="HandItemSlot" type="Node3D" parent="Head"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.475278, 0, -1.16118)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.431573, 0.0810053, -0.555893)
 script = ExtResource("4_wqstd")
 
 [node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]

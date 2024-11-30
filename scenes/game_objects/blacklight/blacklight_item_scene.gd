@@ -37,13 +37,16 @@ func _process(delta):
 
 		if ray.is_colliding():
 			var collision: CollisionObject3D = ray.get_collider()
-			var secret = collision.get_parent_node_3d().get_parent_node_3d()
-			if secret is SecretText:
-				var secret_id = secret.secret_text_id
-				var secret_found = State.is_secret_found(secret_id)
-				if secret_found == null:
-					State.add_secret_found(secret_id)
-					Events.journal.emit(secret.text)
+			var parent = collision.get_parent_node_3d()
+#			// Secret text is setup such that collision is 2 childs down
+			if parent:
+				var secret = parent.get_parent_node_3d()
+				if secret is SecretText:
+					var secret_id = secret.secret_text_id
+					var secret_found = State.is_secret_found(secret_id)
+					if secret_found == null:
+						State.add_secret_found(secret_id)
+						Events.journal.emit(secret.text)
 
 
 func use():

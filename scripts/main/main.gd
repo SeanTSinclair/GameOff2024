@@ -18,6 +18,7 @@ func _ready():
 	Dialogic.clear()
 	DialogueManager.start_dialogue_no_npc("start")
 	DialogueManager.connect("timeline_finished", Callable(self, "_play_animation"))
+	SoundManager.play_sfx("TEST", 0, -20, 0.37)
 
 
 func _play_animation():
