@@ -17,8 +17,8 @@ being: I only answer what is asked of me. [br]Your mother made her choice freely
 being: Would you make hers meaningless[br] by destroying me?
 if {JERRYCAN} == false:
 	if {MATCHES} == false:
-		[signal arg="burn_baby_burn"]
 		- She didn’t want this. She wants me to stop you.
+			[signal arg="burn_baby_burn"]
 
 - I-I can’t do it, mother. What would happen if I burn it.
 	[background arg="res://dialogic/backgrounds/family_end.png" fade="3.0"]
