@@ -15,12 +15,16 @@ being: Honouring your mother’s wishes [br]by staying alive [br]and living with
 being: Would you defy her sacrifice? [br]Throw away the life she gave you?
 being: I only answer what is asked of me. [br]Your mother made her choice freely.
 being: Would you make hers meaningless[br] by destroying me?
-if {JERRYCAN} == false:
-	if {MATCHES} == false:
-		- She didn’t want this. She wants me to stop you.
-			[signal arg="burn_baby_burn"]
-
-- I-I can’t do it, mother. What would happen if I burn it.
-	[background arg="res://dialogic/backgrounds/family_end.png" fade="3.0"]
-	[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
-	[wait time="4.0"]
+if {JERRYCAN}  ==  true and {MATCHES} == true and {dialogue_choices.MOTHERTALK} == true:
+	do State.set_game_over("You managed to save your mothers soul")
+	[signal arg="burn_baby_burn"]
+	- She didn’t want this. She wants me to stop you.
+else:
+	
+	- I-I can’t do it, mother. What would happen if I burn it.
+		do State.set_game_over("You and your family lives foreves in servitude of the being")
+		[background arg="res://dialogic/backgrounds/family_end.png" fade="3.0"]
+		[wait time="5.0"]
+		[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
+		[wait time="5.0"]
+		[signal arg="family_end"]
