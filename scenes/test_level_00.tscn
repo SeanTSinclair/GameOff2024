@@ -3501,7 +3501,6 @@ reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_rqkj3")
 }
-speed_scale = 4.0
 
 [node name="IntroBlackThing" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5422, 4.40993, -14.4542)
