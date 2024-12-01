@@ -3630,9 +3630,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5575, 2.82309, -10.5568)
 [node name="MedicineBottle" parent="." instance=ExtResource("37_xpdxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10721, 3.4652, -9.36132)
 
-[node name="Matches" parent="." instance=ExtResource("86_cgnmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9194, 2.82309, -9.68316)
-
 [node name="table_eat" parent="." instance=ExtResource("38_21tky")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3277, 2.85, -18.6741)
 
@@ -3661,7 +3658,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="Key" parent="." instance=ExtResource("86_wfd8f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8885, 3.97684, -10.7219)
+transform = Transform3D(0.872777, 0.488119, -2.13363e-08, 0.000834889, -0.00149286, -0.999999, -0.488118, 0.872776, -0.00171046, -0.633669, 0.654124, -14.5508)
 key_id = "Door1"
 
 [node name="BasicDoor3" parent="." instance=ExtResource("34_al8nw")]
@@ -3771,5 +3768,12 @@ texture = ExtResource("99_ah8kb")
 
 [node name="BasementDoor" parent="." instance=ExtResource("99_50syo")]
 transform = Transform3D(-0.999999, 0, -0.00143111, 0, 1, 0, 0.00143111, 0, -0.999999, -6.69831, -2.84443, -15.6074)
+
+[node name="Matches" parent="." instance=ExtResource("86_cgnmu")]
+transform = Transform3D(0.198629, 0, -0.318108, 0, 0.375028, 0, 0.318108, 0, 0.198629, -1.62431, 0.803808, -8.03901)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.159588, 0.987184, 0, -0.987184, -0.159588, -0.347593, 2.745, -14.7704)
+light_energy = 0.3
 
 [editable path="Mansion/Characters/CrawlingFather"]
