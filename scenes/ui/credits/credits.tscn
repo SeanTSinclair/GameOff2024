@@ -1,7 +1,7 @@
-[gd_scene load_steps=51 format=3 uid="uid://b0pvkal5i30f5"]
+[gd_scene load_steps=64 format=3 uid="uid://b0pvkal5i30f5"]
 
-[ext_resource type="Texture2D" uid="uid://d3ftwbof0navg" path="res://assets/balnk_no_name.png" id="1_8c578"]
 [ext_resource type="Script" path="res://scripts/ui/credits/credits.gd" id="1_c5ntr"]
+[ext_resource type="Script" path="res://scenes/ui/credits/contributor.gd" id="2_nhsgn"]
 [ext_resource type="Texture2D" uid="uid://b6asdhbkql22a" path="res://assets/menu-sprite/splash-main_0000_Layer-45.png" id="2_rc0m5"]
 [ext_resource type="Texture2D" uid="uid://dif6c3ytknkhd" path="res://assets/menu-sprite/splash-main_0001_Layer-44.png" id="3_elnya"]
 [ext_resource type="Texture2D" uid="uid://dgvjum6q0g0pb" path="res://assets/menu-sprite/splash-main_0002_Layer-43.png" id="4_7bdi3"]
@@ -48,6 +48,56 @@
 [ext_resource type="Texture2D" uid="uid://bpop37qn23ham" path="res://assets/menu-sprite/splash-main_0043_Layer-2.png" id="45_yd6ct"]
 [ext_resource type="Texture2D" uid="uid://cmrixicaohxel" path="res://assets/menu-sprite/splash-main_0044_Layer-1.png" id="46_b7bhk"]
 [ext_resource type="Script" path="res://scenes/ui/main_menu/animated_sprite_2d.gd" id="47_ocpo6"]
+
+[sub_resource type="Resource" id="Resource_tuwgg"]
+script = ExtResource("2_nhsgn")
+role_name = "Writer/Storyboard/Developer"
+display_name = "Aina"
+
+[sub_resource type="Resource" id="Resource_4jf5e"]
+script = ExtResource("2_nhsgn")
+role_name = "3D artist/Level designer"
+display_name = "Espen Susort"
+
+[sub_resource type="Resource" id="Resource_1kq0v"]
+script = ExtResource("2_nhsgn")
+role_name = "Game designer"
+display_name = "Irina"
+
+[sub_resource type="Resource" id="Resource_eq7v8"]
+script = ExtResource("2_nhsgn")
+role_name = "Developer"
+display_name = "Kristian Hiim"
+
+[sub_resource type="Resource" id="Resource_xx6ko"]
+script = ExtResource("2_nhsgn")
+role_name = "Developer"
+display_name = "Marius Bakkeli"
+
+[sub_resource type="Resource" id="Resource_fec2i"]
+script = ExtResource("2_nhsgn")
+role_name = "Developer"
+display_name = "Marius Horne"
+
+[sub_resource type="Resource" id="Resource_ia10r"]
+script = ExtResource("2_nhsgn")
+role_name = "Music/SFX"
+display_name = "Martin Malmei Aarsland"
+
+[sub_resource type="Resource" id="Resource_jyy20"]
+script = ExtResource("2_nhsgn")
+role_name = "Project manager/Developer"
+display_name = "Sean Sinclair"
+
+[sub_resource type="Resource" id="Resource_6vb6k"]
+script = ExtResource("2_nhsgn")
+role_name = "Game director/3D artist"
+display_name = "Uni Susort"
+
+[sub_resource type="Resource" id="Resource_3rvd5"]
+script = ExtResource("2_nhsgn")
+role_name = "Tester / Breaker of stuff"
+display_name = "Vidar Hiim"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hj5xb"]
 animations = [{
@@ -192,19 +242,64 @@ animations = [{
 "speed": 18.0
 }]
 
-[sub_resource type="FontVariation" id="FontVariation_7rw1t"]
-spacing_glyph = 8
+[sub_resource type="Animation" id="Animation_xaw7q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreditsRichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(50, 360)]
+}
+
+[sub_resource type="Animation" id="Animation_njefi"]
+resource_name = "game_over"
+length = 35.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreditsRichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, 360), Vector2(50, -1200)]
+}
+
+[sub_resource type="Animation" id="Animation_qyqm0"]
+resource_name = "scroll"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreditsRichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(50, 360), Vector2(50, -900)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_it3io"]
+_data = {
+"RESET": SubResource("Animation_xaw7q"),
+"game_over": SubResource("Animation_njefi"),
+"scroll": SubResource("Animation_qyqm0")
+}
 
 [node name="Credits" type="CanvasLayer"]
 script = ExtResource("1_c5ntr")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("1_8c578")
+contributors = Array[ExtResource("2_nhsgn")]([SubResource("Resource_tuwgg"), SubResource("Resource_4jf5e"), SubResource("Resource_1kq0v"), SubResource("Resource_eq7v8"), SubResource("Resource_xx6ko"), SubResource("Resource_fec2i"), SubResource("Resource_ia10r"), SubResource("Resource_jyy20"), SubResource("Resource_6vb6k"), SubResource("Resource_3rvd5")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(240, 180)
@@ -221,34 +316,31 @@ grow_vertical = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_right = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="Panel" type="Panel" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 10
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = SubResource("FontVariation_7rw1t")
-theme_override_font_sizes/font_size = 48
-text = "CREDITS"
-
-[node name="CreditsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/line_spacing = -5
-text = "Aina
-Espen
-Irina 
-Kristian 
-Marius B
-Marius H
-Martin
-Sean
-Uni
-Vidar"
-
-[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="CreditsRichTextLabel" type="RichTextLabel" parent="."]
 unique_name_in_owner = true
-layout_mode = 2
+offset_left = 50.0
+offset_top = 360.0
+offset_right = 430.0
+offset_bottom = 400.0
+bbcode_enabled = true
+text = "[center]Credits here[/center]
+"
+fit_content = true
+scroll_active = false
+
+[node name="BackButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 419.0
+offset_top = 310.0
+offset_right = 461.0
+offset_bottom = 342.0
 size_flags_horizontal = 8
 text = "Back"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_it3io")
+}
