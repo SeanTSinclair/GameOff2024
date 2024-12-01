@@ -15,7 +15,7 @@ being: Honouring your mother’s wishes [br]by staying alive [br]and living with
 being: Would you defy her sacrifice? [br]Throw away the life she gave you?
 being: I only answer what is asked of me. [br]Your mother made her choice freely.
 being: Would you make hers meaningless[br] by destroying me?
-if {JERRYCAN}  ==  true and {MATCHES} == true and {dialogue_choices.MOTHERTALK} == true:
+if {JERRYCAN}  ==  true and {MATCHES} == true and {dialogue_choices.MOTHERFINISHED} == true:
 	- She didn’t want this. She wants me to stop you.
 		do State.set_game_over("You managed to save your mothers soul")
 		[signal arg="burn_baby_burn"]
