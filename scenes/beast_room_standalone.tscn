@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://bafvtsrmtcw8c"]
+[gd_scene load_steps=82 format=4 uid="uid://bafvtsrmtcw8c"]
 
 [ext_resource type="Script" path="res://scripts/main/final_scene.gd" id="1_a5p8g"]
 [ext_resource type="PackedScene" uid="uid://vsyu3ffqtip5" path="res://objects/small-items/throne.glb" id="1_jgt78"]
@@ -47,19 +47,6 @@
 [ext_resource type="Texture2D" uid="uid://b60r1xoyrcqsh" path="res://assets/models/relic/TheBeast (1)_beastex5.png" id="43_rql08"]
 [ext_resource type="PackedScene" uid="uid://c4ai6ys1jqecg" path="res://objects/small-items/mansion-basement-door-mteal.glb" id="45_15b32"]
 [ext_resource type="PackedScene" uid="uid://wa0junudfbi0" path="res://scenes/player/player.tscn" id="46_tcnpo"]
-
-[sub_resource type="Environment" id="Environment_1x7jg"]
-background_energy_multiplier = 1.35
-ambient_light_color = Color(0.078815, 0.078815, 0.078815, 1)
-ambient_light_energy = 0.0
-reflected_light_source = 1
-fog_enabled = true
-fog_light_color = Color(0, 0, 0, 1)
-fog_density = 0.0892
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0747
-volumetric_fog_albedo = Color(0.325121, 0.172719, 0.412532, 1)
-volumetric_fog_length = 84.28
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_btdov"]
 resource_name = "Material.003"
@@ -1875,9 +1862,6 @@ _data = {
 
 [node name="BeastRoomStandalone" type="Node3D"]
 script = ExtResource("1_a5p8g")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_1x7jg")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.912499, -0.132805, 0.386922, 6.96707e-09, 0.945836, 0.324644, -0.409079, -0.296237, 0.863075, -1.444, 3.85475, 8.17466)
