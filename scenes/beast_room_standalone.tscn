@@ -1745,6 +1745,34 @@ tracks/2/keys = {
 "values": [Vector3(1.087, 1.434, 0.712), Vector3(1.822, 2.404, 1.194)]
 }
 
+[sub_resource type="Animation" id="Animation_nuvb8"]
+resource_name = "die"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.67739, -2.91138, -13.5424), Vector3(-2.67739, -1.93441, -16.8471)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.0196867, 0), Vector3(0.00351034, 0.0193712, -0.179246)]
+}
+
 [sub_resource type="Animation" id="Animation_8f4rs"]
 resource_name = "final_scene"
 length = 11.0
@@ -1829,34 +1857,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(-2.67739, -2.91138, -13.5424), Vector3(-2.677, -2.891, -13.542), Vector3(-2.67739, -2.91138, -13.5424)]
-}
-
-[sub_resource type="Animation" id="Animation_nuvb8"]
-resource_name = "die"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-2.67739, -2.91138, -13.5424), Vector3(-2.67739, -1.93441, -16.8471)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Player:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0.0196867, 0), Vector3(0.00351034, 0.0193712, -0.179246)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mfwqn"]
