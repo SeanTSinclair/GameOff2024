@@ -2650,7 +2650,7 @@ autostart = true
 visible = false
 
 [node name="Fire" type="AnimatedSprite3D" parent="Fires/Group6"]
-transform = Transform3D(0.578211, 0, 0, 0, 0.578211, 0, 0, 0, 0.578211, -2.62096, -4.07683, -14.821)
+transform = Transform3D(0.588, 0, 0, 0, 0.588, 0, 0, 0, 0.588, -2.62096, -4.07683, -14.821)
 offset = Vector2(0, 64)
 pixel_size = 0.02
 billboard = 1
@@ -2670,7 +2670,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="Fire2" type="AnimatedSprite3D" parent="Fires/Group6"]
-transform = Transform3D(0.706855, 0, 0, 0, 0.933183, 0, 0, 0, 0.463283, -2.62096, -3.06399, -17.9368)
+transform = Transform3D(1.087, 0, 0, 0, 1.434, 0, 0, 0, 0.712, -2.62096, -3.06399, -17.9368)
 offset = Vector2(0, 64)
 pixel_size = 0.02
 billboard = 1
