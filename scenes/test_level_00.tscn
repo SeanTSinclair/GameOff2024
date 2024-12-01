@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=4 uid="uid://4wndb8147fjy"]
+[gd_scene load_steps=179 format=4 uid="uid://4wndb8147fjy"]
 
 [ext_resource type="Texture2D" uid="uid://coqf6vagf5tuu" path="res://assets/help-00-test-black-text.png" id="3_bgh7f"]
 [ext_resource type="PackedScene" uid="uid://bcyc5xk6v7tpm" path="res://objects/secret-text.tscn" id="4_sr0u4"]
@@ -93,6 +93,7 @@
 [ext_resource type="PackedScene" uid="uid://b34k81o68rp4u" path="res://objects/small-items/mansion-wall.glb" id="89_cpdhq"]
 [ext_resource type="Texture2D" uid="uid://dvsqrwbpb6k6" path="res://objects/small-items/curtains_open-red.png" id="90_adrt7"]
 [ext_resource type="Texture2D" uid="uid://lamu26v55rq" path="res://objects/small-items/carpet-08.png" id="91_7pihn"]
+[ext_resource type="Texture2D" uid="uid://bvusrufbm1gdh" path="res://objects/small-items/curtains_closed-red-narrow.png" id="92_d8t4v"]
 [ext_resource type="Texture2D" uid="uid://cj1pot8j0husa" path="res://objects/small-items/carpet-03.png" id="92_g8lcu"]
 [ext_resource type="Texture2D" uid="uid://dll84evlgi7sg" path="res://objects/small-items/carpet-01.png" id="93_tkib3"]
 [ext_resource type="Texture2D" uid="uid://ducag8h5cbwso" path="res://objects/small-items/carpet-07.png" id="94_j4v73"]
@@ -3628,8 +3629,12 @@ script = ExtResource("78_m6v72")
 wait_time = 0.1
 autostart = true
 
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.0804476, 1.16813, -0.00142161, 0.000847029, -0.00174937, -0.999753, -1.01135, 0.0929176, -0.000950402, 0.0139898, 0.654124, -14.3232)
+texture = ExtResource("92_d8t4v")
+
 [node name="Key" parent="." instance=ExtResource("86_wfd8f")]
-transform = Transform3D(0.872777, 0.488119, -2.13363e-08, 0.000834889, -0.00149286, -0.999999, -0.488118, 0.872776, -0.00171046, -0.633669, 0.654124, -14.5508)
+transform = Transform3D(1.13461, 0.634555, -2.77373e-08, 0, -5.68248e-08, -1.3, -0.634555, 1.13461, -4.95954e-08, -0.633669, 0.654124, -14.5508)
 key_id = "Door1"
 
 [node name="BasicDoor3" parent="." instance=ExtResource("34_al8nw")]
