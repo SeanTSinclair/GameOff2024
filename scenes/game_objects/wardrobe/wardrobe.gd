@@ -13,4 +13,5 @@ func _on_secret_book_interacted_with() -> void:
 		return
 	opened = true
 	animation_player.play("open")
+	SoundManager.play_sfx("BOOKSHELF_SLIDE")
 	Events.journal.emit("I heard a strange sound, like something moved above me")
