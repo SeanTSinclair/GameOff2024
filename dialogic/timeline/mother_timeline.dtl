@@ -1,12 +1,14 @@
-if {dialogue_choices.MOTHERTALK} == true:
+if {dialogue_choices.MOTHERTALK} == true and {dialogue_choices.MOTHERFINISHED} == false:
 	player: Mother?[br] Do you know anything about a deal?
 	mother: **Mumbles**
 	player: What?
-	mother: Its cold. Please stop it. You have to burn it
+	mother: Its cold. Please stop it. [br]You have to burn it
 	player: What?
 	mother: You have to [u]burn it[/u]
+	do DialogueManager.finish_task("talk_mother")
 	do DialogueManager.start_task("matches")
 	do DialogueManager.start_task("gasoline")
+	set {dialogue_choices.MOTHERFINISHED} = true
 else:
 	mother: <Is it only me trapped like this?/Its so cold/Why am I here? I can't remember.>
 	do DialogueManager.start_task("mother_mystery")
