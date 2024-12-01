@@ -14,7 +14,7 @@ script = ExtResource("1_e4u4g")
 [node name="Model" parent="." instance=ExtResource("1_u6i1p")]
 
 [node name="InteractionComponent" parent="." instance=ExtResource("3_5kbv0")]
-prompt_message = "You sure you want to die?"
+prompt_message = "I have a bad feeling about this"
 
 [node name="CollisionShape3D" parent="InteractionComponent" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50528, 1.05585, 0.00238037)
