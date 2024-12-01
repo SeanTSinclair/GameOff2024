@@ -87,10 +87,10 @@ text = "Brightness	"
 [node name="BrightnessSlider" type="HSlider" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/BrightnessSlider"]
 unique_name_in_owner = true
 layout_mode = 2
-min_value = 0.13
+min_value = 0.001
 max_value = 0.5
-step = 0.01
-value = 0.15
+step = 0.001
+value = 0.151
 
 [node name="WindowOptionContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
