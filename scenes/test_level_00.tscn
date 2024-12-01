@@ -3498,9 +3498,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2226, 2.87454, -17.0724)
 [node name="Lavatory" type="Node3D" parent="Mansion/Room Pos Nodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3496, 2.87454, -10.0831)
 
-[node name="Playroom" type="Node3D" parent="Mansion/Room Pos Nodes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9904, 2.87454, -12.5617)
-
 [node name="SecondFloorOutlookCorner1" type="Node3D" parent="Mansion/Room Pos Nodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9648, 2.87454, -16.087)
 
@@ -3521,9 +3518,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18622, -2.87788, -18.021)
 
 [node name="StairsBasement" type="Node3D" parent="Mansion/Room Pos Nodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7025, -1.4782, -20.1314)
-
-[node name="BasementSecondRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.55286, -2.87788, -11.7802)
 
 [node name="LivingRoom" type="Node3D" parent="Mansion/Room Pos Nodes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.36722, 2.87454, -9.83492)
@@ -3609,12 +3603,12 @@ hallway_stairs_second_floor = NodePath("../../Mansion/Room Pos Nodes/StairsSecon
 hallway_stairs_basement = NodePath("../../Mansion/Room Pos Nodes/StairsBasement")
 dining_room = NodePath("../../Mansion/Room Pos Nodes/DiningRoom")
 basement_first_room = NodePath("../../Mansion/Room Pos Nodes/BasementFirstRoom")
-basement_second_room = NodePath("../../Mansion/Room Pos Nodes/BasementSecondRoom")
+basement_second_room = NodePath("")
 broom_closet = NodePath("../../Mansion/Room Pos Nodes/BroomCloset")
 study = NodePath("../../Mansion/Room Pos Nodes/Study")
 bathroom = NodePath("../../Mansion/Room Pos Nodes/Bathroom")
 lavatory = NodePath("../../Mansion/Room Pos Nodes/Lavatory")
-playroom = NodePath("../../Mansion/Room Pos Nodes/Playroom")
+playroom = NodePath("")
 portrait_room = NodePath("../../Mansion/Room Pos Nodes/LivingRoom")
 outlook_corner_1 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner1")
 outlook_corner_2 = NodePath("../../Mansion/Room Pos Nodes/SecondFloorOutlookCorner2")
