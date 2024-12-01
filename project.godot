@@ -71,9 +71,9 @@ variables={
 "BATTERY1": false,
 "BATTERY2": false,
 "BLACKLIGHT": false,
-"JERRYCAN": false,
+"JERRYCAN": true,
 "KEY": false,
-"MATCHES": false,
+"MATCHES": true,
 "MEDICINEBOTTLE": false,
 "dialogue_choices": {
 "FATHERTALKED": false,

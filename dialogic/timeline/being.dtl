@@ -17,15 +17,26 @@ being: I only answer what is asked of me. [br]Your mother made her choice freely
 being: Would you make hers meaningless[br] by destroying me?
 if {JERRYCAN} == true:
 	if {MATCHES} == true:
-		- She didn’t want this. She wants me to stop you.
-		[background arg="res://dialogic/backgrounds/beast.png" fade="1.0"]
-		[wait time="2.0"]
-		[background arg="res://dialogic/backgrounds/wakeUpOrBurn.png" fade="1.0"]
-		[wait time="2.0"]
-		[background arg="res://dialogic/backgrounds/burn.png" fade="1.0"]
+		if {dialogue_choices.MOTHERTALK} == true:
+			- She didn’t want this. She wants me to stop you.
+				[background arg="res://dialogic/backgrounds/beast.png" fade="1.0"]
+				[wait time="2.0"]
+				[background arg="res://dialogic/backgrounds/wakeUpOrBurn.png" fade="1.0"]
+				[wait time="2.0"]
+				[background arg="res://dialogic/backgrounds/burn.png" fade="1.0"]
+				[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
+				[wait time="4.0"]
+		else:
+			- She wouldn't want this. She would want me to stop you.
+				[background arg="res://dialogic/backgrounds/beast.png" fade="1.0"]
+				[wait time="2.0"]
+				[background arg="res://dialogic/backgrounds/wakeUpOrBurn.png" fade="1.0"]
+				[wait time="2.0"]
+				[background arg="res://dialogic/backgrounds/burn.png" fade="1.0"]
+				[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
+				[wait time="4.0"]
+	
+	- I-I can’t do it, mother. What would happen if I burn it.
+		[background arg="res://dialogic/backgrounds/family_end.png" fade="3.0"]
 		[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
-
-- I-I can’t do it, mother. What would happen if I burn it.
-	[background arg="res://dialogic/backgrounds/family_end.png" fade="3.0"]
-	[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
-	[wait time="4.0"]
+		[wait time="4.0"]
