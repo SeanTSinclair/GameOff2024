@@ -1,6 +1,6 @@
 being: Child, you’ve come at last.
 player: What are you?
-being: I am merely the hand that reached[br] into the abyss to pull you from the void.
+being: I the hand that reached[br] into the abyss to pull you from the void.
 being: It was I who gave you back the breath[br] in your lungs, the beat in[br] your heart.
 player: What did you do to mother?
 being: A debt was paid for your return.
@@ -19,10 +19,13 @@ if {JERRYCAN}  ==  true and {MATCHES} == true and {dialogue_choices.MOTHERFINISH
 	- She didn’t want this. She wants me to stop you.
 		do State.set_game_over("You managed to save your mothers soul")
 		[signal arg="burn_baby_burn"]
+		[wait time="3.0"]
+		do SoundManager.play_sfx("being_burning")
 else:
 	
-	- I-I can’t do it, mother. What would happen if I burn it.
+	- I-I can’t do it. I can't destroy you
 		do State.set_game_over("You and your family lives foreves in servitude of the being")
+		do SoundManager.play_sfx("breaking_bones")
 		[background arg="family_end.png" fade="3.0"]
 		[wait time="5.0"]
 		[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
