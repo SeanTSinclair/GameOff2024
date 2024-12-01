@@ -12,6 +12,7 @@ var start_time: int
 var game_over: bool = false
 var game_over_time: int = 0
 var game_over_status: String = ""
+var brightness_level: float = 0.15
 
 
 func reset() -> void:
