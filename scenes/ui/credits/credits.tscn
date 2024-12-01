@@ -62,7 +62,7 @@ display_name = "Espen Susort"
 [sub_resource type="Resource" id="Resource_1kq0v"]
 script = ExtResource("2_nhsgn")
 role_name = "Game designer"
-display_name = "Irina"
+display_name = "Jeanne Irina Knudsen"
 
 [sub_resource type="Resource" id="Resource_eq7v8"]
 script = ExtResource("2_nhsgn")

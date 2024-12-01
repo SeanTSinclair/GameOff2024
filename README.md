@@ -40,8 +40,8 @@ If you want to run the linter before commiting manually you may do so using the 
 ##### How to install:
 1. Make sure you have python and pip installed.
 2. run  `pip install -r requirements.txt`
-    -  If you for some reason have issues running this command a solution could be to run `python3 -m pip install -r requirements.txt`
-    - This installs pre-commit and gdscript toolkit
+	-  If you for some reason have issues running this command a solution could be to run `python3 -m pip install -r requirements.txt`
+	- This installs pre-commit and gdscript toolkit
 3. Run `pre-commit install` in the root of the project.
 
 Now every time you run `git commit` the GdScript Toolkit linter is executed, and you must resolve any linting issues before a commit is accepted. 
@@ -64,13 +64,13 @@ Also - I can highly recommend lazygit if you prefer the terminal.
 
 - Aina Kvamme Bru - Writer/Storyboard/Developer
 - Espen Susort - 3D artist/Level designer
-- Irina - Game designer
+- Jeanne Irina Knudsen - Game designer
 - Kristian Hiim - Developer
 - Marius Bakkeli - Developer
 - Marius Horne - Developer
 - Martin Malmei Aarsland - Music/SFX
 - Sean Sinclair - Project manager/Developer
 - Uni Susort - Game director/3D artist
-- Vidar Hiim - QA
+- Vidar Hiim - Tester / Breaker of stuff
 
 Huge thanks to everyone that contributed, it was an amazing journey! ❤️
