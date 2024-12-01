@@ -62,7 +62,7 @@ Also - I can highly recommend lazygit if you prefer the terminal.
 
 ## Contributors
 
-- Aina - Writer/Storyboard/Developer
+- Aina Kvamme Bru - Writer/Storyboard/Developer
 - Espen Susort - 3D artist/Level designer
 - Irina - Game designer
 - Kristian Hiim - Developer
