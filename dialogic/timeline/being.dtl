@@ -17,8 +17,8 @@ being: I only answer what is asked of me. [br]Your mother made her choice freely
 being: Would you make hers meaningless[br] by destroying me?
 if {JERRYCAN}  ==  true and {MATCHES} == true and {dialogue_choices.MOTHERTALK} == true:
 	do State.set_game_over("You managed to save your mothers soul")
-	[signal arg="burn_baby_burn"]
 	- She didn’t want this. She wants me to stop you.
+		[signal arg="burn_baby_burn"]
 else:
 	
 	- I-I can’t do it, mother. What would happen if I burn it.
