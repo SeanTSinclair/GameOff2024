@@ -70,7 +70,7 @@ Also - I can highly recommend lazygit if you prefer the terminal.
 - Marius Horne - Developer
 - Martin Malmei Aarsland - Music/SFX
 - Sean Sinclair - Project manager/Developer
-- Uni Susort - Game director/3D artist
+- Uni Susort - Game director/3D artist/SFX
 - Vidar Hiim - Tester / Breaker of stuff
 
 Huge thanks to everyone that contributed, it was an amazing journey! ❤️
