@@ -68,7 +68,7 @@ Also - I can highly recommend lazygit if you prefer the terminal.
 - Kristian Hiim - Developer
 - Marius Bakkeli - Developer
 - Marius Horne - Developer
-- Martin Aarsland - Music/SFX
+- Martin Malmei Aarsland - Music/SFX
 - Sean Sinclair - Project manager/Developer
 - Uni Susort - Game director/3D artist
 - Vidar Hiim - QA
