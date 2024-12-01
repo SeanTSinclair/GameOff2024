@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=4 uid="uid://bafvtsrmtcw8c"]
+[gd_scene load_steps=84 format=4 uid="uid://bafvtsrmtcw8c"]
 
 [ext_resource type="Script" path="res://scripts/main/final_scene.gd" id="1_a5p8g"]
 [ext_resource type="PackedScene" uid="uid://vsyu3ffqtip5" path="res://objects/small-items/throne.glb" id="1_jgt78"]
