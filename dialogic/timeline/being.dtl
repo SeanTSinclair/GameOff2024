@@ -25,9 +25,6 @@ else:
 	
 	- I-I can’t do it. I can't destroy you
 		do State.set_game_over("You and your family lives foreves in servitude of the being")
-		do SoundManager.play_sfx("breaking_bones")
-		[background arg="family_end.png" fade="3.0"]
-		[wait time="5.0"]
-		[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
-		[wait time="5.0"]
 		[signal arg="family_end"]
+		[wait time="2.0"]
+		do SoundManager.play_sfx("breaking_bones")
