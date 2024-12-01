@@ -86,7 +86,7 @@ variables={
 "NEEDTOTALKTOFATHER": false
 }
 }
-glossary/glossary_files=["res://dialogic/glossary.tres"]
+glossary/glossary_files=[]
 text/autocolor_names=false
 
 [display]
