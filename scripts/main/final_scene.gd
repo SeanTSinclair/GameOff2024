@@ -11,3 +11,4 @@ func _ready() -> void:
 
 func queue_hover() -> void:
 	animation_player.play("hover")
+	DialogueManager.start_dialogue_no_npc("being")

@@ -15,6 +15,7 @@ const MOTHERMYSTERY = preload("res://resources/tasks/mother.tres")
 var player
 var npcs = []
 var current_npc: Node = null
+var current_timeline
 
 
 # Set the player reference
@@ -43,6 +44,7 @@ func start_dialogue_no_npc(timeline_name: String):
 		print("Error: Player not set!")
 		return
 	freeze_all()
+	current_timeline = timeline_name
 	Dialogic.start(timeline_name)
 	Dialogic.timeline_ended.connect(_on_dialogue_end_no_npc)
 
@@ -66,7 +68,8 @@ func _on_dialogue_end():
 
 
 func _on_dialogue_end_no_npc():
-	emit_signal("timeline_finished")
+	if current_timeline == "start":
+		emit_signal("timeline_finished")
 	Dialogic.timeline_ended.disconnect(_on_dialogue_end_no_npc)
 	unfreeze_all()
 

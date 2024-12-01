@@ -1,4 +1,3 @@
-do DialogueManager.start_task("find_being")
 being: Child, you’ve come at last.
 player: What are you?
 being: I am merely the hand that reached[br] into the abyss to pull you from the void.
@@ -15,8 +14,7 @@ being: As you are now, [br]you can live here with your family.
 being: Honouring your mother’s wishes [br]by staying alive [br]and living with your family.
 being: Would you defy her sacrifice? [br]Throw away the life she gave you?
 being: I only answer what is asked of me. [br]Your mother made her choice freely.
-being: Would you make hers meaningless by destroying me?
-do DialogueManager.finish_task("mother_mystery")
+being: Would you make hers meaningless[br] by destroying me?
 if {JERRYCAN} == true:
 	if {MATCHES} == true:
 		- She didn’t want this. She wants me to stop you.
@@ -25,8 +23,9 @@ if {JERRYCAN} == true:
 		[background arg="res://dialogic/backgrounds/wakeUpOrBurn.png" fade="1.0"]
 		[wait time="2.0"]
 		[background arg="res://dialogic/backgrounds/burn.png" fade="1.0"]
-		[clear time="1.0"]
+		[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
 
 - I-I can’t do it, mother. What would happen if I burn it.
 	[background arg="res://dialogic/backgrounds/family_end.png" fade="3.0"]
-	[clear time="2.0"]
+	[background arg="res://dialogic/backgrounds/the_end.png" fade="3.0"]
+	[wait time="4.0"]
