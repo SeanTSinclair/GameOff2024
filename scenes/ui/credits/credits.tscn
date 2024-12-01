@@ -91,7 +91,7 @@ display_name = "Sean Sinclair"
 
 [sub_resource type="Resource" id="Resource_6vb6k"]
 script = ExtResource("2_nhsgn")
-role_name = "Game director/3D artist"
+role_name = "Game director/3D artist/SFX"
 display_name = "Uni Susort"
 
 [sub_resource type="Resource" id="Resource_3rvd5"]
