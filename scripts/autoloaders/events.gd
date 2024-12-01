@@ -35,3 +35,6 @@ signal secret_message_found(id: String)
 
 @warning_ignore("unused_signal")
 signal secret_book_interacted_with
+
+@warning_ignore("unused_signal")
+signal brightness_level_changed(value: float)

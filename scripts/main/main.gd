@@ -12,6 +12,7 @@ var state: MainStates = MainStates.ACTIVE
 @onready
 var scene_anim_player: AnimationPlayer = %WorldLayer/NavigationRegion3D/TestLevel00/AnimationPlayer
 @onready var final_scene: PackedScene = preload("res://scenes/beast_room_standalone.tscn")
+@onready var world_environment: WorldEnvironment = $WorldEnvironment
 
 
 func _ready():
@@ -20,6 +21,8 @@ func _ready():
 	DialogueManager.start_dialogue_no_npc("start")
 	DialogueManager.connect("timeline_finished", Callable(self, "_play_animation"))
 	SoundManager.play_sfx("TEST", 0, -20, 0.37)
+	Events.brightness_level_changed.connect(_on_brightness_level_changed)
+	update_darkness_level(State.brightness_level)
 
 
 func _play_animation():
@@ -126,3 +129,11 @@ func _on_pause_menu_pause_menu_closed() -> void:
 
 func _on_journal_menu_journal_closed() -> void:
 	menu_closed()
+
+
+func update_darkness_level(value: float) -> void:
+	world_environment.environment.background_color = Color(value, value, value)
+
+
+func _on_brightness_level_changed(value: float) -> void:
+	update_darkness_level(value)

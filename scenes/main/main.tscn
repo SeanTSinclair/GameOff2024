@@ -13,7 +13,7 @@
 
 [sub_resource type="Environment" id="Environment_eekjr"]
 background_mode = 1
-background_color = Color(0.131379, 0.131379, 0.131379, 1)
+background_color = Color(0.133333, 0.133333, 0.133333, 1)
 sky = SubResource("Sky_rmhu6")
 glow_normalized = true
 glow_intensity = 8.0

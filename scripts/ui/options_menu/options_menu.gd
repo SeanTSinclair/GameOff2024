@@ -9,6 +9,7 @@ signal back_pressed
 @onready var sfx_slider: HSlider = %SfxSlider
 @onready var music_slider: HSlider = %MusicSlider
 @onready var panel_container: PanelContainer = %PanelContainer
+@onready var brightness_slider: HSlider = %BrightnessSlider
 
 
 func _ready() -> void:
@@ -16,6 +17,8 @@ func _ready() -> void:
 	display_button.pressed.connect(_on_display_button_pressed)
 	sfx_slider.value_changed.connect(_on_audio_slide_changed.bind("sfx"))
 	music_slider.value_changed.connect(_on_audio_slide_changed.bind("music"))
+	brightness_slider.value = State.brightness_level
+	brightness_slider.value_changed.connect(_on_brightness_level_changed)
 	_update_display()
 
 
@@ -66,3 +69,8 @@ func _on_keybinds_button_pressed() -> void:
 
 func _on_keybinds_back_pressed() -> void:
 	panel_container.visible = true
+
+
+func _on_brightness_level_changed(value: float) -> void:
+	State.brightness_level = value
+	Events.brightness_level_changed.emit(value)
