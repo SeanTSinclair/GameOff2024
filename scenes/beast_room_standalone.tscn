@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=4 uid="uid://bafvtsrmtcw8c"]
+[gd_scene load_steps=85 format=4 uid="uid://bafvtsrmtcw8c"]
 
 [ext_resource type="Script" path="res://scripts/main/final_scene.gd" id="1_a5p8g"]
 [ext_resource type="PackedScene" uid="uid://vsyu3ffqtip5" path="res://objects/small-items/throne.glb" id="1_jgt78"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://civc58rgk5jjr" path="res://assets/flame_sprite/flames3_06_Layer.png" id="12_kkc6k"]
 [ext_resource type="Texture2D" uid="uid://bu7acrha7kckm" path="res://assets/flame_sprite/flames3_07_Layer.png" id="13_rudll"]
 [ext_resource type="Texture2D" uid="uid://cufn6ew6fv5i2" path="res://assets/flame_sprite/flames3_08_Layer.png" id="14_dk5wh"]
+[ext_resource type="Script" path="res://scenes/fires.gd" id="14_gflev"]
 [ext_resource type="Texture2D" uid="uid://83uxajettare" path="res://assets/flame_sprite/flames3_09_Layer.png" id="15_olafa"]
 [ext_resource type="Texture2D" uid="uid://bv2equm5m7oxn" path="res://assets/flame_sprite/flames3_10_Layer.png" id="16_fc4su"]
 [ext_resource type="Texture2D" uid="uid://boamytexx4qw4" path="res://assets/flame_sprite/flames3_11_Layer.png" id="17_vvvo6"]
@@ -288,113 +289,6 @@ _data = {
 "KeyAction": SubResource("Animation_hkpfq"),
 "KeyAction_001": SubResource("Animation_ugm4f")
 }
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dyfro"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_hc5gy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_ek788")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_kp5cr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_bo3d3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_fqnl0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_kkc6k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_rudll")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_dk5wh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_olafa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_fc4su")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_vvvo6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_o6xlv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_qaor5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_4ibw6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_xy44r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_eouma")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_ftfky")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_ioisl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_jljw0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_e3lfa")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_redad")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_k0uhu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_naao2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_535c2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_874eu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_ttpp8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_c1s4y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_66ml5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_ocyyk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_6bptu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_sgbpt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_yx4ei")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_vmn3g")
-}],
-"loop": true,
-"name": &"default",
-"speed": 12.0
-}]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ns3qn"]
 resource_name = "FrontColor"
@@ -1783,6 +1677,9 @@ tracks/3/keys = {
 "values": [Vector3(0, -1.5708, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_gvgmo"]
+resource_name = "burn_baby_burn"
+
 [sub_resource type="Animation" id="Animation_8f4rs"]
 resource_name = "final_scene"
 length = 11.0
@@ -1841,9 +1738,12 @@ tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(10.9667),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.0333333, 10.9667),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"show_being_moved_by_force_text"
+}, {
 "args": [],
 "method": &"queue_hover"
 }]
@@ -1869,9 +1769,117 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mfwqn"]
 _data = {
 "RESET": SubResource("Animation_k8hge"),
+"burn_baby_burn": SubResource("Animation_gvgmo"),
 "final_scene": SubResource("Animation_8f4rs"),
 "hover": SubResource("Animation_g6pgf")
 }
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dyfro"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hc5gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ek788")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kp5cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bo3d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fqnl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kkc6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rudll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dk5wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_olafa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_fc4su")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vvvo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_o6xlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qaor5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_4ibw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_xy44r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_eouma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ftfky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ioisl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_jljw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_e3lfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_redad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_k0uhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_naao2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_535c2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_874eu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ttpp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_c1s4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_66ml5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ocyyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_6bptu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_sgbpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_yx4ei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_vmn3g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="BeastRoomStandalone" type="Node3D"]
 script = ExtResource("1_a5p8g")
@@ -2063,27 +2071,6 @@ autoplay = "KeyAction_001"
 transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, -0.0378017, 2.48422, -0.0401001)
 light_color = Color(0.943595, 0.664773, 0.423158, 1)
 omni_range = 1.25
-
-[node name="Fire" type="AnimatedSprite3D" parent="Objects"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74982, -4.05076, -13.0608)
-visible = false
-offset = Vector2(0, 64)
-pixel_size = 0.02
-billboard = 1
-texture_filter = 2
-sprite_frames = SubResource("SpriteFrames_dyfro")
-autoplay = "default"
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Objects/Fire"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
-light_color = Color(0.878495, 0.559047, 0.336001, 1)
-shadow_enabled = true
-omni_range = 4.072
-script = ExtResource("40_rnlql")
-
-[node name="FlickerTimer" type="Timer" parent="Objects/Fire/OmniLight3D"]
-wait_time = 0.1
-autostart = true
 
 [node name="mansion-basement-door" parent="Objects" instance=ExtResource("41_ngx2g")]
 transform = Transform3D(-0.999965, 0, -0.00834256, 0, 1, 0, 0.00834256, 0, -0.999965, -6.70552, -2.85, -15.6218)
@@ -2396,3 +2383,324 @@ transform = Transform3D(-0.728535, 0, -1.84697e-06, 0, 0.728535, 0, 1.84697e-06,
 libraries = {
 "": SubResource("AnimationLibrary_mfwqn")
 }
+
+[node name="Fires" type="Node" parent="."]
+script = ExtResource("14_gflev")
+
+[node name="Group1" type="Node3D" parent="Fires"]
+visible = false
+
+[node name="Fire" type="AnimatedSprite3D" parent="Fires/Group1"]
+transform = Transform3D(0.32949, 0, 0, 0, 0.32949, 0, 0, 0, 0.32949, -3.35825, -3.67559, -17.4726)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group1/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group1/Fire/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Fire2" type="AnimatedSprite3D" parent="Fires/Group1"]
+transform = Transform3D(0.32949, 0, 0, 0, 0.32949, 0, 0, 0, 0.32949, -2.08676, -3.67559, -17.5994)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group1/Fire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group1/Fire2/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Group2" type="Node3D" parent="Fires"]
+visible = false
+
+[node name="Fire" type="AnimatedSprite3D" parent="Fires/Group2"]
+transform = Transform3D(0.430812, 0, 0, 0, 0.430812, 0, 0, 0, 0.430812, -3.07737, -3.93935, -16.8765)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group2/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group2/Fire/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Fire2" type="AnimatedSprite3D" parent="Fires/Group2"]
+transform = Transform3D(0.430812, 0, 0, 0, 0.430812, 0, 0, 0, 0.430812, -2.29273, -3.93935, -17.0778)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group2/Fire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group2/Fire2/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Fire3" type="AnimatedSprite3D" parent="Fires/Group2"]
+transform = Transform3D(0.430812, 0, 0, 0, 0.430812, 0, 0, 0, 0.430812, -1.49092, -3.93935, -17.7658)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group2/Fire3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group2/Fire3/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Fire4" type="AnimatedSprite3D" parent="Fires/Group2"]
+transform = Transform3D(0.430812, 0, 0, 0, 0.430812, 0, 0, 0, 0.430812, -4.12883, -3.93935, -18.0492)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group2/Fire4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group2/Fire4/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Group3" type="Node3D" parent="Fires"]
+visible = false
+
+[node name="Fire2" type="AnimatedSprite3D" parent="Fires/Group3"]
+transform = Transform3D(0.774921, 0, 0, 0, 0.774921, 0, 0, 0, 0.774921, -2.69448, -3.67559, -17.4089)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group3/Fire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group3/Fire2/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Fire3" type="AnimatedSprite3D" parent="Fires/Group3"]
+transform = Transform3D(0.774921, 0, 0, 0, 0.774921, 0, 0, 0, 0.774921, -3.34305, -3.67559, -17.9262)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group3/Fire3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group3/Fire3/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Fire4" type="AnimatedSprite3D" parent="Fires/Group3"]
+transform = Transform3D(0.774921, 0, 0, 0, 0.774921, 0, 0, 0, 0.774921, -2.04897, -3.67559, -17.8027)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group3/Fire4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group3/Fire4/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Group4" type="Node3D" parent="Fires"]
+visible = false
+
+[node name="Fire" type="AnimatedSprite3D" parent="Fires/Group4"]
+transform = Transform3D(0.197496, 0, 0, 0, 0.197496, 0, 0, 0, 0.197496, -2.83384, -4.07683, -16.3937)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group4/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group4/Fire/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Group5" type="Node3D" parent="Fires"]
+visible = false
+
+[node name="Fire" type="AnimatedSprite3D" parent="Fires/Group5"]
+transform = Transform3D(0.197496, 0, 0, 0, 0.197496, 0, 0, 0, 0.197496, -2.62096, -4.07683, -16.1594)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group5/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group5/Fire/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Fire2" type="AnimatedSprite3D" parent="Fires/Group5"]
+transform = Transform3D(0.197496, 0, 0, 0, 0.197496, 0, 0, 0, 0.197496, -3.01183, -4.07683, -15.9209)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group5/Fire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group5/Fire2/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Fire3" type="AnimatedSprite3D" parent="Fires/Group5"]
+transform = Transform3D(0.197496, 0, 0, 0, 0.197496, 0, 0, 0, 0.197496, -2.76123, -4.07683, -15.6409)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group5/Fire3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group5/Fire3/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Group6" type="Node3D" parent="Fires"]
+visible = false
+
+[node name="Fire" type="AnimatedSprite3D" parent="Fires/Group6"]
+transform = Transform3D(0.578211, 0, 0, 0, 0.578211, 0, 0, 0, 0.578211, -2.62096, -4.07683, -14.821)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group6/Fire"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group6/Fire/OmniLight3D"]
+wait_time = 0.1
+autostart = true
+
+[node name="Fire2" type="AnimatedSprite3D" parent="Fires/Group6"]
+transform = Transform3D(0.706855, 0, 0, 0, 0.933183, 0, 0, 0, 0.463283, -2.62096, -3.06399, -17.9368)
+offset = Vector2(0, 64)
+pixel_size = 0.02
+billboard = 1
+texture_filter = 2
+sprite_frames = SubResource("SpriteFrames_dyfro")
+autoplay = "default"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fires/Group6/Fire2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.702069, 0)
+light_color = Color(0.878495, 0.559047, 0.336001, 1)
+shadow_enabled = true
+omni_range = 4.072
+script = ExtResource("40_rnlql")
+
+[node name="FlickerTimer" type="Timer" parent="Fires/Group6/Fire2/OmniLight3D"]
+wait_time = 0.1
+autostart = true

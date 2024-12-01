@@ -12,3 +12,7 @@ func _ready() -> void:
 func queue_hover() -> void:
 	animation_player.play("hover")
 	DialogueManager.start_dialogue_no_npc("being")
+
+
+func show_being_moved_by_force_text() -> void:
+	Events.feedback.emit("What? I'm being moved against my will!")
