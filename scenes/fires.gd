@@ -46,4 +46,3 @@ func _physics_process(_delta: float) -> void:
 
 func scale_fires():
 	var tween = get_tree().create_tween()
-	tween.interpolate_value()
