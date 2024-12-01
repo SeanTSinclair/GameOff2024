@@ -7,8 +7,6 @@ signal tasks_updated
 var active_tasks := {}
 var completed_tasks := {}
 
-@onready var start_time: int = Time.get_ticks_msec() / 1000
-
 
 func _ready() -> void:
 	Events.journal.connect(_on_journal)
@@ -18,11 +16,11 @@ func _ready() -> void:
 
 
 func _on_journal(message: String) -> void:
-	journal_event_written.emit(get_current_time_in_sec(), message)
+	journal_event_written.emit(State.get_current_time_in_sec(), message)
 
 
 func _on_feedback(message: String) -> void:
-	Events.feedback_given.emit(get_current_time_in_sec(), message)
+	Events.feedback_given.emit(State.get_current_time_in_sec(), message)
 
 
 func _on_task_received(task: Task) -> void:
@@ -40,7 +38,3 @@ func _on_task_completed(task: Task) -> void:
 		Events.journal.emit(task.task_completed_message)
 		active_tasks.erase(task.id)
 		tasks_updated.emit()
-
-
-func get_current_time_in_sec() -> int:
-	return (Time.get_ticks_msec() / 1000) - start_time
