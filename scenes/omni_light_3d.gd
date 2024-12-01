@@ -8,12 +8,9 @@ extends OmniLight3D
 func _ready():
 	var timer: Timer = $FlickerTimer  # Replace with your Timer node's name or path if different
 	if timer:
-		print("Timer found")
 		# Connect the signal using Callable()
 		timer.connect("timeout", Callable(self, "_on_Timer_timeout"))
 		timer.start(flicker_interval)
-	else:
-		print("Timer not found")
 
 
 func _on_Timer_timeout():
