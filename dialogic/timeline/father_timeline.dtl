@@ -1,30 +1,39 @@
-if {dialogue_choices.FATHERTALKED} == false:
+if {dialogue_choices.NEEDTOTALKTOFATHER} == false:
 	do DialogueManager.finish_task("find_father")
+	if {dialogue_choices.FATHERTASKUNFINSISHED} == true:
+		father: Have you found my medicine?
+	else:
+		father: I can’t remember, [br]why can’t I remember?
+		father: I’ve lost someone?
+		player: Father? [br]What can I do to help?
+		father: My medicine, [br]that will help me remember. [br]Have you seen it?
+		do DialogueManager.start_task("find_medicine_bottle")
+		set {dialogue_choices.FATHERTASKUNFINSISHED} = true
 	if {MEDICINEBOTTLE} == true:
+		set {dialogue_choices.FATHERTASKUNFINSISHED} = false
+		do DialogueManager.finish_task("find_medicine_bottle")
 		father: Thank you.
 		father: I remember now.
-		[sound volume="0.0"]
 		father: ...Your mother. [br]She was here…once.
 		father: What’s left is not her.
 		player: What?
 		father: It's only her empty shell walking [br]around.
 		being: I wonder what you are going [br]to do once you figure out the truth?
 		player: The truth?
-		set {dialogue_choices.FATHERTALKED} = true
-	else:
-		[sound volume="0.0"]
-		father: I can’t remember, [br]why can’t I remember?
-		father: I’ve lost someone?
-		player: Father? [br]What can I do to help?
-		father: My medicine, [br]that will help me remember. [br]Have you seen it?
-		do DialogueManager.start_task("find_medicine_bottle")
+		set {dialogue_choices.NEEDTOTALKTOFATHER} = true
+		set {dialogue_choices.DIDFATHERTASK} = true
+
 else:
-	father: What have we done...
-	if {dialogue_choices.GRANDMOTHERTALKED} == true:
-		player: I should go speak with grandmother again, [br]maybe she knows what's going on.
-		do DialogueManager.start_task("find_grandmother")
-		set {dialogue_choices.GRANDMOTHERTALKED} = true
+	if {dialogue_choices.FATHERFINISHED} == true:
+		father: What have we done...
 	else:
-		player: Maybe someone else [br]will tell me what's going on?
-		set {dialogue_choices.GRANDMOTHERTALKED} = true
-		do DialogueManager.start_task("find_grandmother")
+		father: What have we done...
+		if {dialogue_choices.GRANDMOTHERTALKED} == true:
+			player: I should go speak with grandmother again, [br]maybe she knows what's going on.
+			do DialogueManager.start_task("find_grandmother")
+			set {dialogue_choices.FATHERFINISHED} = true
+		else:
+			player: Maybe someone else [br]will tell me what's going on?
+			set {dialogue_choices.GRANDMOTHERTALKED} = true
+			do DialogueManager.start_task("find_grandmother")
+			set {dialogue_choices.FATHERFINISHED} = true

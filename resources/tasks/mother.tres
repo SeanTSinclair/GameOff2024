@@ -7,4 +7,4 @@ script = ExtResource("1_8a1nf")
 id = "MOTHERMYSTERY"
 description = "What is going on with mother"
 task_received_message = "Mother is acting weird I should figure out what is going on"
-task_completed_message = ""
+task_completed_message = "Mother sold her soul to save me"
