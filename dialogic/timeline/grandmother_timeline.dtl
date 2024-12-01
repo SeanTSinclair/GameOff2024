@@ -1,4 +1,4 @@
-if {dialogue_choices.GRANDMOTHERTALKED} == false:
+if {dialogue_choices.GRANDMOTHERTALKED}  ==  false:
 	grandmother: There is a darkness in this house, [br] darkness we couldn’t have known
 	[sound volume="0.0"]
 	player: Grandmother?
@@ -9,14 +9,21 @@ if {dialogue_choices.GRANDMOTHERTALKED} == false:
 	set {dialogue_choices.GRANDMOTHERTALKED} = true
 	player: What was that voice?
 else:
-	do DialogueManager.finish_task("find_grandmother")
-	player: Grandmother why is father [br]saying that mother is gone? [br]She’s right here.
-	grandmother: Some things are too dark for a child to know.
-	player: Tell me more, please [br]something is not right.
-	grandmother: Oh, forgive me… [br]That is not your mother, [br]only a shell left behind.
-	grandmother: We made a deal for a terrible price.
-	grandmother: I fear we made the wrong choice.[br] We made a deal with that being.
-	grandmother: … If you want to know the truth, [br]go to the basement.
-	player: *Before I do, I should talk to mother [br]to see if there is truly nothing left.*
-	do DialogueManager.start_task("talk_mother")
-	set {dialogue_choices.MOTHERTALK} = true
+	if {dialogue_choices.FATHERFINISHED} == true:
+		if {dialogue_choices.GRANDMOTHERFINISHED} == false:
+			player: Grandmother why is father [br]saying that mother is gone? She’s right here.
+			grandmother: Some things are too dark for a child to know.
+			player: Tell me more, please [br]something is not right.
+			grandmother: Oh, forgive me… [br]That is not your mother, [br]only a shell left behind.
+			grandmother: We made a deal for a terrible price.
+			grandmother: I fear we made the wrong choice.[br] We made a deal with that being.
+			grandmother: … If you want to know the truth, [br]go to the basement.
+			player: *Before I do, I should talk to mother [br]to see if there is truly nothing left.*
+			do DialogueManager.finish_task("find_grandmother")
+			do DialogueManager.start_task("talk_mother")
+			set {dialogue_choices.MOTHERTALK} = true
+			set {dialogue_choices.GRANDMOTHERFINISHED} = true
+		else:
+			grandmother: … If you want to know the truth, [br]go to the basement.
+	else:
+		father: You should go talk to your father

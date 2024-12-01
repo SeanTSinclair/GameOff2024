@@ -7,4 +7,4 @@ script = ExtResource("1_vfxdn")
 id = "FINDGRANDMOTHER"
 description = "I should ask grandmother if she knows more about what's going on"
 task_received_message = "Maybe grandmother will know"
-task_completed_message = ""
+task_completed_message = "Grandmother told me the truth"

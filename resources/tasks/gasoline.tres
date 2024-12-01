@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_fxr3i")
 id = "GASOLINE"
-description = "I need something to set help start the fire"
-task_received_message = ""
-task_completed_message = ""
+description = "I should find something to help the fire get going"
+task_received_message = "I should find something to help the fire get going"
+task_completed_message = "This should work"

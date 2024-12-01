@@ -76,9 +76,14 @@ variables={
 "MATCHES": false,
 "MEDICINEBOTTLE": false,
 "dialogue_choices": {
-"FATHERTALKED": false,
+"DIDFATHERTASK": false,
+"FATHERFINISHED": false,
+"FATHERTASKUNFINSISHED": false,
+"GRANDMOTHERFINISHED": false,
 "GRANDMOTHERTALKED": false,
-"MOTHERTALK": false
+"MOTHERFINISHED": false,
+"MOTHERTALK": false,
+"NEEDTOTALKTOFATHER": false
 }
 }
 glossary/glossary_files=["res://dialogic/glossary.tres"]
