@@ -19,7 +19,6 @@ func _on_interacted() -> void:
 	var origin_open = open
 	if key_id != "":
 		if State.is_key_found(key_id):
-			print("Hey")
 			open = !open
 			if !unlocked:
 				Events.feedback.emit("Used a key to unlock the door")
@@ -32,5 +31,7 @@ func _on_interacted() -> void:
 	if origin_open != open:
 		if open:
 			anim_player.play("Open")
+			interaction_component.prompt_message = "close"
 		else:
 			anim_player.play_backwards("Open")
+			interaction_component.prompt_message = "open"
