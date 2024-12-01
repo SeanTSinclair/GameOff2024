@@ -12,6 +12,7 @@ const TIME_COLOR: String = "#ffaaaa"
 
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	back_button.pressed.connect(_on_back_button_pressed)
 
 	label.clear()
